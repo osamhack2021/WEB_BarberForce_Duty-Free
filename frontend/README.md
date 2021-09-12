@@ -1,4 +1,15 @@
-# barber-force-frontend
+# Barber Force - Fronend
+
+> `Barber Force` 프로젝트의 프론트엔드 부분을 위한 디렉토리
+
+## Rules
+- 컴포넌트 태그는 `CamelCase` 로 사용한다. (개인적으로 일반 컴포넌트와 비교할 때 2 word 이상의 `kebab-case` 로 구분하기보다는 `CamelCase`로 구분하는게 에디터에서도 다르게 하이라이팅이 되어서 더 가독성이 좋아보임)
+
+---
+
+# Default Nuxt.js README.md
+
+---
 
 ## Build Setup
 
