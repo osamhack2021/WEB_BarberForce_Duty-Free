@@ -1,5 +1,5 @@
 <template>
-  <div>This is sample component.</div>
+  <footer class="border p-3">This is footer</footer>
 </template>
 
 <script>

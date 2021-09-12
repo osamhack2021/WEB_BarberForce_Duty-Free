@@ -1,5 +1,9 @@
 <template>
-  <main class="p-3">This is Index page.</main>
+  <div>
+    <LayoutHeader />
+    <Nuxt />
+    <LayoutFooter />
+  </div>
 </template>
 
 <script>
