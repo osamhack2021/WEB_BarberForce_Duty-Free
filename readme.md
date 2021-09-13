@@ -25,9 +25,10 @@
  - DB 등 사용한 다른 프로그램 
  
 ### Front-end
- -  react.js, vue.js 등 사용한 front-end 프레임워크 
- -  UI framework
- - 기타 사용한 라이브러리
+ - Nuxt.js (Vue, Vuex, Vue-Router 등 포함)
+ - Tailwind CSS
+ - Axios
+ - PWA (using @nuxtjs/pwa)
 
 ## 설치 안내 (Installation Process)
 ```bash
