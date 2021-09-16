@@ -48,8 +48,9 @@ $ yarn start or npm run start
  샘플 에디터 [https://stackedit.io/app#](https://stackedit.io/app#)
  
 ## 팀 정보 (Team Information)
-- hong gil dong (hong999@gmail.com), Github Id: gildong999
-- kim su ji (suji999@gmail.com), Github Id: suji999
+- Se Lee (ese1997@naver.com), Github Id: Sally271
+- Chanhyuk Byeon (bdu00chch@gmail.com), Github Id: Bisue
+- Sangwook Park (dkxkqkrtkddn@gmail.com), Github Id: sw0501
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
  * [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
