@@ -1,5 +1,5 @@
 <template>
-  <main class="p-3">This is page 1.</main>
+  <main class="p-3">This is Login page.</main>
 </template>
 
 <script>

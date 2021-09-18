@@ -1,5 +1,5 @@
 <template>
-  <main class="p-3">This is page 2.</main>
+  <main class="p-3">This is Register page.</main>
 </template>
 
 <script>
