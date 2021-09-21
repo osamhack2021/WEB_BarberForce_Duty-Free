@@ -1,11 +1,10 @@
 <template>
-  <header class="flex border p-3">
-    This is header
-    <nav class="ml-auto">
-      <NuxtLink class="text-blue-500" to="/">Index</NuxtLink>
-      <NuxtLink class="text-blue-500" to="/page1">Page 1</NuxtLink>
-      <NuxtLink class="text-blue-500" to="/page2">Page 2</NuxtLink>
-    </nav>
+  <header class="border shadow">
+    <div class="container flex justify-center mx-auto p-3">
+      <NuxtLink to="/">
+        <img class="w-12 h-12" src="@/assets/logo.svg" alt="Barber Force" />
+      </NuxtLink>
+    </div>
   </header>
 </template>
 
