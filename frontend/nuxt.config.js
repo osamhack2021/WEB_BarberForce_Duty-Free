@@ -50,4 +50,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Dotenv
+  env: {
+    kakaoRestKey: process.env.KAKAO_REST_KEY,
+    kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI,
+  },
 };
