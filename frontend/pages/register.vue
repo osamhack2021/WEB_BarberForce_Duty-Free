@@ -7,6 +7,9 @@
 <script>
 export default {
   layout: 'empty',
+  mounted() {
+    this.$router.replace('/register/1');
+  },
 };
 </script>
 
