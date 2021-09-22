@@ -1,5 +1,12 @@
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        kakao: '#fbe300',
+        email: '#2196f3',
+      },
+    },
+  },
   variants: {},
   plugins: [],
   purge: {
