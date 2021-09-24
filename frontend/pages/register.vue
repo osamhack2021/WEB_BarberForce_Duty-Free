@@ -7,10 +7,6 @@
 <script>
 export default {
   layout: 'empty',
-  middleware({ redirect }) {
-    // 부모 페이지로 들어오면 잘못된 접근. 회원가입 첫번째 페이지로 보내기
-    return redirect('/register/1');
-  },
 };
 </script>
 
