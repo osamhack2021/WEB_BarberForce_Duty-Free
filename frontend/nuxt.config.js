@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/pwa',
     // https://auth.nuxtjs.org/
     '@nuxtjs/auth-next',
+    '@nuxtjs/toast',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -55,5 +56,12 @@ export default {
   env: {
     kakaoRestKey: process.env.KAKAO_REST_KEY,
     kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI,
+  },
+
+  // Nuxt Toast
+  toast: {
+    position: 'top-right',
+    duration: 3000,
+    keepOnHover: true,
   },
 };
