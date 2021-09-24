@@ -1,19 +1,21 @@
 <template>
   <div class="p-2">
-    <form @submit.prevent>
+    <form @submit.prevent="submit">
       <div class="mb-6">
         <label class="block mb-1" for="email">이름을 알려주세요.</label>
         <input
           id="name"
+          v-model="name"
           class="w-full border rounded p-2 text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
           type="text"
           name="name"
         />
       </div>
       <div class="mb-6">
-        <label class="block mb-1" for="password">군번을 입력해주세요.</label>
+        <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
         <input
           id="soldier_id"
+          v-model="soldier_id"
           class="w-full border rounded p-2 text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
           type="text"
           name="soldier_id"
@@ -26,7 +28,7 @@
         </div>
       </div>
       <div class="flex justify-center">
-        <button class="rounded bg-blue-500 text-white py-2 px-3">가입하기</button>
+        <button type="submit" class="rounded bg-blue-500 text-white py-2 px-3">가입하기</button>
       </div>
     </form>
   </div>
@@ -35,6 +37,35 @@
 <script>
 export default {
   transition: 'slide',
+  computed: {
+    name: {
+      get() {
+        return this.$store.state.register.name;
+      },
+      set(value) {
+        this.$store.dispatch('register/setName', value);
+      },
+    },
+    soldier_id: {
+      get() {
+        return this.$store.state.register.soldier_id;
+      },
+      set(value) {
+        this.$store.dispatch('register/setSoldierId', value);
+      },
+    },
+  },
+  mounted() {
+    if (this.$store.getters['register/step'] < 4) {
+      this.$toast.error('이전 페이지의 입력을 채워주세요!');
+      this.$router.replace('/register/3');
+    }
+  },
+  methods: {
+    submit() {
+      console.log(this.$store.state.register);
+    },
+  },
 };
 </script>
 
