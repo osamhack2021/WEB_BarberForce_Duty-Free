@@ -2,20 +2,24 @@
   <main class="h-screen w-screen flex flex-col items-center justify-center p-3">
     <!-- logo -->
     <img class="w-25 h-25" src="~/assets/img/logo.svg" alt="Barber Force" />
-    <!-- links -->
+    <!-- form -->
     <div class="flex flex-col items-stretch w-3/4 max-w-md text-white text-center mt-20">
-      <!-- login via kakao -->
-      <a class="flex mb-2" :href="kakaoLoginURL">
-        <img class="h-full w-auto mr-2" src="~/assets/img/kakao.png" alt="Kakao talk" />
-        <span class="rounded bg-kakao text-black flex-1 flex items-center justify-center">카카오톡으로 로그인</span>
-      </a>
-      <!-- login via email -->
-      <NuxtLink class="flex mb-2" to="/">
-        <img class="h-full w-auto mr-2" src="~/assets/img/email.png" alt="Kakao talk" />
-        <span class="rounded bg-email text-white flex-1 flex items-center justify-center">이메일로 로그인</span>
-      </NuxtLink>
-      <!-- register -->
-      <NuxtLink class="rounded border border-white p-3" to="/register/1">회원 가입</NuxtLink>
+      <div class="mb-3">
+        <input v-model="credentials.email" class="rounded text-black p-2" type="text" placeholder="E-mail" />
+      </div>
+      <div class="mb-3">
+        <input v-model="credentials.password" class="rounded text-black p-2" type="password" placeholder="PW" />
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="mb-5">
+          <input id="remember" v-model="remember" type="checkbox" />
+          <label for="remember">로그인 유지</label>
+        </div>
+        <button class="rounded-xl border border-white text-white font-medium py-1 px-7 mb-7" @click="login">
+          Login
+        </button>
+        <NuxtLink class="text-sm underline" to="/register/1">회원가입</NuxtLink>
+      </div>
     </div>
     <!-- background -->
     <div class="absolute top-0 left-0 w-full h-full bg-auth-overlay"></div>
@@ -26,9 +30,18 @@
 <script>
 export default {
   layout: 'empty',
-  computed: {
-    kakaoLoginURL() {
-      return `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.kakaoRestKey}&redirect_uri=${process.env.kakaoRedirectURI}&response_type=code`;
+  data() {
+    return {
+      credentials: {
+        email: '',
+        password: '',
+      },
+      remember: false,
+    };
+  },
+  methods: {
+    login() {
+      console.log(this.credentials, this.remember);
     },
   },
 };

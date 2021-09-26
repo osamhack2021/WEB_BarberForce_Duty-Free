@@ -64,4 +64,14 @@ export default {
     duration: 3000,
     keepOnHover: true,
   },
+
+  // Auth
+  auth: {
+    redirect: {
+      login: '/auth',
+      logout: '/',
+      callback: false,
+      home: '/',
+    },
+  },
 };
