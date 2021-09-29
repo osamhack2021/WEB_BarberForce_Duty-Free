@@ -1,12 +1,12 @@
 <template>
-  <div class="p-2">
+  <div class="text-white p-2">
     <form @submit.prevent="submit">
       <div class="mb-6">
         <label class="block mb-1" for="email">이름을 알려주세요.</label>
         <input
           id="name"
           v-model="name"
-          class="w-full border rounded p-2 text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
+          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
           type="text"
           name="name"
         />
@@ -16,7 +16,7 @@
         <input
           id="soldier_id"
           v-model="soldier_id"
-          class="w-full border rounded p-2 text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
+          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
           type="text"
           name="soldier_id"
         />

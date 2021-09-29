@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div class="text-white p-2">
     <div class="text-lg mb-8"><span class="font-bold">Barber Force</span>에 가입하시겠습니까?</div>
     <div class="flex justify-center items-center">
       <NuxtLink class="text-center mx-3" to="/register/2">
