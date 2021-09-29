@@ -1,7 +1,7 @@
 <template>
-  <main class="h-screen w-screen flex flex-col items-center justify-center p-3">
+  <main class="h-screen w-screen flex flex-col items-center justify-center bg-auth p-3">
     <!-- logo -->
-    <img class="w-25 h-25" src="~/assets/img/logo.svg" alt="Barber Force" />
+    <img src="@/assets/img/logo_set_white_bg.png" alt="Barber Force" />
     <!-- links -->
     <div class="flex flex-col items-stretch w-3/4 max-w-md text-white text-center mt-20">
       <!-- login via kakao -->
@@ -17,9 +17,6 @@
       <!-- register -->
       <NuxtLink class="rounded border border-white p-3" to="/register/1">회원 가입</NuxtLink>
     </div>
-    <!-- background -->
-    <div class="absolute top-0 left-0 w-full h-full bg-auth-overlay"></div>
-    <div class="absolute top-0 left-0 w-full h-full bg-auth"></div>
   </main>
 </template>
 
@@ -35,12 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.bg-auth-overlay {
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: -1;
-}
 .bg-auth {
-  background: url(~/assets/img/auth_bg.jpg) center/cover no-repeat;
-  z-index: -2;
+  background-color: #406d96;
 }
 </style>

@@ -12,10 +12,10 @@ export default {
 
 <style>
 .slide-enter-active {
-  animation: slide-in 0.5s;
+  animation: slide-in 0.25s;
 }
 .slide-leave-active {
-  animation: slide-out 0.5s;
+  animation: slide-out 0.25s;
 }
 @keyframes slide-in {
   0% {
