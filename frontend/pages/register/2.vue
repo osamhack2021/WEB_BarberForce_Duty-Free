@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div class="text-white p-2">
     <div class="text-lg mb-8">어떤 방법으로 가입하시겠습니까?</div>
     <div class="flex flex-col items-stretch">
       <NuxtLink class="flex mb-2" to="/register/3">
