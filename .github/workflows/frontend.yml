@@ -14,7 +14,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - run: npm lint
+      - run: cd frontend
+      - run: npm run lint
   test:
     runs-on: ubuntu-latest
 
@@ -23,4 +24,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
+      - run: cd frontend
       - run: npm test
