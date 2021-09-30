@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* common */
+body {
+  background-color: #fffff5;
+}
