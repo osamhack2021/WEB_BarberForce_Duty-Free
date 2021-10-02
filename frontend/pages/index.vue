@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto p-3">
+  <main class="container p-3">
     <swiper class="swiper" :options="swiperOption">
       <swiper-slide
         v-for="barber in barbers"
