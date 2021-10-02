@@ -1,6 +1,6 @@
 <template>
   <header class="shadow bg-brand">
-    <div class="relative container flex h-full px-4">
+    <div class="relative flex h-full px-4">
       <button class="focus:outline-none">
         <img src="@/assets/img/menu.svg" style="width: 23px" />
       </button>
