@@ -10,5 +10,8 @@ module.exports = {
   },
   variants: {},
   plugins: [require('@tailwindcss/aspect-ratio')],
+  corePlugins: {
+    container: false,
+  },
   purge: {},
 };
