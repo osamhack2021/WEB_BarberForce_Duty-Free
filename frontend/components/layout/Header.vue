@@ -5,7 +5,8 @@
         <img src="@/assets/img/menu.svg" style="width: 23px" />
       </button>
       <NuxtLink class="absolute top-1/2 left-1/2" style="transform: translate(-50%, -50%)" to="/">
-        <img src="@/assets/img/logo_white.png" alt="Barber Force" />
+        <img class="block md:hidden" src="@/assets/img/logo_white.png" alt="Barber Force" />
+        <img class="hidden md:block" src="@/assets/img/logo_with_title.png" alt="Barber Force" />
       </NuxtLink>
     </div>
   </header>
@@ -15,4 +16,8 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+header {
+  z-index: 99999;
+}
+</style>
