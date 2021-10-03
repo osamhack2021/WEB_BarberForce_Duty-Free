@@ -15,9 +15,9 @@ export default {
     // 현재 진행중인 회원가입 단계
     step: state => {
       if (!state.email || !state.password || !state.password_confirm) {
-        return 3;
+        return 2;
       } else if (!state.name || !state.soldier_id) {
-        return 4;
+        return 3;
       } else {
         return 1;
       }

@@ -1,38 +1,34 @@
 <template>
   <div class="text-white p-2">
-    <form @submit.prevent>
+    <form @submit.prevent="submit">
       <div class="mb-6">
-        <label class="block mb-1" for="email">이메일을 입력해주세요.</label>
+        <label class="block mb-1" for="email">이름을 알려주세요.</label>
         <input
-          id="email"
-          v-model="email"
+          id="name"
+          v-model="name"
           class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
           type="text"
-          name="email"
+          name="name"
         />
       </div>
       <div class="mb-6">
-        <label class="block mb-1" for="password">비밀번호를 입력해주세요.</label>
+        <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
         <input
-          id="password"
-          v-model="password"
+          id="soldier_id"
+          v-model="soldier_id"
           class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
-          type="password"
-          name="password"
+          type="text"
+          name="soldier_id"
         />
       </div>
       <div class="mb-6">
-        <label class="block mb-1" for="password_confirm">비밀번호를 다시 입력해주세요.</label>
-        <input
-          id="password_confirm"
-          v-model="password_confirm"
-          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
-          type="password"
-          name="password_confirm"
-        />
+        <div class="mb-4">휴대전화로 본인인증을 해주세요.</div>
+        <div class="flex justify-center">
+          <img class="w-16 h-16" src="~/assets/img/pass.png" alt="PASS" />
+        </div>
       </div>
-      <div class="flex justify-end">
-        <NuxtLink class="rounded bg-blue-500 text-white py-2 px-3" to="/register/4">다음</NuxtLink>
+      <div class="flex justify-center">
+        <button type="submit" class="rounded bg-blue-500 text-white py-2 px-3">가입하기</button>
       </div>
     </form>
   </div>
@@ -42,29 +38,32 @@
 export default {
   transition: 'slide',
   computed: {
-    email: {
+    name: {
       get() {
-        return this.$store.state.register.email;
+        return this.$store.state.register.name;
       },
       set(value) {
-        this.$store.dispatch('register/setEmail', value);
+        this.$store.dispatch('register/setName', value);
       },
     },
-    password: {
+    soldier_id: {
       get() {
-        return this.$store.state.register.password;
+        return this.$store.state.register.soldier_id;
       },
       set(value) {
-        this.$store.dispatch('register/setPassword', value);
+        this.$store.dispatch('register/setSoldierId', value);
       },
     },
-    password_confirm: {
-      get() {
-        return this.$store.state.register.password_confirm;
-      },
-      set(value) {
-        this.$store.dispatch('register/setPasswordConfirm', value);
-      },
+  },
+  mounted() {
+    if (this.$store.getters['register/step'] < 3) {
+      this.$toast.error('이전 페이지의 입력을 채워주세요!');
+      this.$router.replace('/register/2');
+    }
+  },
+  methods: {
+    submit() {
+      console.log(this.$store.state.register);
     },
   },
 };
