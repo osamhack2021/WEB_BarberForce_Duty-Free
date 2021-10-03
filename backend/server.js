@@ -4,7 +4,7 @@ const port = 3306;
 //const bodyParser = require('body-parser');
 //const ejs = require('ejs');
 //const path = require('path');
-//const db = require('./db.js');
+const db = require('./db.js');
 //const route = require('./route.js');
 
 //app.set('view engine','pug');
@@ -20,11 +20,12 @@ app.get('/', (req, res) => {
     });
 });
 
-/*
+
 app.get('/login',(req,res) =>{
 
 })
 
+/*
 app.get('/register',(req,res) =>{
 
 })
