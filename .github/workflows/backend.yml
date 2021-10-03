@@ -19,7 +19,7 @@ jobs:
           host: $({ secrets.BARBERFORCE_HOST })
           username: $({ secrets.BARBERFORCE_USERNAME })
           password: $({ secrets.BARBERFORCE_PASSWORD })
-          scripts: |
+          script: |
             cd ${{ secrets.BARBERFORCE_PATH }} && git pull
             npm install
             cd
