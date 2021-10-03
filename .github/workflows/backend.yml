@@ -22,6 +22,3 @@ jobs:
           script: |
             cd ${{ secrets.BARBERFORCE_PATH }} && git pull
             npm install
-            cd
-            cd ${{ secrets.BARBERFORCE_BACKEND_PATH }}
-            node server.js
