@@ -98,29 +98,31 @@
         </NuxtLink>
       </section>
       <!-- search form section -->
-      <div class="relative">
-        <img
-          class="absolute left-3 top-1/2 w-5 h-auto"
-          style="transform: translate(0, -50%)"
-          src="@/assets/img/search.svg"
-        />
-        <input
-          class="
-            w-full
-            rounded
-            border
-            bg-white
-            font-semibold
-            text-lg text-gray-400
-            placeholder-gray-200
-            py-2
-            pl-12
-            pr-4
-            focus:outline-none focus:ring focus:ring-white focus:ring-opacity-30
-          "
-          placeholder="찾으시는 것이 있나요?"
-          type="text"
-        />
+      <div class="flex justify-center">
+        <div class="relative w-full max-w-md">
+          <img
+            class="absolute left-3 top-1/2 w-5 h-auto"
+            style="transform: translate(0, -50%)"
+            src="@/assets/img/search.svg"
+          />
+          <input
+            class="
+              w-full
+              rounded
+              border
+              bg-white
+              font-semibold
+              text-lg text-gray-400
+              placeholder-gray-200
+              py-2
+              pl-12
+              pr-4
+              focus:outline-none focus:ring focus:ring-white focus:ring-opacity-30
+            "
+            placeholder="찾으시는 것이 있나요?"
+            type="text"
+          />
+        </div>
       </div>
     </div>
   </main>
@@ -144,9 +146,8 @@ export default {
           clickable: true,
         },
         breakpoints: {
-          768: {
+          640: {
             slidesPerView: 2,
-            slidesPerGroup: 2,
           },
         },
       },
@@ -156,10 +157,10 @@ export default {
         spaceBetween: 10,
         loop: false,
         breakpoints: {
-          768: {
+          640: {
             slidesPerView: 3,
           },
-          1024: {
+          880: {
             slidesPerView: 4,
           },
         },
