@@ -4,12 +4,14 @@ module.exports = {
       colors: {
         kakao: '#fbe300',
         email: '#2196f3',
+        brand: '#406D96',
       },
     },
   },
   variants: {},
   plugins: [require('@tailwindcss/aspect-ratio')],
-  purge: {
-    enabled: true,
+  corePlugins: {
+    container: false,
   },
+  purge: {},
 };

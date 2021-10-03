@@ -1,12 +1,13 @@
 <template>
-  <header class="border shadow">
-    <div class="container flex mx-auto p-3">
-      <NuxtLink to="/">
-        <img class="w-12 h-12" src="@/assets/img/logo.png" alt="Barber Force" />
-      </NuxtLink>
-      <button class="ml-auto focus:outline-none">
-        <img class="w-6 h-6" src="@/assets/img/menu.svg" />
+  <header class="shadow bg-brand">
+    <div class="relative flex h-full px-4">
+      <button class="focus:outline-none">
+        <img src="@/assets/img/menu.svg" style="width: 23px" />
       </button>
+      <NuxtLink class="absolute top-1/2 left-1/2" style="transform: translate(-50%, -50%)" to="/">
+        <img class="block md:hidden" src="@/assets/img/logo_white.png" alt="Barber Force" />
+        <img class="hidden md:block" src="@/assets/img/logo_with_title.png" alt="Barber Force" />
+      </NuxtLink>
     </div>
   </header>
 </template>
@@ -15,4 +16,8 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+header {
+  z-index: 99999;
+}
+</style>
