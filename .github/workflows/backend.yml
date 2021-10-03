@@ -22,5 +22,5 @@ jobs:
           script: |
             cd ${{ secrets.BARBERFORCE_PATH }} && git pull
             cd
-            cd ${{ secrets.BARBERFORCE_BACKEND_PATH}}
+            cd ${{ secrets.BARBERFORCE_BACK_PATH }}
             node server.js
