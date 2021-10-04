@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 
-import 'swiper/css/swiper.css';
+import 'swiper/swiper.scss';
 
 // import custom style
 import '~/assets/css/swiper.css';

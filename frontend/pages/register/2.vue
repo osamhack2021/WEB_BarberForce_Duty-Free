@@ -1,22 +1,72 @@
 <template>
   <div class="text-white p-2">
-    <div class="text-lg mb-8">어떤 방법으로 가입하시겠습니까?</div>
-    <div class="flex flex-col items-stretch">
-      <NuxtLink class="flex mb-2" to="/register/3">
-        <img class="h-full w-auto mr-2" src="~/assets/img/kakao.png" alt="Kakao talk" />
-        <span class="rounded bg-kakao text-black flex-1 flex items-center justify-center">카카오톡으로 로그인</span>
-      </NuxtLink>
-      <NuxtLink class="flex mb-2" to="/register/3">
-        <img class="h-full w-auto mr-2" src="~/assets/img/email.png" alt="Kakao talk" />
-        <span class="rounded bg-email text-white flex-1 flex items-center justify-center">이메일로 로그인</span>
-      </NuxtLink>
-    </div>
+    <form @submit.prevent>
+      <div class="mb-6">
+        <label class="block mb-1" for="email">이메일을 입력해주세요.</label>
+        <input
+          id="email"
+          v-model="email"
+          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
+          type="text"
+          name="email"
+        />
+      </div>
+      <div class="mb-6">
+        <label class="block mb-1" for="password">비밀번호를 입력해주세요.</label>
+        <input
+          id="password"
+          v-model="password"
+          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
+          type="password"
+          name="password"
+        />
+      </div>
+      <div class="mb-6">
+        <label class="block mb-1" for="password_confirm">비밀번호를 다시 입력해주세요.</label>
+        <input
+          id="password_confirm"
+          v-model="password_confirm"
+          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
+          type="password"
+          name="password_confirm"
+        />
+      </div>
+      <div class="flex justify-end">
+        <NuxtLink class="rounded bg-blue-500 text-white py-2 px-3" to="/register/3">다음</NuxtLink>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
   transition: 'slide',
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.register.email;
+      },
+      set(value) {
+        this.$store.dispatch('register/setEmail', value);
+      },
+    },
+    password: {
+      get() {
+        return this.$store.state.register.password;
+      },
+      set(value) {
+        this.$store.dispatch('register/setPassword', value);
+      },
+    },
+    password_confirm: {
+      get() {
+        return this.$store.state.register.password_confirm;
+      },
+      set(value) {
+        this.$store.dispatch('register/setPasswordConfirm', value);
+      },
+    },
+  },
 };
 </script>
 
