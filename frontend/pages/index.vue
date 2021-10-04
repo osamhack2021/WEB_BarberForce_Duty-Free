@@ -125,11 +125,14 @@
         </div>
       </div>
     </div>
+
+    <button class="rounded bg-brand text-white font-bold py-2 px-4" @click="logout">로그아웃(테스트용)</button>
   </main>
 </template>
 
 <script>
 export default {
+  middleware: 'auth',
   data() {
     return {
       barbers: [],
@@ -256,6 +259,11 @@ export default {
         likes: 11,
       },
     ];
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('auth/logout');
+    },
   },
 };
 </script>

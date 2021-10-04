@@ -24,7 +24,7 @@ export default {
   ssr: false,
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/vue-awesome-swiper.js', mode: 'client' }],
+  plugins: [{ src: '~/plugins/vue-awesome-swiper.js', mode: 'client' }, '@/plugins/api.js', '@/plugins/auth.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -63,6 +63,7 @@ export default {
   env: {
     kakaoRestKey: process.env.KAKAO_REST_KEY,
     kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI,
+    backendURL: process.env.BACKEND_URL,
   },
 
   // Nuxt Toast
