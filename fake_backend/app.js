@@ -35,6 +35,12 @@ app.post("/login", (req, res) => {
     res.status("400").send("Not Found");
   }
 });
+app.post("/register", (req, res) => {
+  console.log(req.body);
+  res.send({
+    message: "success!",
+  });
+});
 app.get("/me", (req, res) => {
   if (!req.headers["authorization"]) {
     res.status(400).send("Bad request");
