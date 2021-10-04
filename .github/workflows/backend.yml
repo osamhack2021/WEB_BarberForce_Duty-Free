@@ -1,4 +1,4 @@
-name: backend CI/CD
+name: backend CI
 
 on:
   push:
@@ -6,14 +6,37 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    #PR이 merge 되었을때 아래 steps을 실행하겠다.
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - working-directory: ./backend
+        run: |
+          npm ci
+          npm run lint
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - working-directory: ./backend
+        run: |
+          npm ci
+          npm test
+
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - name : executing remote ssh commands using password
-        #if: github.event_name == 'pull_request'
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.BARBERFORCE_HOST }}
@@ -21,6 +44,7 @@ jobs:
           password: ${{ secrets.BARBERFORCE_PASSWORD }}
           script: |
             cd ${{ secrets.BARBERFORCE_PATH }} && git pull
-            cd
             cd ${{ secrets.BARBERFORCE_BACK_PATH }}
-            node server.js
+            npm install
+            pm2 kill backend
+            pm2 start server.js --name "backend" --start
