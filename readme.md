@@ -1,28 +1,30 @@
 <p align="center"><img src="/asset/readme_1_title.png"></p>
 
-
 ## 프로젝트 소개
+
 - '바버포스'는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문한 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 
 
-
 ## 기능 설명
- - 장병들은 부대원임을 인증하고 '바버포스'에 가입할 수 있으며, 외출이나 외박 일정에 맞추어 미리 이들 미용시설에 이발 서비스를 예약하게 됩니다. 이렇게 이발 서비스를 받은 후 간단한 별점 시스템을 이용해 만족도를 평가하고, 다른 장병들의 별점과 리뷰를 참고해 자신이 예약하는 데에 활용할 수도 있습니다.
+
+- 장병들은 부대원임을 인증하고 '바버포스'에 가입할 수 있으며, 외출이나 외박 일정에 맞추어 미리 이들 미용시설에 이발 서비스를 예약하게 됩니다. 이렇게 이발 서비스를 받은 후 간단한 별점 시스템을 이용해 만족도를 평가하고, 다른 장병들의 별점과 리뷰를 참고해 자신이 예약하는 데에 활용할 수도 있습니다.
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
-* ECMAScript 6 지원 브라우저 사용
-* 권장: Google Chrome 버젼 77 이상
 
-## 기술 스택 (Technique Used) 
+- ECMAScript 6 지원 브라우저 사용
+- 권장: Google Chrome 버젼 77 이상
+
+## 기술 스택 (Technique Used)
+
 ### Back-end
- -  nodejs, php, java 등 서버 언어 버전 
- - express, laravel, sptring boot 등 사용한 프레임워크 
- - DB 등 사용한 다른 프로그램 
- 
+- nodejs, php, java 등 서버 언어 버전
+- express, laravel, sptring boot 등 사용한 프레임워크
+- DB 등 사용한 다른 프로그램
+
 ### Front-end
- - Nuxt.js (Vue, Vuex, Vue-Router 등 포함)
- - Tailwind CSS
- - Axios
- - PWA (using @nuxtjs/pwa)
+- Nuxt.js (Vue, Vuex, Vue-Router 등 포함)
+- Tailwind CSS
+- Axios
+- PWA (using @nuxtjs/pwa)
 
 ## 설치 안내 (Installation Process)
 ```bash
