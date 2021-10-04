@@ -23,6 +23,7 @@
 <script>
 export default {
   layout: 'empty',
+  middleware: 'guest',
   computed: {
     kakaoLoginURL() {
       return `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.kakaoRestKey}&redirect_uri=${process.env.kakaoRedirectURI}&response_type=code`;

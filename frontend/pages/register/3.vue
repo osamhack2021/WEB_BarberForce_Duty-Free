@@ -62,8 +62,13 @@ export default {
     }
   },
   methods: {
-    submit() {
-      console.log(this.$store.state.register);
+    async submit() {
+      console.log('submit!');
+      try {
+        await this.$store.dispatch('register/register');
+      } catch (e) {
+        console.log(e.response);
+      }
     },
   },
 };
