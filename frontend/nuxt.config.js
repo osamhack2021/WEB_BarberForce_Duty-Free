@@ -43,8 +43,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://auth.nuxtjs.org/
-    '@nuxtjs/auth-next',
     '@nuxtjs/toast',
   ],
 
@@ -72,15 +70,5 @@ export default {
     position: 'top-right',
     duration: 3000,
     keepOnHover: true,
-  },
-
-  // Auth
-  auth: {
-    redirect: {
-      login: '/auth',
-      logout: '/',
-      callback: false,
-      home: '/',
-    },
   },
 };

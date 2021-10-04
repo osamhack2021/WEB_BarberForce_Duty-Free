@@ -130,7 +130,6 @@
 
 <script>
 export default {
-  // middleware: 'auth',
   data() {
     return {
       barbers: [],
