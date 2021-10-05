@@ -4,11 +4,15 @@ const jwt=require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
   email: String,
-  password: String
+  password: String,
+  passowrd_confirm: String,
+  name: String,
+  soldier_id: String
 });
 
 userSchema.methods.comparePassword=function(plainPassword, cb){
   if(plainPassword==this.password)return cb(null,true);
+  else return cb(null,false);
   /*
     bcrypt.compare(plainPassword, this.password, function(err, isMatch){
         if(err) return cb(err);

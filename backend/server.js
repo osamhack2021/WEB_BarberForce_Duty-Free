@@ -43,7 +43,6 @@ app.post('/login',(req,res)=>{
   User.findOne({email: req.body.email}, (err,user)=>{
     if(!user){
       return res.json({
-        mess: req.body.email,
         loginSuccess: false,
         message: "Unvalid email"
       });
@@ -60,7 +59,7 @@ app.post('/login',(req,res)=>{
                 res.cookie("x_auth", user.token)
                 .status(200)
                 .json({
-                    loginSuccess: true,
+                    //loginSuccess: true,
                     userId: user._id
             });
         });
@@ -68,24 +67,53 @@ app.post('/login',(req,res)=>{
   });
 });
 
-app.get('/login',(req,res)=>{
-  res.send(req.body);
+app.post('/register',(req,res)=>{
+  User.findOne({email: req.body.email}, (err,user)=>{
+    console.log('email ck');
+    //이미 사용중인 email인 경우
+    if(user){
+      return res.json({
+        registerSuccess: false,
+        message: "Existing email"
+      });
+    }
+
+    User.findOne({soldier_id: req.body.soldier_id}, (err,user)=>{
+      //이미 사용중인 군번인 경우
+      if(user){
+        return res.json({
+          registerSuccess: false,
+          message: "Existing soldier_id"
+        })
+      }
+      console.log('pass ck');
+      User.insertMany([{ "email": req.body.email, "password": req.body.password, "passowrd_confirm": req.body.passowrd_confirm, "name": req.body.name, "soldier_id": req.body.soldier_id}],
+        function(err, result) {
+          if(err){
+            callback(err,null);
+            return;
+          }
+
+          User.findOne({email: req.body.email}, (err,user)=>{
+            if(user){
+              console.log('사용자 추가 완료');
+              return res.json({
+                registerSuccess: true
+              })
+            }
+            else{
+              console.log('사용자 추가 실패');
+              return res.json({
+                registerSuccess: false
+              })
+            }
+          })
+        }
+      )
+    })
+  })
 })
 
-app.post('/check_login',(req,res)=>{
-  const token = req.body['jwt'];
-
-  jwt.verify(token,key,(err,decoded)=>{
-    if(!err && decoded.username == 'root')
-    {
-      res.send('로그인이 되어있으시네요!');
-    }
-    else{
-      res.send('저런, 로그인이 되어있지 않네요.');
-    }
-  });
-//
-});
 /*
 app.get('/login',(req,res) =>{
 
