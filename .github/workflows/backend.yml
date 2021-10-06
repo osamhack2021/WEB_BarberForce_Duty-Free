@@ -1,4 +1,4 @@
-name: backend CI/CD
+name: backend CI
 
 on:
   push:
@@ -6,6 +6,33 @@ on:
     branches: [ master ]
 
 jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - working-directory: ./backend
+        run: |
+          npm ci
+          npm run lint
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - working-directory: ./backend
+        run: |
+          npm ci
+          npm test
+
+
   build:
     #PR이 merge 되었을때 아래 steps을 실행하겠다.
     runs-on: ubuntu-latest
@@ -21,6 +48,6 @@ jobs:
           password: ${{ secrets.BARBERFORCE_PASSWORD }}
           script: |
             cd ${{ secrets.BARBERFORCE_PATH }} && git pull
-            cd
             cd ${{ secrets.BARBERFORCE_BACK_PATH }}
+            mongod
             node server.js
