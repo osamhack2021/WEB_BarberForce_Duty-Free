@@ -1,3 +1,3 @@
-export default function ({ store }) {
-  store.dispatch('auth/load');
+export default async function ({ store }) {
+  await store.dispatch('auth/load');
 }
