@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       barbers: [
+        /*
         {
           id: 1,
           title: 'THE JJONDEUK',
@@ -64,8 +65,12 @@ export default {
             },
           ],
         },
+        */
       ],
     };
+  },
+  async fetch() {
+    this.barbers = await this.$api.barbers.list();
   },
 };
 </script>
