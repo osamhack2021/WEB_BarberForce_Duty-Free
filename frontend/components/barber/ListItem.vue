@@ -65,7 +65,9 @@ export default {
     };
   },
   mounted() {
-    this.reviews = this.$api.barbers.reviews(this.barber.id);
+    this.$api.barbers.reviews(this.barber.id).then(({ data }) => {
+      this.reviews = data;
+    });
   },
   methods: {
     toggle() {
