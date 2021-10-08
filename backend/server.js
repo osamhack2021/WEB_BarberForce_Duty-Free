@@ -36,10 +36,9 @@ app.get('/', (req, res) => {
 */
 
 app.get('/',(req,res)=>{
-  User.find({})
-  .then( users=>{
-    res.send(users);
-  });
+  res.json({
+    success:true
+  })
 })
 
 
@@ -128,7 +127,8 @@ app.get('/me',(req,res) =>{
       })
     }
     else {
-      return res.json({
+      return res.status(401)
+      .json({
         message: "Not Login"
       })
     }
