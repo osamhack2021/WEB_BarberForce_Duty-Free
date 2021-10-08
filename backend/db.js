@@ -11,7 +11,7 @@ module.exports = () => {
   }
   connect();
   mongoose.connection.on('disconnected',connect);
-  require('./user.js')  //추후에 user.js 만들예
+  require('./user')  //추후에 user.js 만들예
   //dfdf
-  
+
 };
