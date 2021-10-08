@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 module.exports = () => {
   function connect(){
-    mongoose.connect('mongodb://localhost:27017',function(err){
+    mongoose.connect('mongodb://34.64.179.55:27017',function(err){
       if(err){
         console.error('mongodb connection err',err);
       }
@@ -14,5 +14,6 @@ module.exports = () => {
   mongoose.connection.on('disconnected',connect);
 
   require('./user');
-  //require('/reservation');
+  require('./reservation');
+  require('./barbers');
 };

@@ -10,6 +10,9 @@ const cors = require('cors');
 const path = require('path');
 const db = require('./db');
 const User = require('./user');
+const Reservation = require('./reservation');
+const Barbers = require('./barbers');
+
 
 //const route = require('./route.js');
 
@@ -93,7 +96,7 @@ app.post('/register',(req,res)=>{
         });
       }
       User.insertMany([{ "email": req.body.email, "password": req.body.password,
-      "name": req.body.name, "soldier_id": req.body.soldier_id, token: ""}],
+      "name": req.body.name, "soldier_id": req.body.soldier_id, "token": ""}],
         function(err, result) {
           if(err){
             callback(err,null);
@@ -130,7 +133,7 @@ app.get('/me', (req, res) => {
       message: "Not Login"
     });
   }
-  
+
   User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,user)=>{
     if(user){
       return res.json({
@@ -389,188 +392,452 @@ app.get('/barbers/:id/reviews',(req,res)=>{
 });
 
 app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
-  var dummy_reservation =
+
+  var date =
   [
     {
-      id: 0,
-      date: 1,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 1,
-      date: 2,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 2,
-      date: 3,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 3,
-      date: 4,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 4,
-      date: 5,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 5,
-      date: 6,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 6,
-      date: 7,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 7,
-      date: 8,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 8,
-      date: 9,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 9,
-      date: 10,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 10,
-      date: 11,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 11,
-      date: 12,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
     {
-      id: 12,
-      date: 13,
-      timespan:
-      {
-        _1800: true,
-        _1830: true,
-        _1900: true,
-        _1930: true,
-        _2000: true,
-        _2030: true
-      }
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
     },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    },
+    {
+      _1800: false,
+      _1830: false,
+      _1900: false,
+      _1930: false,
+      _2000: false,
+      _2030: false
+    }
   ]
+
+
+  Reservation.find({ year:req.params.year, month:req.params.month}, (err, users)=>{
+    users.find({$or: [{ _1800: req.params.id, _1830: req.params.id, _1900: req.params.id,
+    _1930: req.params.id, _2000: req.params.id, _2030: req.params.id }]},(err,user)=>{
+      for(i=0;i<user.size();i++){
+        var T = user[i].timespan(req.params.id);
+        if(T=="_1800"){
+          data[user[i].data]._1800 = true;
+        }
+        else if(T=="_1830"){
+          data[user[i].data]._1830 = true;
+        }
+        else if(T=="_1900"){
+          data[user[i].data]._1900 = true;
+        }
+        else if(T=="_1930"){
+          data[user[i].data]._1930 = true;
+        }
+        else if(T=="_2000"){
+          data[user[i].data]._2000 = true;
+        }
+        else if(T=="_2030"){
+          data[user[i].data]._2030 = true;
+        }
+      }
+    })
+  })
+
+  return res.json({
+    date: date
+  })
 });
 
 app.get('/barbers/:id/reservations',(req,res)=>{
+  Reservation.findOne({"year": req.body.year, "month": req.body.month, "date": req.body.day},(err,user)=>{
+    if(req.body.time=="_1800"){
+      var myquery = { description: user.description };
+      var newvalues = { $set: { description: req.body.description } };
+      User.updateOne(myquery,newvalues,function(err,res){
+        if (err) throw err;
+        console.log("1 update");
+      })
+      user._1800[0]="true",
+      user._1800[1]=req.params.id;
+      user.description=req.body.description;
+      /*
+      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
+        if(soldier){
+          user._1800[2]=soldier._id;
+          return res.json({
+            reservation: user
+          })
+        }
+        else {
+          return res.status(401)
+          .json({
+            message: "Not Login"
+          })
+        }
+      })
+      */
+      return res.json({
+        res: user
+      })
+    }
+    else if(req.body.time=="_1830"){
+      user._1830[0]="true",
+      user._1830[1]=req.params.id;
+      user.description=req.body.description;
+      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
+        if(soldier){
+          user._1830[2]=soldier._id;
+          return res.json({
+            reservation: user
+          })
+        }
+        else {
+          return res.status(401)
+          .json({
+            message: "Not Login"
+          })
+        }
+      })
+    }
+    else if(req.body.time=="_1900"){
+      user._1900[0]="true",
+      user._1900[1]=req.params.id;
+      user.description=req.body.description;
+      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
+        if(soldier){
+          user._1900[2]=soldier._id;
+          return res.json({
+            reservation: user
+          })
+        }
+        else {
+          return res.status(401)
+          .json({
+            message: "Not Login"
+          })
+        }
+      })
+    }
+    else if(req.body.time=="_1930"){
+      user._1930[0]="true",
+      user._1330[1]=req.params.id;
+      user.description=req.body.description;
+
+      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
+        if(soldier){
+          user._1930[2]=soldier._id;
+          return res.json({
+            reservation: user
+          })
+        }
+        else {
+          return res.status(401)
+          .json({
+            message: "Not Login"
+          })
+        }
+      })
+    }
+    else if(req.body.time=="_2000"){
+      user._2000[0]="true",
+      user._2000[1]=req.params.id;
+      user.description=req.body.description;
+
+      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
+        if(soldier){
+          user._2000[2]=soldier._id;
+          return res.json({
+            reservation: user
+          })
+        }
+        else {
+          return res.status(401)
+          .json({
+            message: "Not Login"
+          })
+        }
+      })
+    }
+    else if(req.body.time=="_2030"){
+      user._2030[0]="true",
+      user._2030[1]=req.params.id;
+      user.description=req.body.description;
+      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
+        if(soldier){
+          user._2030[2]=soldier._id;
+          return res.json({
+            reservation: user
+          })
+        }
+        else {
+          return res.status(401)
+          .json({
+            message: "Not Login"
+          })
+        }
+      })
+    }
+  })
+
 
 });
 
 app.get('/reservations',(req,res)=>{
-
+  User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
+    if(user){
+      Reservation.find({$or: [{ "_1800": user._id, "_1830": user._id, "_1900": user._id,
+      "_1930": user._id, "_2000": user._id, "_2030": user._id }]},(err,reserve)=>{
+        return res.json({
+          reservation: reserve
+        })
+      })
+    }
+  })
 });
 
+app.get('/createReserve',(req,res)=>{
+  Reservation.insertMany({"year":req.body.year, "month":req.body.month,"date":req.body.day,
+    "description":"","_1800":[req.body._1800[0],req.body._1800[1],req.body._1800[2]],
+    "_1830":[req.body._1830[0],req.body._1830[1],req.body._1830[2]],
+    "_1900":[req.body._1900[0],req.body._1900[1],req.body._1900[2]],
+    "_1930":[req.body._1930[0],req.body._1930[1],req.body._1930[2]],
+    "_2000":[req.body._2000[0],req.body._2000[1],req.body._2000[2]],
+    "_2030":[req.body._2030[0],req.body._2030[1],req.body._2030[2]]
+  });
+  return res.json({
+    message: "추가"
+  })
+})
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);
 });
