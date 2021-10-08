@@ -213,9 +213,7 @@ app.get('/barbers',(req,res) =>{
   var barbers = dummmy_barber.slice(0,req.query.limit);
 
 
-  return res.json({
-    Barbers: barbers
-  });
+  return res.json(barbers);
 });
 
 app.get('/barbers/:id',(req,res)=>{
@@ -371,22 +369,13 @@ app.get('/barbers/:id/reviews',(req,res)=>{
   ];
 
   if(req.params.id==0){
-    return res.json({
-      id: req.params.id,
-      reviewer: dummy_review_1
-    })
+    return res.json(dummy_review_1)
   }
   else if(req.params.id==1){
-    return res.json({
-      id: req.params.id,
-      reviewer: dummy_review_2
-    })
+    return res.json(dummy_review_2)
   }
   else{
-    return res.json({
-      id: req.params.id,
-      reviewer: dummy_review_3
-    })
+    return res.json(dummy_review_3)
   }
 
 });

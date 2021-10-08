@@ -28,7 +28,7 @@
     <div v-if="opened">
       <hr />
       <!-- reviews -->
-      <div v-for="review in barber.reviews" :key="review.id" class="flex p-2">
+      <div v-for="review in reviews" :key="review.id" class="flex p-2">
         <!-- thumb section -->
         <div class="review-thumb mr-2">
           <img class="rounded object-cover w-full h-full" :src="review.thumb" />
@@ -60,8 +60,14 @@ export default {
   },
   data() {
     return {
+      reviews: [],
       opened: false,
     };
+  },
+  mounted() {
+    this.$api.barbers.reviews(this.barber.id).then(({ data }) => {
+      this.reviews = data;
+    });
   },
   methods: {
     toggle() {
