@@ -289,18 +289,21 @@ app.get('/barbers/:id/reviews',(req,res)=>{
   var dummy_review_1 =
   [
       {
+        id: 1,
         reviewer: "박상욱",
         body: "너무 좋아요!!",
         rating: 5,
         createdAt: "2021-03-25T0912:00:00Z"
       },
       {
+        id: 2,
         reviewer: "이세",
         body: "맘에 쏙들어요!!",
         rating: 5,
         createdAt: "2021-05-22T0918:06:20Z"
       },
       {
+        id: 3,
         reviewer: "변찬혁",
         bdoy: "두발 규정에 맞게 잘 잘라줍니다",
         rating: 4,
@@ -311,18 +314,21 @@ app.get('/barbers/:id/reviews',(req,res)=>{
   var dummy_review_2 =
   [
         {
+          id: 4,
           reviewer: "강민구",
           body: "머리에 스크래치가 났어요",
           rating: 1,
           createdAt: "2021-09-18T0920:00:03Z"
         },
         {
+          id: 5,
           reviewer: "류서현",
           body: "나쁘지않아요",
           rating: 3,
           createdAt: "2021-10-01T0917:10:00Z"
         },
         {
+          id: 6,
           reviewer: "박찬현",
           bdoy: "간부님이 좋아하십니다",
           rating: 3,
@@ -333,18 +339,21 @@ app.get('/barbers/:id/reviews',(req,res)=>{
   var dummy_review_3 =
   [
         {
+          id: 7,
           reviewer: "김현민",
           body: "곱슬기가 사라졌습니다",
           rating: 5,
           createdAt: "2021-03-28T0920:00:00Z"
         },
         {
+          id: 8,
           reviewer: "김영인",
           body: "보통입니다",
           rating: 3,
           createdAt: "2021-03-29T0920:00:00Z"
         },
         {
+          id: 9,
           reviewer: "이동환",
           bdoy: "너무 잘 잘라요~~",
           rating: 5,
