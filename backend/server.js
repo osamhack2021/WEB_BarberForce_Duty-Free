@@ -635,12 +635,16 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
   ]
 
 
-  Reservation.find({ "year":req.params.year, "month":req.params.month}, (err, users)=>{
-    var id = req.params.id;
-    users.find({$or: [{ "_1800": id, "_1830": req.params.id, "_1900": req.params.id,
-    "_1930": req.params.id, "_2000": req.params.id, "_2030": req.params.id }]},(err,user)=>{
+  Reservation.find({ "year":req.params.year, "month":req.params.month,
+    $or: [{ "_1800": req.params.id}, {"_1830": req.params.id},{ "_1900": req.params.id},
+    {"_1930": req.params.id}, {"_2000": req.params.id}, {"_2030": req.params.id }]}, (err, user)=>{
 
-      for(i=0;i<user.size();i++){
+      return res.json({
+        user: user,
+        id: req.params.id
+      })
+
+      for(i=0;i<user.length;i++){
         var T = user[i].timespan(req.params.id);
         if(T=="_1800"){
           data[user[i].data]._1800 = true;
@@ -662,11 +666,11 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
         }
       }
     })
-  })
-
+  /*
   return res.json({
     date: date
   })
+  */
 });
 
 app.post('/barbers/:id/reservations',(req,res)=>{
@@ -695,12 +699,12 @@ app.post('/barbers/:id/reservations',(req,res)=>{
       User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
         if(soldier){
           user._1830[2]=soldier._id;
+          user.save(function(err,user){})
           return res.json({
             reservation: user
           })
         }
       })
-      user.save(function(err,user){})
 
     }
     else if(req.body.time=="_1900"){
@@ -710,6 +714,7 @@ app.post('/barbers/:id/reservations',(req,res)=>{
       User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
         if(soldier){
           user._1900[2]=soldier._id;
+          user.save(function(err,user){})
           return res.json({
             reservation: user
           })
@@ -721,7 +726,6 @@ app.post('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
-      user.save(function(err,user){})
 
     }
     else if(req.body.time=="_1930"){
@@ -732,6 +736,8 @@ app.post('/barbers/:id/reservations',(req,res)=>{
       User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
         if(soldier){
           user._1930[2]=soldier._id;
+          user.save(function(err,user){})
+
           return res.json({
             reservation: user
           })
@@ -743,7 +749,6 @@ app.post('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
-      user.save(function(err,user){})
 
     }
     else if(req.body.time=="_2000"){
@@ -754,6 +759,7 @@ app.post('/barbers/:id/reservations',(req,res)=>{
       User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
         if(soldier){
           user._2000[2]=soldier._id;
+          user.save(function(err,user){})
           return res.json({
             reservation: user
           })
@@ -765,7 +771,7 @@ app.post('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
-      user.save(function(err,user){})
+
 
     }
     else if(req.body.time=="_2030"){
@@ -775,6 +781,8 @@ app.post('/barbers/:id/reservations',(req,res)=>{
       User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
         if(soldier){
           user._2030[2]=soldier._id;
+          user.save(function(err,user){})
+
           return res.json({
             reservation: user
           })
@@ -786,7 +794,6 @@ app.post('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
-      user.save(function(err,user){})
 
     }
   })
@@ -796,12 +803,9 @@ app.post('/barbers/:id/reservations',(req,res)=>{
 
 app.get('/reservations',(req,res)=>{
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
-    return res.json({
-      user: user
-    })
     if(user){
-      Reservation.find({$or: [{ "_1800": user._id, "_1830": user._id, "_1900": user._id,
-      "_1930": user._id, "_2000": user._id, "_2030": user._id }]},(err,reserve)=>{
+      Reservation.find({$or: [{ "_1800": user._id}, {"_1830": user._id}, {"_1900": user._id},
+      {"_1930": user._id}, {"_2000": user._id}, {"_2030": user._id }]},(err,reserve)=>{
         return res.json({
           reservation: reserve
         })
