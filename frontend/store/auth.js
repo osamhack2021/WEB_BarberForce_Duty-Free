@@ -45,7 +45,6 @@ export default {
         if (error.response.status === 401) {
           context.commit('clearToken');
           context.commit('clearUser');
-          location.reload();
         }
       }
     },
