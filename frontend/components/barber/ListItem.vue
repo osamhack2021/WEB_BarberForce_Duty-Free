@@ -65,7 +65,7 @@ export default {
     };
   },
   mounted() {
-    this.reviews = this.$api.barbers.review(this.barber.id);
+    this.reviews = this.$api.barbers.reviews(this.barber.id);
   },
   methods: {
     toggle() {
