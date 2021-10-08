@@ -7,7 +7,7 @@ export default {
   }),
   getters: {
     isLoggedIn(state) {
-      return !!state.user;
+      return !!state.user && !!state.token;
     },
   },
   mutations: {
