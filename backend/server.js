@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const url = require('url')
 const key = require('./auth/key');
 //const ejs = require('ejs');
+const cors = require('cors');
 const path = require('path');
 const db = require('./db');
 const User = require('./user');
@@ -14,9 +15,11 @@ const User = require('./user');
 
 //app.set('view engine','pug');
 //app.set('views',path.join(__dirname,'Form.html'));
-//db();
+db();
 //app.use(express.static(path.join(__dirname,'Form.html')));
 //app.use('/',route);
+
+app.use(cors());
 
 app.use(bodyParser.json());
 /*
