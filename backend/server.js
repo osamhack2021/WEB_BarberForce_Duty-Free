@@ -187,8 +187,164 @@ app.get('/barbers',(req,res) =>{
   })
 })
 
+app.get('/barbers/:id',(req,res)=>{
+  var dummmy_barber =
+  [
+    {
+      id: 0,
+      title: "Yang's Barber Shop",
+      location: "보라매 사동",
+      location_detail: {
+        longitude: 0,
+        latitude: 0
+      },
+      rating: 5,
+      bookmarked: true
+    },
+    {
+      id: 1,
+      title: "송탄이발소",
+      location: "송탄역",
+      location_detail: {
+        longitude: 37.07575,
+        latitude: 127.05439
+      },
+      rating: 3,
+      bookmarked: false
+    },
+    {
+      id: 2,
+      title: "머리 잘하는 집",
+      location: "송탄출장소",
+      location_detail: {
+        longitude: 37.06668,
+        latitude: 127.06495
+      },
+      rating: 4,
+      bookmarked: false
+    },
+    {
+      id: 3,
+      title: "송탄 미용실",
+      location: "K-55 정문",
+      location_detail: {
+        longitude: 37.07944,
+        latitude: 127.05071
+      },
+      rating: 2,
+      bookmarked: false
+    },
+    {
+      id: 4,
+      title: "머리 잘깎아주는 예쁜 누나",
+      location: "경기도 평택시 고덕북로 77",
+      location_detail: {
+        longitude: 37.07341,
+        latitude: 127.03178
+      },
+      rating: 5,
+      bookmarked: true
+    }
+  ]
+  return res.json({
+    id: dummmy_barber[req.params.id].id,
+    title: dummmy_barber[req.params.id].title,
+    location: dummmy_barber[req.params.id].location,
+    location_detail: dummmy_barber[req.params.id].location_detail,
+    rating: dummmy_barber[req.params.id].rating,
+    bookmarked: dummmy_barber[req.params.id].bookmarked
+  })
+})
+
+app.get('/barbers/:id/reviews',(req,res)=>{
+
+  var dummy_review_1 =
+  [
+      {
+        reviewer: "박상욱",
+        body: "너무 좋아요!!",
+        rating: 5,
+        createdAt: "2021-03-25T0912:00:00Z"
+      },
+      {
+        reviewer: "이세",
+        body: "맘에 쏙들어요!!",
+        rating: 5,
+        createdAt: "2021-05-22T0918:06:20Z"
+      },
+      {
+        reviewer: "변찬혁",
+        bdoy: "두발 규정에 맞게 잘 잘라줍니다",
+        rating: 4,
+        createdAt: "2021-06-16T0909:15:23Z"
+      }
+  ]
+
+  var dummy_review_2 =
+  [
+        {
+          reviewer: "강민구",
+          body: "머리에 스크래치가 났어요",
+          rating: 1,
+          createdAt: "2021-09-18T0920:00:03Z"
+        },
+        {
+          reviewer: "류서현",
+          body: "나쁘지않아요",
+          rating: 3,
+          createdAt: "2021-10-01T0917:10:00Z"
+        },
+        {
+          reviewer: "박찬현",
+          bdoy: "간부님이 좋아하십니다",
+          rating: 3,
+          createdAt: "2021-10-01T0919:20:00Z"
+        }
+  ]
+
+  var dummy_review_3 =
+  [
+        {
+          reviewer: "김현민",
+          body: "곱슬기가 사라졌습니다",
+          rating: 5,
+          createdAt: "2021-03-28T0920:00:00Z"
+        },
+        {
+          reviewer: "김영인",
+          body: "보통입니다",
+          rating: 3,
+          createdAt: "2021-03-29T0920:00:00Z"
+        },
+        {
+          reviewer: "이동환",
+          bdoy: "너무 잘 잘라요~~",
+          rating: 5,
+          createdAt: "2021-03-30T0921:00:00Z"
+        }
+  ]
+
+  if(req.params.id==0){
+    return res.json({
+      id: req.params.id,
+      reviewer: dummy_review_1
+    })
+  }
+  else if(req.params.id==1){
+    return res.json({
+      id: req.params.id,
+      reviewer: dummy_review_2
+    })
+  }
+  else{
+    return res.json({
+      id: req.params.id,
+      reviewer: dummy_review_3
+    })
+  }
+
+})
+
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);
 });
-
-//dfdf
