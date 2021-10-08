@@ -17,17 +17,18 @@ const reservationSchema = new mongoose.Schema({
 });
 
 reservationSchema.methods.timespan=function(barbers_id){
-  if(user._1800[1]==barbers_id)return "_1800";
-  else if(user._1830[1]==barbers_id)return "_1830";
-  else if(user._1900[1]==barbers_id)return "_1900";
-  else if(user._1930[1]==barbers_id)return "_1930";
-  else if(user._2000[1]==barbers_id)return "_2000";
-  else if(user._2030[1]==barbers_id)return "_2030";
+  if(user._1800[1]==barbers_id)return 0;
+  else if(user._1830[1]==barbers_id)return 1;
+  else if(user._1900[1]==barbers_id)return 2;
+  else if(user._1930[1]==barbers_id)return 3;
+  else if(user._2000[1]==barbers_id)return 4;
+  else if(user._2030[1]==barbers_id)return 5;
 }
 
 reservationSchema.methods.update=function(status){
     const reserve = this;
     reserve.description = status;
+    cb(null,reserve);
 }
 
 module.exports = mongoose.model('Reservation', reservationSchema);

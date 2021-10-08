@@ -635,9 +635,11 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
   ]
 
 
-  Reservation.find({ year:req.params.year, month:req.params.month}, (err, users)=>{
-    users.find({$or: [{ _1800: req.params.id, _1830: req.params.id, _1900: req.params.id,
-    _1930: req.params.id, _2000: req.params.id, _2030: req.params.id }]},(err,user)=>{
+  Reservation.find({ "year":req.params.year, "month":req.params.month}, (err, users)=>{
+    var id = req.params.id;
+    users.find({$or: [{ "_1800": id, "_1830": req.params.id, "_1900": req.params.id,
+    "_1930": req.params.id, "_2000": req.params.id, "_2030": req.params.id }]},(err,user)=>{
+
       for(i=0;i<user.size();i++){
         var T = user[i].timespan(req.params.id);
         if(T=="_1800"){
@@ -667,37 +669,24 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
   })
 });
 
-app.get('/barbers/:id/reservations',(req,res)=>{
+app.post('/barbers/:id/reservations',(req,res)=>{
   Reservation.findOne({"year": req.body.year, "month": req.body.month, "date": req.body.day},(err,user)=>{
     if(req.body.time=="_1800"){
-      var myquery = { description: user.description };
-      var newvalues = { $set: { description: req.body.description } };
-      User.updateOne(myquery,newvalues,function(err,res){
-        if (err) throw err;
-        console.log("1 update");
-      })
       user._1800[0]="true",
       user._1800[1]=req.params.id;
       user.description=req.body.description;
-      /*
       User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
         if(soldier){
           user._1800[2]=soldier._id;
-          return res.json({
-            reservation: user
-          })
         }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
+        user.save(function(err,user){})
+        return res.json({
+          res: user,
+          token: req.headers.authorization.split(' ')[1],
+          soldier: soldier
+        })
       })
-      */
-      return res.json({
-        res: user
-      })
+
     }
     else if(req.body.time=="_1830"){
       user._1830[0]="true",
@@ -710,13 +699,9 @@ app.get('/barbers/:id/reservations',(req,res)=>{
             reservation: user
           })
         }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
       })
+      user.save(function(err,user){})
+
     }
     else if(req.body.time=="_1900"){
       user._1900[0]="true",
@@ -736,6 +721,8 @@ app.get('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
+      user.save(function(err,user){})
+
     }
     else if(req.body.time=="_1930"){
       user._1930[0]="true",
@@ -756,6 +743,8 @@ app.get('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
+      user.save(function(err,user){})
+
     }
     else if(req.body.time=="_2000"){
       user._2000[0]="true",
@@ -776,6 +765,8 @@ app.get('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
+      user.save(function(err,user){})
+
     }
     else if(req.body.time=="_2030"){
       user._2030[0]="true",
@@ -795,6 +786,8 @@ app.get('/barbers/:id/reservations',(req,res)=>{
           })
         }
       })
+      user.save(function(err,user){})
+
     }
   })
 
@@ -803,6 +796,9 @@ app.get('/barbers/:id/reservations',(req,res)=>{
 
 app.get('/reservations',(req,res)=>{
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
+    return res.json({
+      user: user
+    })
     if(user){
       Reservation.find({$or: [{ "_1800": user._id, "_1830": user._id, "_1900": user._id,
       "_1930": user._id, "_2000": user._id, "_2030": user._id }]},(err,reserve)=>{
