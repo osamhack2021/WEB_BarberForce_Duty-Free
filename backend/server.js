@@ -46,19 +46,21 @@ app.get('/',(req,res)=>{
 app.post('/login',(req,res)=>{
   User.findOne({email: req.body.email}, (err,user)=>{
     if(!user){
-      return res.json({
+      return res.status(401)
+      .json({
         loginSuccess: false,
         message: "Unvalid email"
       });
     }
     user.comparePassword(req.body.password, (err, isMatch)=>{
       if(!isMatch)
-        return res.json({
+        return res.status(401)
+        .json({
           loginSuccess:false,
           message: "Wrong password"
         });
         user.generateToken((err, user)=>{
-                if(err) return res.status(400).send(err);
+                if(err) return res.status(401).send(err);
                 // 토큰을 쿠키에 저장
                 res.cookie("x_auth", user.token)
                 .status(200)
@@ -89,7 +91,8 @@ app.post('/register',(req,res)=>{
           message: "Existing soldier_id"
         })
       }
-      User.insertMany([{ "email": req.body.email, "password": req.body.password, "passowrd_confirm": req.body.passowrd_confirm, "name": req.body.name, "soldier_id": req.body.soldier_id}],
+      User.insertMany([{ "email": req.body.email, "password": req.body.password,
+      "name": req.body.name, "soldier_id": req.body.soldier_id, token: ""}],
         function(err, result) {
           if(err){
             callback(err,null);
