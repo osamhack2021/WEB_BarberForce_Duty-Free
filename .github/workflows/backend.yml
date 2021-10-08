@@ -20,9 +20,7 @@ jobs:
           password: ${{ secrets.BARBERFORCE_PASSWORD }}
           script: |
             
-            cd ${{ secrets.BARBERFORCE_PATH }} && git pull
-            cd ${{ secrets.BARBERFORCE_BACK_PATH }}
-            npm install
-            pm2 kill backend
-            mongod
-            pm2 start server.js --name "backend" --start
+            #cd ${{ secrets.BARBERFORCE_BACK_PATH }}
+            #npm install
+            #mongod
+            #pm2 start server.js --name "backend" --start
