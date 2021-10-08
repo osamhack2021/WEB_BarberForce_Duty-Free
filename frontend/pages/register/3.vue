@@ -66,6 +66,8 @@ export default {
       console.log('submit!');
       try {
         await this.$store.dispatch('register/register');
+        this.$toast.success('성공적으로 가입되었습니다!');
+        this.$router.replace('/login');
       } catch (e) {
         console.log(e.response);
       }

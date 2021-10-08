@@ -7,7 +7,7 @@ export default {
   }),
   getters: {
     isLoggedIn(state) {
-      return !!state.user;
+      return !!state.user && !!state.token;
     },
   },
   mutations: {
@@ -45,7 +45,6 @@ export default {
         if (error.response.status === 401) {
           context.commit('clearToken');
           context.commit('clearUser');
-          location.reload();
         }
       }
     },
