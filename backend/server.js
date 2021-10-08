@@ -165,6 +165,8 @@ app.get('/barbers',(req,res) =>{
       title: "Yang's Barber Shop",
       location: "보라매 사동",
       rating: 5,
+      phone: "031-669-6000",
+      thumb: "/img/shop1.jpg",
       bookmarked: true
     },
     {
@@ -172,6 +174,8 @@ app.get('/barbers',(req,res) =>{
       title: "송탄이발소",
       location: "송탄역",
       rating: 3,
+      phone: "02-669-3622",
+      thumb: "/img/shop2.jpg",
       bookmarked: false
     },
     {
@@ -179,6 +183,8 @@ app.get('/barbers',(req,res) =>{
       title: "머리 잘하는 집",
       location: "송탄출장소",
       rating: 4,
+      phone: "042-669-7222",
+      thumb: "/img/shop1.jpg",
       bookmarked: false
     },
     {
@@ -186,6 +192,8 @@ app.get('/barbers',(req,res) =>{
       title: "송탄 미용실",
       location: "K-55 정문",
       rating: 2,
+      phone: "031-123-6666",
+      thumb: "/img/shop2.jpg",
       bookmarked: false
     },
     {
@@ -193,6 +201,8 @@ app.get('/barbers',(req,res) =>{
       title: "머리 잘깎아주는 예쁜 누나",
       location: "경기도 평택시 고덕북로 77",
       rating: 5,
+      phone: "031-355-1235",
+      thumb: "/img/shop1.jpg",
       bookmarked: true
     }
   ]
