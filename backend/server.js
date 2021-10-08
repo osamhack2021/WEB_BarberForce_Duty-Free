@@ -76,7 +76,8 @@ app.post('/register',(req,res)=>{
   User.findOne({email: req.body.email}, (err,user)=>{
     //이미 사용중인 email인 경우
     if(user){
-      return res.json({
+      return res.status(401)
+      .json({
         registerSuccess: false,
         message: "Existing email"
       });
@@ -85,41 +86,45 @@ app.post('/register',(req,res)=>{
     User.findOne({soldier_id: req.body.soldier_id}, (err,user)=>{
       //이미 사용중인 군번인 경우
       if(user){
-        return res.json({
+        return res.status(401)
+        .json({
           registerSuccess: false,
           message: "Existing soldier_id"
-        })
+        });
       }
       User.insertMany([{ "email": req.body.email, "password": req.body.password,
       "name": req.body.name, "soldier_id": req.body.soldier_id, token: ""}],
         function(err, result) {
           if(err){
             callback(err,null);
+            res.status(401);
             return;
           }
 
           User.findOne({email: req.body.email}, (err,user)=>{
             if(user){
               console.log('사용자 추가 완료');
-              return res.json({
+              return res.status(200)
+              .json({
                 registerSuccess: true
-              })
+              });
             }
             else{
               console.log('사용자 추가 실패');
-              return res.json({
+              return res.status(401)
+              .json({
                 registerSuccess: false
-              })
+              });
             }
           })
         }
       )
     })
   })
-})
+});
 
 app.get('/me',(req,res) =>{
-  User.findOne({token: req.headers.authorization}, (err,user)=>{
+  User.findOne({token: req.headers.authorization.split('')[1]}, (err,user)=>{
     if(user){
       return res.json({
         name: user.name,
@@ -133,7 +138,7 @@ app.get('/me',(req,res) =>{
       })
     }
   })
-})
+});
 
 app.get('/barbers',(req,res) =>{
   /*
@@ -190,8 +195,8 @@ app.get('/barbers',(req,res) =>{
 
   return res.json({
     Barbers: barbers
-  })
-})
+  });
+});
 
 app.get('/barbers/:id',(req,res)=>{
   var dummmy_barber =
@@ -260,7 +265,7 @@ app.get('/barbers/:id',(req,res)=>{
     rating: dummmy_barber[req.params.id].rating,
     bookmarked: dummmy_barber[req.params.id].bookmarked
   })
-})
+});
 
 app.get('/barbers/:id/reviews',(req,res)=>{
 
@@ -349,7 +354,190 @@ app.get('/barbers/:id/reviews',(req,res)=>{
     })
   }
 
-})
+});
+
+app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
+  var dummy_reservation =
+  [
+    {
+      id: 0,
+      date: 1,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 1,
+      date: 2,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 2,
+      date: 3,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 3,
+      date: 4,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 4,
+      date: 5,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 5,
+      date: 6,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 6,
+      date: 7,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 7,
+      date: 8,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 8,
+      date: 9,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 9,
+      date: 10,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 10,
+      date: 11,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 11,
+      date: 12,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+    {
+      id: 12,
+      date: 13,
+      timespan:
+      {
+        _1800: true,
+        _1830: true,
+        _1900: true,
+        _1930: true,
+        _2000: true,
+        _2030: true
+      }
+    },
+  ]
+});
+
+app.get('/barbers/:id/reservations',(req,res)=>{
+
+});
+
+app.get('/reservations',(req,res)=>{
+
+});
 
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);

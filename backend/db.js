@@ -9,9 +9,10 @@ module.exports = () => {
       console.log('mongodb connected');
     });
   }
+
   connect();
   mongoose.connection.on('disconnected',connect);
-  require('./user')  //추후에 user.js 만들예
-  //dfdf
 
+  require('./user');
+  //require('/reservation');
 };
