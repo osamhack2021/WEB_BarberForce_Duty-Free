@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   password: String,
   passowrd_confirm: String,
   name: String,
-  soldier_id: String
+  soldier_id: String,
+  token: String
 });
 
 userSchema.methods.comparePassword=function(plainPassword, cb){

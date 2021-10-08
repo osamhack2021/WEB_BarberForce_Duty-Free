@@ -3,6 +3,7 @@ const app = express();
 const port = 3306;
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const url = require('url')
 const key = require('./auth/key');
 //const ejs = require('ejs');
 const path = require('path');
@@ -60,8 +61,8 @@ app.post('/login',(req,res)=>{
                 .status(200)
                 .json({
                     //loginSuccess: true,
-                    userId: user._id
-            });
+                    token: user.token
+                });
         });
     });
   });
@@ -69,7 +70,6 @@ app.post('/login',(req,res)=>{
 
 app.post('/register',(req,res)=>{
   User.findOne({email: req.body.email}, (err,user)=>{
-    console.log('email ck');
     //이미 사용중인 email인 경우
     if(user){
       return res.json({
@@ -86,7 +86,6 @@ app.post('/register',(req,res)=>{
           message: "Existing soldier_id"
         })
       }
-      console.log('pass ck');
       User.insertMany([{ "email": req.body.email, "password": req.body.password, "passowrd_confirm": req.body.passowrd_confirm, "name": req.body.name, "soldier_id": req.body.soldier_id}],
         function(err, result) {
           if(err){
@@ -114,20 +113,79 @@ app.post('/register',(req,res)=>{
   })
 })
 
-/*
-app.get('/login',(req,res) =>{
-
-})
-
-app.get('/register',(req,res) =>{
-
-})
-
 app.get('/me',(req,res) =>{
-
+  User.findOne({token: req.headers.authorization}, (err,user)=>{
+    if(user){
+      return res.json({
+        name: user.name,
+        email: user.email
+      })
+    }
+    else {
+      return res.json({
+        message: "Not Login"
+      })
+    }
+  })
 })
 
-*/
+app.get('/barbers',(req,res) =>{
+  /*
+  User.find({token: req.headers.authorization}, (err,user)=>{
+
+    var barbers = user;
+    return res.json({
+      barbers: barbers
+    })
+
+  })
+  */
+  var dummmy_barber =
+  [
+    {
+      id: 0,
+      title: "Yang's Barber Shop",
+      location: "보라매 사동",
+      rating: 5,
+      bookmarked: true
+    },
+    {
+      id: 1,
+      title: "송탄이발소",
+      location: "송탄역",
+      rating: 3,
+      bookmarked: false
+    },
+    {
+      id: 2,
+      title: "머리 잘하는 집",
+      location: "송탄출장소",
+      rating: 4,
+      bookmarked: false
+    },
+    {
+      id: 3,
+      title: "송탄 미용실",
+      location: "K-55 정문",
+      rating: 2,
+      bookmarked: false
+    },
+    {
+      id: 4,
+      title: "머리 잘깎아주는 예쁜 누나",
+      location: "경기도 평택시 고덕북로 77",
+      rating: 5,
+      bookmarked: true
+    }
+  ]
+
+  var barbers = dummmy_barber.slice(0,req.query.limit);
+
+
+  return res.json({
+    Barbers: barbers
+  })
+})
 
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);
