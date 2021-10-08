@@ -123,7 +123,14 @@ app.post('/register',(req,res)=>{
   })
 });
 
-app.get('/me',(req,res) =>{
+app.get('/me', (req, res) => {
+  // authorization 헤더가 없을 경우
+  if (!req.headers.authorization) {
+    return res.status(401).json({
+      message: "Not Login"
+    });
+  }
+  
   User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,user)=>{
     if(user){
       return res.json({
