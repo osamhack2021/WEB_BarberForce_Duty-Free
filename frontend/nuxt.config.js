@@ -1,6 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    htmlAttrs: {
+      lang: 'ko',
+    },
     title: 'barber-force-frontend',
     meta: [
       { charset: 'utf-8' },
@@ -24,7 +27,7 @@ export default {
   ssr: false,
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/vue-awesome-swiper.js', mode: 'client' }],
+  plugins: [{ src: '~/plugins/vue-awesome-swiper.js', mode: 'client' }, '@/plugins/api.js', '@/plugins/auth.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -43,8 +46,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://auth.nuxtjs.org/
-    '@nuxtjs/auth-next',
     '@nuxtjs/toast',
   ],
 
@@ -65,6 +66,7 @@ export default {
   env: {
     kakaoRestKey: process.env.KAKAO_REST_KEY,
     kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI,
+    backendURL: process.env.BACKEND_URL,
   },
 
   // Nuxt Toast
@@ -72,15 +74,5 @@ export default {
     position: 'top-right',
     duration: 3000,
     keepOnHover: true,
-  },
-
-  // Auth
-  auth: {
-    redirect: {
-      login: '/auth',
-      logout: '/',
-      callback: false,
-      home: '/',
-    },
   },
 };

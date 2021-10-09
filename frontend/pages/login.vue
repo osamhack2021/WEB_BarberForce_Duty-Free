@@ -37,6 +37,8 @@
 <script>
 export default {
   layout: 'empty',
+  middleware: 'guest',
+
   data() {
     return {
       credentials: {
@@ -47,8 +49,15 @@ export default {
     };
   },
   methods: {
-    login() {
-      console.log(this.credentials, this.remember);
+    async login() {
+      try {
+        await this.$store.dispatch('auth/login', this.credentials);
+        this.$toast.success('성공적으로 로그인되었습니다!');
+        this.$router.replace('/');
+      } catch (e) {
+        this.$toast.error('아이디와 비밀번호를 확인해주세요!');
+        this.credentials.password = '';
+      }
     },
   },
 };

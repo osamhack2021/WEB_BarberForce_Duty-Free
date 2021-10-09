@@ -4,25 +4,27 @@
       <swiper-slide
         v-for="barber in barbers"
         :key="barber.id"
-        :style="`background: url(${barber.image}) center/cover no-repeat`"
+        :style="`background: url(${barber.thumb}) center/cover no-repeat`"
       >
-        <div class="aspect-w-1 aspect-h-1">
-          <div class="flex flex-col justify-end bg-dummy1">
-            <div class="bg-black bg-opacity-80 font-thin text-white text-sm py-3 px-5 pb-12">
-              <div class="flex items-center">
-                <span class="font-bold text-xl">{{ barber.title }}</span>
-                <span class="flex items-center text-base ml-auto">
-                  <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
-                  {{ barber.rating }}
-                </span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
-                {{ barber.location }}
+        <NuxtLink :to="`/barbers/${barber.id}`">
+          <div class="aspect-w-1 aspect-h-1">
+            <div class="flex flex-col justify-end bg-dummy1">
+              <div class="bg-black bg-opacity-80 font-thin text-white text-sm py-3 px-5 pb-12">
+                <div class="flex items-center">
+                  <span class="font-bold text-xl">{{ barber.title }}</span>
+                  <span class="flex items-center text-base ml-auto">
+                    <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
+                    {{ barber.rating }}
+                  </span>
+                </div>
+                <div class="flex items-center">
+                  <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
+                  {{ barber.location }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </NuxtLink>
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination"></div>
     </swiper>
@@ -125,12 +127,14 @@
         </div>
       </div>
     </div>
+
+    <button class="rounded bg-brand text-white font-bold py-2 px-4" @click="logout">로그아웃(테스트용)</button>
   </main>
 </template>
 
 <script>
 export default {
-  // middleware: 'auth',
+  middleware: 'auth',
   data() {
     return {
       barbers: [],
@@ -167,59 +171,10 @@ export default {
       },
     };
   },
-  fetch() {
+  async fetch() {
     // dummy data
-    this.barbers = [
-      {
-        id: 1,
-        title: '주현바버샵',
-        location: '송탄면',
-        rating: '4.2',
-        image: '/img/shop1.jpg',
-      },
-      {
-        id: 2,
-        title: '양현바버샵',
-        location: '평택시',
-        rating: '4.4',
-        image: '/img/shop2.jpg',
-      },
-      {
-        id: 3,
-        title: '이세바버샵',
-        location: '동성로',
-        rating: '4.7',
-        image: '/img/shop1.jpg',
-      },
-      {
-        id: 4,
-        title: '주현바버샵',
-        location: '송탄면',
-        rating: '4.2',
-        image: '/img/shop1.jpg',
-      },
-      {
-        id: 5,
-        title: '양현바버샵',
-        location: '평택시',
-        rating: '4.4',
-        image: '/img/shop2.jpg',
-      },
-      {
-        id: 6,
-        title: '이세바버샵',
-        location: '동성로',
-        rating: '4.7',
-        image: '/img/shop1.jpg',
-      },
-      {
-        id: 7,
-        title: '이세바버샵',
-        location: '동성로',
-        rating: '4.7',
-        image: '/img/shop1.jpg',
-      },
-    ];
+    const { data: barbers } = await this.$api.barbers.list();
+    this.barbers = barbers;
     this.articles = [
       {
         id: 1,
@@ -257,6 +212,11 @@ export default {
         likes: 11,
       },
     ];
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('auth/logout');
+    },
   },
 };
 </script>

@@ -45,7 +45,7 @@ jobs:
           script: |
             cd ${{ secrets.BARBERFORCE_PATH }} && git pull
             cd ${{ secrets.BARBERFORCE_FRONT_PATH }}
-            npm install
-            pm2 kill frontend
+            npm install --no-save
+            pm2 delete frontend
             npm run build
             pm2 start npm --name "frontend" -- start

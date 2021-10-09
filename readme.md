@@ -1,4 +1,4 @@
-<p align="center"><img src="/asset/readme_1_title.png"></p>
+<p align="center"><img src="/images/1_readme_title.png"></p>
 
 ## 프로젝트 소개
 
@@ -16,9 +16,9 @@
 ## 기술 스택 (Technique Used)
 
 ### Back-end
-- nodejs, php, java 등 서버 언어 버전
-- express, laravel, sptring boot 등 사용한 프레임워크
-- DB 등 사용한 다른 프로그램
+- Node.js
+- Express
+- MongoDB
 
 ### Front-end
 - Nuxt.js (Vue, Vuex, Vue-Router 등 포함)
