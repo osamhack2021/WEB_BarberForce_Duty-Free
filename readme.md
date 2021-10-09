@@ -1,4 +1,4 @@
-<p align="center"><img src="/images/rsz_1_readme_title.jpg" width="100%"></p>
+<p align="center"><img src="/images/rsz_1_readme_title.jpg" width="85%"></p>
 
 ## 프로젝트 소개
 
