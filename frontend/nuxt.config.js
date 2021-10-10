@@ -1,6 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    htmlAttrs: {
+      lang: 'ko',
+    },
     title: 'barber-force-frontend',
     meta: [
       { charset: 'utf-8' },
@@ -62,8 +65,8 @@ export default {
   // Dotenv
   env: {
     kakaoRestKey: process.env.KAKAO_REST_KEY,
-    kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI,
-    backendURL: process.env.BACKEND_URL,
+    kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI || 'https://api.barberforce.shop/kakao/callback',
+    backendURL: process.env.BACKEND_URL || 'https://api.barberforce.shop',
   },
 
   // Nuxt Toast
