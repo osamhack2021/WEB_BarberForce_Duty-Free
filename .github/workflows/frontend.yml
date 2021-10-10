@@ -1,42 +1,18 @@
-name: Fronend CI
+name: Fronend Deploy
 
 on:
   push:
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-      - working-directory: ./frontend
-        run: |
-          npm ci
-          npm run lint
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-      - working-directory: ./frontend
-        run: |
-          npm ci
-          npm test
-  
   deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name : executing remote ssh commands using password
+      - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.BARBERFORCE_HOST }}
