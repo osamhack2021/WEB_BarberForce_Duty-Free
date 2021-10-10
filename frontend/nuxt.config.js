@@ -54,6 +54,7 @@ export default {
     manifest: {
       name: 'Barber Force',
       lang: 'ko',
+      backround_color: '#406D96',
     },
   },
 
