@@ -1,4 +1,4 @@
-<p align="center"><img src="/images/1_readme_title.png"></p>
+<p align="center"><img src="/images/1_readme_title_1676.png" ></p>
 
 ## 프로젝트 소개
 
