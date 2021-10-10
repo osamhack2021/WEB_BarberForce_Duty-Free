@@ -9,6 +9,4 @@ const barbersSchema = new mongoose.Schema({
   createdAt: String
 });
 
-
-
 module.exports = mongoose.model('Review', barbersSchema);
