@@ -1,9 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    htmlAttrs: {
-      lang: 'ko',
-    },
     title: 'barber-force-frontend',
     meta: [
       { charset: 'utf-8' },
