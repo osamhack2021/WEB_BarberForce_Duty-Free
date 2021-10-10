@@ -1,9 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    htmlAttrs: {
-      lang: 'ko',
-    },
     title: 'barber-force-frontend',
     meta: [
       { charset: 'utf-8' },
@@ -45,6 +42,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
     '@nuxtjs/toast',
   ],
@@ -54,8 +52,20 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      name: 'Barber Force',
+      author: 'Duty-Free',
+      description: '군 장병 미용시설 예약 서비스',
+      lang: 'ko',
+      ogHost: process.env.FRONT_URL || 'https://barberforce.shop',
+    },
     manifest: {
-      lang: 'en',
+      name: 'Barber Force',
+      lang: 'ko',
+      backround_color: '#406D96',
+    },
+    workbox: {
+      offline: false, // no offline support yet.
     },
   },
 
@@ -74,5 +84,16 @@ export default {
     position: 'top-right',
     duration: 3000,
     keepOnHover: true,
+  },
+
+  // Nuxt onesignal module
+  oneSignal: {
+    init: {
+      appId: process.env.ONESIGNAL_APP_ID,
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true,
+      },
+    },
   },
 };
