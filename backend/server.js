@@ -8,34 +8,21 @@ const key = require('./auth/key');
 //const ejs = require('ejs');
 const cors = require('cors');
 const path = require('path');
+
 const db = require('./db');
 const User = require('./user');
 const Reservation = require('./reservation');
 const Barbers = require('./barbers');
+const Review = require('./review');
 
 
 //const route = require('./route.js');
 
-//app.set('view engine','pug');
-//app.set('views',path.join(__dirname,'Form.html'));
 db();
-//app.use(express.static(path.join(__dirname,'Form.html')));
+
 //app.use('/',route);
-
 app.use(cors());
-
 app.use(bodyParser.json());
-/*
-app.get('/',function(req,res){
-  console.log(req.body);
-    res.send(req.body);
-});
-app.get('/', (req, res) => {
-    res.json({
-        success: true,
-    });
-});
-*/
 
 app.get('/',(req,res)=>{
   res.json({
