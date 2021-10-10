@@ -51,6 +51,13 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      name: 'Barber Force',
+      author: 'Duty-Free',
+      description: '군 장병 미용시설 예약 서비스',
+      lang: 'ko',
+      ogHost: process.env.FRONT_URL || 'https://barberforce.shop',
+    },
     manifest: {
       name: 'Barber Force',
       lang: 'ko',
