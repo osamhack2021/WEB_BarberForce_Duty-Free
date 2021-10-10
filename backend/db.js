@@ -16,4 +16,5 @@ module.exports = () => {
   require('./user');
   require('./reservation');
   require('./barbers');
+  require('./review');
 };
