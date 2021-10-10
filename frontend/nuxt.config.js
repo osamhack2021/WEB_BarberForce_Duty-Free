@@ -63,6 +63,9 @@ export default {
       lang: 'ko',
       backround_color: '#406D96',
     },
+    workbox: {
+      offline: false, // no offline support yet.
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
