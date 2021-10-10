@@ -42,6 +42,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
     '@nuxtjs/toast',
   ],
@@ -83,5 +84,16 @@ export default {
     position: 'top-right',
     duration: 3000,
     keepOnHover: true,
+  },
+
+  // Nuxt onesignal module
+  oneSignal: {
+    init: {
+      appId: process.env.ONESIGNAL_APP_ID,
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true,
+      },
+    },
   },
 };
