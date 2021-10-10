@@ -15,6 +15,11 @@ export default {
         href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap',
       },
     ],
+    script: [
+      {
+        src: `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_KEY}&libraries=services`,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
