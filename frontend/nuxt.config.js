@@ -89,7 +89,7 @@ export default {
   // Nuxt onesignal module
   oneSignal: {
     init: {
-      appId: process.env.ONESIGNAL_APP_ID,
+      appId: '1c70b40b-aa5d-438c-a9cf-7f7e92cd5f99',
       allowLocalhostAsSecureOrigin: true,
       welcomeNotification: {
         disable: true,
