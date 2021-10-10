@@ -65,8 +65,8 @@ export default {
   // Dotenv
   env: {
     kakaoRestKey: process.env.KAKAO_REST_KEY,
-    kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI,
-    backendURL: process.env.BACKEND_URL,
+    kakaoRedirectURI: process.env.KAKAO_REDIRECT_URI || 'https://api.barberforce.shop/kakao/callback',
+    backendURL: process.env.BACKEND_URL || 'https://api.barberforce.shop',
   },
 
   // Nuxt Toast
