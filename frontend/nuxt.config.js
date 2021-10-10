@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'barber-force-frontend',
+    title: 'Barber Force',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -61,8 +61,11 @@ export default {
     },
     manifest: {
       name: 'Barber Force',
+      short_name: 'Barber Force',
+      description: '군 장병 미용시설 예약 서비스',
       lang: 'ko',
-      backround_color: '#406D96',
+      background_color: '#406D96',
+      start_url: '/',
     },
     workbox: {
       offline: false, // no offline support yet.
