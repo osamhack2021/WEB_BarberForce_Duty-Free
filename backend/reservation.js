@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const reservationSchema = new mongoose.Schema({
   year: Number,
   month: Number,
-  date: Number,
+  day: Number,
   time: Number,
   barbers_id: String, //ObjectId
   user_id: String,    //ObjectId
+  userName: String,
   description: String
 });
 

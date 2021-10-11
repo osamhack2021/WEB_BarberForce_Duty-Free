@@ -169,14 +169,148 @@ app.get('/barbers/:id',(req,res)=>{
 
 app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
 
-  Reservation.find({barbers_id: req.params.id, year: req.params.year, month:req.params.month}, (err, user)=>{
+  Reservation.find({barbers_id: req.params.id, year: req.params.year, month:req.params.month}, (err, reservation)=>{
+    var list =
+    [
+      {
+        day: 1,
+        status: false
+      },
+      {
+        day: 2,
+        status: false
+      },
+      {
+        day: 3,
+        status: false
+      },
+      {
+        day: 4,
+        status: false
+      },
+      {
+        day: 5,
+        status: false
+      },
+      {
+        day: 6,
+        status: false
+      },
+      {
+        day: 7,
+        status: false
+      },
+      {
+        day: 8,
+        status: false
+      },
+      {
+        day: 9,
+        status: false
+      },
+      {
+        day: 10,
+        status: false
+      },
+      {
+        day: 11,
+        status: false
+      },
+      {
+        day: 11,
+        status: false
+      },
+      {
+        day: 12,
+        status: false
+      },
+      {
+        day: 13,
+        status: false
+      },
+      {
+        day: 14,
+        status: false
+      },
+      {
+        day: 15,
+        status: false
+      },
+      {
+        day: 16,
+        status: false
+      },
+      {
+        day: 17,
+        status: false
+      },
+      {
+        day: 18,
+        status: false
+      },
+      {
+        day: 19,
+        status: false
+      },
+      {
+        day: 20,
+        status: false
+      },
+      {
+        day: 21,
+        status: false
+      },
+      {
+        day: 22,
+        status: false
+      },
+      {
+        day: 23,
+        status: false
+      },
+      {
+        day: 24,
+        status: false
+      },
+      {
+        day: 25,
+        status: false
+      },
+      {
+        day: 26,
+        status: false
+      },
+      {
+        day: 27,
+        status: false
+      },
+      {
+        day: 28,
+        status: false
+      },
+      {
+        day: 29,
+        status: false
+      },
+      {
+        day: 30,
+        status: false
+      },
+      {
+        day: 31,
+        status: false
+      }
+    ]
 
-      return res.json({
-        user: user
-      })
+    for(i=0;i<reservation.length;i++){
+      list[reservation[i].day-1].status = true;
+    }
 
-
+    return res.json({
+      reservations: list
     })
+
+  })
   /*
   return res.json({
     date: date
@@ -185,6 +319,13 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
 });
 
 app.post('/barbers/:id/reservations',(req,res)=>{
+  User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
+    Reservation.insertMany({"year":req.body.year,"month":req.body.month,"day":req.body.day,"time":req.body.date,"barbers_id":req.params.id,"user_id":user._id,"userName":user.name,"description":req.body.description});
+    return res.json({
+      mss: "추가"
+    })
+  })
+  /*
   Reservation.findOne({"year": req.body.year, "month": req.body.month, "date": req.body.day},(err,user)=>{
     if(req.body.time=="_1800"){
       user._1800[0]="true",
@@ -308,8 +449,7 @@ app.post('/barbers/:id/reservations',(req,res)=>{
 
     }
   })
-
-
+  */
 });
 
 app.get('/barbers/:id/reviews',(req,res)=>{
@@ -420,17 +560,11 @@ app.post('/barbers/:id/reviews',(req,res)=>{
 
 app.get('/reservations',(req,res)=>{
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
-    if(user){
+    Reservation.find({user_id:user._id},(err,reservation)=>{
       return res.json({
-        user
+        reservations: reservation
       })
-      Reservation.find({$or: [{ "_1800": user._id}, {"_1830": user._id}, {"_1900": user._id},
-      {"_1930": user._id}, {"_2000": user._id}, {"_2030": user._id }]},(err,reserve)=>{
-        return res.json({
-          reservation: reserve
-        })
-      })
-    }
+    })
   })
 });
 

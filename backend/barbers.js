@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const barbersSchema = new mongoose.Schema({
   title: String,
   location: String,
-  longitude: Number,
-  latitude: Number,
+  location_detail: String,
   rating: Number,
   phone: String,
   thumb: String,
