@@ -18,4 +18,5 @@ module.exports = () => {
   require('./reservation');
   require('./barbers');
   require('./review');
+  require('./unit');
 };

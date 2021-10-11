@@ -14,7 +14,7 @@ const User = require('./user');
 const Reservation = require('./reservation');
 const Barbers = require('./barbers');
 const Review = require('./review');
-
+const Unit = require('./unit');
 //const route = require('./route.js');
 
 db();
@@ -799,6 +799,25 @@ app.post('/createBarbers',(req,res)=>{
   Barbers.insertMany({"title":req.body.title,"location":req.body.location,"logitude":req.body.longitude,"latitude":req.body.latitude,"rating":req.body.rating,"phone":req.body.phone,"thumb":req.body.thumb,"bookmarked":req.body.bookmarked,"weekdayHour":req.body.weekdayHour,"holidayHour":req.body.holidayHour,"description":req.body.description});
 })
 
+app.get('/DB',(req,res)=>{
+  User.find({},(err,user)=>{
+    Barbers.find({},(err,barbers)=>{
+      Reservation.find({},(err,reservation)=>{
+        Review.find({},(err,review)=>{
+          Unit.find({},(err,unit)=>{
+            return res.json({
+              user: user,
+              barbers: barbers,
+              reservation: reservation,
+              review: review,
+              unit: unit
+            })
+          })
+        })
+      })
+    })
+  })
+})
 
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);
