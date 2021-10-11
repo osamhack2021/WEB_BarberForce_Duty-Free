@@ -24,7 +24,12 @@ export default {
   ssr: false,
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/vue-awesome-swiper.js', mode: 'client' }, '@/plugins/api.js', '@/plugins/fetch-user.js'],
+  plugins: [
+    { src: '~/plugins/vue-awesome-swiper.js', mode: 'client' },
+    '@/plugins/api.js',
+    '@/plugins/auth.js',
+    '@/plugins/fetch-user.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

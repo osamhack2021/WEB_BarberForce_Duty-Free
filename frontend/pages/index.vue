@@ -80,7 +80,7 @@ export default {
   middleware: 'auth',
   methods: {
     logout() {
-      this.$store.dispatch('auth/logout');
+      this.$auth.logout();
     },
   },
 };
