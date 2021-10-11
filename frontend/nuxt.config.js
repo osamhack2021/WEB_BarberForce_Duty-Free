@@ -18,7 +18,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/css/transition.css'],
 
   // SSR
   ssr: false,
@@ -29,6 +29,7 @@ export default {
     '@/plugins/api.js',
     '@/plugins/auth.js',
     '@/plugins/fetch-user.js',
+    '@/plugins/vee-validate.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
