@@ -5,8 +5,8 @@ const reservationSchema = new mongoose.Schema({
   month: Number,
   date: Number,
   time: Number,
-  barbers_id: ObjectId,
-  user_id: ObjectId,
+  barbers_id: String, //ObjectId
+  user_id: String,    //ObjectId
   description: String
 });
 

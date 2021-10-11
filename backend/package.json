@@ -10,9 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "express": "^4.17.1",
-=======
     "body-parser": "^1.19.0",
     "cor": "0.0.0",
     "cors": "^2.8.5",
@@ -20,7 +17,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.10",
     "path": "^0.12.7",
->>>>>>> 00e530c2f66aecb51448e75b42a355b670872adf
     "url": "^0.11.0"
   }
 }

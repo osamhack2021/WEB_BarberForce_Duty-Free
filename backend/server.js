@@ -765,7 +765,12 @@ app.get('/barbers/:id/reviews',(req,res)=>{
 });
 
 app.post('/barbers/:id/reviews',(req,res)=>{
-
+  var reviewer;
+  var today = new Date();
+  User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
+    if(user)reviewer=user.name;
+  });
+  Review.insertMany({"barbers_id":req.params.id,"thumb":"","reviewer":reviewer,"body":req.body.body,"rating":req.body.rating,"createdAt":today});
 })
 
 app.get('/reservations',(req,res)=>{
@@ -794,13 +799,6 @@ app.post('/createBarbers',(req,res)=>{
   Barbers.insertMany({"title":req.body.title,"location":req.body.location,"logitude":req.body.longitude,"latitude":req.body.latitude,"rating":req.body.rating,"phone":req.body.phone,"thumb":req.body.thumb,"bookmarked":req.body.bookmarked,"weekdayHour":req.body.weekdayHour,"holidayHour":req.body.holidayHour,"description":req.body.description});
 })
 
-app.post('/createUser',(req,res)=>{
-
-})
-
-app.post('/createReview',(req,res)=>{
-
-})
 
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);
