@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen w-screen flex flex-col items-center justify-center bg-auth p-3">
+  <main class="h-screen w-screen flex flex-col items-center justify-center bg-brand p-3">
     <!-- logo -->
     <img src="@/assets/img/1_logo+title_figma.svg" width="203" alt="BarberForce" />
     <!-- form -->
@@ -70,9 +70,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.bg-auth {
-  background-color: #406d96;
-}
-</style>
