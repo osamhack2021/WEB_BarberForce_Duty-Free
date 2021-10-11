@@ -1,36 +1,66 @@
 <template>
   <div class="text-white p-2">
-    <form @submit.prevent="submit">
-      <div class="mb-6">
-        <label class="block mb-1" for="email">이름을 알려주세요.</label>
-        <input
-          id="name"
-          v-model="name"
-          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
-          type="text"
-          name="name"
-        />
-      </div>
-      <div class="mb-6">
-        <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
-        <input
-          id="soldier_id"
-          v-model="soldier_id"
-          class="w-full border rounded p-2 text-black text-sm focus:outline-none focus:border-blue-500 focus:shadow-sm"
-          type="text"
-          name="soldier_id"
-        />
-      </div>
-      <div class="mb-6">
-        <div class="mb-4">휴대전화로 본인인증을 해주세요.</div>
-        <div class="flex justify-center">
-          <img class="w-16 h-16" src="~/assets/img/pass.png" alt="PASS" />
+    <ValidationObserver v-slot="{ handleSubmit }">
+      <form @submit.prevent="handleSubmit(submit)">
+        <div class="mb-6">
+          <label class="block mb-1" for="email">이름을 알려주세요.</label>
+          <ValidationProvider name="이름" rules="required" v-slot="{ errors, classes }">
+            <input
+              id="name"
+              v-model="name"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
+              name="name"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
         </div>
-      </div>
-      <div class="flex justify-center">
-        <button type="submit" class="rounded bg-blue-500 text-white py-2 px-3">가입하기</button>
-      </div>
-    </form>
+        <div class="mb-6">
+          <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
+          <ValidationProvider name="군번" rules="required" v-slot="{ errors, classes }">
+            <input
+              id="soldier_id"
+              v-model="soldier_id"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
+              name="soldier_id"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
+        </div>
+        <div class="mb-6">
+          <div class="mb-4">휴대전화로 본인인증을 해주세요.</div>
+          <div class="flex justify-center">
+            <img class="w-16 h-16" src="~/assets/img/pass.png" alt="PASS" />
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit" class="rounded bg-blue-500 text-white py-2 px-3">가입하기</button>
+        </div>
+      </form>
+    </ValidationObserver>
   </div>
 </template>
 
@@ -63,13 +93,11 @@ export default {
   },
   methods: {
     async submit() {
-      console.log('submit!');
       try {
-        await this.$store.dispatch('register/register');
-        this.$toast.success('성공적으로 가입되었습니다!');
-        this.$router.replace('/login');
-      } catch (e) {
-        console.log(e.response);
+        await this.$auth.register();
+      } catch (registerError) {
+        console.error(registerError);
+        this.$toast.error(`에러가 발생했습니다!`);
       }
     },
   },
