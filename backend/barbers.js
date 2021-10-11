@@ -11,7 +11,8 @@ const barbersSchema = new mongoose.Schema({
   bookmarked: Boolean,
   weekdayHour: String,
   holidayHour: String,
-  description: String
+  description: String,
+  partnership: [String]
 });
 
 module.exports = mongoose.model('Barbers', barbersSchema);

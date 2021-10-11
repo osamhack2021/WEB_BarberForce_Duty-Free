@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const barbersSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   barbers_id: {type: String, required: true}, //ObjectId
   thumb: String,
   reviewer: {type: String, required:true},
@@ -9,4 +9,4 @@ const barbersSchema = new mongoose.Schema({
   createdAt: String
 });
 
-module.exports = mongoose.model('Review', barbersSchema);
+module.exports = mongoose.model('Review', reviewSchema);
