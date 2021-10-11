@@ -63,13 +63,11 @@ export default {
   },
   methods: {
     async submit() {
-      console.log('submit!');
       try {
-        await this.$store.dispatch('register/register');
-        this.$toast.success('성공적으로 가입되었습니다!');
-        this.$router.replace('/login');
+        await this.$auth.register();
       } catch (e) {
-        console.log(e.response);
+        console.error(e);
+        this.$toast.error(`에러가 발생했습니다!`);
       }
     },
   },

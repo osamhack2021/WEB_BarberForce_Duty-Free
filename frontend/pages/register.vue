@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen w-screen flex items-center justify-center p-3 bg-auth overflow-hidden">
+  <main class="h-screen w-screen flex items-center justify-center p-3 bg-brand overflow-hidden">
     <NuxtChild />
   </main>
 </template>
@@ -10,12 +10,6 @@ export default {
   middleware: 'guest',
 };
 </script>
-
-<style scoped>
-.bg-auth {
-  background-color: #406d96;
-}
-</style>
 
 <style>
 .slide-enter-active {
