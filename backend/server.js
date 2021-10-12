@@ -179,7 +179,7 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
       var time = moment(new Date(reservation[i].time)).format('HH') + ':' + moment(new Date(reservation[i].time)).format('mm');
       list[reservation[i].day-1].time[time] = true;
     }
-    
+
     return res.json({
       reservations: list
     })
@@ -189,7 +189,6 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
 });
 
 app.post('/barbers/:id/reservations',(req,res)=>{
-  //var time =
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
     Reservation.insertMany({"year":req.body.year,"month":req.body.month,"day":req.body.day,"time":req.body.time,"barbers_id":req.params.id,"user_id":user._id,"userName":user.name,"description":req.body.description});
     return res.json({
@@ -257,7 +256,7 @@ app.post('/createUnit',(req,res)=>{
 })
 
 app.get('/dataTest',(req,res)=>{
-  var date = new Date(req.body.time).getHours() + 'DFDF';
+  var date = moment(new Date()).format('HH:mm');
   var time = req.body.time
   return res.json({
     req: req.body.time,
