@@ -2,10 +2,10 @@
   <swiper class="swiper md:mb-3" :options="swiperOption">
     <swiper-slide
       v-for="barber in barbers"
-      :key="barber.id"
+      :key="barber._id"
       :style="`background: url(${barber.thumb}) center/cover no-repeat`"
     >
-      <NuxtLink :to="`/barbers/${barber.id}`">
+      <NuxtLink :to="`/barbers/${barber._id}`">
         <div class="aspect-w-1 aspect-h-1">
           <div class="flex flex-col justify-end bg-dummy1">
             <div class="bg-black bg-opacity-80 font-thin text-white text-sm py-3 px-5 pb-12">
@@ -54,8 +54,8 @@ export default {
     };
   },
   async fetch() {
-    const { data: barbers } = await this.$api.barbers.list();
-    this.barbers = barbers;
+    const { data } = await this.$api.barbers.list();
+    this.barbers = data.barbers;
   },
 };
 </script>

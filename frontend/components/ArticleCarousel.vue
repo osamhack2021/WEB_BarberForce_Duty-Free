@@ -2,7 +2,7 @@
   <swiper class="swiper mb-4" :options="swiperOption">
     <swiper-slide
       v-for="article in articles"
-      :key="article.id"
+      :key="article._id"
       :style="`background: url(${article.thumb}) center/cover no-repeat`"
     >
       <!-- article card -->
@@ -57,35 +57,35 @@ export default {
   fetch() {
     this.articles = [
       {
-        id: 1,
+        _id: 1,
         title: '사이버지식정보방',
         location: '보라매 사동',
         thumb: '/img/article1.png',
         likes: 52,
       },
       {
-        id: 2,
+        _id: 2,
         title: `양현's 댄스클럽`,
         location: '보호실',
         thumb: '/img/article2.png',
         likes: 47,
       },
       {
-        id: 3,
+        _id: 3,
         title: '그냥 미용실입니다',
         location: '집무실',
         thumb: '/img/article3.png',
         likes: 34,
       },
       {
-        id: 4,
+        _id: 4,
         title: '또 다른 곳',
         location: '집무실',
         thumb: '/img/article3.png',
         likes: 26,
       },
       {
-        id: 5,
+        _id: 5,
         title: '또 다른 곳 2',
         location: '집무실',
         thumb: '/img/article1.png',
