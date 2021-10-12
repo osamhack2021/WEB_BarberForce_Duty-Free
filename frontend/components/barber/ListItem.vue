@@ -28,7 +28,10 @@
     <div v-if="opened">
       <hr />
       <!-- reviews -->
-      <div v-for="review in reviews" :key="review.id" class="flex p-2">
+      <template v-if="reviews.length === 0">
+        <div class="text-sm md:text-base p-2">리뷰가 아직 없습니다!</div>
+      </template>
+      <div v-for="review in reviews" :key="review._id" class="flex p-2">
         <!-- thumb section -->
         <div class="review-thumb mr-2">
           <img class="rounded object-cover w-full h-full" :src="review.thumb" />
@@ -66,7 +69,7 @@ export default {
   },
   mounted() {
     this.$api.barbers.reviews(this.barber.id).then(({ data }) => {
-      this.reviews = data;
+      this.reviews = data.reviews;
     });
   },
   methods: {
