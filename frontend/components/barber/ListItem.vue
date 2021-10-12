@@ -6,7 +6,9 @@
       </div>
       <div class="relative flex-1 px-2">
         <div class="flex items-center p-1 sm:p-2 md:p-4">
-          <span class="text-lg font-bold">{{ barber.title }}</span>
+          <NuxtLink :to="`/barbers/${barber._id}`">
+            <span class="text-lg font-bold">{{ barber.title }}</span>
+          </NuxtLink>
           <span class="flex items-center text-base ml-auto">
             <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
             {{ barber.rating }}

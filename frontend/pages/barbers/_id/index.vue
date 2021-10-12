@@ -155,6 +155,12 @@ export default {
   background: url(/img/shop1.jpg) center/cover no-repeat;
 }
 
+@media (min-width: 640px) {
+  .barbershop-heading {
+    height: 350px;
+  }
+}
+
 .kakao-map {
   height: 200px;
 }
