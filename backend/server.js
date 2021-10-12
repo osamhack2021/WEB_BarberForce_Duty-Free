@@ -586,6 +586,13 @@ app.post('/createBarbers',(req,res)=>{
   })
 })
 
+app.post('/createUnit',(req,res)=>{
+  Unit.insertMany({"unitName":req.body.unitName,"soldier_id":req.body.soldier_id,"barbers_id":req.body.barbers_id});
+  return res.json({
+    mss: "추가"
+  })
+})
+
 app.get('/DB',(req,res)=>{
   User.find({},(err,user)=>{
     Barbers.find({},(err,barbers)=>{
