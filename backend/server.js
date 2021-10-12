@@ -189,6 +189,7 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
 });
 
 app.post('/barbers/:id/reservations',(req,res)=>{
+  //var time =
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
     Reservation.insertMany({"year":req.body.year,"month":req.body.month,"day":req.body.day,"time":req.body.time,"barbers_id":req.params.id,"user_id":user._id,"userName":user.name,"description":req.body.description});
     return res.json({
