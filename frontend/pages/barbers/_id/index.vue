@@ -104,6 +104,7 @@ export default {
         const container = this.$refs.map;
         const options = {
           center: new window.kakao.maps.LatLng(val.location_detail.latitude, val.location_detail.longitude),
+          draggable: false,
           level: 3,
         };
         const map = new window.kakao.maps.Map(container, options);
