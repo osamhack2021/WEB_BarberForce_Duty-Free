@@ -278,9 +278,7 @@ app.get('/DB',(req,res)=>{
 
 app.get('/dataTest',(req,res)=>{
   var date = moment(new Date()).format('HH:mm');
-  var time = new
   return res.json({
-    req: req.body.time,
     date: date
   })
 })
