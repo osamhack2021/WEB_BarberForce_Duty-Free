@@ -20,13 +20,15 @@
               {{ barber.location }}
             </div>
             <NuxtLink class="underline mt-auto" to="/">예약 수정/취소하기</NuxtLink>
-            <div class="absolute top-full" style="right: 5%; transform: translate(0, -75%)">
-              <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
-              <div class="flex justify-center items-center">
-                <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2">예</button>
-                <button class="w-16 text-center rounded bg-red-500 text-white py-2 mr-2">아니오</button>
+            <template v-if="timeover">
+              <div class="absolute top-full" style="right: 5%; transform: translate(0, -75%)">
+                <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
+                <div class="flex justify-center items-center">
+                  <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2">예</button>
+                  <button class="w-16 text-center rounded bg-red-500 text-white py-2 mr-2">아니오</button>
+                </div>
               </div>
-            </div>
+            </template>
           </div>
         </div>
       </div>
@@ -76,13 +78,15 @@
               <NuxtLink class="underline" to="/">예약 수정/취소하기</NuxtLink>
             </div>
           </div>
-          <div class="mt-auto">
-            <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
-            <div class="flex justify-center items-center">
-              <button class="flex-1 text-center rounded bg-brand text-white py-3 mr-2">예</button>
-              <button class="flex-1 text-center rounded bg-red-500 text-white py-3 mr-2">아니오</button>
+          <template v-if="timeover">
+            <div class="mt-auto">
+              <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
+              <div class="flex justify-center items-center">
+                <button class="flex-1 text-center rounded bg-brand text-white py-3 mr-2">예</button>
+                <button class="flex-1 text-center rounded bg-red-500 text-white py-3 mr-2">아니오</button>
+              </div>
             </div>
-          </div>
+          </template>
         </div>
       </div>
     </template>
@@ -101,6 +105,16 @@ export default {
     return {
       barber: null,
     };
+  },
+  computed: {
+    timeover() {
+      const now = new Date();
+      return (
+        this.reservation.year <= now.getFullYear() &&
+        this.reservation.month <= now.getMonth() + 1 &&
+        this.reservation.day <= now.getDate()
+      );
+    },
   },
   async fetch() {
     const { data } = await this.$api.barbers.show(this.reservation.barbers_id);
