@@ -63,7 +63,7 @@ export default {
       commit('setName', '');
       commit('setSoldierId', '');
     },
-    async register({ commit, state }) {
+    async register({ dispatch, state }) {
       await this.$api.auth.register({
         email: state.email,
         password: state.password,
@@ -71,6 +71,7 @@ export default {
         name: state.name,
         soldier_id: state.soldier_id,
       });
+      dispatch('clear');
     },
   },
 };
