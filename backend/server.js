@@ -8,6 +8,7 @@ const cors = require('cors');
 const path = require('path');
 
 const key = require('./auth/key');
+const moment = require('./moment');
 const db = require('./db');
 
 const User = require('./user');
@@ -154,10 +155,7 @@ app.get('/barbers/:id',(req,res)=>{
       id: barbers._id,
       title: barbers.title,
       location: barbers.location,
-      location_detail:{
-        longitude: barbers.longitude,
-        latitude: barbers.latitude
-      },
+      location_detail:barbers.location_detail,
       rating: barbers.rating,
       bookmarked: barbers.bookmarked,
       phone: barbers.phone,
@@ -170,142 +168,18 @@ app.get('/barbers/:id',(req,res)=>{
 app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
 
   Reservation.find({barbers_id: req.params.id, year: req.params.year, month:req.params.month}, (err, reservation)=>{
-    var list =
-    [
-      {
-        day: 1,
-        status: false
-      },
-      {
-        day: 2,
-        status: false
-      },
-      {
-        day: 3,
-        status: false
-      },
-      {
-        day: 4,
-        status: false
-      },
-      {
-        day: 5,
-        status: false
-      },
-      {
-        day: 6,
-        status: false
-      },
-      {
-        day: 7,
-        status: false
-      },
-      {
-        day: 8,
-        status: false
-      },
-      {
-        day: 9,
-        status: false
-      },
-      {
-        day: 10,
-        status: false
-      },
-      {
-        day: 11,
-        status: false
-      },
-      {
-        day: 11,
-        status: false
-      },
-      {
-        day: 12,
-        status: false
-      },
-      {
-        day: 13,
-        status: false
-      },
-      {
-        day: 14,
-        status: false
-      },
-      {
-        day: 15,
-        status: false
-      },
-      {
-        day: 16,
-        status: false
-      },
-      {
-        day: 17,
-        status: false
-      },
-      {
-        day: 18,
-        status: false
-      },
-      {
-        day: 19,
-        status: false
-      },
-      {
-        day: 20,
-        status: false
-      },
-      {
-        day: 21,
-        status: false
-      },
-      {
-        day: 22,
-        status: false
-      },
-      {
-        day: 23,
-        status: false
-      },
-      {
-        day: 24,
-        status: false
-      },
-      {
-        day: 25,
-        status: false
-      },
-      {
-        day: 26,
-        status: false
-      },
-      {
-        day: 27,
-        status: false
-      },
-      {
-        day: 28,
-        status: false
-      },
-      {
-        day: 29,
-        status: false
-      },
-      {
-        day: 30,
-        status: false
-      },
-      {
-        day: 31,
-        status: false
-      }
-    ]
-
-    for(i=0;i<reservation.length;i++){
-      list[reservation[i].day-1].status = true;
+    /*
+    //Date 늘렷거가면서 탐색하고 없으면 집어넣는 식으로
+    */
+    var list = new Array(31);
+    for(i=0;i<list.length;i++){
+      list[i] = {day: i+1, time: {'18:00': false, '18:30': false, '19:00': false,'19:30':false,'20:00':false,'20:30':false}}
     }
-
+    for(i=0;i<reservation.length;i++){
+      var time = moment(new Date(reservation[i].time)).format('HH') + ':' + moment(new Date(reservation[i].time)).format('mm');
+      list[reservation[i].day-1].time[time] = true;
+    }
+    
     return res.json({
       reservations: list
     })
@@ -315,8 +189,9 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
 });
 
 app.post('/barbers/:id/reservations',(req,res)=>{
+  //var time =
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
-    Reservation.insertMany({"year":req.body.year,"month":req.body.month,"day":req.body.day,"time":req.body.date,"barbers_id":req.params.id,"user_id":user._id,"userName":user.name,"description":req.body.description});
+    Reservation.insertMany({"year":req.body.year,"month":req.body.month,"day":req.body.day,"time":req.body.time,"barbers_id":req.params.id,"user_id":user._id,"userName":user.name,"description":req.body.description});
     return res.json({
       mss: "추가"
     })
@@ -324,90 +199,6 @@ app.post('/barbers/:id/reservations',(req,res)=>{
 });
 
 app.get('/barbers/:id/reviews',(req,res)=>{
-
-  /*
-  var dummy_review_1 = [
-    {
-      id: 1,
-      thumb: "/img/article1.png",
-      reviewer: "박상욱",
-      body: "너무 좋아요!!",
-      rating: 5,
-      createdAt: "2021-03-25T0912:00:00Z",
-    },
-    {
-      id: 2,
-      thumb: "/img/article2.png",
-      reviewer: "이세",
-      body: "맘에 쏙들어요!!",
-      rating: 5,
-      createdAt: "2021-05-22T0918:06:20Z",
-    },
-    {
-      id: 3,
-      thumb: "/img/article3.png",
-      reviewer: "변찬혁",
-      bdoy: "두발 규정에 맞게 잘 잘라줍니다",
-      rating: 4,
-      createdAt: "2021-06-16T0909:15:23Z",
-    },
-  ];
-
-  var dummy_review_2 = [
-    {
-      id: 4,
-      thumb: "/img/article1.png",
-      reviewer: "강민구",
-      body: "머리에 스크래치가 났어요",
-      rating: 1,
-      createdAt: "2021-09-18T0920:00:03Z",
-    },
-    {
-      id: 5,
-      thumb: "/img/article2.png",
-      reviewer: "류서현",
-      body: "나쁘지않아요",
-      rating: 3,
-      createdAt: "2021-10-01T0917:10:00Z",
-    },
-    {
-      id: 6,
-      thumb: "/img/article3.png",
-      reviewer: "박찬현",
-      bdoy: "간부님이 좋아하십니다",
-      rating: 3,
-      createdAt: "2021-10-01T0919:20:00Z",
-    },
-  ];
-
-  var dummy_review_3 = [
-    {
-      id: 7,
-      thumb: "/img/article1.png",
-      reviewer: "김현민",
-      body: "곱슬기가 사라졌습니다",
-      rating: 5,
-      createdAt: "2021-03-28T0920:00:00Z",
-    },
-    {
-      id: 8,
-      thumb: "/img/article2.png",
-      reviewer: "김영인",
-      body: "보통입니다",
-      rating: 3,
-      createdAt: "2021-03-29T0920:00:00Z",
-    },
-    {
-      id: 9,
-      thumb: "/img/article3.png",
-      reviewer: "이동환",
-      bdoy: "너무 잘 잘라요~~",
-      rating: 5,
-      createdAt: "2021-03-30T0921:00:00Z",
-    },
-  ];
-  */
-
   Review.find({barbers_id: req.params.id},(err,review)=>{
     return res.json({
       reviews: review
@@ -452,7 +243,7 @@ app.post('/createReserve',(req,res)=>{
 })
 
 app.post('/createBarbers',(req,res)=>{
-  Barbers.insertMany({"title":req.body.title,"location":req.body.location,"longitude":req.body.longitude,"latitude":req.body.latitude,"rating":req.body.rating,"phone":req.body.phone,"thumb":req.body.thumb,"bookmarked":req.body.bookmarked,"weekdayHour":req.body.weekdayHour,"holidayHour":req.body.holidayHour,"description":req.body.description,"partnership":req.body.partnership});
+  Barbers.insertMany({"title":req.body.title,"location":req.body.location,"location_detail":req.body.location_detail,"rating":req.body.rating,"phone":req.body.phone,"thumb":req.body.thumb,"bookmarked":req.body.bookmarked,"weekdayHour":req.body.weekdayHour,"holidayHour":req.body.holidayHour,"description":req.body.description,"partnership":req.body.partnership});
   return res.json({
     mss: "추가"
   })
@@ -462,6 +253,15 @@ app.post('/createUnit',(req,res)=>{
   Unit.insertMany({"unitName":req.body.unitName, "soldier_id":req.body.soldier_id,"barbers_id":req.body.barbers_id});
   return res.json({
     mss: "추가"
+  })
+})
+
+app.get('/dataTest',(req,res)=>{
+  var date = new Date(req.body.time).getHours() + 'DFDF';
+  var time = req.body.time
+  return res.json({
+    req: req.body.time,
+    date: date
   })
 })
 
