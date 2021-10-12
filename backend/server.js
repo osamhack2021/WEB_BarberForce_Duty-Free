@@ -224,7 +224,7 @@ app.get('/reservations',(req,res)=>{
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
     Reservation.find({user_id:user._id},(err,reservation)=>{
       return res.json({
-        reservations: reservation
+        reservations: reservation.sort(reservation.time)
       })
     })
   })
@@ -256,11 +256,29 @@ app.post('/createUnit',(req,res)=>{
   })
 })
 
+app.get('/DB',(req,res)=>{
+  User.find({},(err,user)=>{
+    Barbers.find({},(err,barbers)=>{
+      Reservation.find({},(err,reservation)=>{
+        Review.find({},(err,review)=>{
+          Unit.find({},(err,unit)=>{
+            return res.json({
+              User: user,
+              Barbers: barbers,
+              Reservation: reservation,
+              Review: review,
+              Unit: unit
+            })
+          })
+        })
+      })
+    })
+  })
+})
+
 app.get('/dataTest',(req,res)=>{
   var date = moment(new Date()).format('HH:mm');
-  var time = req.body.time
   return res.json({
-    req: req.body.time,
     date: date
   })
 })
