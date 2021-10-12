@@ -179,7 +179,7 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
       var time = moment(new Date(reservation[i].time)).format('HH') + ':' + moment(new Date(reservation[i].time)).format('mm');
       list[reservation[i].day-1].time[time] = true;
     }
-    
+
     return res.json({
       reservations: list
     })
@@ -257,7 +257,7 @@ app.post('/createUnit',(req,res)=>{
 })
 
 app.get('/dataTest',(req,res)=>{
-  var date = new Date(req.body.time).getHours() + 'DFDF';
+  var date = moment(new Date()).format('HH:mm');
   var time = req.body.time
   return res.json({
     req: req.body.time,
