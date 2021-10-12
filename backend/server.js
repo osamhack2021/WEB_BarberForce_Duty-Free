@@ -15,10 +15,7 @@ const Reservation = require('./reservation');
 const Barbers = require('./barbers');
 const Review = require('./review');
 const Unit = require('./unit');
-<<<<<<< HEAD
 
-=======
->>>>>>> eff1db689fc753de0e835492487615d319807ea7
 //const route = require('./route.js');
 
 db();
@@ -144,11 +141,7 @@ app.get('/barbers',(req,res) =>{
   Unit.findOne({token: req.headers.authorization},(err,unit)=>{
     Barbers.find({partnership: unit.unitName},(err,barbers)=>{
       return res.json({
-<<<<<<< HEAD
         barbers: barbers.slice(0,req.query.limit)
-=======
-        barbers: barbers
->>>>>>> eff1db689fc753de0e835492487615d319807ea7
       })
     })
   })
@@ -317,13 +310,6 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
       reservations: list
     })
 
-<<<<<<< HEAD
-=======
-  })
-  /*
-  return res.json({
-    date: date
->>>>>>> eff1db689fc753de0e835492487615d319807ea7
   })
 
 });
@@ -334,136 +320,7 @@ app.post('/barbers/:id/reservations',(req,res)=>{
     return res.json({
       mss: "추가"
     })
-<<<<<<< HEAD
   })
-=======
-  })
-  /*
-  Reservation.findOne({"year": req.body.year, "month": req.body.month, "date": req.body.day},(err,user)=>{
-    if(req.body.time=="_1800"){
-      user._1800[0]="true",
-      user._1800[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1800[2]=soldier._id;
-        }
-        user.save(function(err,user){})
-        return res.json({
-          res: user,
-          token: req.headers.authorization.split(' ')[1],
-          soldier: soldier
-        })
-      })
-
-    }
-    else if(req.body.time=="_1830"){
-      user._1830[0]="true",
-      user._1830[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1830[2]=soldier._id;
-          user.save(function(err,user){})
-          return res.json({
-            reservation: user
-          })
-        }
-      })
-
-    }
-    else if(req.body.time=="_1900"){
-      user._1900[0]="true",
-      user._1900[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1900[2]=soldier._id;
-          user.save(function(err,user){})
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-    }
-    else if(req.body.time=="_1930"){
-      user._1930[0]="true",
-      user._1330[1]=req.params.id;
-      user.description=req.body.description;
-
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1930[2]=soldier._id;
-          user.save(function(err,user){})
-
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-    }
-    else if(req.body.time=="_2000"){
-      user._2000[0]="true",
-      user._2000[1]=req.params.id;
-      user.description=req.body.description;
-
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._2000[2]=soldier._id;
-          user.save(function(err,user){})
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-
-    }
-    else if(req.body.time=="_2030"){
-      user._2030[0]="true",
-      user._2030[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._2030[2]=soldier._id;
-          user.save(function(err,user){})
-
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-    }
-  })
-  */
->>>>>>> eff1db689fc753de0e835492487615d319807ea7
 });
 
 app.get('/barbers/:id/reviews',(req,res)=>{
@@ -599,41 +456,12 @@ app.post('/createBarbers',(req,res)=>{
   return res.json({
     mss: "추가"
   })
-<<<<<<< HEAD
 })
 
 app.post('/createUnit',(req,res)=>{
   Unit.insertMany({"unitName":req.body.unitName, "soldier_id":req.body.soldier_id,"barbers_id":req.body.barbers_id});
   return res.json({
     mss: "추가"
-=======
-})
-
-app.post('/createUnit',(req,res)=>{
-  Unit.insertMany({"unitName":req.body.unitName,"soldier_id":req.body.soldier_id,"barbers_id":req.body.barbers_id});
-  return res.json({
-    mss: "추가"
-  })
-})
-
-app.get('/DB',(req,res)=>{
-  User.find({},(err,user)=>{
-    Barbers.find({},(err,barbers)=>{
-      Reservation.find({},(err,reservation)=>{
-        Review.find({},(err,review)=>{
-          Unit.find({},(err,unit)=>{
-            return res.json({
-              user: user,
-              barbers: barbers,
-              reservation: reservation,
-              review: review,
-              unit: unit
-            })
-          })
-        })
-      })
-    })
->>>>>>> eff1db689fc753de0e835492487615d319807ea7
   })
 })
 
