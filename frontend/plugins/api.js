@@ -22,6 +22,9 @@ const barbers = client => ({
   reviews: async id => {
     return await client.get(`/barbers/${id}/reviews`);
   },
+  createReview: async (id, data) => {
+    return await client.post(`/barbers/${id}/reviews`, data);
+  },
   reservations: async (id, year, month) => {
     return await client.get(`/barbers/${id}/reservations/${year}/${month}`);
   },

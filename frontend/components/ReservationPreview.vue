@@ -90,11 +90,58 @@
         </div>
       </div>
     </template>
+    <!-- review form -->
+    <template v-if="timeover">
+      <div class="mt-4 mb-2 p-3">
+        <div class="font-bold text-center">미용실의 서비스를 평가해주세요.</div>
+        <div class="flex justify-center">
+          <div class="inline-flex flex-col">
+            <StarRating v-model="review.rating" :increment="0.5" :show-rating="false" />
+            <span class="ml-auto mr-2">
+              <span class="font-bold text-lg">{{ review.rating }}</span>
+              /5
+            </span>
+          </div>
+        </div>
+        <ValidationObserver v-slot="{ handleSubmit }">
+          <form @submit.prevent="handleSubmit(submitReview)">
+            <div class="flex items-end font-bold mb-1">
+              간단 리뷰 작성하기 <span class="text-gray-400 text-xs font-light ml-2">5/140</span>
+            </div>
+            <ValidationProvider name="리뷰" rules="required" v-slot="{ errors }">
+              <textarea
+                v-model="review.body"
+                class="w-full rounded border p-2 focus:outline-none"
+                :class="{ 'border-red-400': errors.length > 0, 'focus:border-brand': errors.length === 0 }"
+                rows="3"
+              ></textarea>
+              <transition name="fade">
+                <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400">
+                  {{ errors[0] }}
+                </div>
+              </transition>
+            </ValidationProvider>
+            <div class="flex items-start mt-1">
+              <span class="flex items-center">
+                <input id="onlyBarber" v-model="review.onlyBarber" class="mr-1" type="checkbox" />
+                <label for="onlyBarber" class="text-sm">사장님께만 보이게</label>
+              </span>
+              <button type="submit" class="rounded bg-brand text-white py-2 px-5 ml-auto">작성하기</button>
+            </div>
+          </form>
+        </ValidationObserver>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
+import StarRating from 'vue-star-rating';
+
 export default {
+  components: {
+    StarRating,
+  },
   props: {
     reservation: {
       type: Object,
@@ -104,16 +151,34 @@ export default {
   data() {
     return {
       barber: null,
+      review: {
+        body: '',
+        rating: 5,
+        onlyBarber: false,
+      },
     };
   },
   computed: {
     timeover() {
       const now = new Date();
+      now.setDate(15);
       return (
         this.reservation.year <= now.getFullYear() &&
         this.reservation.month <= now.getMonth() + 1 &&
         this.reservation.day <= now.getDate()
       );
+    },
+  },
+  methods: {
+    async submitReview() {
+      try {
+        console.log(this.barber);
+        await this.$api.barbers.createReview(this.barber.id, this.review);
+        this.$toast.success('리뷰를 작성했습니다!');
+      } catch (e) {
+        console.error(e);
+        this.$toast.error('에러가 발생했습니다!');
+      }
     },
   },
   async fetch() {
