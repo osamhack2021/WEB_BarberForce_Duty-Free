@@ -1,7 +1,8 @@
 <template>
   <main class="container pb-20">
     <!-- 미용실 carousel -->
-    <BarberCarousel />
+    <ReservationPreview v-if="nextReservation" :reservation="nextReservation" />
+    <BarberCarousel v-else />
     <div class="p-3">
       <!-- '머리깎고 뭐하지?' section -->
       <section class="mb-12">
@@ -78,6 +79,23 @@
 <script>
 export default {
   middleware: 'auth',
+  data() {
+    return {
+      nextReservation: null,
+    };
+  },
+  async fetch() {
+    const { data } = await this.$api.reservations.list();
+    const reservations = data.reservations;
+    const now = new Date();
+    this.nextReservation = reservations.find(
+      reservation =>
+        reservation.year >= now.getFullYear() &&
+        reservation.month >= now.getMonth() + 1 &&
+        reservation.day >= now.getDate()
+    );
+    console.log(this.nextReservation);
+  },
   methods: {
     logout() {
       this.$auth.logout();
