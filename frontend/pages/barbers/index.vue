@@ -2,7 +2,7 @@
   <main class="container px-2 pt-2 pb-20">
     <CommonHeading class="mb-2">BARBERSHOP</CommonHeading>
     <!-- barbershop component -->
-    <BarberListItem v-for="barber in barbers" :key="barber.id" :barber="barber" class="mb-3" />
+    <BarberListItem v-for="barber in barbers" :key="barber._id" :barber="barber" class="mb-3" />
   </main>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   },
   async fetch() {
     const { data } = await this.$api.barbers.list();
-    this.barbers = data;
+    this.barbers = data.barbers;
   },
 };
 </script>
