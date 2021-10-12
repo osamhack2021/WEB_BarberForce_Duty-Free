@@ -109,7 +109,7 @@ export default {
         const map = new window.kakao.maps.Map(container, options);
 
         const geocoder = new window.kakao.maps.services.Geocoder();
-        geocoder.addressSearch('역촌동 85-46', (result, status) => {
+        geocoder.addressSearch(val.location_detail, (result, status) => {
           if (status === window.kakao.maps.services.Status.OK) {
             const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
 
