@@ -141,7 +141,7 @@ app.get('/barbers',(req,res) =>{
   Unit.findOne({token: req.headers.authorization},(err,unit)=>{
     Barbers.find({partnership: unit.unitName},(err,barbers)=>{
       return res.json({
-        barbers: barbers
+        barbers: barbers.slice(0,req.query.limit)
       })
     })
   })
@@ -311,11 +311,7 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
     })
 
   })
-  /*
-  return res.json({
-    date: date
-  })
-  */
+
 });
 
 app.post('/barbers/:id/reservations',(req,res)=>{
@@ -325,131 +321,6 @@ app.post('/barbers/:id/reservations',(req,res)=>{
       mss: "추가"
     })
   })
-  /*
-  Reservation.findOne({"year": req.body.year, "month": req.body.month, "date": req.body.day},(err,user)=>{
-    if(req.body.time=="_1800"){
-      user._1800[0]="true",
-      user._1800[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1800[2]=soldier._id;
-        }
-        user.save(function(err,user){})
-        return res.json({
-          res: user,
-          token: req.headers.authorization.split(' ')[1],
-          soldier: soldier
-        })
-      })
-
-    }
-    else if(req.body.time=="_1830"){
-      user._1830[0]="true",
-      user._1830[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1830[2]=soldier._id;
-          user.save(function(err,user){})
-          return res.json({
-            reservation: user
-          })
-        }
-      })
-
-    }
-    else if(req.body.time=="_1900"){
-      user._1900[0]="true",
-      user._1900[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1900[2]=soldier._id;
-          user.save(function(err,user){})
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-    }
-    else if(req.body.time=="_1930"){
-      user._1930[0]="true",
-      user._1330[1]=req.params.id;
-      user.description=req.body.description;
-
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._1930[2]=soldier._id;
-          user.save(function(err,user){})
-
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-    }
-    else if(req.body.time=="_2000"){
-      user._2000[0]="true",
-      user._2000[1]=req.params.id;
-      user.description=req.body.description;
-
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._2000[2]=soldier._id;
-          user.save(function(err,user){})
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-
-    }
-    else if(req.body.time=="_2030"){
-      user._2030[0]="true",
-      user._2030[1]=req.params.id;
-      user.description=req.body.description;
-      User.findOne({token: req.headers.authorization.split(' ')[1]}, (err,soldier)=>{
-        if(soldier){
-          user._2030[2]=soldier._id;
-          user.save(function(err,user){})
-
-          return res.json({
-            reservation: user
-          })
-        }
-        else {
-          return res.status(401)
-          .json({
-            message: "Not Login"
-          })
-        }
-      })
-
-    }
-  })
-  */
 });
 
 app.get('/barbers/:id/reviews',(req,res)=>{
