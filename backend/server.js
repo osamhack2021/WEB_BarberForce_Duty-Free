@@ -224,7 +224,7 @@ app.get('/reservations',(req,res)=>{
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
     Reservation.find({user_id:user._id},(err,reservation)=>{
       return res.json({
-        reservations: reservation
+        reservations: reservation.sort(reservation.time)
       })
     })
   })
