@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import { ValidationProvider, ValidationObserver } from 'vee-validate';
-import { configure, extend } from 'vee-validate';
+import { ValidationProvider, ValidationObserver , configure, extend } from 'vee-validate';
+
 import { required, email, min, confirmed } from 'vee-validate/dist/rules';
 import { messages } from 'vee-validate/dist/locale/ko.json';
 
