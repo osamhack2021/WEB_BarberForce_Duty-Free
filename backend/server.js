@@ -267,7 +267,7 @@ app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
 })
 
 app.get('/kakao/access',(req,res)=>{
-  var accessToken = req.
+  //var accessToken = req.
 })
 
 app.post('/kakao/register',(req,res)=>{
