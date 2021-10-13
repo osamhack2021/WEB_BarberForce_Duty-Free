@@ -271,7 +271,7 @@ app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
 })
 
 app.get('/kakao/access',(req,res)=>{
-  var code = req.query.cod;
+  var code = req.query.code;
   console.log(code);
   const options = {
     uri: "https://kauth.kakao.com/oauth/token",
