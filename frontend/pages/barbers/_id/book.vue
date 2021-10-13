@@ -83,13 +83,6 @@ export default {
       description,
     };
   },
-  mounted() {
-    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
-      this.barber = data;
-    });
-
-    console.log(this.$store.state.auth.user);
-  },
   computed: {
     dateString() {
       const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
@@ -98,6 +91,11 @@ export default {
     timeString() {
       return this.date.format('A hh:mm');
     },
+  },
+  mounted() {
+    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
+      this.barber = data;
+    });
   },
   methods: {
     async submit() {
@@ -113,7 +111,7 @@ export default {
         this.$toast.success('예약되었습니다!');
         this.$router.replace('/');
       } catch (e) {
-        console.error(e);
+        this.$toast.error('에러가 발생했습니다!');
       }
     },
   },

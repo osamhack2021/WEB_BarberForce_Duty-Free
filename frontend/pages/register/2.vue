@@ -4,7 +4,7 @@
       <form @submit.prevent="handleSubmit(next)">
         <div class="mb-6">
           <label class="block mb-1" for="email">이메일을 입력해주세요.</label>
-          <ValidationProvider name="이메일" rules="required|email" v-slot="{ errors, classes }">
+          <ValidationProvider v-slot="{ errors, classes }" name="이메일" rules="required|email">
             <input
               id="email"
               v-model="email"
@@ -28,7 +28,7 @@
         </div>
         <div class="mb-6">
           <label class="block mb-1" for="password">비밀번호를 입력해주세요.</label>
-          <ValidationProvider vid="password" name="비밀번호" rules="required|min:6" v-slot="{ errors, classes }">
+          <ValidationProvider v-slot="{ errors, classes }" vid="password" name="비밀번호" rules="required|min:6">
             <input
               id="password"
               v-model="password"
@@ -52,7 +52,7 @@
         </div>
         <div class="mb-6">
           <label class="block mb-1" for="password_confirm">비밀번호를 다시 입력해주세요.</label>
-          <ValidationProvider name="비밀번호 확인" rules="required|confirmed:password" v-slot="{ errors, classes }">
+          <ValidationProvider v-slot="{ errors, classes }" name="비밀번호 확인" rules="required|confirmed:password">
             <input
               id="password_confirm"
               v-model="password_confirm"
@@ -85,11 +85,6 @@
 <script>
 export default {
   transition: 'slide',
-  methods: {
-    next() {
-      this.$router.push('/register/3');
-    },
-  },
   computed: {
     email: {
       get() {
@@ -114,6 +109,11 @@ export default {
       set(value) {
         this.$store.dispatch('register/setPasswordConfirm', value);
       },
+    },
+  },
+  methods: {
+    next() {
+      this.$router.push('/register/3');
     },
   },
 };
