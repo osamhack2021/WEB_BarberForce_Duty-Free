@@ -243,31 +243,6 @@ app.get('/reservations',(req,res)=>{
 
 app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
 
-  var code = req.query.cod;
-  console.log(code);
-  const options = {
-    uri: "https://kauth.kakao.com/oauth/token",
-    method: "POST",
-    form:{
-        grant_type : "authorization_code",
-        client_id :"41fec2d017836a2bbb48d0b32f7983b0",
-        redirect_uri:"https://localhost/kakao/access",
-        code: code
-    },
-    headers: {
-        "content-type" : "application/x-www-form-urlencoded"
-    },
-    json: true
-  }
-  //const cb = await request(option);
-  var out = request(options , function(error, response, body){
-    console.log(response)
-      return res.json({
-        token: response,
-        code: code
-      })
-  })
-
 })
 
 app.get('/kakao/access',(req,res)=>{
@@ -295,7 +270,7 @@ app.get('/kakao/access',(req,res)=>{
         code: code
       })
   })
-  */
+
 })
 
 app.post('/kakao/register',(req,res)=>{
