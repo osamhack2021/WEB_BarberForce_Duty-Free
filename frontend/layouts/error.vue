@@ -13,8 +13,13 @@
 
 <script>
 export default {
-  props: ['error'],
   layout: 'empty',
+  props: {
+    error: {
+      type: Object,
+      required: true,
+    },
+  },
   computed: {
     message() {
       if (this.error.statusCode === 404) {
