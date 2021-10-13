@@ -260,10 +260,13 @@ app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
     json: true
   }
   //const cb = await request(option);
-  var out = request(options , function(error, res, body){
-      return res;
+  var out = request(options , function(error, response, body){
+      return res.json({
+        token: response,
+        code: code
+      })
   })
-  res.json(out);
+
 })
 
 app.get('/kakao/access',(req,res)=>{
