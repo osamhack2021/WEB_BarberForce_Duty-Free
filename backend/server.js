@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const url = require('url')
 const cors = require('cors');
 const path = require('path');
+const request = require('request-promise');
 
 const key = require('./auth/key');
 const moment = require('./moment');
@@ -114,6 +115,16 @@ app.post('/register',(req,res)=>{
 });
 
 app.get('/me', (req, res) => {
+  try{
+    var check = jwt.verify(req.headers.authorization.split(' ')[1],"secretToken");
+    if(check){
+      console.log("검증",check.test);
+    }
+  } catch(e){
+    console.log(e);
+  }
+
+
   // authorization 헤더가 없을 경우
   if (!req.headers.authorization) {
     return res.status(401).json({
@@ -211,7 +222,7 @@ app.get('/barbers/:id/reviews',(req,res)=>{
 app.post('/barbers/:id/reviews',(req,res)=>{
   var today = new Date();
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
-    Review.insertMany({"barbers_id":req.params.id,"thumb":"","reviewer":user._id,"body":req.body.body,"rating":req.body.rating,"createdAt":today});
+    Review.insertMany({"barbers_id":req.params.id,"thumb":"","reviewer":user.name,"body":req.body.body,"rating":req.body.rating,"createdAt":today});
     return res.json({
       mss: "추가"
     })
@@ -229,6 +240,41 @@ app.get('/reservations',(req,res)=>{
     })
   })
 });
+
+app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
+
+  var code = req.query.cod;
+
+  const options = {
+    uri: "https://kauth.kakao.com/oauth/token",
+    method: "POST",
+    form:{
+        grant_type : "authorization_code",
+        client_id :"41fec2d017836a2bbb48d0b32f7983b0",
+        redirect_uri:"https://localhost/kakao/access",
+        code: code
+    },
+    headers: {
+        "content-type" : "application/x-www-form-urlencoded"
+    },
+    json: true
+  }
+  //const cb = await request(option);
+  var out = request(options , function(error, res, body){
+      return res;
+  })
+  res.json(out);
+})
+
+app.get('/kakao/access',(req,res)=>{
+  var accessToken = req.
+})
+
+app.post('/kakao/register',(req,res)=>{
+
+})
+
+
 
 //DB 저장용
 app.post('/createReserve',(req,res)=>{
