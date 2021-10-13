@@ -24,7 +24,7 @@ userSchema.methods.comparePassword=function(plainPassword, cb){
 
 userSchema.methods.generateToken=function(cb){
     const user=this;
-    const token = jwt.sign({id:this._id},"secretToken",{ expiresIn: '30m'});
+    const token = jwt.sign({id:this._id},"secretToken",{ expiresIn: '24h'});
     user.token=token;
     user.save(function(err, user){
         if(err) return cb(err);
