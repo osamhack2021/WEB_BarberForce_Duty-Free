@@ -33,7 +33,6 @@ export default {
     { src: '~/plugins/vue-awesome-swiper.js', mode: 'client' },
     '@/plugins/api.js',
     '@/plugins/auth.js',
-    '@/plugins/fetch-user.js',
     '@/plugins/vee-validate.js',
   ],
 
@@ -98,6 +97,11 @@ export default {
     position: 'top-right',
     duration: 3000,
     keepOnHover: true,
+  },
+
+  // nuxt router (for global middleware (fetch-user))
+  router: {
+    middleware: 'fetch-user',
   },
 
   // Nuxt onesignal module

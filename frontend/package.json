@@ -9,6 +9,7 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
+    "lint:fix": "eslint --ext \".js,.vue\" --ignore-path .gitignore . --fix",
     "test": "echo 'Tests are not written yet.'"
   },
   "dependencies": {
