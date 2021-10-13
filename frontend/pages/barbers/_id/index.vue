@@ -15,7 +15,8 @@
           <!-- time selector -->
           <div class="flex flex-col items-center mb-2">
             <div class="mb-2">
-              <input v-model="date" class="rounded border py-1 px-2 w-full max-w-md" type="datetime-local" />
+              <!-- <DatePicker v-model="date" :disabled-dates="disabledDates" /> -->
+              <DatePicker v-model="date" mode="dateTime" :minute-increment="30" is24hr />
             </div>
           </div>
           <!-- additional message input -->
@@ -81,13 +82,20 @@
 
 <script>
 import moment from 'moment';
+// import Calendar from 'v-calendar/lib/components/calendar.umd';
+import DatePicker from 'v-calendar/lib/components/date-picker.umd';
 
 export default {
   middleware: 'auth',
+  components: {
+    // Calendar,
+    DatePicker,
+  },
   data() {
     return {
       barber: null,
-      date: new Date().toISOString(),
+      reservations: null,
+      date: moment().add(1, 'd').set('h', 18).set('m', 0).toString(),
       description: '',
       map: null,
     };
@@ -99,14 +107,19 @@ export default {
       });
     },
   },
-  mounted() {
-    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
-      this.barber = data;
-    });
+  async fetch() {
+    const { data } = await this.$api.barbers.show(this.$route.params.id);
+    this.barber = data;
   },
   methods: {
     book() {
       const date = moment(this.date);
+
+      if (date.hours() < 18 || date.hours() >= 21) {
+        this.$toast.error('예약 시간은 18시 00분부터 20시 30분까지만 가능합니다.');
+        return;
+      }
+
       const year = date.year();
       const month = date.month() + 1;
       const day = date.date();
