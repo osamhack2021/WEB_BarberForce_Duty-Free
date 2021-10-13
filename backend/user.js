@@ -3,12 +3,11 @@ const jwt=require('jsonwebtoken');
 //const bcrypt=require('bcrypt'); //PW 암호화
 
 const userSchema = new mongoose.Schema({
-  email: String,
+  email: {type: String, required: true},
   password: String,
-  passowrd_confirm: String,
-  name: String,
-  soldier_id: String,
-  token: String
+  name: {type: String, required: true},
+  soldier_id: {type: String, required: true, defaults: ""},
+  token: {type: String, defaults: ""}
 });
 
 userSchema.methods.comparePassword=function(plainPassword, cb){

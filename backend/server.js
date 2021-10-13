@@ -8,6 +8,8 @@ const cors = require('cors');
 const path = require('path');
 const request = require('request-promise');
 
+const axios = require('axios');
+
 const key = require('./auth/key');
 const moment = require('./moment');
 const db = require('./db');
@@ -263,15 +265,49 @@ app.get('/kakao/access',(req,res)=>{
     },
     json: true
   }
+
+  var accessToken;
   //const cb = await request(option);
   var out = request(options , function(error, response, body){
-    console.log(response)
-      return res.json({
-        token: response,
-        code: code
-      })
+    accessToken = response.token.body.access_token;
   })
 
+  const instance = axios.create();
+  instance.defaults.headers.common['Authorization'] = accessToken;
+  var email;
+  var name;
+  intstance.get("https://api.barberforce.shop/kakao/access",{
+  }).then(function(response){
+    email = response.data.kakao_account.email;
+    name = response.data.kakao_account.name;
+  })
+
+  User.findOne({email:email},(err,user)=>{
+    //DB에 존재하는 사용자인 경우
+    if(user){
+      user.generateToken((err, user)=>{
+        var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+        if(err) return res.status(401).send(err);
+        // 토큰을 쿠키에 저장
+        return res.cookie("x_auth", user.token)
+        .status(200)
+        .redirect(url)
+      });
+    }
+  })
+
+  //DB에 존재하지 않는 사용자인 경우
+  User.insertMany({"email":email,"name":name});
+  User.findOne({email: email},(err,user)=>{
+    user.generateToken((err, user)=>{
+      var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
+      if(err) return res.status(401).send(err);
+      // 토큰을 쿠키에 저장
+      return res.cookie("x_auth", user.token)
+      .status(200)
+      .redirect(url)
+    });
+  })
 })
 
 app.post('/kakao/register',(req,res)=>{
