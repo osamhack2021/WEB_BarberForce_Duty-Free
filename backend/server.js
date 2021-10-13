@@ -272,6 +272,9 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = response.token.body.access_token;
   })
 
+  //여기까지 되는거 확인
+
+  //
   const instance = axios.create();
   instance.defaults.headers.common['Authorization'] = accessToken;
   var email;
