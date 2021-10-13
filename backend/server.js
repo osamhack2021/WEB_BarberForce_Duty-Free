@@ -289,9 +289,7 @@ app.get('/kakao/access',(req,res)=>{
         var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
         if(err) return res.status(401).send(err);
         // 토큰을 쿠키에 저장
-        return res.cookie("x_auth", user.token)
-        .status(200)
-        .redirect(url)
+        return res.redirect(url)
       });
     }
   })
@@ -303,9 +301,7 @@ app.get('/kakao/access',(req,res)=>{
       var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
       if(err) return res.status(401).send(err);
       // 토큰을 쿠키에 저장
-      return res.cookie("x_auth", user.token)
-      .status(200)
-      .redirect(url)
+      return res.redirect(url)
     });
   })
 })
