@@ -272,6 +272,8 @@ app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
 
 app.get('/kakao/access',(req,res)=>{
   var code = req.query.code;
+  return res.json({code:code})
+  /*
   console.log(code);
   const options = {
     uri: "https://kauth.kakao.com/oauth/token",
@@ -295,6 +297,7 @@ app.get('/kakao/access',(req,res)=>{
         code: code
       })
   })
+  */
 })
 
 app.post('/kakao/register',(req,res)=>{
