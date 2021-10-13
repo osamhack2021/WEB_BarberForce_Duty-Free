@@ -270,7 +270,7 @@ app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
 
 })
 
-app.get('/kakao/access?code=KAKAO_CODE',(req,res)=>{
+app.get('/kakao/access',(req,res)=>{
   var code = req.query.cod;
   console.log(code);
   const options = {
