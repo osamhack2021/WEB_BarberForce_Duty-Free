@@ -276,7 +276,7 @@ app.get('/kakao/access',(req,res)=>{
   instance.defaults.headers.common['Authorization'] = accessToken;
   var email;
   var name;
-  intstance.get("https://api.barberforce.shop/kakao/access",{
+  instance.get("https://api.barberforce.shop/kakao/access",{
   }).then(function(response){
     email = response.data.kakao_account.email;
     name = response.data.kakao_account.name;
