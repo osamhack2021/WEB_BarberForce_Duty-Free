@@ -1,7 +1,8 @@
 <template>
   <main class="container pb-20">
     <!-- 미용실 carousel -->
-    <BarberCarousel />
+    <ReservationPreview v-if="firstReservation" :reservation="firstReservation" />
+    <BarberCarousel v-else />
     <div class="p-3">
       <!-- '머리깎고 뭐하지?' section -->
       <section class="mb-12">
@@ -78,6 +79,16 @@
 <script>
 export default {
   middleware: 'auth',
+  data() {
+    return {
+      firstReservation: null,
+    };
+  },
+  async fetch() {
+    const { data } = await this.$api.reservations.list();
+    const reservations = data.reservations;
+    this.firstReservation = reservations[0];
+  },
   methods: {
     logout() {
       this.$auth.logout();
