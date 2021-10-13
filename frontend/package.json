@@ -22,6 +22,7 @@
     "moment": "^2.29.1",
     "nuxt": "^2.15.7",
     "swiper": "^5.4.5",
+    "v-calendar": "^2.3.4",
     "vee-validate": "^3.4.13",
     "vue-awesome-swiper": "^4.1.1",
     "vue-star-rating": "^1.7.0"

@@ -24,7 +24,7 @@
           <!-- description -->
           <div class="text-center">
             <div class="font-bold">사장님께 용무</div>
-            <div class="border bg-white p-2">
+            <div class="border bg-white break-all p-2">
               {{ description || '내용이 없습니다.' }}
             </div>
           </div>

@@ -15,13 +15,41 @@
           <!-- time selector -->
           <div class="flex flex-col items-center mb-2">
             <div class="mb-2">
-              <input v-model="date" class="rounded border py-1 px-2 w-full max-w-md" type="datetime-local" />
+              <!-- <DatePicker v-model="date" :disabled-dates="disabledDates" /> -->
+              <DatePicker v-model="date" mode="dateTime" :minute-increment="30" is24hr />
             </div>
           </div>
           <!-- additional message input -->
-          <div class="flex flex-col items-center mb-2">
-            <div class="font-bold">사장님께 용무</div>
-            <textarea v-model="description" class="rounded border py-1 px-2 w-full max-w-md" rows="5"></textarea>
+          <div class="mb-2">
+            <ValidationObserver class="block w-full" ref="description">
+              <ValidationProvider
+                class="flex justify-center w-full"
+                v-slot="{ errors, classes }"
+                name="용무"
+                rules="required|min:5|max:140"
+              >
+                <div class="w-full max-w-md">
+                  <div class="font-bold text-left mb-1">
+                    사장님께 용무
+                    <span class="text-gray-500 text-sm font-light ml-3">{{ description.length }}/140</span>
+                  </div>
+                  <textarea
+                    v-model="description"
+                    class="rounded border py-1 px-2 w-full max-w-md focus:outline-none focus:border-brand"
+                    rows="5"
+                  ></textarea>
+                  <transition name="fade">
+                    <div
+                      v-if="errors.length > 0"
+                      class="max-w-md text-left text-xs md:text-sm text-red-400"
+                      :class="classes"
+                    >
+                      {{ errors[0] }}
+                    </div>
+                  </transition>
+                </div>
+              </ValidationProvider>
+            </ValidationObserver>
           </div>
           <!-- submit button -->
           <div class="flex justify-end">
@@ -31,7 +59,10 @@
         <!-- reviews section -->
         <div class="mb-6">
           <CommonHeading class="mb-2">REVIEWS</CommonHeading>
-          <div class="rounded border w-full bg-gray-50 text-center py-3 px-6">구현 준비중</div>
+          <template v-if="reviews.length === 0">
+            <div class="text-sm text-center md:text-base">아직 리뷰가 없습니다!</div>
+          </template>
+          <ReviewListItem v-for="review in reviews" :key="review._id" :review="review" />
         </div>
         <!-- info section -->
         <div class="mb-6">
@@ -81,13 +112,21 @@
 
 <script>
 import moment from 'moment';
+// import Calendar from 'v-calendar/lib/components/calendar.umd';
+import DatePicker from 'v-calendar/lib/components/date-picker.umd';
 
 export default {
   middleware: 'auth',
+  components: {
+    // Calendar,
+    DatePicker,
+  },
   data() {
     return {
       barber: null,
-      date: new Date().toISOString(),
+      reservations: null,
+      reviews: [],
+      date: moment().add(1, 'd').set('h', 18).set('m', 0).toString(),
       description: '',
       map: null,
     };
@@ -99,14 +138,28 @@ export default {
       });
     },
   },
-  mounted() {
-    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
-      this.barber = data;
-    });
+  async fetch() {
+    const { data: barber } = await this.$api.barbers.show(this.$route.params.id);
+    this.barber = barber;
+
+    const { data: reviewResponse } = await this.$api.barbers.reviews(this.$routes.params.id);
+    this.reviews = reviewResponse.reviews;
   },
   methods: {
-    book() {
+    async book() {
       const date = moment(this.date);
+
+      if (date.hours() < 18 || date.hours() >= 21) {
+        this.$toast.error('예약 시간은 18시 00분부터 20시 30분까지만 가능합니다.');
+        return;
+      }
+
+      const valid = await this.$refs.description.validate();
+      if (!valid) {
+        this.$toast.error(`'사장님께 용무' 입력을 확인해주세요!`);
+        return;
+      }
+
       const year = date.year();
       const month = date.month() + 1;
       const day = date.date();

@@ -6,6 +6,9 @@ const jwt = require('jsonwebtoken');
 const url = require('url')
 const cors = require('cors');
 const path = require('path');
+const request = require('request-promise');
+
+const axios = require('axios');
 
 const key = require('./auth/key');
 const moment = require('./moment');
@@ -114,6 +117,16 @@ app.post('/register',(req,res)=>{
 });
 
 app.get('/me', (req, res) => {
+  try{
+    var check = jwt.verify(req.headers.authorization.split(' ')[1],"secretToken");
+    if(check){
+      console.log("검증",check.test);
+    }
+  } catch(e){
+    console.log(e);
+  }
+
+
   // authorization 헤더가 없을 경우
   if (!req.headers.authorization) {
     return res.status(401).json({
@@ -211,7 +224,7 @@ app.get('/barbers/:id/reviews',(req,res)=>{
 app.post('/barbers/:id/reviews',(req,res)=>{
   var today = new Date();
   User.findOne({token: req.headers.authorization.split(' ')[1]},(err,user)=>{
-    Review.insertMany({"barbers_id":req.params.id,"thumb":"","reviewer":user._id,"body":req.body.body,"rating":req.body.rating,"createdAt":today});
+    Review.insertMany({"barbers_id":req.params.id,"thumb":"","reviewer":user.name,"body":req.body.body,"rating":req.body.rating,"createdAt":today});
     return res.json({
       mss: "추가"
     })
@@ -229,6 +242,75 @@ app.get('/reservations',(req,res)=>{
     })
   })
 });
+
+app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
+
+})
+
+app.get('/kakao/access',(req,res)=>{
+
+  var code = req.query.code;
+
+  const options = {
+    uri: "https://kauth.kakao.com/oauth/token",
+    method: "POST",
+    form:{
+        grant_type : "authorization_code",
+        client_id : "41fec2d017836a2bbb48d0b32f7983b0",
+        redirect_uri: "https://api.barberforce.shop/kakao/access",
+        code: code
+    },
+    headers: {
+        "content-type" : "application/x-www-form-urlencoded"
+    },
+    json: true
+  }
+
+  var accessToken;
+  //const cb = await request(option);
+  var out = request(options , function(error, response, body){
+    accessToken = response.token.body.access_token;
+  })
+
+  const instance = axios.create();
+  instance.defaults.headers.common['Authorization'] = accessToken;
+  var email;
+  var name;
+  instance.get("https://api.barberforce.shop/kakao/access",{
+  }).then(function(response){
+    email = response.data.kakao_account.email;
+    name = response.data.kakao_account.name;
+  })
+
+  User.findOne({email:email},(err,user)=>{
+    //DB에 존재하는 사용자인 경우
+    if(user){
+      user.generateToken((err, user)=>{
+        var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+        if(err) return res.status(401).send(err);
+        // 토큰을 쿠키에 저장
+        return res.redirect(url)
+      });
+    }
+  })
+
+  //DB에 존재하지 않는 사용자인 경우
+  User.insertMany({"email":email,"name":name});
+  User.findOne({email: email},(err,user)=>{
+    user.generateToken((err, user)=>{
+      var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
+      if(err) return res.status(401).send(err);
+      // 토큰을 쿠키에 저장
+      return res.redirect(url)
+    });
+  })
+})
+
+app.post('/kakao/register',(req,res)=>{
+
+})
+
+
 
 //DB 저장용
 app.post('/createReserve',(req,res)=>{

@@ -33,24 +33,7 @@
       <template v-if="reviews.length === 0">
         <div class="text-sm md:text-base p-2">리뷰가 아직 없습니다!</div>
       </template>
-      <div v-for="review in reviews" :key="review._id" class="flex p-2">
-        <!-- thumb section -->
-        <div class="review-thumb mr-2">
-          <img class="rounded object-cover w-full h-full" :src="review.thumb" />
-        </div>
-        <!-- content section -->
-        <div class="flex-1">
-          <div class="flex items-start mb-2">
-            <span class="flex items-center text-lg">
-              <img class="w-7 h-7 mr-1" src="~/assets/img/star.svg" />
-              {{ review.rating.toFixed(1) }}
-            </span>
-            <span class="text-sm text-gray-300 ml-auto">{{ review.createdAt }}</span>
-          </div>
-          <div class="text-sm mb-6">{{ review.body }}</div>
-          <div class="text-sm">리뷰 남긴이: {{ review.reviewer }}</div>
-        </div>
-      </div>
+      <ReviewListItem v-for="review in reviews" :key="review._id" :review="review" />
     </div>
   </div>
 </template>
@@ -69,10 +52,9 @@ export default {
       opened: false,
     };
   },
-  mounted() {
-    this.$api.barbers.reviews(this.barber.id).then(({ data }) => {
-      this.reviews = data.reviews;
-    });
+  async fetch() {
+    const { data } = await this.$api.barbers.reviews(this.barber.id);
+    this.reviews = data.reviews;
   },
   methods: {
     toggle() {
@@ -102,22 +84,6 @@ export default {
 @media (min-width: 1024px) {
   .barber-thumb {
     width: 150px;
-  }
-}
-
-.review-thumb {
-  width: 100px;
-}
-
-@media (min-width: 768px) {
-  .review-thumb {
-    width: 105px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .review-thumb {
-    width: 110px;
   }
 }
 </style>
