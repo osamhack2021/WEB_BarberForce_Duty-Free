@@ -53,7 +53,7 @@
                     </span>
                     <span class="items-center hidden md:flex">
                       <img class="mr-2 w-7" src="@/assets/img/phone.svg" />
-                      031-669-6660
+                      {{ barber.phone }}
                     </span>
                   </div>
                 </div>
@@ -68,7 +68,7 @@
               <div class="">매주 월요일은 정기휴무입니다.</div>
               <span class="flex items-center mt-3 md:hidden">
                 <img class="mr-2 w-7" src="@/assets/img/phone.svg" />
-                031-669-6660
+                {{ barber.phone }}
               </span>
               <!-- <div class="rounded border w-full bg-gray-50 text-center py-3 px-6">구현 준비중</div> -->
             </div>
@@ -92,34 +92,15 @@ export default {
       map: null,
     };
   },
+  mounted() {
+    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
+      this.barber = data;
+    });
+  },
   watch: {
     barber(val) {
       this.$nextTick(() => {
-        const geocoder = new window.kakao.maps.services.Geocoder();
-        geocoder.addressSearch(val.location_detail, (result, status) => {
-          if (status === window.kakao.maps.services.Status.OK) {
-            const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
-
-            const container = this.$refs.map;
-            const options = {
-              center: coords,
-              draggable: false,
-              level: 3,
-            };
-            const map = new window.kakao.maps.Map(container, options);
-
-            const marker = new window.kakao.maps.Marker({
-              map,
-              position: coords,
-            });
-
-            const infoWindow = new window.kakao.maps.InfoWindow({
-              content: `<div style="width: 150px; text-align:center; padding: 0.5rem 0.25rem">${val.title}</div>`,
-              // content: `<div style="width: 150px; text-align:center; padding: 0.5rem 0.25rem">${val.title}</div>`,
-            });
-            infoWindow.open(map, marker);
-          }
-        });
+        this.drawMap(val.title, val.location_detail);
       });
     },
   },
@@ -139,6 +120,33 @@ export default {
       this.$router.push(
         `/barbers/${this.barber.id}/book?year=${year}&month=${month}&day=${day}&time=${time}&description=${description}`
       );
+    },
+    drawMap(title, location) {
+      const geocoder = new window.kakao.maps.services.Geocoder();
+      geocoder.addressSearch(location, (result, status) => {
+        if (status === window.kakao.maps.services.Status.OK) {
+          const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+
+          const container = this.$refs.map;
+          const options = {
+            center: coords,
+            draggable: false,
+            level: 3,
+          };
+          const map = new window.kakao.maps.Map(container, options);
+
+          const marker = new window.kakao.maps.Marker({
+            map,
+            position: coords,
+          });
+
+          const infoWindow = new window.kakao.maps.InfoWindow({
+            content: `<div style="width: 150px; text-align:center; padding: 0.5rem 0.25rem">${title}</div>`,
+            // content: `<div style="width: 150px; text-align:center; padding: 0.5rem 0.25rem">${val.title}</div>`,
+          });
+          infoWindow.open(map, marker);
+        }
+      });
     },
   },
 };
