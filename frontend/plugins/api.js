@@ -32,7 +32,7 @@ const barbers = client => ({
 
 // reservations
 const reservations = client => ({
-  mine: async () => {
+  list: async () => {
     return await client.get('/reservations');
   },
 });
