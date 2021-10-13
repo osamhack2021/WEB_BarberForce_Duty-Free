@@ -272,16 +272,14 @@ app.get('/kakao/callback?code=KAKAO_CODE',(req,res)=>{
 
 app.get('/kakao/access',(req,res)=>{
   var code = req.query.code;
-  return res.json({code:code})
-  /*
-  console.log(code);
+
   const options = {
     uri: "https://kauth.kakao.com/oauth/token",
     method: "POST",
     form:{
         grant_type : "authorization_code",
-        client_id :"41fec2d017836a2bbb48d0b32f7983b0",
-        redirect_uri:"https://localhost/kakao/access",
+        client_id : "41fec2d017836a2bbb48d0b32f7983b0",
+        redirect_uri: "https://localhost/kakao/access",
         code: code
     },
     headers: {
