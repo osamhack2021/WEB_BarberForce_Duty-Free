@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import { ValidationProvider, ValidationObserver , configure, extend } from 'vee-validate';
+import { ValidationProvider, ValidationObserver, configure, extend } from 'vee-validate';
 
-import { required, email, min, confirmed } from 'vee-validate/dist/rules';
+import { required, email, min, confirmed, max } from 'vee-validate/dist/rules';
 import { messages } from 'vee-validate/dist/locale/ko.json';
 
 const rules = {
@@ -9,6 +9,7 @@ const rules = {
   email,
   min,
   confirmed,
+  max,
 };
 
 Object.keys(rules).forEach(rule => {
