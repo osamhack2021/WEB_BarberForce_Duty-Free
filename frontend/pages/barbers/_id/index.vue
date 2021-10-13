@@ -101,18 +101,18 @@ export default {
   watch: {
     barber(val) {
       this.$nextTick(() => {
-        const container = this.$refs.map;
-        const options = {
-          center: new window.kakao.maps.LatLng(val.location_detail.latitude, val.location_detail.longitude),
-          draggable: false,
-          level: 3,
-        };
-        const map = new window.kakao.maps.Map(container, options);
-
         const geocoder = new window.kakao.maps.services.Geocoder();
         geocoder.addressSearch(val.location_detail, (result, status) => {
           if (status === window.kakao.maps.services.Status.OK) {
             const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+
+            const container = this.$refs.map;
+            const options = {
+              center: coords,
+              draggable: false,
+              level: 3,
+            };
+            const map = new window.kakao.maps.Map(container, options);
 
             const marker = new window.kakao.maps.Marker({
               map,
@@ -124,8 +124,6 @@ export default {
               // content: `<div style="width: 150px; text-align:center; padding: 0.5rem 0.25rem">${val.title}</div>`,
             });
             infoWindow.open(map, marker);
-
-            map.setCenter(coords);
           }
         });
       });
