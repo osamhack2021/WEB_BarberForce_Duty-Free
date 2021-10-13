@@ -32,7 +32,10 @@
         <!-- reviews section -->
         <div class="mb-6">
           <CommonHeading class="mb-2">REVIEWS</CommonHeading>
-          <div class="rounded border w-full bg-gray-50 text-center py-3 px-6">구현 준비중</div>
+          <template v-if="reviews.length === 0">
+            <div class="text-sm text-center md:text-base">아직 리뷰가 없습니다!</div>
+          </template>
+          <ReviewListItem v-for="review in reviews" :key="review._id" :review="review" />
         </div>
         <!-- info section -->
         <div class="mb-6">
@@ -95,6 +98,7 @@ export default {
     return {
       barber: null,
       reservations: null,
+      reviews: [],
       date: moment().add(1, 'd').set('h', 18).set('m', 0).toString(),
       description: '',
       map: null,
@@ -108,8 +112,11 @@ export default {
     },
   },
   async fetch() {
-    const { data } = await this.$api.barbers.show(this.$route.params.id);
-    this.barber = data;
+    const { data: barber } = await this.$api.barbers.show(this.$route.params.id);
+    this.barber = barber;
+
+    const { data: reviewResponse } = await this.$api.barbers.reviews(this.$routes.params.id);
+    this.reviews = reviewResponse.reviews;
   },
   methods: {
     book() {
