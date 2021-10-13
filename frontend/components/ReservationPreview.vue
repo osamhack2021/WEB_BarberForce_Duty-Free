@@ -19,7 +19,7 @@
               <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
               {{ barber.location }}
             </div>
-            <NuxtLink class="underline mt-auto" to="/">예약 수정/취소하기</NuxtLink>
+            <NuxtLink class="underline mt-auto" to="/history">예약 수정/취소하기</NuxtLink>
             <template v-if="timeover">
               <div class="absolute top-full" style="right: 5%; transform: translate(0, -75%)">
                 <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
@@ -75,7 +75,7 @@
               </div>
             </div>
             <div>
-              <NuxtLink class="underline" to="/">예약 수정/취소하기</NuxtLink>
+              <NuxtLink class="underline" to="/history">예약 수정/취소하기</NuxtLink>
             </div>
           </div>
           <template v-if="timeover">
