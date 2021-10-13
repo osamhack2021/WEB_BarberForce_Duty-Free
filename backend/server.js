@@ -301,7 +301,9 @@ app.get('/kakao/access',(req,res)=>{
       var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
       if(err) return res.status(401).send(err);
       // 토큰을 쿠키에 저장
-      return res.redirect(url)
+      return res.json({
+        url: url
+      })
     });
   })
 })
