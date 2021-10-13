@@ -53,7 +53,6 @@ export default {
       try {
         await this.$auth.login(this.credentials);
       } catch (e) {
-        console.error(e);
         if (e.response && e.response.data && e.response.data.message) {
           const message = e.response.data.message;
           if (message === 'Unvalid email') {

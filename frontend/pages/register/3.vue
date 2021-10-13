@@ -4,7 +4,7 @@
       <form @submit.prevent="handleSubmit(submit)">
         <div class="mb-6">
           <label class="block mb-1" for="email">이름을 알려주세요.</label>
-          <ValidationProvider name="이름" rules="required" v-slot="{ errors, classes }">
+          <ValidationProvider v-slot="{ errors, classes }" name="이름" rules="required">
             <input
               id="name"
               v-model="name"
@@ -28,7 +28,7 @@
         </div>
         <div class="mb-6">
           <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
-          <ValidationProvider name="군번" rules="required" v-slot="{ errors, classes }">
+          <ValidationProvider v-slot="{ errors, classes }" name="군번" rules="required">
             <input
               id="soldier_id"
               v-model="soldier_id"
@@ -96,7 +96,6 @@ export default {
       try {
         await this.$auth.register();
       } catch (registerError) {
-        console.error(registerError);
         this.$toast.error(`에러가 발생했습니다!`);
       }
     },

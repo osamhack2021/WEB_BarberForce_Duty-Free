@@ -15,13 +15,13 @@
           <!-- time selector -->
           <div class="flex flex-col items-center mb-2">
             <div class="mb-2">
-              <input class="rounded border py-1 px-2 w-full max-w-md" type="datetime-local" v-model="date" />
+              <input v-model="date" class="rounded border py-1 px-2 w-full max-w-md" type="datetime-local" />
             </div>
           </div>
           <!-- additional message input -->
           <div class="flex flex-col items-center mb-2">
             <div class="font-bold">사장님께 용무</div>
-            <textarea class="rounded border py-1 px-2 w-full max-w-md" rows="5" v-model="description"></textarea>
+            <textarea v-model="description" class="rounded border py-1 px-2 w-full max-w-md" rows="5"></textarea>
           </div>
           <!-- submit button -->
           <div class="flex justify-end">
@@ -92,12 +92,6 @@ export default {
       map: null,
     };
   },
-  mounted() {
-    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
-      this.barber = data;
-      console.log(data);
-    });
-  },
   watch: {
     barber(val) {
       this.$nextTick(() => {
@@ -128,6 +122,11 @@ export default {
         });
       });
     },
+  },
+  mounted() {
+    this.$api.barbers.show(this.$route.params.id).then(({ data }) => {
+      this.barber = data;
+    });
   },
   methods: {
     book() {
