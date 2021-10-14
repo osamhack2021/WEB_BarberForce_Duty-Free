@@ -21,10 +21,10 @@
           </div>
           <!-- additional message input -->
           <div class="mb-2">
-            <ValidationObserver class="block w-full" ref="description">
+            <ValidationObserver ref="description" class="block w-full">
               <ValidationProvider
-                class="flex justify-center w-full"
                 v-slot="{ errors, classes }"
+                class="flex justify-center w-full"
                 name="용무"
                 rules="required|min:5|max:140"
               >
@@ -116,11 +116,11 @@ import moment from 'moment';
 import DatePicker from 'v-calendar/lib/components/date-picker.umd';
 
 export default {
-  middleware: 'auth',
   components: {
     // Calendar,
     DatePicker,
   },
+  middleware: 'auth',
   data() {
     return {
       barber: null,
@@ -131,19 +131,19 @@ export default {
       map: null,
     };
   },
-  watch: {
-    barber(val) {
-      this.$nextTick(() => {
-        this.drawMap(val.title, val.location_detail);
-      });
-    },
-  },
   async fetch() {
     const { data: barber } = await this.$api.barbers.show(this.$route.params.id);
     this.barber = barber;
 
     const { data: reviewResponse } = await this.$api.barbers.reviews(this.$routes.params.id);
     this.reviews = reviewResponse.reviews;
+  },
+  watch: {
+    barber(val) {
+      this.$nextTick(() => {
+        this.drawMap(val.title, val.location_detail);
+      });
+    },
   },
   methods: {
     async book() {

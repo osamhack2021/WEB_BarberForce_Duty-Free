@@ -42,6 +42,10 @@ export default {
       reservations: [],
     };
   },
+  async fetch() {
+    const { data } = await this.$api.reservations.list();
+    this.reservations = data.reservations;
+  },
   computed: {
     upcomming() {
       return this.reservations.filter(reservation => moment().isBefore(moment(reservation.time)));
@@ -49,10 +53,6 @@ export default {
     previous() {
       return this.reservations.filter(reservation => moment(reservation.time).isBefore(moment()));
     },
-  },
-  async fetch() {
-    const { data } = await this.$api.reservations.list();
-    this.reservations = data.reservations;
   },
 };
 </script>

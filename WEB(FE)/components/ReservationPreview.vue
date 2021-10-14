@@ -108,7 +108,7 @@
             <div class="flex items-end font-bold mb-1">
               간단 리뷰 작성하기 <span class="text-gray-400 text-xs font-light ml-2">5/140</span>
             </div>
-            <ValidationProvider name="리뷰" rules="required" v-slot="{ errors }">
+            <ValidationProvider v-slot="{ errors }" name="리뷰" rules="required">
               <textarea
                 v-model="review.body"
                 class="w-full rounded border p-2 focus:outline-none"
@@ -158,6 +158,10 @@ export default {
       },
     };
   },
+  async fetch() {
+    const { data } = await this.$api.barbers.show(this.reservation.barbers_id);
+    this.barber = data;
+  },
   computed: {
     timeover() {
       const now = new Date();
@@ -172,18 +176,12 @@ export default {
   methods: {
     async submitReview() {
       try {
-        console.log(this.barber);
         await this.$api.barbers.createReview(this.barber.id, this.review);
         this.$toast.success('리뷰를 작성했습니다!');
       } catch (e) {
-        console.error(e);
         this.$toast.error('에러가 발생했습니다!');
       }
     },
-  },
-  async fetch() {
-    const { data } = await this.$api.barbers.show(this.reservation.barbers_id);
-    this.barber = data;
   },
 };
 </script>
