@@ -31,4 +31,20 @@ userSchema.methods.generateToken=function(cb){
     });
 }
 
+userSchema.method.insertUser=function(cb,email,name){
+  const user=this;
+  user.insertMany({"email":email,"name":name,"password":null,"token":"",})
+  user.save(function(err, user){
+      if(err) return cb(err);
+      cb(null, user);
+  });
+}
+
+userSchema.method.saveUser=function(cb){
+  user.save(function(err, user){
+      if(err) return cb(err);
+      cb(null, user);
+  });
+}
+
 module.exports = mongoose.model('User', userSchema);

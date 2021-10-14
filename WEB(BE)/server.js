@@ -329,13 +329,9 @@ app.get('/kakao/access',(req,res)=>{
           //DB에 존재하지 않는 사용자인 경우
 
             User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
-            User.save(function(err, user){
-                if(err) {
-                  return res.json({
-                    error: err
-                  });
-                }
-            });
+            User.find({},(err,user)=>{
+              user.saveUser((err,user));
+            })
             User.find({},(err,user2)=>{
               return res.json({
                 user: user2,
