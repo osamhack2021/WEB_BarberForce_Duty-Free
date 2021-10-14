@@ -348,8 +348,7 @@ app.get('/kakao/access',(req,res)=>{
     code: code,
     accessToken: accessToken,
     name: name,
-    email: email,
-    body: body
+    email: email
   })
 
 
