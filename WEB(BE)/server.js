@@ -271,21 +271,36 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = body.access_token
   })
 
+  const instance = {
+    uri: "https://kauth.kakao.com/oauth/token",
+    method: "POST",
+    form:{
 
-  const instance = axios.create();
-  instance.defaults.headers.common['Authorization'] = accessToken;
+    },
+    headers: {
+      "Authorization" : "Baerer " + accessToken
+    }
+  }
+
   var email;
   var name;
+  var phone;
   var url = "https://api.barberforce.shop/kakao/access";
-  instance.post(url,{
-  }).then(function(response){
-    return res.json({
-      response: response
-    })
-  }).catch(function(err){
-    return res.json({
-      err: err
-    })
+
+  out = request(instance, function(error, response, body){
+    email = body.kakao_account.email;
+    name = body.kakao_account.name;
+    phone = body.kakao_account.phone;
+    if(error){
+      return res.json({
+        err: err
+      })
+    }
+    else{
+      return res.json({
+        body: body
+      })
+    }
   })
 
   /*
