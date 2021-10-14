@@ -5,7 +5,6 @@ const User = require('../models/user');
 const fetchUser = require('../middleware/fetchUser');
 
 router.post('/login', (req, res) => {
-  // chan: 내부 수정은 나중에
   User.findOne({ email: req.body.email }, (err, user) => {
     if (!user) {
       return res.status(401).json({
@@ -14,24 +13,22 @@ router.post('/login', (req, res) => {
       });
     }
     user.comparePassword(req.body.password, (err, isMatch) => {
-      if (!isMatch)
+      if (!isMatch) {
         return res.status(401).json({
           loginSuccess: false,
           message: 'Wrong password',
         });
-      user.generateToken((err, user) => {
-        if (err) return res.status(401).send(err);
-        // chan: 쿠키 저장 부분은 뺌 (프론트에서 쿠키로 안써서)
-        res.status(200).json({
-          token: user.token,
-        });
+      }
+
+      const token = user.generateToken();
+      res.json({
+        token: token,
       });
     });
   });
 });
 
-router.post('register', (req, res) => {
-  // chan: 내부 수정은 나중에
+router.post('/register', (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     //이미 사용중인 email인 경우
     if (user) {
@@ -60,7 +57,7 @@ router.post('register', (req, res) => {
             token: '',
           },
         ],
-        function (err, result) {
+        (err, result) => {
           if (err) {
             callback(err, null);
             res.status(401);
