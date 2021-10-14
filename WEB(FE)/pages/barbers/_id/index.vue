@@ -176,7 +176,6 @@ export default {
       );
     },
     drawMap(title, location) {
-      console.log(window.kakao);
       const geocoder = new window.kakao.maps.services.Geocoder();
       geocoder.addressSearch(location, (result, status) => {
         if (status === window.kakao.maps.services.Status.OK) {
