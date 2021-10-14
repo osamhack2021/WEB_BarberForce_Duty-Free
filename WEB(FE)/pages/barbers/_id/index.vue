@@ -132,10 +132,11 @@ export default {
     };
   },
   async fetch() {
-    const { data: barber } = await this.$api.barbers.show(this.$route.params.id);
+    const id = this.$route.params.id;
+    const { data: barber } = await this.$api.barbers.show(id);
     this.barber = barber;
 
-    const { data: reviewResponse } = await this.$api.barbers.reviews(this.$routes.params.id);
+    const { data: reviewResponse } = await this.$api.barbers.reviews(id);
     this.reviews = reviewResponse.reviews;
   },
   watch: {
@@ -170,6 +171,7 @@ export default {
       );
     },
     drawMap(title, location) {
+      console.log(window.kakao);
       const geocoder = new window.kakao.maps.services.Geocoder();
       geocoder.addressSearch(location, (result, status) => {
         if (status === window.kakao.maps.services.Status.OK) {
