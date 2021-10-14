@@ -343,7 +343,7 @@ app.get('/kakao/access',(req,res)=>{
           })
 
           return res.json({
-            user: user2
+            user: user
           })
           /*
           user.generateToken((err, user)=>{
