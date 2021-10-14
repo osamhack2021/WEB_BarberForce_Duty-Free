@@ -306,11 +306,10 @@ app.get('/kakao/access',(req,res)=>{
             err: err
           })
         }
-        name = body.kakao_account.profile.nickname;
-        email = body.kakao_account.email;
         //값 체크
-
         else{
+          name = body.kakao_account.profile.nickname;
+          email = body.kakao_account.email;
           return res.json({
             code: code,
             accessToken: accessToken,
