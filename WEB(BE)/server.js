@@ -271,9 +271,10 @@ app.get('/kakao/access',(req,res)=>{
   var out = request(options , function(error, response, body){
     return res.json({
       response: response,
-      token: response.token,
+      body: body
+      /*token: response.token,
       body: response.token.body,
-      accessToken: response.token.body.access_token
+      accessToken: response.token.body.access_token*/
     })
   })
 
