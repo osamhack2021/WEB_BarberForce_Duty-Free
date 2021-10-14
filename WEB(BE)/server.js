@@ -325,34 +325,32 @@ app.get('/kakao/access',(req,res)=>{
                 else {return res.redirect(url)}
               });
             }
-            else{
-              User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
-              User.save(function(err, user){
-                  if(err) {
-                    return res.json({
-                      error: err
-                    });
-                  }
-              });
-              User.find({},(err,user2)=>{
-                return res.json({
-                  user: user2,
-                  error: err
-                })
-                /*
-                user.generateToken((err, user)=>{
-
-                  var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
-                  if(err) {return res.status(401).send(err);}
-                  else {return res.redirect(url)}
-                });
-                */
-              })
-            }
           })
           //DB에 존재하지 않는 사용자인 경우
+          else{
+            User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
+            User.save(function(err, user){
+                if(err) {
+                  return res.json({
+                    error: err
+                  });
+                }
+            });
+            User.find({},(err,user2)=>{
+              return res.json({
+                user: user2,
+                error: err
+              })
+              /*
+              user.generateToken((err, user)=>{
 
-
+                var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+                if(err) {return res.status(401).send(err);}
+                else {return res.redirect(url)}
+              });
+              */
+            })
+          }
           /*
           return res.json({
             code: code,
