@@ -6,12 +6,10 @@ const reservationSchema = new mongoose.Schema({
   day: Number,
   time: String,
   barbers_id: String, //ObjectId
-  user_id: String,    //ObjectId
+  user_id: String, //ObjectId
   userName: String,
   description: String,
-  done: Boolean
+  done: Boolean,
 });
-
-
 
 module.exports = mongoose.model('Reservation', reservationSchema);
