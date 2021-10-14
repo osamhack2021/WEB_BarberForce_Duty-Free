@@ -326,8 +326,9 @@ app.get('/kakao/access',(req,res)=>{
               });
             }
           })
+
           //DB에 존재하지 않는 사용자인 경우
-          user = new User();
+          var user = new User();
           user.email = email;
           user.name = name;
           user.token = "";
@@ -345,17 +346,11 @@ app.get('/kakao/access',(req,res)=>{
 
           user.generateToken((err, user)=>{
 
-            /*
-            var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
+            var url = "https://barberforce.shop/kakao/callback?token=" + user.token + "&fisrt=1";
             if(err) {return res.status(401).send(err);}
             else {return res.redirect(url)}
-            */
-            
-          });
 
-          return res.json({
-            user: user
-          })
+          });
 
           //User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
           /*
