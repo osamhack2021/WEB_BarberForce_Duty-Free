@@ -11,7 +11,7 @@ const barbersSchema = new mongoose.Schema({
   weekdayHour: String,
   holidayHour: String,
   description: String,
-  partnership: [String]
+  partnership: [String],
 });
 
 module.exports = mongoose.model('Barbers', barbersSchema);

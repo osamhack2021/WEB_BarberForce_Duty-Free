@@ -13,13 +13,13 @@ const key = require('./auth/key');
 const moment = require('./moment');
 const db = require('./db');
 
-const User = require('./user');
-const Reservation = require('./reservation');
-const Barbers = require('./barbers');
-const Review = require('./review');
-const Unit = require('./unit');
+const User = require('./models/user');
+const Reservation = require('./models/reservation');
+const Barbers = require('./models/barbers');
+const Review = require('./models/review');
+const Unit = require('./models/unit');
 
-//const route = require('./route.js');
+const authRouter = require('./routes/auth');
 
 db();
 
@@ -34,116 +34,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.post('/login', (req, res) => {
-  User.findOne({ email: req.body.email }, (err, user) => {
-    if (!user) {
-      return res.status(401).json({
-        loginSuccess: false,
-        message: 'Unvalid email',
-      });
-    }
-    user.comparePassword(req.body.password, (err, isMatch) => {
-      if (!isMatch)
-        return res.status(401).json({
-          loginSuccess: false,
-          message: 'Wrong password',
-        });
-      user.generateToken((err, user) => {
-        if (err) return res.status(401).send(err);
-        // 토큰을 쿠키에 저장
-        res.cookie('x_auth', user.token).status(200).json({
-          token: user.token,
-        });
-      });
-    });
-  });
-});
-
-app.post('/register', (req, res) => {
-  User.findOne({ email: req.body.email }, (err, user) => {
-    //이미 사용중인 email인 경우
-    if (user) {
-      return res.status(401).json({
-        registerSuccess: false,
-        message: 'Existing email',
-      });
-    }
-
-    User.findOne({ soldier_id: req.body.soldier_id }, (err, user) => {
-      //이미 사용중인 군번인 경우
-      if (user) {
-        return res.status(401).json({
-          registerSuccess: false,
-          message: 'Existing soldier_id',
-        });
-      }
-
-      User.insertMany(
-        [
-          {
-            email: req.body.email,
-            password: req.body.password,
-            name: req.body.name,
-            soldier_id: req.body.soldier_id,
-            token: '',
-          },
-        ],
-        function (err, result) {
-          if (err) {
-            callback(err, null);
-            res.status(401);
-            return;
-          }
-
-          User.findOne({ email: req.body.email }, (err, user) => {
-            if (user) {
-              console.log('사용자 추가 완료');
-              return res.status(200).json({
-                registerSuccess: true,
-              });
-            } else {
-              console.log('사용자 추가 실패');
-              return res.status(401).json({
-                registerSuccess: false,
-              });
-            }
-          });
-        }
-      );
-    });
-  });
-});
-
-app.get('/me', (req, res) => {
-  try {
-    var check = jwt.verify(req.headers.authorization.split(' ')[1], 'secretToken');
-    if (check) {
-      console.log('검증', check.test);
-    }
-  } catch (e) {
-    console.log(e);
-  }
-
-  // authorization 헤더가 없을 경우
-  if (!req.headers.authorization) {
-    return res.status(401).json({
-      message: 'Not Login',
-    });
-  }
-
-  User.findOne({ token: req.headers.authorization.split(' ')[1] }, (err, user) => {
-    if (user) {
-      return res.json({
-        name: user.name,
-        email: user.email,
-      });
-    } else {
-      return res.status(401).json({
-        message: 'Not Login',
-      });
-    }
-  });
-});
+app.use('', authRouter);
 
 app.get('/barbers', (req, res) => {
   var unitName;
