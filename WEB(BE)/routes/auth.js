@@ -4,8 +4,11 @@ const User = require('../models/user');
 
 const fetchUser = require('../middleware/fetchUser');
 
+// 이메일 로그인 처리 라우트
+// (async/await 으로 비동기 콜 처리 (callback hell 해결))
 router.post('/login', async (req, res) => {
   try {
+    // 이메일 중복 검사
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
       return res.status(401).json({
@@ -14,6 +17,7 @@ router.post('/login', async (req, res) => {
       });
     }
 
+    // 비밀번호 검사 (todo: 암호화 해시비교)
     const checkPassword = user.comparePassword(req.body.password);
     if (!checkPassword) {
       return res.status(401).json({
@@ -22,8 +26,11 @@ router.post('/login', async (req, res) => {
       });
     }
 
+    // JWT 토큰 생성 (DB 저장 X)
     const token = user.generateToken();
-    res.json({
+
+    // 토큰 반환
+    return res.json({
       token: token,
     });
   } catch (e) {
@@ -31,10 +38,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// 이메일 회원가입 처리 라우트
+// (async/await 으로 비동기 콜 처리 (callback hell 해결))
 router.post('/register', async (req, res) => {
   try {
+    // 이메일 중복체크
     const existEmail = await User.exists({ email: req.body.email });
-    //이미 사용중인 email인 경우
     if (existEmail) {
       return res.status(401).json({
         registerSuccess: false,
@@ -42,8 +51,8 @@ router.post('/register', async (req, res) => {
       });
     }
 
+    // 군번 중복체크
     const existSoldierId = await User.exists({ soldier_id: req.body.soldier_id });
-    //이미 사용중인 군번인 경우
     if (existSoldierId) {
       return res.status(401).json({
         registerSuccess: false,
@@ -51,6 +60,7 @@ router.post('/register', async (req, res) => {
       });
     }
 
+    // 새로운 User 생성 (insertMany 대신 create 사용)
     await User.create({
       email: req.body.email,
       password: req.body.password,
@@ -58,8 +68,8 @@ router.post('/register', async (req, res) => {
       soldier_id: req.body.soldier_id,
     });
 
+    // 만들어진 User 확인
     const createdUser = await User.findOne({ email: req.body.email });
-
     if (createdUser) {
       console.log('사용자 추가 완료');
 
@@ -78,7 +88,10 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// 로그인한 사람의 정보
+// (fetchUser 미들웨어를 사용함)
 router.get('/me', fetchUser, (req, res) => {
+  // fetchUser 에서 user를 변수화해주므로 바로 리턴하면 됨
   const user = req.user;
   res.json({
     email: user.email,
