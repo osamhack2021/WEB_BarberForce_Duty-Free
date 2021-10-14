@@ -10,7 +10,7 @@ const request = require('request-promise');
 const axios = require('axios');
 
 const key = require('./auth/key');
-const moment = require('./moment');
+const moment = require('moment');
 const db = require('./db');
 
 const User = require('./models/user');
