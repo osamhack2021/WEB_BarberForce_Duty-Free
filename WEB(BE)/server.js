@@ -269,7 +269,7 @@ app.get('/kakao/access',(req,res)=>{
   var accessToken;
   //const cb = await request(option);
   var out = request(options , function(error, response, body){
-    accessToken = response.access_token;
+    accessToken = response;
   })
 
   return res.json({
