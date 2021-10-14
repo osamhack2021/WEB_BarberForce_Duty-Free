@@ -12,18 +12,17 @@ router.post('/login', (req, res) => {
         message: 'Unvalid email',
       });
     }
-    user.comparePassword(req.body.password, (err, isMatch) => {
-      if (!isMatch) {
-        return res.status(401).json({
-          loginSuccess: false,
-          message: 'Wrong password',
-        });
-      }
-
-      const token = user.generateToken();
-      res.json({
-        token: token,
+    const checkPassword = user.comparePassword(req.body.password);
+    if (!checkPassword) {
+      return res.status(401).json({
+        loginSuccess: false,
+        message: 'Wrong password',
       });
+    }
+
+    const token = user.generateToken();
+    res.json({
+      token: token,
     });
   });
 });

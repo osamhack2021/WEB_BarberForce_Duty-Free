@@ -9,18 +9,11 @@ const userSchema = new mongoose.Schema({
   soldier_id: { type: String, defaults: '' },
 });
 
-userSchema.methods.comparePassword = function (plainPassword, cb) {
-  if (plainPassword == this.password) return cb(null, true);
-  else return cb(null, false);
-  /*
-    bcrypt.compare(plainPassword, this.password, function(err, isMatch){
-        if(err) return cb(err);
-        cb(null, isMatch);
-    });
-  */
+userSchema.methods.comparePassword = function (plainPassword) {
+  return plainPassword === this.password;
 };
 
-userSchema.methods.generateToken = function (callback) {
+userSchema.methods.generateToken = function () {
   return jwt.sign({ _id: this._id }, 'secretToken', { expiresIn: '24h' });
 };
 
