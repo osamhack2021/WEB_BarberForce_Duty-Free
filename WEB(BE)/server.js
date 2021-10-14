@@ -327,7 +327,7 @@ app.get('/kakao/access',(req,res)=>{
             }
           })
           //DB에 존재하지 않는 사용자인 경우
-          User.insertMany({"email":email,"name":name});
+          User.insertMany({"email":email,"name":name, "token":""});
           User.findOne({email: email},(err,user)=>{
             user.generateToken((err, user)=>{
               var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
