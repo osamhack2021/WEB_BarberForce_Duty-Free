@@ -7,7 +7,6 @@ const url = require('url')
 const cors = require('cors');
 const path = require('path');
 const request = require('request-promise');
-
 const axios = require('axios');
 
 const key = require('./auth/key');
@@ -272,12 +271,13 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = body.access_token
   })
 
+
   const instance = axios.create();
   instance.defaults.headers.common['Authorization'] = accessToken;
   var email;
   var name;
   var url = "https://api.barberforce.shop/kakao/access";
-  instance.get(url,{
+  instance.post(url,{
   }).then(function(response){
     return res.json({
       response: response
