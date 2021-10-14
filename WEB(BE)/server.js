@@ -274,7 +274,7 @@ app.get('/kakao/access',(req,res)=>{
     uri: "https://kapi.kakao.com/v1/user/access_token_info",
     method: "GET",
     headers: {
-      "Bearer" + accessToken,
+      "Authorization" : "Bearer " + accessToken,
     },
     json: true
   }
@@ -289,7 +289,7 @@ app.get('/kakao/access',(req,res)=>{
       })
     }
   })
-
+/*
   const instance = {
     uri: "https://kapi.kakao.com/v2/user/me",
     method: "POST",
