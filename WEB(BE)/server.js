@@ -268,12 +268,14 @@ app.get('/kakao/access',(req,res)=>{
   var accessToken;
   var out1 = request(options , function(error, response, body){
     accessToken = body.access_token;
+    return res.json({
+      code: code,
+      body : body,
+      accessToken: accessToken
+    })
   })
 
-  return res.json({
-    code: code,
-    accessToken: accessToken
-  })
+
 
 /*
   const verify = {
