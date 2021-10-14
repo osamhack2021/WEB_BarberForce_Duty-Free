@@ -327,7 +327,13 @@ app.get('/kakao/access',(req,res)=>{
             }
             else{
               User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
-              User.save();
+              User.save(function(err, user){
+                  if(err) {
+                    return res.json({
+                      error: err
+                    });
+                  }
+              });
               User.find({},(err,user2)=>{
                 return res.json({
                   user: user2,
