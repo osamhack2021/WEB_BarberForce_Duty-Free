@@ -279,7 +279,8 @@ app.get('/kakao/access',(req,res)=>{
     },
     headers: {
       "Authorization" : "Baerer " + accessToken
-    }
+    },
+    json: true
   }
 
   var email;
