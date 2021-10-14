@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const User = require('../models/user');
+const Unit = require('../models/unit');
 
 const fetchUser = require('../middleware/fetchUser');
 
@@ -45,18 +46,24 @@ router.post('/register', async (req, res) => {
     // 이메일 중복체크
     const existEmail = await User.exists({ email: req.body.email });
     if (existEmail) {
-      return res.status(401).json({
-        registerSuccess: false,
-        message: 'Existing email',
+      return res.status(403).json({
+        error: 'EXISTING_EMAIL',
       });
     }
 
     // 군번 중복체크
     const existSoldierId = await User.exists({ soldier_id: req.body.soldier_id });
     if (existSoldierId) {
-      return res.status(401).json({
-        registerSuccess: false,
-        message: 'Existing soldier_id',
+      return res.status(403).json({
+        error: 'EXISTING_SOLDIER_ID',
+      });
+    }
+
+    // 우리 DB에 등록된 군번인지 확인
+    const validSoliderId = await Unit.exists({ soldier_id: req.body.soldier_id });
+    if (!validSoliderId) {
+      return res.status(403).json({
+        error: 'INVALID_SOLDIER_ID',
       });
     }
 
@@ -79,7 +86,7 @@ router.post('/register', async (req, res) => {
     } else {
       console.log('사용자 추가 실패');
 
-      return res.status(401).json({
+      return res.status(500).json({
         registerSuccess: false,
       });
     }
