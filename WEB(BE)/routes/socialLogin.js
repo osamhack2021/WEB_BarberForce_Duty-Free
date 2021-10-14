@@ -3,9 +3,8 @@ const request = require('request');
 
 const User = require('../models/user');
 
-router.get('/kakao/access', (req, res) => {
-  var code = req.query.code;
-
+// code 로 토큰을 가져오는 함수 (내부적으로 request 사용)
+function getToken(code, callback) {
   const options = {
     uri: 'https://kauth.kakao.com/oauth/token',
     method: 'POST',
@@ -21,107 +20,66 @@ router.get('/kakao/access', (req, res) => {
     json: true,
   };
 
-  var accessToken;
-  var email;
-  var name;
+  request(options, (error, response, body) => {
+    callback(body.access_token);
+  });
+}
 
-  var out1 = request(options, function (error, response, body) {
-    accessToken = body.access_token;
-    const verify = {
-      uri: 'https://kapi.kakao.com/v1/user/access_token_info',
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ' + accessToken,
-      },
-      json: true,
-    };
+// accessToken 으로 사용자 정보를 가져오는 함수 (내부적으로 request 사용)
+function getUser(token, callback) {
+  const options = {
+    uri: 'https://kapi.kakao.com/v2/user/me',
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + token,
+    },
+    json: true,
+  };
 
-    var out2 = request(verify, function (err, response, body) {
-      if (err) {
-        return res.json({
-          verify: err,
-        });
-      }
-      const instance = {
-        uri: 'https://kapi.kakao.com/v2/user/me',
-        method: 'POST',
-        headers: {
-          Authorization: 'Bearer ' + accessToken,
-        },
-        json: true,
-      };
+  request(options, (error, respoonse, body) => {
+    callback(body.kakao_account);
+  });
+}
 
-      var out2 = request(instance, function (err, response, body) {
-        if (err) {
-          return res.json({
-            err: err,
-          });
-        }
-        //값 체크
-        else {
-          name = body.kakao_account.profile.nickname;
-          email = body.kakao_account.email;
-          /*
-          return res.json({
-            code: code,
-            accessToken: accessToken,
-            name: name,
-            email: email,
-            body: body
-          })*/
-          User.findOne({ email: email }, (err, user) => {
-            //DB에 존재하는 사용자인 경우
-            if (user) {
-              user.generateToken((err, user) => {
-                var url = 'https://barberforce.shop/kakao/callback?token=' + user.token;
-                if (err) {
-                  return res.status(401).send(err);
-                } else {
-                  return res.redirect(url);
-                }
-              });
+// 카카오 로그인 콜백 라우트
+router.get('/kakao/access', (req, res) => {
+  // 코드
+  const code = req.query.code;
+
+  // 코드로 토큰 가져오기
+  getToken(code, token => {
+    const accessToken = token;
+
+    // 토큰으로 사용자 정보 가져오기
+    getUser(accessToken, user => {
+      const email = user.email;
+      const name = user.profile.nickname;
+
+      // 이메일로 사용자 검색
+      User.exists({ email: email }, (err, exists) => {
+        if (exists) {
+          // 해당 이메일의 사용자가 이미 있다면
+          // 그 사용자에 대한 토큰 생성 후 리다이렉트
+          const token = user.generateToken();
+          const url = 'https://barberforce.shop/kakao/callback?token=' + token;
+          return res.redirect(url);
+        } else {
+          // 없다면 (최초 로그인이라면)
+          // 사용자를 하나 만들고 (insertMany 대신 create 사용)
+          User.create(
+            {
+              email: email,
+              name: name,
+              soldier_id: null,
+              password: null,
+            },
+            (err, user) => {
+              // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
+              const token = user.generateToken();
+              const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
+              return res.redirect(url);
             }
-          });
-          //DB에 존재하지 않는 사용자인 경우
-          user = new User();
-          user.email = email;
-          user.name = name;
-          user.token = '';
-          user.soldier_id = null;
-          user.password = null;
-
-          user.save(function (err) {
-            if (err) {
-              return res.json({
-                error: err,
-              });
-            }
-          });
-
-          //User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
-
-          User.find({}, (err, user2) => {
-            return res.json({
-              user: user2,
-              error: err,
-            });
-            /*
-            user.generateToken((err, user)=>{
-                var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
-              if(err) {return res.status(401).send(err);}
-              else {return res.redirect(url)}
-            });
-            */
-          });
-
-          /*
-          return res.json({
-            code: code,
-            accessToken: accessToken,
-            name: name,
-            email: email
-          })
-          */
+          );
         }
       });
     });
