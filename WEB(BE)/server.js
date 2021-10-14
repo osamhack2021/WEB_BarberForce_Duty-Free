@@ -21,6 +21,7 @@ const Unit = require('./models/unit');
 
 const authRouter = require('./routes/auth');
 const socialLoginRouter = require('./routes/socialLogin');
+const barbersRouter = require('./routes/barbers');
 
 db();
 
@@ -37,33 +38,7 @@ app.get('/', (req, res) => {
 
 app.use('', authRouter);
 app.use('', socialLoginRouter);
-
-app.get('/barbers', (req, res) => {
-  var unitName;
-  Unit.findOne({ token: req.headers.authorization }, (err, unit) => {
-    Barbers.find({ partnership: unit.unitName }, (err, barbers) => {
-      return res.json({
-        barbers: barbers.slice(0, req.query.limit),
-      });
-    });
-  });
-});
-
-app.get('/barbers/:id', (req, res) => {
-  Barbers.findOne({ _id: req.params.id }, (err, barbers) => {
-    return res.json({
-      id: barbers._id,
-      title: barbers.title,
-      location: barbers.location,
-      location_detail: barbers.location_detail,
-      rating: barbers.rating,
-      bookmarked: barbers.bookmarked,
-      phone: barbers.phone,
-      thumb: barbers.thumb,
-      description: barbers.description,
-    });
-  });
-});
+app.use('', barbersRouter);
 
 app.get('/barbers/:id/reservations/:year/:month', (req, res) => {
   Reservation.find(
