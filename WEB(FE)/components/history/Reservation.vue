@@ -70,7 +70,7 @@ export default {
       const date = moment(this.reservation.time);
       return {
         date: date.format('YYYY/MM/DD'),
-        time: date.format('A hh:mm'),
+        time: date.format('HH:mm'),
       };
     },
     upcomming() {
