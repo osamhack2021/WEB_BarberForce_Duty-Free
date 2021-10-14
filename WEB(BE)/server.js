@@ -185,6 +185,7 @@ app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
     */
     var list = new Array(31);
     for(i=0;i<list.length;i++){
+      var time = new Array();
       list[i] = {day: i+1, time: {'18:00': false, '18:30': false, '19:00': false,'19:30':false,'20:00':false,'20:30':false}}
     }
     for(i=0;i<reservation.length;i++){
@@ -325,8 +326,8 @@ app.get('/kakao/access',(req,res)=>{
     if(user){
       user.generateToken((err, user)=>{
         var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
-        if(err) //return res.status(401).send(err);
-        res.redirect(url)
+        if(err) {return res.status(401).send(err);}
+        else {res.redirect(url)}
       });
     }
     else{
@@ -335,8 +336,8 @@ app.get('/kakao/access',(req,res)=>{
       User.findOne({email: email},(err,user)=>{
         user.generateToken((err, user)=>{
           var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
-          if(err) //return res.status(401).send(err);
-          res.redirect(url)
+          if(err) {return res.status(401).send(err);}
+          else {res.redirect(url)}
         });
       })
     }
