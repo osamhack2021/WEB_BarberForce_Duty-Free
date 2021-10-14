@@ -10,8 +10,8 @@
               <span class="flex items-center ml-auto">
                 <img class="w-6 mr-2" src="~/assets/img/clock_white.svg" />
                 <div class="text-xs">
-                  <div>{{ reservation.year }}. {{ reservation.month }}. {{ reservation.day }}</div>
-                  <div>18:00 ~ 19:30</div>
+                  <div>{{ dateString.date }}</div>
+                  <div>{{ dateString.time }}</div>
                 </div>
               </span>
             </div>
@@ -20,11 +20,13 @@
               {{ barber.location }}
             </div>
             <NuxtLink class="underline mt-auto" to="/history">예약 수정/취소하기</NuxtLink>
-            <template v-if="timeover">
+            <template v-if="timeover && !reviewForm">
               <div class="absolute top-full" style="right: 5%; transform: translate(0, -75%)">
                 <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
                 <div class="flex justify-center items-center">
-                  <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2">예</button>
+                  <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2" @click="reviewForm = true">
+                    예
+                  </button>
                   <button class="w-16 text-center rounded bg-red-500 text-white py-2 mr-2">아니오</button>
                 </div>
               </div>
@@ -70,19 +72,21 @@
             <div class="flex items-center mr-2 mb-3">
               <img class="w-6 mr-2" src="~/assets/img/clock_white.svg" />
               <div>
-                <div>{{ reservation.year }}. {{ reservation.month }}. {{ reservation.day }}</div>
-                <div>18:00 ~ 19:30</div>
+                <div>{{ dateString.date }}</div>
+                <div>{{ dateString.time }}</div>
               </div>
             </div>
             <div>
               <NuxtLink class="underline" to="/history">예약 수정/취소하기</NuxtLink>
             </div>
           </div>
-          <template v-if="timeover">
+          <template v-if="timeover && !reviewForm">
             <div class="mt-auto">
               <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
               <div class="flex justify-center items-center">
-                <button class="flex-1 text-center rounded bg-brand text-white py-3 mr-2">예</button>
+                <button class="flex-1 text-center rounded bg-brand text-white py-3 mr-2" @click="reviewForm = true">
+                  예
+                </button>
                 <button class="flex-1 text-center rounded bg-red-500 text-white py-3 mr-2">아니오</button>
               </div>
             </div>
@@ -91,7 +95,7 @@
       </div>
     </template>
     <!-- review form -->
-    <template v-if="timeover">
+    <template v-if="reviewForm">
       <div class="mt-4 mb-2 p-3">
         <div class="font-bold text-center">미용실의 서비스를 평가해주세요.</div>
         <div class="flex justify-center">
@@ -137,6 +141,7 @@
 
 <script>
 import StarRating from 'vue-star-rating';
+import moment from 'moment';
 
 export default {
   components: {
@@ -151,6 +156,7 @@ export default {
   data() {
     return {
       barber: null,
+      reviewForm: false,
       review: {
         body: '',
         rating: 5,
@@ -163,14 +169,15 @@ export default {
     this.barber = data;
   },
   computed: {
+    dateString() {
+      return {
+        date: moment(this.reservation.time).format('YYYY. MM. DD'),
+        time: moment(this.reservation.time).format('HH:mm'),
+      };
+    },
     timeover() {
-      const now = new Date();
-      now.setDate(15);
-      return (
-        this.reservation.year <= now.getFullYear() &&
-        this.reservation.month <= now.getMonth() + 1 &&
-        this.reservation.day <= now.getDate()
-      );
+      const now = moment();
+      return moment(this.reservation.time).isBefore(now);
     },
   },
   methods: {
