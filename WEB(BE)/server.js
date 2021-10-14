@@ -310,40 +310,35 @@ app.get('/kakao/access',(req,res)=>{
         else{
           name = body.kakao_account.profile.nickname;
           email = body.kakao_account.email;
+          /*
           return res.json({
             code: code,
             accessToken: accessToken,
-            name: refreshToken,
+            name: name,
             email: email,
             body: body
+          })*/
+          User.findOne({email:email},(err,user)=>{
+            //DB에 존재하는 사용자인 경우
+            if(user){
+              user.generateToken((err, user)=>{
+                var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+                if(err) return res.status(401).send(err);
+                return res.redirect(url)
+              });
+            }
           })
-        }
-        /*
-        User.findOne({email:email},(err,user)=>{
-          //DB에 존재하는 사용자인 경우
-          if(user){
+
+          //DB에 존재하지 않는 사용자인 경우
+          User.insertMany({"email":email,"name":name});
+          User.findOne({email: email},(err,user)=>{
             user.generateToken((err, user)=>{
-              var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+              var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
               if(err) return res.status(401).send(err);
-              // 토큰을 쿠키에 저장
               return res.redirect(url)
             });
-          }
-        })
-
-        //DB에 존재하지 않는 사용자인 경우
-        User.insertMany({"email":email,"name":name});
-        User.findOne({email: email},(err,user)=>{
-          user.generateToken((err, user)=>{
-            var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
-            if(err) return res.status(401).send(err);
-            // 토큰을 쿠키에 저장
-            return res.json({
-              url: url
-            })
-          });
-        })
-        */
+          })
+        }
       })
     })
   })
