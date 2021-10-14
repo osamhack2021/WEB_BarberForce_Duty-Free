@@ -8,7 +8,8 @@ const reservationSchema = new mongoose.Schema({
   barbers_id: String, //ObjectId
   user_id: String,    //ObjectId
   userName: String,
-  description: String
+  description: String,
+  done: Boolean
 });
 
 
