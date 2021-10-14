@@ -9,7 +9,7 @@ const JWT_KEY = 'secretToken';
 // 토큰을 복호화해 _id 를 찾고 해당하는 사용자를 가져와
 // 라우트에서 바로 쓸 수 있도록 req.user에 할당해주는 미들웨어
 // (이 미들웨어는 로그인을 해야 접근할 수 있게 할 라우트에 적용)
-const fetchUserMiddleware = (req, res, next) => {
+const fetchUserMiddleware = async (req, res, next) => {
   // authorization 헤더가 없는 요청이면 기각
   if (!req.headers.authorization) {
     return res.status(403).json({
@@ -32,12 +32,8 @@ const fetchUserMiddleware = (req, res, next) => {
   }
 
   // decode 한 토큰 안의 _id 로 user를 찾음
-  UserModel.findOne({ _id: decoded._id }, (error, user) => {
-    if (error) {
-      return res.status(500).json({
-        message: 'fetchUserMiddleware: SERVER ERROR',
-      });
-    }
+  try {
+    const user = await UserModel.findOne({ _id: decoded._id });
 
     // 해당 _id의 유저가 없으면
     if (!user) {
@@ -51,7 +47,9 @@ const fetchUserMiddleware = (req, res, next) => {
 
     // 다음 핸들러로 이동 (미들웨어로 쓸거기 때문에)
     next();
-  });
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} in :fetchUser middleware - 에러!`, e);
+  }
 };
 
 module.exports = fetchUserMiddleware;

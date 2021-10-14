@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
       token: token,
     });
   } catch (e) {
-    console.error('/login: 에러!', e);
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
   }
 });
 
@@ -85,7 +85,7 @@ router.post('/register', async (req, res) => {
       });
     }
   } catch (e) {
-    console.error('/register: 에러!', e);
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
   }
 });
 

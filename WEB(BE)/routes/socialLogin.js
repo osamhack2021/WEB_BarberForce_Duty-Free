@@ -53,30 +53,34 @@ router.get('/kakao/access', (req, res) => {
     // 토큰으로 사용자 정보 가져오기
     // (callback 이 async 함수임. 그 함수 내부에서 await을 사용하기 때문)
     getUser(accessToken, async user => {
-      const email = user.email;
-      const name = user.profile.nickname;
+      try {
+        const email = user.email;
+        const name = user.profile.nickname;
 
-      // 이메일로 사용자 검색
-      const existingUser = await User.find({ email: email });
-      if (existingUser) {
-        // 해당 이메일의 사용자가 이미 있다면
-        // 그 사용자에 대한 토큰 생성 후 리다이렉트
-        const token = user.generateToken();
-        const url = 'https://barberforce.shop/kakao/callback?token=' + token;
-        return res.redirect(url);
-      } else {
-        // 없다면 (최초 로그인이라면)
-        // 사용자를 하나 만들고 (insertMany 대신 create 사용)
-        const user = await User.create({
-          email: email,
-          name: name,
-          soldier_id: null,
-          password: null,
-        });
-        // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
-        const token = user.generateToken();
-        const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
-        return res.redirect(url);
+        // 이메일로 사용자 검색
+        const existingUser = await User.find({ email: email });
+        if (existingUser) {
+          // 해당 이메일의 사용자가 이미 있다면
+          // 그 사용자에 대한 토큰 생성 후 리다이렉트
+          const token = user.generateToken();
+          const url = 'https://barberforce.shop/kakao/callback?token=' + token;
+          return res.redirect(url);
+        } else {
+          // 없다면 (최초 로그인이라면)
+          // 사용자를 하나 만들고 (insertMany 대신 create 사용)
+          const user = await User.create({
+            email: email,
+            name: name,
+            soldier_id: null,
+            password: null,
+          });
+          // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
+          const token = user.generateToken();
+          const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
+          return res.redirect(url);
+        }
+      } catch (e) {
+        console.error(`[${req.method}] ${req.path} - 에러!`, e);
       }
     });
   });

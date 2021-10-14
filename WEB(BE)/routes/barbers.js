@@ -19,7 +19,7 @@ router.get('/barbers', fetchUser, async (req, res) => {
       barbers: barbers.slice(0, req.query.limit),
     });
   } catch (e) {
-    console.error('/babers - 에러!');
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
   }
 });
 
@@ -31,7 +31,7 @@ router.get('/barbers/:id', async (req, res) => {
 
     return res.json(barber);
   } catch (e) {
-    console.error('/babers/:id - 에러!');
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
   }
 });
 
