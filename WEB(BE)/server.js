@@ -287,49 +287,41 @@ app.get('/kakao/access',(req,res)=>{
           verify: err
         })
       }
-      return res.json({
-        code: code,
-        accessToken: accessToken,
-        refresh: refreshToken,
-        expires: expires_in,
-        body: body
+      const instance = {
+        uri: "https://kapi.kakao.com/v2/user/me",
+        method: "POST",
+        headers: {
+          "Authorization" : "Bearer " + accessToken
+        },
+        json: true
+      }
+
+      var email;
+      var name;
+      var phone;
+
+      var out2 = request(instance, function(err,response,body){
+        if(err){
+          return res.json({
+            err: err
+          })
+        }
+        else{
+          return res.json({
+            code: code,
+            accessToken: accessToken,
+            refresh: refreshToken,
+            expires: expires_in,
+            body: body
+          })
+        }
       })
     })
   })
 
 
 
-  /*
-  const instance = {
-    uri: "https://kapi.kakao.com/v2/user/me",
-    method: "POST",
-    headers: {
-      "Authorization" : "Bearer " + accessToken
-    },
-    json: true
-  }
 
-
-  var email;
-  var name;
-  var phone;
-
-  var out2 = request(instance, function(err,response,body){
-    if(err){
-      return res.json({
-        err: err
-      })
-    }
-    else{
-      return res.json({
-        code: code,
-        accessToken: accessToken,
-        refresh: refreshToken,
-        expires: expires_in,
-        body: body
-      })
-    }
-  })
   /*
   User.findOne({email:email},(err,user)=>{
     //DB에 존재하는 사용자인 경우
