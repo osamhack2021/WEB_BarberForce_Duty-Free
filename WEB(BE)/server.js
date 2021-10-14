@@ -276,7 +276,7 @@ app.get('/kakao/access',(req,res)=>{
 
 
 
-/*
+
   const verify = {
     uri: "https://kapi.kakao.com/v1/user/access_token_info",
     method: "GET",
@@ -292,12 +292,16 @@ app.get('/kakao/access',(req,res)=>{
         verify: err
       })
       return res.json({
+        code: code,
+        accessToken: accessToken,
+        refresh: refreshToken,
+        expires: expires_in,
         body: body
       })
     }
   })
-  */
 
+  /*
   const instance = {
     uri: "https://kapi.kakao.com/v2/user/me",
     method: "POST",
