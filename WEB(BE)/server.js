@@ -306,15 +306,45 @@ app.get('/kakao/access',(req,res)=>{
             err: err
           })
         }
+        name = body.kakao_account.profile.nickname;
+        email = body.kakao_account.email;
+        //값 체크
+
         else{
           return res.json({
             code: code,
             accessToken: accessToken,
-            refresh: refreshToken,
-            expires: expires_in,
+            name: refreshToken,
+            email: email,
             body: body
           })
         }
+        /*
+        User.findOne({email:email},(err,user)=>{
+          //DB에 존재하는 사용자인 경우
+          if(user){
+            user.generateToken((err, user)=>{
+              var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+              if(err) return res.status(401).send(err);
+              // 토큰을 쿠키에 저장
+              return res.redirect(url)
+            });
+          }
+        })
+
+        //DB에 존재하지 않는 사용자인 경우
+        User.insertMany({"email":email,"name":name});
+        User.findOne({email: email},(err,user)=>{
+          user.generateToken((err, user)=>{
+            var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
+            if(err) return res.status(401).send(err);
+            // 토큰을 쿠키에 저장
+            return res.json({
+              url: url
+            })
+          });
+        })
+        */
       })
     })
   })
@@ -322,32 +352,9 @@ app.get('/kakao/access',(req,res)=>{
 
 
 
-  /*
-  User.findOne({email:email},(err,user)=>{
-    //DB에 존재하는 사용자인 경우
-    if(user){
-      user.generateToken((err, user)=>{
-        var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
-        if(err) return res.status(401).send(err);
-        // 토큰을 쿠키에 저장
-        return res.redirect(url)
-      });
-    }
-  })
 
-  //DB에 존재하지 않는 사용자인 경우
-  User.insertMany({"email":email,"name":name});
-  User.findOne({email: email},(err,user)=>{
-    user.generateToken((err, user)=>{
-      var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
-      if(err) return res.status(401).send(err);
-      // 토큰을 쿠키에 저장
-      return res.json({
-        url: url
-      })
-    });
-  })
-  */
+
+
 })
 
 app.post('/kakao/register',(req,res)=>{
