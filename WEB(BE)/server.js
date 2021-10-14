@@ -266,12 +266,17 @@ app.get('/kakao/access',(req,res)=>{
   }
 
   var accessToken;
+  var refreshToken;
+  var expires_in;
   var out1 = request(options , function(error, response, body){
     accessToken = body.access_token;
+    refreshToken = body.refresh_token;
+    expires_in = body.expires_in;
     return res.json({
       code: code,
-      body : body,
-      accessToken: accessToken
+      accessToken: accessToken,
+      refresh: refreshToken,
+      expires: expires_in
     })
   })
 
