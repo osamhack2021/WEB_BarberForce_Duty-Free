@@ -327,12 +327,23 @@ app.get('/kakao/access',(req,res)=>{
             }
           })
           //DB에 존재하지 않는 사용자인 경우
+          user = new User();
+          user.email = email;
+          user.name = name;
+          user.token = "";
+          user.soldier_id = null;
+          user.password = null;
 
-          User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
-/*
-          User.find({},(err,user)=>{
-            user.saveUser((err,user));
-          })*/
+          user.save(function(err){
+            if(err){
+              return res.json({
+                error: err
+              })
+            }
+          })
+
+          //User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
+
           User.find({},(err,user2)=>{
             return res.json({
               user: user2,
