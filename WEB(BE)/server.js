@@ -266,7 +266,7 @@ app.get('/kakao/access',(req,res)=>{
   }
 
   var accessToken;
-  var out = request(options , function(error, response, body){
+  var out1 = request(options , function(error, response, body){
     accessToken = body.access_token;
   })
 
@@ -279,7 +279,7 @@ app.get('/kakao/access',(req,res)=>{
     json: true
   }
 
-  out = request(verify, function(err,response,body){
+  var out2 = request(verify, function(err,response,body){
     if(err){
       return res.json({
         verify: err
@@ -289,7 +289,7 @@ app.get('/kakao/access',(req,res)=>{
       })
     }
   })
-/*
+  /*
   const instance = {
     uri: "https://kapi.kakao.com/v2/user/me",
     method: "POST",
