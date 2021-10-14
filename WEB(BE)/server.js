@@ -346,16 +346,18 @@ app.get('/kakao/access',(req,res)=>{
 
           user.generateToken((err, user)=>{
 
-            var url = "https://barberforce.shop/kakao/callback?token=" + user.token + "&fisrt=1";
-            return res.json({
-              //url: url,
-              user: user
-            })
+
             /*
             if(err) {return res.status(401).send(err);}
             else {return res.redirect(url)}
             */
           });
+
+          var url = "https://barberforce.shop/kakao/callback?token=" + user.token + "&fisrt=1";
+          return res.json({
+            url: url,
+            user: user
+          })
 
           //User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
           /*
