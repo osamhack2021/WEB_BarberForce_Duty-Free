@@ -322,7 +322,7 @@ app.get('/kakao/access',(req,res)=>{
               user.generateToken((err, user)=>{
                 var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
                 if(err) {return res.status(401).send(err);}
-                //else {res.redirect(url)}
+                else {res.redirect(url)}
               });
             }
             else{
@@ -332,19 +332,20 @@ app.get('/kakao/access',(req,res)=>{
                 user.generateToken((err, user)=>{
                   var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
                   if(err) {return res.status(401).send(err);}
-                  //else {res.redirect(url)}
+                  else {res.redirect(url)}
                 });
               })
             }
           })
 
-
+          /*
           return res.json({
             code: code,
             accessToken: accessToken,
             name: name,
             email: email
           })
+          */
         }
       })
     })
