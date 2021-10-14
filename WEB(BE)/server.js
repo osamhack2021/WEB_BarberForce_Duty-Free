@@ -322,20 +322,18 @@ app.get('/kakao/access',(req,res)=>{
               user.generateToken((err, user)=>{
                 var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
                 if(err) {return res.status(401).send(err);}
-                else {res.redirect(url)}
+                else {return res.redirect(url)}
               });
             }
-            else{
-              //DB에 존재하지 않는 사용자인 경우
-              User.insertMany({"email":email,"name":name});
-              User.findOne({email: email},(err,user)=>{
-                user.generateToken((err, user)=>{
-                  var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
-                  if(err) {return res.status(401).send(err);}
-                  else {res.redirect(url)}
-                });
-              })
-            }
+          })
+          //DB에 존재하지 않는 사용자인 경우
+          User.insertMany({"email":email,"name":name});
+          User.findOne({email: email},(err,user)=>{
+            user.generateToken((err, user)=>{
+              var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+              if(err) {return res.status(401).send(err);}
+              else {return res.redirect(url)}
+            });
           })
 
           /*
