@@ -273,7 +273,12 @@ app.get('/kakao/access',(req,res)=>{
     refreshToken = body.refresh_token;
     expires_in = body.expires_in;
   })
-
+  return res.json({
+    code: code,
+    accessToken: accessToken,
+    refresh: refreshToken,
+    expires: expires_in,
+  })
   /*
   const verify = {
     uri: "https://kapi.kakao.com/v1/user/access_token_info",
