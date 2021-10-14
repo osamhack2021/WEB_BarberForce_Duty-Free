@@ -87,7 +87,10 @@ export default {
   async fetch() {
     const { data } = await this.$api.reservations.list();
     const reservations = data.reservations;
-    this.firstReservation = reservations[0];
+    const first = reservations[0];
+    if (!first.done) {
+      this.firstReservation = first;
+    }
   },
   methods: {
     logout() {
