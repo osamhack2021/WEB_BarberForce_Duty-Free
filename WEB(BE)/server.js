@@ -266,9 +266,13 @@ app.get('/kakao/access',(req,res)=>{
   }
 
   var accessToken;
+  var refresh;
+  var expires_in;
   //const cb = await request(option);
   var out = request(options , function(error, response, body){
-    accessToken = body.access_token
+    accessToken = body.access_token;
+    expires_in = body.expires_in;
+    refresh = bdoy.refresh_token;
   })
 
 
@@ -294,7 +298,12 @@ app.get('/kakao/access',(req,res)=>{
     }
     else{
       return res.json({
-        body: body
+        body: body,
+        code: code,
+        access: accessToken,
+        refresh: refresh,
+        expires_in: expires_in
+
       })
     }
   })
