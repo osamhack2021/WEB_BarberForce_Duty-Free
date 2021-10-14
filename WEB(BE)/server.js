@@ -266,12 +266,11 @@ app.get('/kakao/access',(req,res)=>{
   }
 
   var accessToken;
-  var refreshToken;
-  var expires_in;
+  var email;
+  var name;
+
   var out1 = request(options , function(error, response, body){
     accessToken = body.access_token;
-    refreshToken = body.refresh_token;
-    expires_in = body.expires_in;
     const verify = {
       uri: "https://kapi.kakao.com/v1/user/access_token_info",
       method: "GET",
@@ -296,9 +295,7 @@ app.get('/kakao/access',(req,res)=>{
         json: true
       }
 
-      var email;
-      var name;
-      var phone;
+
 
       var out2 = request(instance, function(err,response,body){
         if(err){
@@ -318,32 +315,31 @@ app.get('/kakao/access',(req,res)=>{
             email: email,
             body: body
           })*/
-          User.findOne({email:email},(err,user)=>{
-            //DB에 존재하는 사용자인 경우
-            if(user){
-              user.generateToken((err, user)=>{
-                var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
-                if(err) return res.status(401).send(err);
-                res.redirect(url)
-              });
-            }
-            else{
-              //DB에 존재하지 않는 사용자인 경우
-              User.insertMany({"email":email,"name":name});
-              User.findOne({email: email},(err,user)=>{
-                user.generateToken((err, user)=>{
-                  var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
-                  if(err) return res.status(401).send(err);
-                  res.redirect(url)
-                });
-              })
-            }
-          })
-
-
         }
       })
     })
+  })
+
+  User.findOne({email:email},(err,user)=>{
+    //DB에 존재하는 사용자인 경우
+    if(user){
+      user.generateToken((err, user)=>{
+        var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
+        if(err) return res.status(401).send(err);
+        res.redirect(url)
+      });
+    }
+    else{
+      //DB에 존재하지 않는 사용자인 경우
+      User.insertMany({"email":email,"name":name});
+      User.findOne({email: email},(err,user)=>{
+        user.generateToken((err, user)=>{
+          var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
+          if(err) return res.status(401).send(err);
+          res.redirect(url)
+        });
+      })
+    }
   })
 
 
