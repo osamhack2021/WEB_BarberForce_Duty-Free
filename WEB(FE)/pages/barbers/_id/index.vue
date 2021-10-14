@@ -62,7 +62,12 @@
           <template v-if="reviews.length === 0">
             <div class="text-sm text-center md:text-base">아직 리뷰가 없습니다!</div>
           </template>
-          <ReviewListItem v-for="review in reviews" :key="review._id" :review="review" />
+          <ReviewListItem
+            v-for="review in reviews"
+            :key="review._id"
+            :review="review"
+            class="rounded border bg-white mb-2"
+          />
         </div>
         <!-- info section -->
         <div class="mb-6">
