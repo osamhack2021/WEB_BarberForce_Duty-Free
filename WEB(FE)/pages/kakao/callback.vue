@@ -9,6 +9,12 @@
 
 <script>
 export default {
+  async middleware({ app, store }) {
+    const token = app.$route.query.token;
+    store.commit('auth/setToken', token);
+    await store.dispatch('auth/load');
+    app.$router.replace('/');
+  },
   computed: {
     token() {
       return this.$route.query.token;
