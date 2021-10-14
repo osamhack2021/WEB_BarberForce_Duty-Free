@@ -69,11 +69,9 @@ app.get('/barbers/:id/reservations/:year/:month', (req, res) => {
   Reservation.find(
     { barbers_id: req.params.id, year: req.params.year, month: req.params.month },
     (err, reservation) => {
-      /*
-    //Date 늘렷거가면서 탐색하고 없으면 집어넣는 식으로
-    */
       var list = new Array(31);
       for (i = 0; i < list.length; i++) {
+        var date = new Date(year, month - 1, i + 1);
         var time = new Array();
         list[i] = {
           day: i + 1,
