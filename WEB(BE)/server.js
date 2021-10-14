@@ -291,7 +291,7 @@ app.get('/kakao/access',(req,res)=>{
   var url = "https://kapi.kakao.com/v2/user/me";
 
   const instance = axios.create();
-  instance.defaults.headers.common['Authorization'] = "Baerer " + accessToken;
+  instance.defaults.headers.common['Authorization'] = "Bearer " + accessToken;
 
   instance.get(url,{
 
