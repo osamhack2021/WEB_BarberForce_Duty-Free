@@ -354,10 +354,7 @@ app.get('/kakao/access',(req,res)=>{
           });
 
           var url = "https://barberforce.shop/kakao/callback?token=" + user.token + "&fisrt=1";
-          return res.json({
-            url: url,
-            user: user
-          })
+          return res.redirect(url);
 
           //User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
           /*
