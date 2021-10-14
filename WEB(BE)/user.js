@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true},
   password: String,
   name: {type: String, required: true},
-  soldier_id: {type: String, required: true, defaults: ""},
+  soldier_id: {type: String, defaults: ""},
   token: {type: String, defaults: ""}
 });
 
@@ -29,6 +29,22 @@ userSchema.methods.generateToken=function(cb){
         if(err) return cb(err);
         cb(null, user);
     });
+}
+
+userSchema.method.insertUser=function(cb,email,name){
+  const user=this;
+  user.insertMany({"email":email,"name":name,"password":null,"token":"",})
+  user.save(function(err, user){
+      if(err) return cb(err);
+      cb(null, user);
+  });
+}
+
+userSchema.method.saveUser=function(cb){
+  user.save(function(err, user){
+      if(err) return cb(err);
+      cb(null, user);
+  });
 }
 
 module.exports = mongoose.model('User', userSchema);
