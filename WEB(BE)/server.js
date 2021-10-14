@@ -283,7 +283,7 @@ app.get('/kakao/access',(req,res)=>{
     })
   })
 
-  /*
+
   User.findOne({email:email},(err,user)=>{
     //DB에 존재하는 사용자인 경우
     if(user){
@@ -308,7 +308,6 @@ app.get('/kakao/access',(req,res)=>{
       })
     });
   })
-  */
 })
 
 app.post('/kakao/register',(req,res)=>{
