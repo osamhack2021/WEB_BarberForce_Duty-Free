@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen w-screen flex flex-col items-center justify-center bg-auth p-3">
+  <main class="h-screen w-screen flex flex-col items-center justify-center bg-brand p-3">
     <!-- logo -->
     <img class="mb-12" src="@/assets/img/2_logo+title_figma_embarrassed.svg" width="203" alt="Barber Force" />
     <!-- errors -->
@@ -13,8 +13,13 @@
 
 <script>
 export default {
-  props: ['error'],
   layout: 'empty',
+  props: {
+    error: {
+      type: Object,
+      required: true,
+    },
+  },
   computed: {
     message() {
       if (this.error.statusCode === 404) {
@@ -26,9 +31,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.bg-auth {
-  background-color: #406d96;
-}
-</style>

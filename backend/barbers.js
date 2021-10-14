@@ -1,15 +1,17 @@
 const mongoose = require('mongoose');
 
 const barbersSchema = new mongoose.Schema({
-  id: Number, //임
-  name: String,
+  title: String,
   location: String,
-  longitude: Number,
-  latitude: Number,
+  location_detail: String,
   rating: Number,
-  bookmarked: Boolean
+  phone: String,
+  thumb: String,
+  bookmarked: Boolean,
+  weekdayHour: String,
+  holidayHour: String,
+  description: String,
+  partnership: [String]
 });
-
-
 
 module.exports = mongoose.model('Barbers', barbersSchema);

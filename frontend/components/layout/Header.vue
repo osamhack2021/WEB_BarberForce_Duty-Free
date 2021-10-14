@@ -19,6 +19,6 @@ export default {};
 
 <style scoped>
 header {
-  z-index: 99999;
+  z-index: 8500;
 }
 </style>
