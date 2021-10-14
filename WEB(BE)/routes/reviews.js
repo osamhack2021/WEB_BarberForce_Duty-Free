@@ -1,30 +1,32 @@
 const router = require('express').Router();
 
-const User = require('../models/user');
 const Review = require('../models/review');
 
-router.get('/barbers/:id/reviews', (req, res) => {
-  Review.find({ barbers_id: req.params.id }, (err, review) => {
-    return res.json({
-      reviews: review,
-    });
+const fetchUser = require('../middleware/fetchUser');
+
+router.get('/barbers/:id/reviews', async (req, res) => {
+  const reviews = await Review.find({ barbers_id: req.params.id });
+
+  return res.json({
+    reviews: reviews,
   });
 });
 
-router.post('/barbers/:id/reviews', (req, res) => {
-  var today = new Date();
-  User.findOne({ token: req.headers.authorization.split(' ')[1] }, (err, user) => {
-    Review.insertMany({
-      barbers_id: req.params.id,
-      thumb: '',
-      reviewer: user.name,
-      body: req.body.body,
-      rating: req.body.rating,
-      createdAt: today,
-    });
-    return res.json({
-      mss: '추가',
-    });
+router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
+  const user = req.user;
+
+  const created = await Review.create({
+    barbers_id: req.params.id,
+    thumb: '',
+    reviewer: user.name,
+    body: req.body.body,
+    rating: req.body.rating,
+    createdAt: new Date().toISOString(),
+  });
+
+  return res.json({
+    mss: '추가',
+    created: created,
   });
 });
 
