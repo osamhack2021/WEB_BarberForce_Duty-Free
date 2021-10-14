@@ -342,20 +342,21 @@ app.get('/kakao/access',(req,res)=>{
             }
           })
 
-          return res.json({
-            user: user
-          })
-          /*
+
           user.generateToken((err, user)=>{
 
+            /*
             var url = "https://barberforce.shop/kakao/callback?token=" + user.token;
             if(err) {return res.status(401).send(err);}
             else {return res.redirect(url)}
-
-            return res.json({
-              user: user
-            })
+            */
+            
           });
+
+          return res.json({
+            user: user
+          })
+
           //User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
           /*
           User.find({},(err,user2)=>{
