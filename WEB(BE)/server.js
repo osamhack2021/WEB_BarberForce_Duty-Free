@@ -271,40 +271,33 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = body.access_token
   })
 
-  /*
-  const instance = {
-    uri: "https://kauth.kakao.com/oauth/token",
-    method: "POST",
-    form:{
 
-    },
+  const instance = {
+    uri: "https://kapi.kakao.com/v2/user/me",
+    method: "POST",
     headers: {
-      "Authorization" : "Baerer " + accessToken
+      "Authorization" : "Bearer " + accessToken
     },
     json: true
   }
-  */
+
 
   var email;
   var name;
   var phone;
-  var url = "https://kapi.kakao.com/v2/user/me";
 
-  const instance = axios.create();
-  instance.defaults.headers.common['Authorization'] = "Bearer " + accessToken;
-
-  instance.get(url,{
-
-  }).then(function(response){
-    return res.json({
-      res: response
-    })
-  }).catch(function(err){
-    return res.json({
-      err: err
-    })
+  var out2 = request(instance, function(err,response,body){
+    if(err){
+      return res.json({
+        err: err
+      })
+    }
+    else{
+      return res.json({
+        body: body
+      })
+    }
   })
-
   /*
   User.findOne({email:email},(err,user)=>{
     //DB에 존재하는 사용자인 경우
