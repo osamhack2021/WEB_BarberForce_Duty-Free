@@ -348,7 +348,7 @@ app.get('/kakao/access',(req,res)=>{
 
             var url = "https://barberforce.shop/kakao/callback?token=" + user.token + "&fisrt=1";
             return res.json({
-              url: url,
+              //url: url,
               user: user
             })
             /*
