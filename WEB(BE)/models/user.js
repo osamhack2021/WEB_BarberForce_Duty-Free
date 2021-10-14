@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
   password: String,
   name: { type: String, required: true },
   soldier_id: { type: String, defaults: '' },
-  token: { type: String, defaults: '' },
 });
 
 userSchema.methods.comparePassword = function (plainPassword, cb) {
@@ -21,14 +20,8 @@ userSchema.methods.comparePassword = function (plainPassword, cb) {
   */
 };
 
-userSchema.methods.generateToken = function (cb) {
-  const user = this;
-  const token = jwt.sign({ id: this._id }, 'secretToken', { expiresIn: '24h' });
-  user.token = token;
-  user.save(function (err, user) {
-    if (err) return cb(err);
-    cb(null, user);
-  });
+userSchema.methods.generateToken = function (callback) {
+  return jwt.sign({ _id: this._id }, 'secretToken', { expiresIn: '24h' });
 };
 
 userSchema.method.insertUser = function (cb, email, name) {
