@@ -326,13 +326,19 @@ app.get('/kakao/access',(req,res)=>{
               });
             }
             else{
-              User.insertMany({"email":email,"name":name,"token":null,"password":null,"soldier_id":null});
+              User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
               User.findOne({email: email},(err,user)=>{
+                return res.json({
+                  user: user
+                })
+                /*
                 user.generateToken((err, user)=>{
+
                   var url = "https://barberforce.shop/kakao/additional?token=" + user.token;
                   if(err) {return res.status(401).send(err);}
                   else {return res.redirect(url)}
                 });
+                */
               })
             }
           })
