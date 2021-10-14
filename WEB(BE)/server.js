@@ -272,12 +272,6 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = body.access_token;
     refreshToken = body.refresh_token;
     expires_in = body.expires_in;
-    return res.json({
-      code: code,
-      accessToken: accessToken,
-      refresh: refreshToken,
-      expires: expires_in
-    })
   })
 
 
@@ -302,7 +296,8 @@ app.get('/kakao/access',(req,res)=>{
       })
     }
   })
-  /*
+  */
+
   const instance = {
     uri: "https://kapi.kakao.com/v2/user/me",
     method: "POST",
@@ -325,12 +320,11 @@ app.get('/kakao/access',(req,res)=>{
     }
     else{
       return res.json({
-        body: body,
         code: code,
-        access: access_body
-        //refresh: refresh,
-        //expires_in: expires_in
-
+        accessToken: accessToken,
+        refresh: refreshToken,
+        expires: expires_in,
+        body: body
       })
     }
   })
