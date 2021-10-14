@@ -23,6 +23,7 @@ const authRouter = require('./routes/auth');
 const socialLoginRouter = require('./routes/socialLogin');
 const barbersRouter = require('./routes/barbers');
 const reservationsRouter = require('./routes/reservations');
+const reviewsRouter = require('./routes/reviews');
 
 db();
 
@@ -41,31 +42,7 @@ app.use('', authRouter);
 app.use('', socialLoginRouter);
 app.use('', barbersRouter);
 app.use('', reservationsRouter);
-
-app.get('/barbers/:id/reviews', (req, res) => {
-  Review.find({ barbers_id: req.params.id }, (err, review) => {
-    return res.json({
-      reviews: review,
-    });
-  });
-});
-
-app.post('/barbers/:id/reviews', (req, res) => {
-  var today = new Date();
-  User.findOne({ token: req.headers.authorization.split(' ')[1] }, (err, user) => {
-    Review.insertMany({
-      barbers_id: req.params.id,
-      thumb: '',
-      reviewer: user.name,
-      body: req.body.body,
-      rating: req.body.rating,
-      createdAt: today,
-    });
-    return res.json({
-      mss: '추가',
-    });
-  });
-});
+app.use('', reviewsRouter);
 
 app.get('/kakao/callback?code=KAKAO_CODE', (req, res) => {});
 
