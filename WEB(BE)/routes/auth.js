@@ -83,12 +83,6 @@ router.post('/register', async (req, res) => {
       return res.status(200).json({
         registerSuccess: true,
       });
-    } else {
-      console.log('사용자 추가 실패');
-
-      return res.status(500).json({
-        registerSuccess: false,
-      });
     }
   } catch (e) {
     console.error('/register: 에러!', e);
