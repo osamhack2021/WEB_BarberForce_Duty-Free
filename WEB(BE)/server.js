@@ -291,14 +291,14 @@ app.get('/kakao/access',(req,res)=>{
       return res.json({
         verify: err
       })
-      return res.json({
-        code: code,
-        accessToken: accessToken,
-        refresh: refreshToken,
-        expires: expires_in,
-        body: body
-      })
     }
+    return res.json({
+      code: code,
+      accessToken: accessToken,
+      refresh: refreshToken,
+      expires: expires_in,
+      body: body
+    })
   })
 
   /*
