@@ -328,7 +328,7 @@ app.get('/kakao/access',(req,res)=>{
             else{
               User.insertMany({"email":email,"name":name,"token":"","password":null,"soldier_id":null});
 
-              User.findOne({email: email},(err,user2)=>{
+              User.findOne({},(err,user2)=>{
                 return res.json({
                   user: user2,
                   error: err
