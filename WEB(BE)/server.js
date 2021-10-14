@@ -276,14 +276,18 @@ app.get('/kakao/access',(req,res)=>{
   instance.defaults.headers.common['Authorization'] = accessToken;
   var email;
   var name;
-  instance.get("https://api.barberforce.shop/kakao/access",{
-  }).then(function(response){
+  instance.get("https://api.barberforce.shop/kakao/access")
+  .then(function(response){
     return res.json({
       response: response
     })
+  }).catch(function(err){
+    return res.json({
+      err: err
+    })
   })
 
-
+  /*
   User.findOne({email:email},(err,user)=>{
     //DB에 존재하는 사용자인 경우
     if(user){
@@ -308,6 +312,7 @@ app.get('/kakao/access',(req,res)=>{
       })
     });
   })
+  */
 })
 
 app.post('/kakao/register',(req,res)=>{
