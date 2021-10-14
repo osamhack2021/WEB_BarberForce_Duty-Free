@@ -9,6 +9,9 @@ const auth = client => ({
   me: async () => {
     return await client.get('/me');
   },
+  additional: async data => {
+    return await client.post('/kakao/additional', data);
+  },
 });
 
 // barbers
