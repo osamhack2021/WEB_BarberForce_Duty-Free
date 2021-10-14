@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
-//const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
+//const bcrypt=require('bcrypt'); //PW 암호화
 
 const userSchema = new mongoose.Schema({
-  email: String,
+  email: {type: String, required: true},
   password: String,
-  passowrd_confirm: String,
-  name: String,
-  soldier_id: String,
-  token: String
+  name: {type: String, required: true},
+  soldier_id: {type: String, required: true, defaults: ""},
+  token: {type: String, defaults: ""}
 });
 
 userSchema.methods.comparePassword=function(plainPassword, cb){
@@ -24,7 +23,7 @@ userSchema.methods.comparePassword=function(plainPassword, cb){
 
 userSchema.methods.generateToken=function(cb){
     const user=this;
-    const token=jwt.sign(user._id.toHexString(), 'secretToken');
+    const token = jwt.sign({id:this._id},"secretToken",{ expiresIn: '24h'});
     user.token=token;
     user.save(function(err, user){
         if(err) return cb(err);
