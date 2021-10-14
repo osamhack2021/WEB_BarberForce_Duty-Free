@@ -272,8 +272,11 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = response.token.body.access_token;
   })
 
+  return res.json({
+    token: accessToken
+  })
   //여기까지 되는거 확인
-
+  /*
   //
   const instance = axios.create();
   instance.defaults.headers.common['Authorization'] = accessToken;
@@ -309,6 +312,7 @@ app.get('/kakao/access',(req,res)=>{
       })
     });
   })
+  */
 })
 
 app.post('/kakao/register',(req,res)=>{
