@@ -49,7 +49,7 @@ export default {
     async submit() {
       try {
         await this.$api.auth.additional({
-          soldier_id,
+          soldier_id: this.soldier_id,
         });
       } catch (e) {
         this.$toast.error('에러가 발생했습니다!');
