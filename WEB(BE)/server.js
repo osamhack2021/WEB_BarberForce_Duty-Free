@@ -269,26 +269,21 @@ app.get('/kakao/access',(req,res)=>{
   var accessToken;
   //const cb = await request(option);
   var out = request(options , function(error, response, body){
-    return res.json({
-      body: body,
-      token: body.access_token
-    })
+    accessToken = body.access_token
   })
 
-
-  //여기까지 되는거 확인
-  /*
-  //
   const instance = axios.create();
   instance.defaults.headers.common['Authorization'] = accessToken;
   var email;
   var name;
   instance.get("https://api.barberforce.shop/kakao/access",{
   }).then(function(response){
-    email = response.data.kakao_account.email;
-    name = response.data.kakao_account.name;
+    return res.json({
+      response: response
+    })
   })
 
+  /*
   User.findOne({email:email},(err,user)=>{
     //DB에 존재하는 사용자인 경우
     if(user){
