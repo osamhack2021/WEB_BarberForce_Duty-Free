@@ -9,14 +9,14 @@
 
 <script>
 export default {
-  async middleware({ app, store }) {
-    const token = app.$route.query.token;
+  async middleware({ route, store, redirect }) {
+    const token = route.query.token;
     store.commit('auth/setToken', token);
     await store.dispatch('auth/load');
-    if (app.$route.query.first === '1') {
-      app.$router.replace('/kakao/additional');
+    if (route.query.first === '1') {
+      redirect('/kakao/additional');
     } else {
-      app.$router.replace('/');
+      redirect('/');
     }
   },
   computed: {

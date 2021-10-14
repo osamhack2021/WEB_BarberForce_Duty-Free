@@ -1,7 +1,7 @@
 <template>
-  <main class="h-screen w-screen flex flex-col items-center justify-center bg-brand p-3">
+  <main class="h-screen w-screen flex flex-col items-center justify-center bg-brand text-white p-3">
     <ValidationObserver v-slot="{ handleSubmit }">
-      <form @submit.prevent="handleSubmit(submit)">
+      <form class="text-center" @submit.prevent="handleSubmit(submit)">
         <div class="underline mb-6">회원정보 입력</div>
         <!-- 프로필 사진 부분 -->
         <!-- 군번 입력 부분 -->
@@ -39,6 +39,7 @@
 
 <script>
 export default {
+  layout: 'empty',
   data() {
     return {
       soldier_id: '',
