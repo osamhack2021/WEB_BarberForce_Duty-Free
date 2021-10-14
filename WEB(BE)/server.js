@@ -266,15 +266,29 @@ app.get('/kakao/access',(req,res)=>{
   }
 
   var accessToken;
-  var refresh;
-  var expires_in;
-  var access_body
-  //const cb = await request(option);
   var out = request(options , function(error, response, body){
     accessToken = body.access_token;
-    access_body = body;
   })
 
+  const verify = {
+    uri: "https://kapi.kakao.com/v1/user/access_token_info",
+    method: "GET",
+    headers: {
+      "Bearer" + accessToken,
+    },
+    json: true
+  }
+
+  out = request(verify, function(err,response,body){
+    if(err){
+      return res.json({
+        verify: err
+      })
+      return res.json({
+        body: body
+      })
+    }
+  })
 
   const instance = {
     uri: "https://kapi.kakao.com/v2/user/me",
