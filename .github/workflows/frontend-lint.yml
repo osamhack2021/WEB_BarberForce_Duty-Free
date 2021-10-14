@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - working-directory: ${{ secrets.BARBERFORCE_FRONT_PATH }}
+      - working-directory: ./WEB(FE)
         run: |
           npm ci
           npm run lint
