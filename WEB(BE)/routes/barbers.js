@@ -5,6 +5,8 @@ const Barbers = require('../models/barbers');
 
 const fetchUser = require('../middleware/fetchUser');
 
+// 우리 부대 제휴미용실 목록
+// (async/await)
 router.get('/barbers', fetchUser, async (req, res) => {
   try {
     const user = req.user;
@@ -21,6 +23,8 @@ router.get('/barbers', fetchUser, async (req, res) => {
   }
 });
 
+// 미용실 세부페이지
+// (async/await)
 router.get('/barbers/:id', async (req, res) => {
   try {
     const barber = await Barbers.findOne({ _id: req.params.id });

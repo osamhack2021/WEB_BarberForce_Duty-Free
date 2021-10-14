@@ -4,6 +4,8 @@ const Review = require('../models/review');
 
 const fetchUser = require('../middleware/fetchUser');
 
+// 해당 미용실의 리뷰 목록 가져오기
+// (async/await)
 router.get('/barbers/:id/reviews', async (req, res) => {
   const reviews = await Review.find({ barbers_id: req.params.id });
 
@@ -12,6 +14,8 @@ router.get('/barbers/:id/reviews', async (req, res) => {
   });
 });
 
+// 해당 미용실에 리뷰 작성하기
+// (async/await)
 router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
   const user = req.user;
 
