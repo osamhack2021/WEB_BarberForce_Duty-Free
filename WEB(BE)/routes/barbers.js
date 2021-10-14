@@ -3,31 +3,32 @@ const router = require('express').Router();
 const Unit = require('../models/unit');
 const Barbers = require('../models/barbers');
 
-router.get('/barbers', (req, res) => {
-  var unitName;
-  Unit.findOne({ token: req.headers.authorization }, (err, unit) => {
-    Barbers.find({ partnership: unit.unitName }, (err, barbers) => {
-      return res.json({
-        barbers: barbers.slice(0, req.query.limit),
-      });
+const fetchUser = require('../middleware/fetchUser');
+
+router.get('/barbers', fetchUser, async (req, res) => {
+  try {
+    const user = req.user;
+
+    const unit = await Unit.findOne({ soldier_id: user.soldier_id });
+    // 추후 partnership 을 ObjectId로 변경?
+    const barbers = await Barbers.find({ partnership: unit.unitName });
+
+    return res.json({
+      barbers: barbers.slice(0, req.query.limit),
     });
-  });
+  } catch (e) {
+    console.error('/babers - 에러!');
+  }
 });
 
-router.get('/barbers/:id', (req, res) => {
-  Barbers.findOne({ _id: req.params.id }, (err, barbers) => {
-    return res.json({
-      id: barbers._id,
-      title: barbers.title,
-      location: barbers.location,
-      location_detail: barbers.location_detail,
-      rating: barbers.rating,
-      bookmarked: barbers.bookmarked,
-      phone: barbers.phone,
-      thumb: barbers.thumb,
-      description: barbers.description,
-    });
-  });
+router.get('/barbers/:id', async (req, res) => {
+  try {
+    const barber = await Barbers.findOne({ _id: req.params.id });
+
+    return res.json(barber);
+  } catch (e) {
+    console.error('/babers/:id - 에러!');
+  }
 });
 
 module.exports = router;
