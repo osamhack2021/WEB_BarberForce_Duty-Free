@@ -31,11 +31,4 @@ userSchema.method.insertUser = function (cb, email, name) {
   });
 };
 
-userSchema.method.saveUser = function (cb) {
-  user.save(function (err, user) {
-    if (err) return cb(err);
-    cb(null, user);
-  });
-};
-
 module.exports = mongoose.model('User', userSchema);
