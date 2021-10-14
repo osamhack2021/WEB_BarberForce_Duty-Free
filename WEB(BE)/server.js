@@ -270,6 +270,12 @@ app.get('/kakao/access',(req,res)=>{
     accessToken = body.access_token;
   })
 
+  return res.json({
+    code: code,
+    accessToken: accessToken
+  })
+
+/*
   const verify = {
     uri: "https://kapi.kakao.com/v1/user/access_token_info",
     method: "GET",
