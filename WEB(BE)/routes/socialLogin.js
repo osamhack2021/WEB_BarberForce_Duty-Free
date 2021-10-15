@@ -58,7 +58,7 @@ router.get('/kakao/access', (req, res) => {
         const name = user.profile.nickname;
 
         // 이메일로 사용자 검색
-        const existingUser = await User.find({ email: email });
+        const existingUser = await User.find({ email: email, social: true });
         if (existingUser) {
           // 해당 이메일의 사용자가 이미 있다면
           // 그 사용자에 대한 토큰 생성 후 리다이렉트
@@ -73,6 +73,7 @@ router.get('/kakao/access', (req, res) => {
             name: name,
             soldier_id: null,
             password: null,
+            social: true,
           });
           // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
           const token = user.generateToken();

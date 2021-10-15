@@ -10,8 +10,8 @@ const fetchUser = require('../middleware/fetchUser');
 // (async/await 으로 비동기 콜 처리 (callback hell 해결))
 router.post('/login', async (req, res) => {
   try {
-    // 이메일 중복 검사
-    const user = await User.findOne({ email: req.body.email });
+    // 이메일 유효 검사
+    const user = await User.findOne({ email: req.body.email, social: false });
     if (!user) {
       return res.status(403).json({
         error: 'INVALID_EMAIL',
