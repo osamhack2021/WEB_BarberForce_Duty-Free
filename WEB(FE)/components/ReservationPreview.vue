@@ -1,12 +1,15 @@
 <template>
   <div>
     <!-- mobile -->
-    <template v-if="barber">
-      <div class="aspect-w-1 aspect-h-1 sm:hidden" :style="`background: url(${barber.thumb}) center/cover no-repeat`">
+    <template v-if="reservation.barber">
+      <div
+        class="aspect-w-1 aspect-h-1 sm:hidden"
+        :style="`background: url(${reservation.barber.thumb}) center/cover no-repeat`"
+      >
         <div class="flex flex-col justify-end">
           <div class="relative bg-black bg-opacity-80 font-thin text-white text-sm py-3 px-5">
             <div class="flex items-center">
-              <span class="font-bold text-xl">{{ barber.title }}</span>
+              <span class="font-bold text-xl">{{ reservation.barber.title }}</span>
               <span class="flex items-center ml-auto">
                 <img class="w-6 mr-2" src="~/assets/img/clock_white.svg" />
                 <div class="text-xs">
@@ -17,7 +20,7 @@
             </div>
             <div class="flex items-center mb-3">
               <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
-              {{ barber.location }}
+              {{ reservation.barber.location }}
             </div>
             <NuxtLink class="underline mt-auto" to="/history">예약 수정/취소하기</NuxtLink>
             <template v-if="timeover && !reviewForm">
@@ -36,22 +39,25 @@
       </div>
     </template>
     <!-- pc -->
-    <template v-if="barber">
+    <template v-if="reservation.barber">
       <div class="hidden sm:flex">
         <div class="w-1/2">
-          <div class="aspect-w-1 aspect-h-1" :style="`background: url(${barber.thumb}) center/cover no-repeat`">
+          <div
+            class="aspect-w-1 aspect-h-1"
+            :style="`background: url(${reservation.barber.thumb}) center/cover no-repeat`"
+          >
             <div class="flex flex-col justify-end">
               <div class="bg-black bg-opacity-80 font-thin text-white text-sm py-3 px-5 pb-12">
                 <div class="flex items-center">
-                  <span class="font-bold text-xl">{{ barber.title }}</span>
+                  <span class="font-bold text-xl">{{ reservation.barber.title }}</span>
                   <span class="flex items-center text-base ml-auto">
                     <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
-                    {{ barber.rating }}
+                    {{ reservation.barber.rating }}
                   </span>
                 </div>
                 <div class="flex items-center">
                   <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
-                  {{ barber.location }}
+                  {{ reservation.barber.location }}
                 </div>
               </div>
             </div>
@@ -59,13 +65,13 @@
         </div>
         <div class="flex flex-col bg-gray-600 text-white w-1/2 py-3 px-5">
           <div class="flex items-center">
-            <span class="font-bold text-2xl">{{ barber.title }}</span>
+            <span class="font-bold text-2xl">{{ reservation.barber.title }}</span>
             <span class="text-lg ml-auto">나의 예약</span>
           </div>
           <div class="mb-3">
             <span class="flex items-center text-sm">
               <img class="w-4 mr-1" src="~/assets/img/place.svg" />
-              {{ barber.location }}
+              {{ reservation.barber.location }}
             </span>
           </div>
           <div>
@@ -155,7 +161,6 @@ export default {
   },
   data() {
     return {
-      barber: null,
       reviewForm: false,
       review: {
         body: '',
@@ -163,10 +168,6 @@ export default {
         onlyBarber: false,
       },
     };
-  },
-  async fetch() {
-    const { data } = await this.$api.barbers.show(this.reservation.barbers_id);
-    this.barber = data;
   },
   computed: {
     dateString() {
@@ -183,7 +184,7 @@ export default {
   methods: {
     async submitReview() {
       try {
-        await this.$api.barbers.createReview(this.barber.id, this.review);
+        await this.$api.barbers.createReview(this.barber._id, this.review);
         this.$toast.success('리뷰를 작성했습니다!');
       } catch (e) {
         this.$toast.error('에러가 발생했습니다!');

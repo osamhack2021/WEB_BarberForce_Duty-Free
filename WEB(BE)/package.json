@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ext \".js\" --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,10 +17,14 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
     "mongoose": "^6.0.10",
     "path": "^0.12.7",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1"
   }
 }

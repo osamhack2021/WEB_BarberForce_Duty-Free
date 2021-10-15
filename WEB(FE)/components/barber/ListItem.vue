@@ -53,7 +53,7 @@ export default {
     };
   },
   async fetch() {
-    const { data } = await this.$api.barbers.reviews(this.barber.id);
+    const { data } = await this.$api.barbers.reviews(this.barber._id);
     this.reviews = data.reviews;
   },
   methods: {

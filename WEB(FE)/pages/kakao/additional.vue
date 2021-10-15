@@ -51,6 +51,8 @@ export default {
         await this.$api.auth.additional({
           soldier_id: this.soldier_id,
         });
+        this.$toast.success('정상적으로 처리되었습니다!');
+        this.$router.replace('/');
       } catch (e) {
         this.$toast.error('에러가 발생했습니다!');
       }
