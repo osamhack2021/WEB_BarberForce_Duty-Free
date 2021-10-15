@@ -98,14 +98,27 @@ router.post('/register', async (req, res) => {
 
 // 로그인한 사람의 정보
 // (fetchUser 미들웨어를 사용함)
-router.get('/me', fetchUser, (req, res) => {
+router.get('/me', fetchUser, async (req, res) => {
   // fetchUser 에서 user를 변수화해주므로 바로 리턴하면 됨
   const user = req.user;
-  res.json({
-    email: user.email,
-    name: user.name,
-    soldier_id: user.soldier_id,
-  });
+
+  try {
+    const unit = await Unit.findOne({ soldier_id: req.body.soldier_id });
+
+    res.json({
+      email: user.email,
+      name: user.name,
+      soldier_id: user.soldier_id,
+      social: user.social,
+      unit: unit,
+    });
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
 });
 
 module.exports = router;
