@@ -54,7 +54,14 @@ export default {
         this.$toast.success('정상적으로 처리되었습니다!');
         this.$router.replace('/');
       } catch (e) {
-        this.$toast.error('에러가 발생했습니다!');
+        const errorType = e.response.data.error;
+        if (errorType === 'EXISTING_SOLDIER_ID') {
+          this.$toast.error('이미 사용중인 군번입니다!');
+        } else if (errorType === 'INVALID_SOLDIER_ID') {
+          this.$toast.error('등록되어 있지 않은 군번입니다!');
+        } else {
+          this.$toast.error(`에러가 발생했습니다!`);
+        }
       }
     },
   },

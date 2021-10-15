@@ -60,7 +60,7 @@ router.get('/kakao/access', (req, res) => {
         const name = user.profile.nickname;
 
         // 이메일로 사용자 검색
-        const existingUser = await User.find({ email: email, social: true });
+        const existingUser = await User.findOne({ email: email, social: true });
         if (existingUser) {
           // 해당 이메일의 사용자가 이미 있다면
           // 그 사용자에 대한 토큰 생성 후 리다이렉트
@@ -92,6 +92,22 @@ router.get('/kakao/access', (req, res) => {
 router.post('/kakao/register', fetchUser, async (req, res) => {
   try {
     const user = req.user;
+
+    // 군번 중복체크
+    const existSoldierId = await User.exists({ soldier_id: req.body.soldier_id });
+    if (existSoldierId) {
+      return res.status(403).json({
+        error: 'EXISTING_SOLDIER_ID',
+      });
+    }
+
+    // 우리 DB에 등록된 군번인지 확인
+    const validSoliderId = await Unit.exists({ soldier_id: req.body.soldier_id });
+    if (!validSoliderId) {
+      return res.status(403).json({
+        error: 'INVALID_SOLDIER_ID',
+      });
+    }
 
     // 군번 데이터 추가 입력
     user.soldier_id = req.soldier_id;
