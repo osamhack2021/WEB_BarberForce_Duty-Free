@@ -1,7 +1,8 @@
 <template>
   <header class="shadow bg-brand">
+    <LayoutMenuBar />
     <div class="relative flex h-full px-4">
-      <button class="focus:outline-none">
+      <button class="focus:outline-none" @click="toggle">
         <img src="@/assets/img/menu.svg" style="width: 23px" />
       </button>
       <NuxtLink class="absolute top-1/2 left-1/2" style="transform: translate(-50%, -50%)" to="/">
@@ -14,7 +15,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    toggle() {
+      this.$store.dispatch('menubar/toggle');
+    },
+  },
+};
 </script>
 
 <style scoped>
