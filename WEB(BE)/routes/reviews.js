@@ -28,7 +28,7 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
   try {
     const user = req.user;
 
-    const created = await Review.create({
+    await Review.create({
       barber: req.params.id,
       reviewer: user._id,
       body: req.body.body,
