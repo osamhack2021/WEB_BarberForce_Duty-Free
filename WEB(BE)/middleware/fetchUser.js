@@ -49,6 +49,10 @@ const fetchUserMiddleware = async (req, res, next) => {
     next();
   } catch (e) {
     console.error(`[${req.method}] ${req.path} in :fetchUser middleware - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 };
 

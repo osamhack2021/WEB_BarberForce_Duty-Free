@@ -15,6 +15,10 @@ router.get('/barbers/:id/reviews', async (req, res) => {
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 
@@ -24,7 +28,7 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
   try {
     const user = req.user;
 
-    const created = await Review.create({
+    await Review.create({
       barber: req.params.id,
       reviewer: user._id,
       body: req.body.body,
@@ -36,6 +40,10 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 
