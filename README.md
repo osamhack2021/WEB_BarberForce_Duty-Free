@@ -1,4 +1,4 @@
-<a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free" align="center"><img src="/images/1_readme_title_1676.png" alt="BarberForce title"></a>
+<a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free" align="center"><img src="/IMAGES/1_readme_title_1676.png" alt="BarberForce title"></a>
 
 ## 프로젝트 소개
 
