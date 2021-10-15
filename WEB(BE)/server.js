@@ -40,49 +40,6 @@ app.use('', barbersRouter);
 app.use('', reservationsRouter);
 app.use('', reviewsRouter);
 
-app.get('/kakao/callback?code=KAKAO_CODE', (req, res) => {});
-
-app.post('/kakao/register', (req, res) => {});
-
-//DB 저장용
-app.post('/createReserve', (req, res) => {
-  var user_id;
-  User.findOne({ token: req.headers.authorization.split(' ')[1] }, (err, user) => {
-    user_id = user._id;
-  });
-  Reservation.insertMany({
-    year: req.body.year,
-    month: req.body.month,
-    date: req.body.day,
-    time: req.body.date,
-    barbers_id: req.params.id,
-    user_id: user_id,
-    description: req.body.description,
-  });
-  return res.json({
-    mss: '추가',
-  });
-});
-
-app.post('/createBarbers', (req, res) => {
-  Barber.insertMany({
-    title: req.body.title,
-    location: req.body.location,
-    location_detail: req.body.location_detail,
-    rating: req.body.rating,
-    phone: req.body.phone,
-    thumb: req.body.thumb,
-    bookmarked: req.body.bookmarked,
-    weekdayHour: req.body.weekdayHour,
-    holidayHour: req.body.holidayHour,
-    description: req.body.description,
-    partnership: req.body.partnership,
-  });
-  return res.json({
-    mss: '추가',
-  });
-});
-
 app.get('/setDummyData', async (req, res) => {
   // 기존 barbers, unit 데이터 비우기
   await Barber.deleteMany({});
@@ -203,22 +160,6 @@ app.get('/setDummyData', async (req, res) => {
   res.json('done');
 });
 
-app.get('/deleteDummys', async (req, res) => {
-  res.json('done');
-});
-
-app.post('/createUnit', async (req, res) => {
-  const response = await Unit.create({
-    unitName: req.body.unitName,
-    solider_id: req.body.soldier_id,
-    barbers_id: req.body.barbers_id,
-  });
-  console.log('res', response);
-  return res.json({
-    mss: '추가',
-  });
-});
-
 app.get('/DB', (req, res) => {
   User.find({}, (err, user) => {
     Barber.find({}, (err, barbers) => {
@@ -236,13 +177,6 @@ app.get('/DB', (req, res) => {
         });
       });
     });
-  });
-});
-
-app.get('/dataTest', (req, res) => {
-  var date = moment(new Date()).format('HH:mm');
-  return res.json({
-    date: date,
   });
 });
 
