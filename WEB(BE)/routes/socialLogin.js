@@ -3,6 +3,8 @@ const request = require('request');
 
 const User = require('../models/user');
 
+const fetchUser = require('../middleware/fetchUser');
+
 // code 로 토큰을 가져오는 함수 (내부적으로 request 사용)
 function getToken(code, callback) {
   const options = {
@@ -85,6 +87,20 @@ router.get('/kakao/access', (req, res) => {
       }
     });
   });
+});
+
+router.post('/kakao/register', fetchUser, async (req, res) => {
+  try {
+    const user = req.user;
+
+    // 군번 데이터 추가 입력
+    user.soldier_id = req.soldier_id;
+    user.save();
+
+    res.json({});
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+  }
 });
 
 module.exports = router;
