@@ -68,7 +68,7 @@ router.get('/reservations', fetchUser, async (req, res) => {
   const user = req.user;
 
   try {
-    const reservations = await Reservation.find({ user_id: user._id })
+    const reservations = await Reservation.find({ user: user._id })
       .populate('barber')
       .populate('user')
       .sort({ time: 'desc' });
@@ -76,6 +76,24 @@ router.get('/reservations', fetchUser, async (req, res) => {
     return res.json({
       reservations: reservations,
     });
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
+});
+
+router.post('/reservations/:id/done', fetchUser, async (req, res) => {
+  const user = req.user;
+
+  try {
+    const reservation = await Reservation.find({ user: user._id });
+
+    await reservation.update({ $set: { done: true } });
+
+    return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({

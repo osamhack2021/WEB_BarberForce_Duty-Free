@@ -30,21 +30,29 @@ router.get('/setDummyData', async (req, res) => {
       soldier_id: [],
       barbers_id: [],
     },
+    {
+      unitName: 'ABCD',
+      soldier_id: [],
+      barbers_id: [],
+    },
   ];
   /**
    * 군번 목록
-   * 20-70007000 ~ 20-70007299 : OICW
-   * 20-70007300 ~ 20-70007699 : AFOC
-   * 20-70007700 ~ 20-70007999 : AAOC
+   * 20-70000000 ~ 20-70005000 : OICW
+   * 20-70005001 ~ 20-70010000 : AFOC
+   * 20-70010001 ~ 20-70015000 : AAOC
+   * 20-70015001 ~ 20-70020000 : ABCD
    */
-  for (let i = 0; i < 999; i++) {
-    const dummySoliderId = `20-${70007000 + i}`;
-    if (i < 300) {
+  for (let i = 0; i <= 20000; i++) {
+    const dummySoliderId = `20-${70000000 + i}`;
+    if (i <= 5000) {
       units[0].soldier_id.push(dummySoliderId);
-    } else if (i < 700) {
+    } else if (i <= 10000) {
       units[1].soldier_id.push(dummySoliderId);
-    } else {
+    } else if (i <= 15000) {
       units[2].soldier_id.push(dummySoliderId);
+    } else {
+      units[3].soldier_id.push(dummySoliderId);
     }
   }
   for (const dummy of units) {
@@ -60,8 +68,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 월요일 휴무입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop2.jpg',
-      bookmarked: false,
-      partnership: ['OICW', 'AFOC'],
+      partnership: ['OICW'],
     },
     {
       title: `송탄이발소`,
@@ -70,8 +77,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 화요일 휴무입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop1.jpg',
-      bookmarked: false,
-      partnership: ['OICW', 'AFOC'],
+      partnership: ['OICW'],
     },
     {
       title: `기본군사훈련단`,
@@ -80,8 +86,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '연중무휴입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop2.jpg',
-      bookmarked: false,
-      partnership: ['OICW', 'AFOC'],
+      partnership: ['AFOC'],
     },
     {
       title: `제 20 전투비행단`,
@@ -90,8 +95,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 화요일 휴무입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop1.jpg',
-      bookmarked: false,
-      partnership: ['OICW', 'AFOC'],
+      partnership: ['AFOC'],
     },
     {
       title: `머리 잘하는 집`,
@@ -100,7 +104,6 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 수요일 휴무입니다.',
       phone: '010-0010-0052',
       thumb: '/img/shop1.jpg',
-      bookmarked: false,
       partnership: ['AAOC'],
     },
     {
@@ -110,8 +113,25 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 수요일 휴무입니다.',
       phone: '010-0110-1000',
       thumb: '/img/shop1.jpg',
-      bookmarked: false,
       partnership: ['AAOC'],
+    },
+    {
+      title: `자라나라 머리머리`,
+      location: '참모장실',
+      location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
+      description: '매주 수요일 휴무입니다.',
+      phone: '010-0010-0052',
+      thumb: '/img/shop1.jpg',
+      partnership: ['ABCD'],
+    },
+    {
+      title: `볶아드립니다`,
+      location: '작전사령관실',
+      location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
+      description: '매주 수요일 휴무입니다.',
+      phone: '010-0110-1000',
+      thumb: '/img/shop1.jpg',
+      partnership: ['ABCD'],
     },
   ];
   for (const dummy of barbers) {
@@ -126,24 +146,28 @@ router.get('/setDummyData', async (req, res) => {
   res.json('done');
 });
 
-router.get('/DB', (req, res) => {
-  User.find({}, (err, user) => {
-    Barber.find({}, (err, barbers) => {
-      Reservation.find({}, (err, reservation) => {
-        Review.find({}, (err, review) => {
-          Unit.find({}, (err, unit) => {
-            return res.json({
-              User: user,
-              Barbers: barbers,
-              Reservation: reservation,
-              Review: review,
-              Unit: unit,
-            });
-          });
-        });
-      });
+router.get('/db', async (req, res) => {
+  try {
+    const users = await User.find({});
+    const barbers = await Barber.find({});
+    const reservations = await Reservation.find({});
+    const reviews = await Review.find({});
+    const units = await Unit.find({});
+
+    return res.json({
+      User: users,
+      Barber: barbers,
+      Reservation: reservations,
+      Review: reviews,
+      Unit: units,
     });
-  });
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
 });
 
 module.exports = router;
