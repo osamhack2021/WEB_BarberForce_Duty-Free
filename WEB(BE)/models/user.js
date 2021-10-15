@@ -11,11 +11,6 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.comparePassword = function (plainPassword) {
-  // 소셜로그인 사용자면 이메일로 로그인 못하도록
-  if (this.password === null) {
-    return false;
-  }
-
   const hashed = crypto.createHash('sha512').update(plainPassword).digest('base64');
   return hashed === this.password;
 };
