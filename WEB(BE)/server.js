@@ -178,21 +178,30 @@ app.get('/barbers/:id',(req,res)=>{
 });
 
 app.get('/barbers/:id/reservations/:year/:month',(req,res)=>{
-
+  year = req.params.year;
+  month = req.params.month;
   Reservation.find({barbers_id: req.params.id, year: req.params.year, month:req.params.month}, (err, reservation)=>{
     var list = new Array(31);
     for(i=0;i<list.length;i++){
-      var date = new Date(year,month-1,i+1,)
+      var timespan = new Date(year,month,i+1,0,0);  //YYYY-MM-DD-00:00:0
       var time = new Array();
-      list[i] = {day: i+1, time: {'18:00': false, '18:30': false, '19:00': false,'19:30':false,'20:00':false,'20:30':false}}
+      while(timespan.getDate()==i+1){
+        time.push({[moment(timespan).format('HH:mm')]: false});
+        timespan.setMinutes(timespan.getMinutes()+1);
+      }
+      list[i] = {day: i+1, time: time}
     }
+
+    //DB 데이터 moment로 변경시 시간 안맞는 경우 발생
     for(i=0;i<reservation.length;i++){
-      var time = moment(new Date(reservation[i].time)).format('HH') + ':' + moment(new Date(reservation[i].time)).format('mm');
-      list[reservation[i].day-1].time[time] = true;
+      var time = moment(new Date(reservation[i].time)).format('HH')*60+moment(new Date(reservation[i].time)).format('mm');
+      list[reservation[i].day-1].time[moment(new Date(reservation[i].time)).format('HH:mm')] = true;
+      console.log(moment(reservation[i].time).format('HH:mm'));
     }
 
     return res.json({
-      reservations: list
+      reservations: list,
+      list: list[reservation[0].day-1]
     })
 
   })
