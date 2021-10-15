@@ -89,7 +89,7 @@ router.post('/reservations/:id/done', fetchUser, async (req, res) => {
   const user = req.user;
 
   try {
-    const reservation = await Reservation.findOne({ user: user._id });
+    const reservation = await Reservation.findOne({ barber: req.params.id });
 
     await reservation.update({ $set: { done: true } });
 
