@@ -107,7 +107,7 @@ export default {
         description: this.description,
       };
       try {
-        await this.$api.barbers.createReservation(this.barber.id, reservation);
+        await this.$api.barbers.createReservation(this.barber._id, reservation);
         this.$toast.success('예약되었습니다!');
         this.$router.replace('/');
       } catch (e) {
