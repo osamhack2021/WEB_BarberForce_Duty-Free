@@ -8,7 +8,7 @@ const fetchUser = require('../middleware/fetchUser');
 // (async/await)
 router.get('/barbers/:id/reviews', async (req, res) => {
   try {
-    const reviews = await Review.find({ barbers_id: req.params.id });
+    const reviews = await Review.find({ barber: req.params.id }).populate('barber').populate('reviewer');
 
     return res.json({
       reviews: reviews,
@@ -25,17 +25,14 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     const user = req.user;
 
     const created = await Review.create({
-      barbers_id: req.params.id,
-      thumb: '',
-      reviewer: user.name,
+      barber: req.params.id,
+      reviewer: user._id,
       body: req.body.body,
       rating: req.body.rating,
-      createdAt: new Date().toISOString(),
     });
 
     return res.json({
       mss: '추가',
-      created: created,
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
