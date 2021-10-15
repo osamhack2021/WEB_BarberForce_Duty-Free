@@ -82,6 +82,10 @@
                 <div>{{ dateString.time }}</div>
               </div>
             </div>
+            <div class="mb-3">
+              <div class="font-bold ml-4 mb-1">사장님께 용무</div>
+              <div class="font-sm">{{ reservation.description }}</div>
+            </div>
             <div>
               <NuxtLink class="underline" to="/history">예약 수정/취소하기</NuxtLink>
             </div>
