@@ -35,8 +35,16 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
       rating: req.body.rating,
     });
 
+    //미용실 레이팅 추가
+    const review = await Barber.find({_id: req.params.id});
+    const rating = await Review.aggregate([
+      {$match:{baber: req.params.id}},
+      {$group:{_id: '$desc',avg:{$avg: '$rating'}}}
+    ]);
+
     return res.json({
       mss: '추가',
+      rating: rating
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
