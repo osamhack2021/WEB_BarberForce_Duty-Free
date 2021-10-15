@@ -53,15 +53,13 @@ export default {
       try {
         await this.$auth.login(this.credentials);
       } catch (e) {
-        if (e.response && e.response.data && e.response.data.message) {
-          const message = e.response.data.message;
-          if (message === 'Unvalid email') {
-            this.$toast.error('해당 이메일과 일치하는 계정이 없습니다!');
-          } else if (message === 'Wrong password') {
-            this.$toast.error('비밀번호가 맞지 않습니다!');
-          }
+        const errorType = e.response.data.error;
+        if (errorType === 'INVALID_EMAIL') {
+          this.$toast.error('해당 이메일과 일치하는 계정이 없습니다!');
+        } else if (errorType === 'INVALID_PASSWORD') {
+          this.$toast.error('비밀번호가 맞지 않습니다!');
         } else {
-          this.$toast.error('알 수 없는 에러가 발생했습니다!');
+          this.$toast.error('오류가 발생했습니다!');
         }
         this.credentials.password = '';
       }

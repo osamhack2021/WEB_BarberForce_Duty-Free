@@ -10,7 +10,7 @@ const auth = client => ({
     return await client.get('/me');
   },
   additional: async data => {
-    return await client.post('/kakao/additional', data);
+    return await client.post('/kakao/register', data);
   },
 });
 

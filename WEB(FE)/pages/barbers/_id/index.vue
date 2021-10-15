@@ -166,14 +166,9 @@ export default {
         return;
       }
 
-      const year = date.year();
-      const month = date.month() + 1;
-      const day = date.date();
-      const time = date.format('_HHmm');
+      const dateString = encodeURIComponent(date.toISOString());
       const description = this.description;
-      this.$router.push(
-        `/barbers/${this.barber.id}/book?year=${year}&month=${month}&day=${day}&time=${time}&description=${description}`
-      );
+      this.$router.push(`/barbers/${this.barber._id}/book?time=${dateString}&description=${description}`);
     },
     drawMap(title, location) {
       const geocoder = new window.kakao.maps.services.Geocoder();
