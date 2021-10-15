@@ -85,6 +85,10 @@ router.get('/kakao/access', (req, res) => {
         }
       } catch (e) {
         console.error(`[${req.method}] ${req.path} - 에러!`, e);
+        return res.status(500).json({
+          error: e,
+          errorString: e.toString(),
+        });
       }
     });
   });
@@ -116,6 +120,10 @@ router.post('/kakao/register', fetchUser, async (req, res) => {
     res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 

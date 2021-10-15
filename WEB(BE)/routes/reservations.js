@@ -57,6 +57,10 @@ router.get('/barbers/:id/reservations/:year/:month', async (req, res) => {
     */
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 
@@ -76,6 +80,10 @@ router.post('/barbers/:id/reservations', fetchUser, async (req, res) => {
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 
@@ -93,6 +101,10 @@ router.get('/reservations', fetchUser, async (req, res) => {
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 

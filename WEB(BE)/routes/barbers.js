@@ -20,6 +20,10 @@ router.get('/barbers', fetchUser, async (req, res) => {
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 
@@ -32,6 +36,10 @@ router.get('/barbers/:id', async (req, res) => {
     return res.json(barber);
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
   }
 });
 
