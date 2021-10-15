@@ -14,11 +14,15 @@ router.get('/barbers/:id/reservations/:year/:month', async (req, res) => {
     const month = req.params.month;
 
     const startDate = moment({
-      y: year,
-      m: month - 1,
-      d: 1,
+      year: year,
+      month: month - 1,
+      date: 1,
     });
-    const endDate = moment(startDate).endTo('month');
+    const endDate = moment({
+      year: year,
+      month: month,
+      date: 1,
+    });
 
     const reservations = await Reservation.find({
       barber: mongoose.Types.ObjectId(req.params.id),
@@ -61,8 +65,8 @@ router.post('/barbers/:id/reservations', fetchUser, async (req, res) => {
 
   try {
     const created = await Reservation.create({
-      barber: mongoose.Types.ObjectId(req.params.id),
-      user: mongoose.Types.ObjectId(user._id),
+      barber: req.params.id,
+      user: user._id,
       time: new Date(req.body.time),
       description: req.body.description,
     });
