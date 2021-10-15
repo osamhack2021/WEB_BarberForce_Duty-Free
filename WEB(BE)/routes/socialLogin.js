@@ -64,7 +64,7 @@ router.get('/kakao/access', (req, res) => {
         if (existingUser) {
           // 해당 이메일의 사용자가 이미 있다면
           // 그 사용자에 대한 토큰 생성 후 리다이렉트
-          const token = user.generateToken();
+          const token = existingUser.generateToken();
           const url = 'https://barberforce.shop/kakao/callback?token=' + token;
           return res.redirect(url);
         } else {
