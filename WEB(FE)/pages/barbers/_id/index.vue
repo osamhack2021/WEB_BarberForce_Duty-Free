@@ -172,7 +172,7 @@ export default {
       const time = date.format('_HHmm');
       const description = this.description;
       this.$router.push(
-        `/barbers/${this.barber.id}/book?year=${year}&month=${month}&day=${day}&time=${time}&description=${description}`
+        `/barbers/${this.barber._id}/book?year=${year}&month=${month}&day=${day}&time=${time}&description=${description}`
       );
     },
     drawMap(title, location) {

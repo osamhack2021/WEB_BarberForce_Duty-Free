@@ -8,6 +8,7 @@ const cors = require('cors');
 const path = require('path');
 const request = require('request-promise');
 const axios = require('axios');
+const mongoose = require('mongoose');
 
 const key = require('./auth/key');
 const moment = require('moment');
@@ -137,7 +138,6 @@ app.get('/setDummyData', async (req, res) => {
       location: '보라매 사동',
       location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
       description: '매주 월요일 휴무입니다.',
-      rating: 4,
       phone: '010-0000-0011',
       thumb: '/img/shop2.jpg',
       bookmarked: false,
@@ -148,7 +148,6 @@ app.get('/setDummyData', async (req, res) => {
       location: '송탄역',
       location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
       description: '매주 화요일 휴무입니다.',
-      rating: 4.2,
       phone: '010-0000-0011',
       thumb: '/img/shop1.jpg',
       bookmarked: false,
@@ -159,7 +158,6 @@ app.get('/setDummyData', async (req, res) => {
       location: '진주',
       location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
       description: '연중무휴입니다.',
-      rating: 4,
       phone: '010-0000-0011',
       thumb: '/img/shop2.jpg',
       bookmarked: false,
@@ -170,7 +168,6 @@ app.get('/setDummyData', async (req, res) => {
       location: '서산',
       location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
       description: '매주 화요일 휴무입니다.',
-      rating: 4.2,
       phone: '010-0000-0011',
       thumb: '/img/shop1.jpg',
       bookmarked: false,
@@ -181,7 +178,6 @@ app.get('/setDummyData', async (req, res) => {
       location: '송탄출장소',
       location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
       description: '매주 수요일 휴무입니다.',
-      rating: 4.5,
       phone: '010-0010-0052',
       thumb: '/img/shop1.jpg',
       bookmarked: false,
@@ -192,7 +188,6 @@ app.get('/setDummyData', async (req, res) => {
       location: 'K-55 정문',
       location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
       description: '매주 수요일 휴무입니다.',
-      rating: 3.5,
       phone: '010-0110-1000',
       thumb: '/img/shop1.jpg',
       bookmarked: false,

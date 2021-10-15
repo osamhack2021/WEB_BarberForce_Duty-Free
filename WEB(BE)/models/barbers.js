@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 
 const barbersSchema = new mongoose.Schema({
-  title: String,
-  location: String,
-  location_detail: String,
-  rating: Number,
-  phone: String,
-  thumb: String,
-  bookmarked: Boolean,
-  weekdayHour: String,
-  holidayHour: String,
-  description: String,
+  title: { type: String, required: true },
+  location: { type: String, required: true },
+  location_detail: { type: String, required: true },
+  rating: { type: Number, default: 0 },
+  phone: { type: String, required: true },
+  thumb: { type: String, default: null },
+  bookmarked: { type: Boolean, default: false },
+  description: { type: String, default: null },
   partnership: [String],
 });
 
