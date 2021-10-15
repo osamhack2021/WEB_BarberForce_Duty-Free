@@ -126,24 +126,28 @@ router.get('/setDummyData', async (req, res) => {
   res.json('done');
 });
 
-router.get('/DB', (req, res) => {
-  User.find({}, (err, user) => {
-    Barber.find({}, (err, barbers) => {
-      Reservation.find({}, (err, reservation) => {
-        Review.find({}, (err, review) => {
-          Unit.find({}, (err, unit) => {
-            return res.json({
-              User: user,
-              Barbers: barbers,
-              Reservation: reservation,
-              Review: review,
-              Unit: unit,
-            });
-          });
-        });
-      });
+router.get('/db', async (req, res) => {
+  try {
+    const users = await User.find({});
+    const barbers = await Barber.find({});
+    const reservations = await Reservation.find({});
+    const reviews = await Review.find({});
+    const units = await Unit.find({});
+
+    return res.json({
+      User: users,
+      Barber: barbers,
+      Reservation: reservations,
+      Review: reviews,
+      Unit: units,
     });
-  });
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
 });
 
 module.exports = router;
