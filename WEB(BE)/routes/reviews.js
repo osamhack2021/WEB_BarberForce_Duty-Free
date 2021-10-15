@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const Review = require('../models/review');
-
+const Barber = require('../models/barber')
 const fetchUser = require('../middleware/fetchUser');
 
 // 해당 미용실의 리뷰 목록 가져오기
@@ -37,10 +37,17 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
 
     //미용실 레이팅 추가
     const review = await Barber.find({_id: req.params.id});
-    const rating = await Review.aggregate([
-      {$match:{baber: req.params.id}},
-      {$group:{_id: '$desc',avg:{$avg: '$rating'}}}
-    ]);
+    const rating = Review.aggregate([
+      { "$match" :{"barber": req.params.id}},
+      { "$unwind": "$rating" }
+    ],
+
+      function(err,data){
+        console.log(JSON.stringify(data,undefined,2));
+      }
+    );
+
+
 
     return res.json({
       mss: '추가',
