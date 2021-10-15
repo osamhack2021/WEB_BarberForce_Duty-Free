@@ -2,21 +2,16 @@ const express = require('express');
 const app = express();
 const port = 3306;
 const bodyParser = require('body-parser');
-const jwt = require('jsonwebtoken');
 const url = require('url');
 const cors = require('cors');
-const path = require('path');
-const request = require('request-promise');
-const axios = require('axios');
 const mongoose = require('mongoose');
 
-const key = require('./auth/key');
 const moment = require('moment');
 const db = require('./db');
 
 const User = require('./models/user');
 const Reservation = require('./models/reservation');
-const Barbers = require('./models/barbers');
+const Barber = require('./models/barber');
 const Review = require('./models/review');
 const Unit = require('./models/unit');
 
@@ -70,7 +65,7 @@ app.post('/createReserve', (req, res) => {
 });
 
 app.post('/createBarbers', (req, res) => {
-  Barbers.insertMany({
+  Barber.insertMany({
     title: req.body.title,
     location: req.body.location,
     location_detail: req.body.location_detail,
@@ -90,7 +85,7 @@ app.post('/createBarbers', (req, res) => {
 
 app.get('/setDummyData', async (req, res) => {
   // 기존 barbers, unit 데이터 비우기
-  await Barbers.deleteMany({});
+  await Barber.deleteMany({});
   await Unit.deleteMany({});
 
   // 부대 데이터
@@ -195,7 +190,7 @@ app.get('/setDummyData', async (req, res) => {
     },
   ];
   for (const dummy of barbers) {
-    const created = await Barbers.create(dummy);
+    const created = await Barber.create(dummy);
     // 미용실의 partnership에 대해 모두 등록
     for (const partner of dummy.partnership) {
       const unit = await Unit.findOne({ unitName: partner });
@@ -224,7 +219,7 @@ app.post('/createUnit', async (req, res) => {
 
 app.get('/DB', (req, res) => {
   User.find({}, (err, user) => {
-    Barbers.find({}, (err, barbers) => {
+    Barber.find({}, (err, barbers) => {
       Reservation.find({}, (err, reservation) => {
         Review.find({}, (err, review) => {
           Unit.find({}, (err, unit) => {

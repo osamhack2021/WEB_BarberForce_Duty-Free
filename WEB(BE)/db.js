@@ -16,7 +16,7 @@ module.exports = () => {
 
   require('./models/user');
   require('./models/reservation');
-  require('./models/barbers');
+  require('./models/barber');
   require('./models/review');
   require('./models/unit');
 };

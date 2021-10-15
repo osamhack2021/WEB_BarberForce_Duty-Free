@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const barbersSchema = new mongoose.Schema({
+const barberSchema = new mongoose.Schema({
   title: { type: String, required: true },
   location: { type: String, required: true },
   location_detail: { type: String, required: true },
@@ -12,4 +12,4 @@ const barbersSchema = new mongoose.Schema({
   partnership: [String],
 });
 
-module.exports = mongoose.model('Barbers', barbersSchema);
+module.exports = mongoose.model('Barber', barberSchema);

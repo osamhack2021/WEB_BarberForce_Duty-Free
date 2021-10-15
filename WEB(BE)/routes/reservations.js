@@ -29,8 +29,8 @@ router.get('/barbers/:id/reservations/:year/:month', async (req, res) => {
     }).sort({ time: 'desc' });
 
     return res.json({
-      reservations: reservations;
-    })
+      reservations: reservations,
+    });
     /*
     const list = [];
     const time = moment(reservations);
