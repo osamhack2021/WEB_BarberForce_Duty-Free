@@ -22,9 +22,6 @@ export default {
         slidesPerView: 1,
         spaceBetween: 0,
         loop: false,
-        autoplay: {
-          dealy: 5000,
-        },
         navigation: {
           prevEl: '.swiper-button-prev',
           nextEl: '.swiper-button-next',

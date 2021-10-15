@@ -195,6 +195,7 @@ export default {
       try {
         await this.$api.barbers.createReview(this.reservation.barber._id, this.review);
         this.$toast.success('리뷰를 작성했습니다!');
+        location.reload();
       } catch (e) {
         this.$toast.error('에러가 발생했습니다!');
       }
