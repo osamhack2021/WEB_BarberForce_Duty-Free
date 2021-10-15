@@ -71,7 +71,7 @@ router.get('/reservations', fetchUser, async (req, res) => {
     const reservations = await Reservation.find({ user: user._id })
       .populate('barber')
       .populate('user')
-      .sort({ time: 'desc' });
+      .sort({ time: 'asc' });
 
     return res.json({
       reservations: reservations,
@@ -89,7 +89,7 @@ router.post('/reservations/:id/done', fetchUser, async (req, res) => {
   const user = req.user;
 
   try {
-    const reservation = await Reservation.find({ user: user._id });
+    const reservation = await Reservation.findOne({ _id: req.params.id });
 
     await reservation.update({ $set: { done: true } });
 
