@@ -16,7 +16,7 @@
           <div class="flex flex-col items-center mb-2">
             <div class="mb-2">
               <!-- <DatePicker v-model="date" :disabled-dates="disabledDates" /> -->
-              <DatePicker v-model="date" mode="dateTime" :minute-increment="30" is24hr />
+              <DatePicker v-model="date" mode="dateTime" is24hr />
             </div>
           </div>
           <!-- additional message input -->
@@ -62,7 +62,12 @@
           <template v-if="reviews.length === 0">
             <div class="text-sm text-center md:text-base">아직 리뷰가 없습니다!</div>
           </template>
-          <ReviewListItem v-for="review in reviews" :key="review._id" :review="review" />
+          <ReviewListItem
+            v-for="review in reviews"
+            :key="review._id"
+            :review="review"
+            class="rounded border bg-white mb-2"
+          />
         </div>
         <!-- info section -->
         <div class="mb-6">
@@ -132,10 +137,11 @@ export default {
     };
   },
   async fetch() {
-    const { data: barber } = await this.$api.barbers.show(this.$route.params.id);
+    const id = this.$route.params.id;
+    const { data: barber } = await this.$api.barbers.show(id);
     this.barber = barber;
 
-    const { data: reviewResponse } = await this.$api.barbers.reviews(this.$routes.params.id);
+    const { data: reviewResponse } = await this.$api.barbers.reviews(id);
     this.reviews = reviewResponse.reviews;
   },
   watch: {
@@ -149,25 +155,15 @@ export default {
     async book() {
       const date = moment(this.date);
 
-      if (date.hours() < 18 || date.hours() >= 21) {
-        this.$toast.error('예약 시간은 18시 00분부터 20시 30분까지만 가능합니다.');
-        return;
-      }
-
       const valid = await this.$refs.description.validate();
       if (!valid) {
         this.$toast.error(`'사장님께 용무' 입력을 확인해주세요!`);
         return;
       }
 
-      const year = date.year();
-      const month = date.month() + 1;
-      const day = date.date();
-      const time = date.format('_HHmm');
+      const dateString = encodeURIComponent(date.toISOString());
       const description = this.description;
-      this.$router.push(
-        `/barbers/${this.barber.id}/book?year=${year}&month=${month}&day=${day}&time=${time}&description=${description}`
-      );
+      this.$router.push(`/barbers/${this.barber._id}/book?time=${dateString}&description=${description}`);
     },
     drawMap(title, location) {
       const geocoder = new window.kakao.maps.services.Geocoder();

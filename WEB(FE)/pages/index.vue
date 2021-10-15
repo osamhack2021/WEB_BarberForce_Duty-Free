@@ -1,7 +1,7 @@
 <template>
   <main class="container pb-20">
     <!-- 미용실 carousel -->
-    <ReservationPreview v-if="firstReservation" :reservation="firstReservation" />
+    <ReservationPreviewCarousel v-if="undoneReservations.length > 0" :reservations="undoneReservations" />
     <BarberCarousel v-else />
     <div class="p-3">
       <!-- '머리깎고 뭐하지?' section -->
@@ -81,13 +81,14 @@ export default {
   middleware: 'auth',
   data() {
     return {
-      firstReservation: null,
+      undoneReservations: [],
     };
   },
   async fetch() {
     const { data } = await this.$api.reservations.list();
-    const reservations = data.reservations;
-    this.firstReservation = reservations[0];
+    this.undoneReservations = data.reservations.filter(reservation => {
+      return !reservation.done;
+    });
   },
   methods: {
     logout() {

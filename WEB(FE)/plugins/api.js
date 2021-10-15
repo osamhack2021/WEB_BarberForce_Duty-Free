@@ -9,6 +9,9 @@ const auth = client => ({
   me: async () => {
     return await client.get('/me');
   },
+  additional: async data => {
+    return await client.post('/kakao/register', data);
+  },
 });
 
 // barbers
@@ -37,6 +40,9 @@ const barbers = client => ({
 const reservations = client => ({
   list: async () => {
     return await client.get('/reservations');
+  },
+  markAsDone: async id => {
+    return await client.post(`/reservations/${id}/done`);
   },
 });
 

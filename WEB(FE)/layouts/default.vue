@@ -8,6 +8,9 @@
 
 <script>
 export default {
+  middleware({ store }) {
+    store.dispatch('menubar/close');
+  },
   computed: {
     headerHeight() {
       return 69;
