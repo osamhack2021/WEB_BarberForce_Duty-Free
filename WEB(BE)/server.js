@@ -87,6 +87,8 @@ app.get('/setDummyData', async (req, res) => {
   // 기존 barbers, unit 데이터 비우기
   await Barber.deleteMany({});
   await Unit.deleteMany({});
+  await Reservation.deleteMany({});
+  await Review.deleteMany({});
 
   // 부대 데이터
   const units = [
