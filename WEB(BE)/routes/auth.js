@@ -103,7 +103,7 @@ router.get('/me', fetchUser, async (req, res) => {
   const user = req.user;
 
   try {
-    const unit = await Unit.findOne({ soldier_id: req.body.soldier_id });
+    const unit = await Unit.findOne({ soldier_id: user.soldier_id });
 
     res.json({
       email: user.email,
