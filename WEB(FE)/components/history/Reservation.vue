@@ -10,16 +10,16 @@
         {{ dateString.time }}
       </div>
       <!-- info -->
-      <template v-if="barber">
+      <template v-if="reservation.barber">
         <div class="flex-1">
           <!-- title -->
-          <div class="text-lg font-bold">{{ barber.title }}</div>
+          <div class="text-lg font-bold">{{ reservation.barber.title }}</div>
           <!-- separator -->
           <hr class="my-1" />
           <!-- phone -->
           <div class="flex items-center text-xs">
             <img class="w-4" src="@/assets/img/phone.svg" />
-            <span class="ml-1">{{ barber.phone }}</span>
+            <span class="ml-1">{{ reservation.barber.phone }}</span>
           </div>
         </div>
       </template>
@@ -58,12 +58,7 @@ export default {
   data() {
     return {
       opened: this.active,
-      barber: null,
     };
-  },
-  async fetch() {
-    const { data } = await this.$api.barbers.show(this.reservation.barber_id);
-    this.barber = data;
   },
   computed: {
     dateString() {

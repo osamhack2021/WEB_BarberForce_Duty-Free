@@ -14,7 +14,7 @@
         <span class="text-sm text-gray-300 ml-auto">{{ createdAtString }}</span>
       </div>
       <div class="text-sm mb-6">{{ review.body }}</div>
-      <div class="text-sm">리뷰 남긴이: {{ review.reviewer }}</div>
+      <div class="text-sm">리뷰 남긴이: {{ review.reviewer.name }}</div>
     </div>
   </div>
 </template>
