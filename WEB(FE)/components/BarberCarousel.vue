@@ -38,9 +38,6 @@ export default {
         slidesPerView: 1,
         spaceBetween: 0,
         loop: false,
-        autoplay: {
-          dealy: 5000,
-        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
