@@ -68,17 +68,10 @@ import moment from 'moment';
 export default {
   middleware: 'auth',
   data() {
-    const year = this.$route.query.year;
-    const month = this.$route.query.month;
-    const day = this.$route.query.day;
-    const time = this.$route.query.time;
+    const time = moment(decodeURIComponent(this.$route.query.time));
     const description = this.$route.query.description;
     return {
       barber: null,
-      date: moment(`${year}-${month}-${day} ${time.substr(1, 2)}:${time.substr(3, 2)}`),
-      year,
-      month,
-      day,
       time,
       description,
     };
@@ -86,10 +79,10 @@ export default {
   computed: {
     dateString() {
       const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
-      return this.date.format('YYYY/MM/DD') + `(${weekdays[this.date.day()]})`;
+      return this.time.format('YYYY/MM/DD') + `(${weekdays[this.time.day()]})`;
     },
     timeString() {
-      return this.date.format('A hh:mm');
+      return this.time.format('A hh:mm');
     },
   },
   mounted() {
@@ -100,9 +93,6 @@ export default {
   methods: {
     async submit() {
       const reservation = {
-        year: this.year,
-        month: this.month,
-        day: this.day,
         time: this.time,
         description: this.description,
       };
