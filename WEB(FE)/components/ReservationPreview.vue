@@ -27,9 +27,7 @@
               <div class="absolute top-full" style="right: 5%; transform: translate(0, -75%)">
                 <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
                 <div class="flex justify-center items-center">
-                  <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2" @click="reviewForm = true">
-                    예
-                  </button>
+                  <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2" @click="markAsDone">예</button>
                   <button class="w-16 text-center rounded bg-red-500 text-white py-2 mr-2">아니오</button>
                 </div>
               </div>
@@ -94,9 +92,7 @@
             <div class="mt-auto">
               <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
               <div class="flex justify-center items-center">
-                <button class="flex-1 text-center rounded bg-brand text-white py-3 mr-2" @click="reviewForm = true">
-                  예
-                </button>
+                <button class="flex-1 text-center rounded bg-brand text-white py-3 mr-2" @click="markAsDone">예</button>
                 <button class="flex-1 text-center rounded bg-red-500 text-white py-3 mr-2">아니오</button>
               </div>
             </div>
@@ -186,6 +182,15 @@ export default {
     },
   },
   methods: {
+    async markAsDone() {
+      try {
+        await this.$api.reservations.markAsDone(this.reservation._id);
+        this.$toast.success('예약이 완료 처리되었습니다!');
+        this.reviewForm = true;
+      } catch (e) {
+        this.$toast.error('에러가 발생했습니다!');
+      }
+    },
     async submitReview() {
       try {
         await this.$api.barbers.createReview(this.barber._id, this.review);
