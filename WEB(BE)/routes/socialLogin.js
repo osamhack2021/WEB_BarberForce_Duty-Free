@@ -2,6 +2,7 @@ const router = require('express').Router();
 const request = require('request');
 
 const User = require('../models/user');
+const Unit = require('../models/unit');
 
 const fetchUser = require('../middleware/fetchUser');
 
@@ -110,8 +111,7 @@ router.post('/kakao/register', fetchUser, async (req, res) => {
     }
 
     // 군번 데이터 추가 입력
-    user.soldier_id = req.soldier_id;
-    user.save();
+    await user.update({ $set: { soldier_id: req.body.soldier_id } });
 
     res.json({});
   } catch (e) {
