@@ -1,4 +1,4 @@
-<p align="center"><img src="/images/1_readme_title_1676.png" ></p>
+<a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free" align="center"><img src="/images/1_readme_title_1676.png" alt="BarberForce title"></a>
 
 ## 프로젝트 소개
 
@@ -34,17 +34,9 @@ $ yarn start or npm run start
 ```
 
 ## 프로젝트 사용법 (Getting Started)
-**마크다운 문법을 이용하여 자유롭게 기재**
-
-잘 모를 경우
-구글 검색 - 마크다운 문법
-[https://post.naver.com/viewer/postView.nhn?volumeNo=24627214&memberNo=42458017](https://post.naver.com/viewer/postView.nhn?volumeNo=24627214&memberNo=42458017)
-
- 편한 마크다운 에디터를 찾아서 사용
- 샘플 에디터 [https://stackedit.io/app#](https://stackedit.io/app#)
  
 ## 팀 정보 (Team Information)
-- Se Lee (ese1997@naver.com), Github Id: Sally271
+- Se Lee (ese1997@naver.com), Github Id: sallyselee
 - Chanhyuk Byeon (bdu00chch@gmail.com), Github Id: Bisue
 - Sangwook Park (dkxkqkrtkddn@gmail.com), Github Id: sw0501
 
