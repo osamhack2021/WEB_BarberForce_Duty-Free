@@ -41,6 +41,9 @@ const reservations = client => ({
   list: async () => {
     return await client.get('/reservations');
   },
+  markAsDone: async id => {
+    return await client.post(`/reservations/${id}/done`);
+  },
 });
 
 export default function ({ $axios, store }, inject) {

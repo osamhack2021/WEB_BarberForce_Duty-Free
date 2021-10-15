@@ -8,10 +8,14 @@
           <div class="mr-6">
             <div class="font-bold">이름</div>
             <div class="font-bold">이메일</div>
+            <div class="font-bold">군번</div>
+            <div class="font-bold">소속 부대</div>
           </div>
           <div class="flex-1">
             <div>{{ $store.state.auth.user.name }}</div>
             <div>{{ $store.state.auth.user.email }}</div>
+            <div>{{ $store.state.auth.user.soldier_id }}</div>
+            <div>{{ $store.state.auth.user.unit.unitName }}</div>
           </div>
         </div>
       </div>
