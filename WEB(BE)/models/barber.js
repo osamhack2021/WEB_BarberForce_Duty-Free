@@ -7,7 +7,6 @@ const barberSchema = new mongoose.Schema({
   rating: { type: Number, default: 0 },
   phone: { type: String, required: true },
   thumb: { type: String, default: null },
-  bookmarked: { type: Boolean, default: false },
   description: { type: String, default: null },
   partnership: [String],
 });
