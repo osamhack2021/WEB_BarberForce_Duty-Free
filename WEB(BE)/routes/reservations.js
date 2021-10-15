@@ -71,7 +71,7 @@ router.get('/reservations', fetchUser, async (req, res) => {
     const reservations = await Reservation.find({ user: user._id })
       .populate('barber')
       .populate('user')
-      .sort({ time: 'desc' });
+      .sort({ time: 'asc' });
 
     return res.json({
       reservations: reservations,
