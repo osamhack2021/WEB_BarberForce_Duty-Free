@@ -193,7 +193,7 @@ export default {
     },
     async submitReview() {
       try {
-        await this.$api.barbers.createReview(this.barber._id, this.review);
+        await this.$api.barbers.createReview(this.reservation.barber._id, this.review);
         this.$toast.success('리뷰를 작성했습니다!');
       } catch (e) {
         this.$toast.error('에러가 발생했습니다!');
