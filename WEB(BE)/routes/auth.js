@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const crypto = require('crypto');
 
 const User = require('../models/user');
 const Unit = require('../models/unit');
@@ -12,18 +13,16 @@ router.post('/login', async (req, res) => {
     // 이메일 중복 검사
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      return res.status(401).json({
-        loginSuccess: false,
-        message: 'Unvalid email',
+      return res.status(403).json({
+        error: 'INVALID_EMAIL',
       });
     }
 
     // 비밀번호 검사 (todo: 암호화 해시비교)
     const checkPassword = user.comparePassword(req.body.password);
     if (!checkPassword) {
-      return res.status(401).json({
-        loginSuccess: false,
-        message: 'Wrong password',
+      return res.status(403).json({
+        error: 'INVALID_PASSWORD',
       });
     }
 
@@ -70,7 +69,7 @@ router.post('/register', async (req, res) => {
     // 새로운 User 생성 (insertMany 대신 create 사용)
     await User.create({
       email: req.body.email,
-      password: req.body.password,
+      password: crypto.createHash('sha512').update(req.body.password).digest('base64'),
       name: req.body.name,
       soldier_id: req.body.soldier_id,
     });

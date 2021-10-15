@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-//const bcrypt=require('bcrypt'); //PW 암호화
+const crypto = require('crypto');
 
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true },
-  password: String,
+  password: { type: String, default: null },
   name: { type: String, required: true },
-  soldier_id: { type: String, defaults: '' },
+  soldier_id: { type: String, required: true },
+  social: { type: Boolean, default: false },
 });
 
 userSchema.methods.comparePassword = function (plainPassword) {
@@ -15,20 +16,12 @@ userSchema.methods.comparePassword = function (plainPassword) {
     return false;
   }
 
-  return plainPassword === this.password;
+  const hashed = crypto.createHash('sha512').update(plainPassword).digest('base64');
+  return hashed === this.password;
 };
 
 userSchema.methods.generateToken = function () {
   return jwt.sign({ _id: this._id }, 'secretToken', { expiresIn: '24h' });
-};
-
-userSchema.method.insertUser = function (cb, email, name) {
-  const user = this;
-  user.insertMany({ email: email, name: name, password: null, token: '' });
-  user.save(function (err, user) {
-    if (err) return cb(err);
-    cb(null, user);
-  });
 };
 
 module.exports = mongoose.model('User', userSchema);
