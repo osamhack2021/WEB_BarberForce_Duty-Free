@@ -35,14 +35,16 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
       rating: req.body.rating,
     });
 
-    //미용실 레이팅 추가
+    //미용실 별점 겡신
     const review = await Review.find({barber: req.params.id});
 
     const barber = await Barber.findOne({_id: req.params.id});
-    barber.rating = (barber.rating * (review.length-1) + req.body.rating) / review.length;
+    const rating = barber.rating;
+    barber.rating = (rating * (review.length-1) + req.body.rating) / review.length;
+    barber.save();
 
     return res.json({
-      mss: '추가'
+      mss: '추가',
     });
 
   } catch (e) {
@@ -53,5 +55,9 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     });
   }
 });
+
+router.post('/rating', async(req,res) =>{
+
+})
 
 module.exports = router;
