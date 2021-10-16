@@ -22,25 +22,27 @@
             </div>
           </div>
           <!-- description -->
-          <div class="text-center">
+          <div class="text-center w-full max-w-md mx-auto">
             <div class="font-bold">사장님께 용무</div>
-            <div class="border bg-white break-all p-2">
+            <div class="border bg-white break-all py-2 px-4">
               {{ description || '내용이 없습니다.' }}
             </div>
           </div>
-          <hr class="my-3" />
+          <hr class="mx-auto max-w-md my-3" />
           <!-- my info -->
-          <div class="mb-8">
-            <div class="font-bold text-lg">내 정보</div>
-            <div class="flex items-center">
-              <span>
-                <span class="font-bold">이름</span>
-                <span class="text-sm">{{ $store.state.auth.user.name }}</span>
-              </span>
-              <span class="ml-auto">
-                <span class="font-bold">이메일</span>
-                <span class="text-sm">{{ $store.state.auth.user.email }}</span>
-              </span>
+          <div class="md:flex md:flex-col md:items-center">
+            <div class="mb-8 w-full max-w-md">
+              <div class="font-bold text-lg mb-2">내 정보</div>
+              <div class="w-full flex items-center">
+                <span>
+                  <span class="text-sm">이름</span>
+                  <span class="text-lg font-bold">{{ $store.state.auth.user.name }}</span>
+                </span>
+                <span class="ml-auto">
+                  <span class="text-sm">이메일</span>
+                  <span class="text-lg font-bold">{{ $store.state.auth.user.email }}</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
