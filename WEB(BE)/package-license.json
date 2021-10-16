@@ -1,0 +1,1838 @@
+{
+  "@eslint/eslintrc@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/eslint/eslintrc",
+    "publisher": "Nicholas C. Zakas",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@eslint\\eslintrc",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@eslint\\eslintrc\\LICENSE"
+  },
+  "@humanwhocodes/config-array@0.6.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/humanwhocodes/config-array",
+    "publisher": "Nicholas C. Zakas",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@humanwhocodes\\config-array",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@humanwhocodes\\config-array\\LICENSE"
+  },
+  "@humanwhocodes/object-schema@1.2.0": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/humanwhocodes/object-schema",
+    "publisher": "Nicholas C. Zakas",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@humanwhocodes\\object-schema",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@humanwhocodes\\object-schema\\LICENSE"
+  },
+  "@types/node@16.10.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@types\\node",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@types\\node\\LICENSE"
+  },
+  "@types/webidl-conversions@6.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@types\\webidl-conversions",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@types\\webidl-conversions\\LICENSE"
+  },
+  "@types/whatwg-url@8.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@types\\whatwg-url",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@types\\whatwg-url\\LICENSE"
+  },
+  "accepts@1.3.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/accepts",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\accepts",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\accepts\\LICENSE"
+  },
+  "acorn-jsx@5.3.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/acornjs/acorn-jsx",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\acorn-jsx",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\acorn-jsx\\LICENSE"
+  },
+  "acorn@8.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/acornjs/acorn",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\acorn",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\acorn\\LICENSE"
+  },
+  "ajv@6.12.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ajv-validator/ajv",
+    "publisher": "Evgeny Poberezkin",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ajv",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ajv\\LICENSE"
+  },
+  "ansi-colors@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/doowb/ansi-colors",
+    "publisher": "Brian Woodward",
+    "url": "https://github.com/doowb",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ansi-colors",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ansi-colors\\LICENSE"
+  },
+  "ansi-regex@5.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/ansi-regex",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ansi-regex",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ansi-regex\\license"
+  },
+  "ansi-styles@4.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/ansi-styles",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ansi-styles",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ansi-styles\\license"
+  },
+  "argparse@1.0.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodeca/argparse",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@eslint\\eslintrc\\node_modules\\argparse",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@eslint\\eslintrc\\node_modules\\argparse\\LICENSE"
+  },
+  "argparse@2.0.1": {
+    "licenses": "Python-2.0",
+    "repository": "https://github.com/nodeca/argparse",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\argparse",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\argparse\\LICENSE"
+  },
+  "array-flatten@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/blakeembrey/array-flatten",
+    "publisher": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\array-flatten",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\array-flatten\\LICENSE"
+  },
+  "asn1@0.2.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/joyent/node-asn1",
+    "publisher": "Joyent",
+    "url": "joyent.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\asn1",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\asn1\\LICENSE"
+  },
+  "assert-plus@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mcavage/node-assert-plus",
+    "publisher": "Mark Cavage",
+    "email": "mcavage@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\assert-plus",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\assert-plus\\README.md"
+  },
+  "asynckit@0.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexindigo/asynckit",
+    "publisher": "Alex Indigo",
+    "email": "iam@alexindigo.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\asynckit",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\asynckit\\LICENSE"
+  },
+  "aws-sign2@0.7.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mikeal/aws-sign",
+    "publisher": "Mikeal Rogers",
+    "email": "mikeal.rogers@gmail.com",
+    "url": "http://www.futurealoof.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\aws-sign2",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\aws-sign2\\LICENSE"
+  },
+  "aws4@1.11.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mhart/aws4",
+    "publisher": "Michael Hart",
+    "email": "michael.hart.au@gmail.com",
+    "url": "https://github.com/mhart",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\aws4",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\aws4\\LICENSE"
+  },
+  "axios@0.23.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/axios/axios",
+    "publisher": "Matt Zabriskie",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\axios",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\axios\\LICENSE"
+  },
+  "backend@1.0.0": {
+    "licenses": "ISC",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)"
+  },
+  "balanced-match@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/juliangruber/balanced-match",
+    "publisher": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\balanced-match",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\balanced-match\\LICENSE.md"
+  },
+  "base64-js@1.5.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/beatgammit/base64-js",
+    "publisher": "T. Jameson Little",
+    "email": "t.jameson.little@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\base64-js",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\base64-js\\LICENSE"
+  },
+  "bcrypt-pbkdf@1.0.2": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/joyent/node-bcrypt-pbkdf",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bcrypt-pbkdf",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bcrypt-pbkdf\\LICENSE"
+  },
+  "bluebird@3.7.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/petkaantonov/bluebird",
+    "publisher": "Petka Antonov",
+    "email": "petka_antonov@hotmail.com",
+    "url": "http://github.com/petkaantonov/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bluebird",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bluebird\\LICENSE"
+  },
+  "body-parser@1.19.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/body-parser",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\body-parser",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\body-parser\\LICENSE"
+  },
+  "brace-expansion@1.1.11": {
+    "licenses": "MIT",
+    "repository": "https://github.com/juliangruber/brace-expansion",
+    "publisher": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\brace-expansion",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\brace-expansion\\LICENSE"
+  },
+  "bson@4.5.3": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mongodb/js-bson",
+    "publisher": "The MongoDB NodeJS Team",
+    "email": "dbx-node@mongodb.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bson",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bson\\LICENSE.md"
+  },
+  "buffer-equal-constant-time@1.0.1": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/goinstant/buffer-equal-constant-time",
+    "publisher": "GoInstant Inc., a salesforce.com company",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\buffer-equal-constant-time",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\buffer-equal-constant-time\\LICENSE.txt"
+  },
+  "buffer@5.7.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/feross/buffer",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\buffer",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\buffer\\LICENSE"
+  },
+  "bytes@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/bytes.js",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bytes",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\bytes\\LICENSE"
+  },
+  "callsites@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/callsites",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\callsites",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\callsites\\license"
+  },
+  "caseless@0.12.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mikeal/caseless",
+    "publisher": "Mikeal Rogers",
+    "email": "mikeal.rogers@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\caseless",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\caseless\\LICENSE"
+  },
+  "chalk@4.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/chalk",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\chalk",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\chalk\\license"
+  },
+  "color-convert@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Qix-/color-convert",
+    "publisher": "Heather Arthur",
+    "email": "fayearthur@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\color-convert",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\color-convert\\LICENSE"
+  },
+  "color-name@1.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/colorjs/color-name",
+    "publisher": "DY",
+    "email": "dfcreative@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\color-name",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\color-name\\LICENSE"
+  },
+  "combined-stream@1.0.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/felixge/node-combined-stream",
+    "publisher": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\combined-stream",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\combined-stream\\License"
+  },
+  "concat-map@0.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/substack/node-concat-map",
+    "publisher": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\concat-map",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\concat-map\\LICENSE"
+  },
+  "content-disposition@0.5.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/content-disposition",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\content-disposition",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\content-disposition\\LICENSE"
+  },
+  "content-type@1.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/content-type",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\content-type",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\content-type\\LICENSE"
+  },
+  "cookie-signature@1.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/node-cookie-signature",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@learnboost.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cookie-signature",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cookie-signature\\Readme.md"
+  },
+  "cookie@0.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/cookie",
+    "publisher": "Roman Shtylman",
+    "email": "shtylman@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cookie",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cookie\\LICENSE"
+  },
+  "cor@0.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/LightSpeedWorks/cor",
+    "publisher": "LightSpeedC",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cor"
+  },
+  "core-util-is@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/isaacs/core-util-is",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\core-util-is",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\core-util-is\\LICENSE"
+  },
+  "cors@2.8.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/cors",
+    "publisher": "Troy Goode",
+    "email": "troygoode@gmail.com",
+    "url": "https://github.com/troygoode/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cors",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cors\\LICENSE"
+  },
+  "cross-spawn@7.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/moxystudio/node-cross-spawn",
+    "publisher": "André Cruz",
+    "email": "andre@moxy.studio",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cross-spawn",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\cross-spawn\\LICENSE"
+  },
+  "dashdash@1.14.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/trentm/node-dashdash",
+    "publisher": "Trent Mick",
+    "email": "trentm@gmail.com",
+    "url": "http://trentm.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\dashdash",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\dashdash\\LICENSE.txt"
+  },
+  "debug@2.6.9": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/debug",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\debug",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\debug\\LICENSE"
+  },
+  "debug@4.3.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/debug",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mquery\\node_modules\\debug",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mquery\\node_modules\\debug\\LICENSE"
+  },
+  "deep-is@0.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/thlorenz/deep-is",
+    "publisher": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\deep-is",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\deep-is\\LICENSE"
+  },
+  "delayed-stream@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/felixge/node-delayed-stream",
+    "publisher": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\delayed-stream",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\delayed-stream\\License"
+  },
+  "denque@2.0.1": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/invertase/denque",
+    "publisher": "Invertase",
+    "email": "oss@invertase.io",
+    "url": "http://github.com/invertase/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\denque",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\denque\\LICENSE"
+  },
+  "depd@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/dougwilson/nodejs-depd",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\depd",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\depd\\LICENSE"
+  },
+  "destroy@1.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stream-utils/destroy",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\destroy",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\destroy\\LICENSE"
+  },
+  "doctrine@3.0.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/eslint/doctrine",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\doctrine",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\doctrine\\LICENSE"
+  },
+  "ecc-jsbn@0.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/quartzjer/ecc-jsbn",
+    "publisher": "Jeremie Miller",
+    "email": "jeremie@jabber.org",
+    "url": "http://jeremie.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ecc-jsbn",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ecc-jsbn\\LICENSE"
+  },
+  "ecdsa-sig-formatter@1.0.11": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/Brightspace/node-ecdsa-sig-formatter",
+    "publisher": "D2L Corporation",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ecdsa-sig-formatter",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ecdsa-sig-formatter\\LICENSE"
+  },
+  "ee-first@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonathanong/ee-first",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ee-first",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ee-first\\LICENSE"
+  },
+  "encodeurl@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/encodeurl",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\encodeurl",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\encodeurl\\LICENSE"
+  },
+  "enquirer@2.3.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/enquirer/enquirer",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\enquirer",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\enquirer\\LICENSE"
+  },
+  "escape-html@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/escape-html",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\escape-html",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\escape-html\\LICENSE"
+  },
+  "escape-string-regexp@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/escape-string-regexp",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\escape-string-regexp",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\escape-string-regexp\\license"
+  },
+  "eslint-scope@6.0.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/eslint/eslint-scope",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-scope",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-scope\\LICENSE"
+  },
+  "eslint-utils@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mysticatea/eslint-utils",
+    "publisher": "Toru Nagashima",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-utils",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-utils\\LICENSE"
+  },
+  "eslint-visitor-keys@2.1.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/eslint/eslint-visitor-keys",
+    "publisher": "Toru Nagashima",
+    "url": "https://github.com/mysticatea",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-utils\\node_modules\\eslint-visitor-keys",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-utils\\node_modules\\eslint-visitor-keys\\LICENSE"
+  },
+  "eslint-visitor-keys@3.0.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/eslint/eslint-visitor-keys",
+    "publisher": "Toru Nagashima",
+    "url": "https://github.com/mysticatea",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-visitor-keys",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint-visitor-keys\\LICENSE"
+  },
+  "eslint@8.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/eslint/eslint",
+    "publisher": "Nicholas C. Zakas",
+    "email": "nicholas+npm@nczconsulting.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint\\LICENSE"
+  },
+  "espree@9.0.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/eslint/espree",
+    "publisher": "Nicholas C. Zakas",
+    "email": "nicholas+npm@nczconsulting.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\espree",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\espree\\LICENSE"
+  },
+  "esprima@4.0.1": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/jquery/esprima",
+    "publisher": "Ariya Hidayat",
+    "email": "ariya.hidayat@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esprima",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esprima\\LICENSE.BSD"
+  },
+  "esquery@1.4.0": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/estools/esquery",
+    "publisher": "Joel Feenstra",
+    "email": "jrfeenst+esquery@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esquery",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esquery\\license.txt"
+  },
+  "esrecurse@4.3.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/estools/esrecurse",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esrecurse",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esrecurse\\README.md"
+  },
+  "estraverse@5.2.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/estools/estraverse",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\estraverse",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\estraverse\\LICENSE.BSD"
+  },
+  "esutils@2.0.3": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/estools/esutils",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esutils",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\esutils\\LICENSE.BSD"
+  },
+  "etag@1.8.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/etag",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\etag",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\etag\\LICENSE"
+  },
+  "express@4.17.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/express",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\express",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\express\\LICENSE"
+  },
+  "extend@3.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/justmoon/node-extend",
+    "publisher": "Stefan Thomas",
+    "email": "justmoon@members.fsf.org",
+    "url": "http://www.justmoon.net",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\extend",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\extend\\LICENSE"
+  },
+  "extsprintf@1.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/davepacheco/node-extsprintf",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\extsprintf",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\extsprintf\\LICENSE"
+  },
+  "fast-deep-equal@3.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/epoberezkin/fast-deep-equal",
+    "publisher": "Evgeny Poberezkin",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fast-deep-equal",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fast-deep-equal\\LICENSE"
+  },
+  "fast-json-stable-stringify@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/epoberezkin/fast-json-stable-stringify",
+    "publisher": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fast-json-stable-stringify",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fast-json-stable-stringify\\LICENSE"
+  },
+  "fast-levenshtein@2.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/hiddentao/fast-levenshtein",
+    "publisher": "Ramesh Nair",
+    "email": "ram@hiddentao.com",
+    "url": "http://www.hiddentao.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fast-levenshtein",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fast-levenshtein\\LICENSE.md"
+  },
+  "file-entry-cache@6.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/royriojas/file-entry-cache",
+    "publisher": "Roy Riojas",
+    "url": "http://royriojas.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\file-entry-cache",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\file-entry-cache\\LICENSE"
+  },
+  "finalhandler@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/finalhandler",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\finalhandler",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\finalhandler\\LICENSE"
+  },
+  "flat-cache@3.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/royriojas/flat-cache",
+    "publisher": "Roy Riojas",
+    "url": "http://royriojas.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\flat-cache",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\flat-cache\\LICENSE"
+  },
+  "flatted@3.2.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/WebReflection/flatted",
+    "publisher": "Andrea Giammarchi",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\flatted",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\flatted\\LICENSE"
+  },
+  "follow-redirects@1.14.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/follow-redirects/follow-redirects",
+    "publisher": "Ruben Verborgh",
+    "email": "ruben@verborgh.org",
+    "url": "https://ruben.verborgh.org/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\follow-redirects",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\follow-redirects\\LICENSE"
+  },
+  "forever-agent@0.6.1": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mikeal/forever-agent",
+    "publisher": "Mikeal Rogers",
+    "email": "mikeal.rogers@gmail.com",
+    "url": "http://www.futurealoof.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\forever-agent",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\forever-agent\\LICENSE"
+  },
+  "form-data@2.3.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/form-data/form-data",
+    "publisher": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\form-data",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\form-data\\License"
+  },
+  "forwarded@0.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/forwarded",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\forwarded",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\forwarded\\LICENSE"
+  },
+  "fresh@0.5.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/fresh",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fresh",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fresh\\LICENSE"
+  },
+  "fs.realpath@1.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/fs.realpath",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fs.realpath",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\fs.realpath\\LICENSE"
+  },
+  "functional-red-black-tree@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mikolalysenko/functional-red-black-tree",
+    "publisher": "Mikola Lysenko",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\functional-red-black-tree",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\functional-red-black-tree\\LICENSE"
+  },
+  "getpass@0.1.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/arekinath/node-getpass",
+    "publisher": "Alex Wilson",
+    "email": "alex.wilson@joyent.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\getpass",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\getpass\\LICENSE"
+  },
+  "glob-parent@6.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/gulpjs/glob-parent",
+    "publisher": "Gulp Team",
+    "email": "team@gulpjs.com",
+    "url": "https://gulpjs.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\glob-parent",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\glob-parent\\LICENSE"
+  },
+  "glob@7.2.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-glob",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\glob",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\glob\\LICENSE"
+  },
+  "globals@13.11.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/globals",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\globals",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\globals\\license"
+  },
+  "har-schema@2.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/ahmadnassri/har-schema",
+    "publisher": "Ahmad Nassri",
+    "email": "ahmad@ahmadnassri.com",
+    "url": "https://www.ahmadnassri.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\har-schema",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\har-schema\\LICENSE"
+  },
+  "har-validator@5.1.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ahmadnassri/node-har-validator",
+    "publisher": "Ahmad Nassri",
+    "email": "ahmad@ahmadnassri.com",
+    "url": "https://www.ahmadnassri.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\har-validator",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\har-validator\\LICENSE"
+  },
+  "has-flag@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/has-flag",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\has-flag",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\has-flag\\license"
+  },
+  "http-errors@1.7.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/http-errors",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\http-errors",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\http-errors\\LICENSE"
+  },
+  "http-signature@1.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/joyent/node-http-signature",
+    "publisher": "Joyent, Inc",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\http-signature",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\http-signature\\LICENSE"
+  },
+  "iconv-lite@0.4.24": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ashtuchkin/iconv-lite",
+    "publisher": "Alexander Shtuchkin",
+    "email": "ashtuchkin@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\iconv-lite",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\iconv-lite\\LICENSE"
+  },
+  "ieee754@1.2.1": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/feross/ieee754",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ieee754",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ieee754\\LICENSE"
+  },
+  "ignore@4.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/kaelzhang/node-ignore",
+    "publisher": "kael",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ignore",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ignore\\LICENSE-MIT"
+  },
+  "import-fresh@3.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/import-fresh",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\import-fresh",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\import-fresh\\license"
+  },
+  "imurmurhash@0.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jensyt/imurmurhash-js",
+    "publisher": "Jens Taylor",
+    "email": "jensyt@gmail.com",
+    "url": "https://github.com/homebrewing",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\imurmurhash",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\imurmurhash\\README.md"
+  },
+  "inflight@1.0.6": {
+    "licenses": "ISC",
+    "repository": "https://github.com/npm/inflight",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\inflight",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\inflight\\LICENSE"
+  },
+  "inherits@2.0.3": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/inherits",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\inherits",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\inherits\\LICENSE"
+  },
+  "ipaddr.js@1.9.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/whitequark/ipaddr.js",
+    "publisher": "whitequark",
+    "email": "whitequark@whitequark.org",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ipaddr.js",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ipaddr.js\\LICENSE"
+  },
+  "is-extglob@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonschlinkert/is-extglob",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\is-extglob",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\is-extglob\\LICENSE"
+  },
+  "is-glob@4.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromatch/is-glob",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\is-glob",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\is-glob\\LICENSE"
+  },
+  "is-typedarray@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/hughsk/is-typedarray",
+    "publisher": "Hugh Kennedy",
+    "email": "hughskennedy@gmail.com",
+    "url": "http://hughsk.io/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\is-typedarray",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\is-typedarray\\LICENSE.md"
+  },
+  "isexe@2.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/isexe",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\isexe",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\isexe\\LICENSE"
+  },
+  "isstream@0.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rvagg/isstream",
+    "publisher": "Rod Vagg",
+    "email": "rod@vagg.org",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\isstream",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\isstream\\LICENSE.md"
+  },
+  "js-yaml@3.14.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodeca/js-yaml",
+    "publisher": "Vladimir Zapparov",
+    "email": "dervus.grim@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@eslint\\eslintrc\\node_modules\\js-yaml",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\@eslint\\eslintrc\\node_modules\\js-yaml\\LICENSE"
+  },
+  "js-yaml@4.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodeca/js-yaml",
+    "publisher": "Vladimir Zapparov",
+    "email": "dervus.grim@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\js-yaml",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\js-yaml\\LICENSE"
+  },
+  "jsbn@0.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/andyperlitch/jsbn",
+    "publisher": "Tom Wu",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsbn",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsbn\\LICENSE"
+  },
+  "json-schema-traverse@0.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/epoberezkin/json-schema-traverse",
+    "publisher": "Evgeny Poberezkin",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-schema-traverse",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-schema-traverse\\LICENSE"
+  },
+  "json-schema@0.2.3": {
+    "licenses": [
+      "AFLv2.1",
+      "BSD"
+    ],
+    "repository": "https://github.com/kriszyp/json-schema",
+    "publisher": "Kris Zyp",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-schema",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-schema\\README.md"
+  },
+  "json-stable-stringify-without-jsonify@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/samn/json-stable-stringify",
+    "publisher": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-stable-stringify-without-jsonify",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-stable-stringify-without-jsonify\\LICENSE"
+  },
+  "json-stringify-safe@5.0.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/json-stringify-safe",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-stringify-safe",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\json-stringify-safe\\LICENSE"
+  },
+  "jsonwebtoken@8.5.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/auth0/node-jsonwebtoken",
+    "publisher": "auth0",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsonwebtoken",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsonwebtoken\\LICENSE"
+  },
+  "jsprim@1.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/joyent/node-jsprim",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsprim",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsprim\\LICENSE"
+  },
+  "jwa@1.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/brianloveswords/node-jwa",
+    "publisher": "Brian J. Brennan",
+    "email": "brianloveswords@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jwa",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jwa\\LICENSE"
+  },
+  "jws@3.2.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/brianloveswords/node-jws",
+    "publisher": "Brian J Brennan",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jws",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jws\\LICENSE"
+  },
+  "kareem@2.3.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/vkarpov15/kareem",
+    "publisher": "Valeri Karpov",
+    "email": "val@karpov.io",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\kareem",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\kareem\\LICENSE"
+  },
+  "levn@0.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/gkz/levn",
+    "publisher": "George Zahariev",
+    "email": "z@georgezahariev.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\levn",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\levn\\LICENSE"
+  },
+  "lodash.includes@4.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.includes",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.includes\\LICENSE"
+  },
+  "lodash.isboolean@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isboolean",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isboolean\\LICENSE"
+  },
+  "lodash.isinteger@4.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isinteger",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isinteger\\LICENSE"
+  },
+  "lodash.isnumber@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isnumber",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isnumber\\LICENSE"
+  },
+  "lodash.isplainobject@4.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isplainobject",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isplainobject\\LICENSE"
+  },
+  "lodash.isstring@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isstring",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.isstring\\LICENSE"
+  },
+  "lodash.merge@4.6.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.merge",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.merge\\LICENSE"
+  },
+  "lodash.once@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.once",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash.once\\LICENSE"
+  },
+  "lodash@4.17.21": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lodash\\LICENSE"
+  },
+  "lru-cache@6.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-lru-cache",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lru-cache",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\lru-cache\\LICENSE"
+  },
+  "media-typer@0.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/media-typer",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\media-typer",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\media-typer\\LICENSE"
+  },
+  "memory-pager@1.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mafintosh/memory-pager",
+    "publisher": "Mathias Buus",
+    "url": "@mafintosh",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\memory-pager",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\memory-pager\\LICENSE"
+  },
+  "merge-descriptors@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/merge-descriptors",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\merge-descriptors",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\merge-descriptors\\LICENSE"
+  },
+  "methods@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/methods",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\methods",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\methods\\LICENSE"
+  },
+  "mime-db@1.50.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/mime-db",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mime-db",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mime-db\\LICENSE"
+  },
+  "mime-types@2.1.33": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/mime-types",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mime-types",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mime-types\\LICENSE"
+  },
+  "mime@1.6.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/broofa/node-mime",
+    "publisher": "Robert Kieffer",
+    "email": "robert@broofa.com",
+    "url": "http://github.com/broofa",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mime",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mime\\LICENSE"
+  },
+  "minimatch@3.0.4": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/minimatch",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\minimatch",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\minimatch\\LICENSE"
+  },
+  "moment@2.29.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/moment/moment",
+    "publisher": "Iskren Ivov Chernev",
+    "email": "iskren.chernev@gmail.com",
+    "url": "https://github.com/ichernev",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\moment",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\moment\\LICENSE"
+  },
+  "mongodb-connection-string-url@2.1.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mongodb-js/mongodb-connection-string-url",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mongodb-connection-string-url",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mongodb-connection-string-url\\LICENSE"
+  },
+  "mongodb@4.1.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mongodb/node-mongodb-native",
+    "publisher": "The MongoDB NodeJS Team",
+    "email": "dbx-node@mongodb.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mongodb",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mongodb\\LICENSE.md"
+  },
+  "mongoose@6.0.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Automattic/mongoose",
+    "publisher": "Guillermo Rauch",
+    "email": "guillermo@learnboost.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mongoose",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mongoose\\LICENSE.md"
+  },
+  "mpath@0.8.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/aheckmann/mpath",
+    "publisher": "Aaron Heckmann",
+    "email": "aaron.heckmann+github@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mpath",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mpath\\LICENSE"
+  },
+  "mquery@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/aheckmann/mquery",
+    "publisher": "Aaron Heckmann",
+    "email": "aaron.heckmann+github@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mquery",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mquery\\LICENSE"
+  },
+  "ms@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/ms",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ms",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\ms\\license.md"
+  },
+  "ms@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/ms",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\send\\node_modules\\ms",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\send\\node_modules\\ms\\license.md"
+  },
+  "ms@2.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/ms",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mquery\\node_modules\\ms",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\mquery\\node_modules\\ms\\license.md"
+  },
+  "ms@2.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vercel/ms",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsonwebtoken\\node_modules\\ms",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\jsonwebtoken\\node_modules\\ms\\license.md"
+  },
+  "natural-compare@1.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/litejs/natural-compare-lite",
+    "publisher": "Lauri Rooden",
+    "url": "https://github.com/litejs/natural-compare-lite",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\natural-compare",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\natural-compare\\README.md"
+  },
+  "negotiator@0.6.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/negotiator",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\negotiator",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\negotiator\\LICENSE"
+  },
+  "oauth-sign@0.9.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mikeal/oauth-sign",
+    "publisher": "Mikeal Rogers",
+    "email": "mikeal.rogers@gmail.com",
+    "url": "http://www.futurealoof.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\oauth-sign",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\oauth-sign\\LICENSE"
+  },
+  "object-assign@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/object-assign",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\object-assign",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\object-assign\\license"
+  },
+  "on-finished@2.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/on-finished",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\on-finished",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\on-finished\\LICENSE"
+  },
+  "once@1.4.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/once",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\once",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\once\\LICENSE"
+  },
+  "optionator@0.9.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/gkz/optionator",
+    "publisher": "George Zahariev",
+    "email": "z@georgezahariev.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\optionator",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\optionator\\LICENSE"
+  },
+  "parent-module@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/parent-module",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\parent-module",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\parent-module\\license"
+  },
+  "parseurl@1.3.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/parseurl",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\parseurl",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\parseurl\\LICENSE"
+  },
+  "path-is-absolute@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/path-is-absolute",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path-is-absolute",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path-is-absolute\\license"
+  },
+  "path-key@3.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/path-key",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path-key",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path-key\\license"
+  },
+  "path-to-regexp@0.1.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/path-to-regexp",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path-to-regexp",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path-to-regexp\\LICENSE"
+  },
+  "path@0.12.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jinder/path",
+    "publisher": "Joyent",
+    "url": "http://www.joyent.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\path\\LICENSE"
+  },
+  "performance-now@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/braveg1rl/performance-now",
+    "publisher": "Braveg1rl",
+    "email": "braveg1rl@outlook.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\performance-now",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\performance-now\\license.txt"
+  },
+  "prelude-ls@1.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/gkz/prelude-ls",
+    "publisher": "George Zahariev",
+    "email": "z@georgezahariev.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\prelude-ls",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\prelude-ls\\LICENSE"
+  },
+  "process@0.11.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/shtylman/node-process",
+    "publisher": "Roman Shtylman",
+    "email": "shtylman@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\process",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\process\\LICENSE"
+  },
+  "progress@2.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/node-progress",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\progress",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\progress\\LICENSE"
+  },
+  "proxy-addr@2.0.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/proxy-addr",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\proxy-addr",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\proxy-addr\\LICENSE"
+  },
+  "psl@1.8.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lupomontero/psl",
+    "publisher": "Lupo Montero",
+    "email": "lupomontero@gmail.com",
+    "url": "https://lupomontero.com/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\psl",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\psl\\LICENSE"
+  },
+  "punycode@1.3.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/bestiejs/punycode.js",
+    "publisher": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\punycode",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\punycode\\LICENSE-MIT.txt"
+  },
+  "punycode@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/bestiejs/punycode.js",
+    "publisher": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tr46\\node_modules\\punycode",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tr46\\node_modules\\punycode\\LICENSE-MIT.txt"
+  },
+  "qs@6.5.2": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/ljharb/qs",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request\\node_modules\\qs",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request\\node_modules\\qs\\LICENSE"
+  },
+  "qs@6.7.0": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/ljharb/qs",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\qs",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\qs\\LICENSE"
+  },
+  "querystring@0.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Gozala/querystring",
+    "publisher": "Irakli Gozalishvili",
+    "email": "rfobic@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\querystring",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\querystring\\License.md"
+  },
+  "range-parser@1.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/range-parser",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\range-parser",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\range-parser\\LICENSE"
+  },
+  "raw-body@2.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stream-utils/raw-body",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\raw-body",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\raw-body\\LICENSE"
+  },
+  "regexp-clone@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/aheckmann/regexp-clone",
+    "publisher": "Aaron Heckmann",
+    "email": "aaron.heckmann+github@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\regexp-clone",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\regexp-clone\\LICENSE"
+  },
+  "regexpp@3.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mysticatea/regexpp",
+    "publisher": "Toru Nagashima",
+    "url": "https://github.com/mysticatea",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\regexpp",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\regexpp\\LICENSE"
+  },
+  "request-promise-core@1.1.4": {
+    "licenses": "ISC",
+    "repository": "https://github.com/request/promise-core",
+    "publisher": "Nicolai Kamenzky",
+    "url": "https://github.com/analog-nico",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request-promise-core",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request-promise-core\\LICENSE"
+  },
+  "request-promise@4.2.6": {
+    "licenses": "ISC",
+    "repository": "https://github.com/request/request-promise",
+    "publisher": "Nicolai Kamenzky",
+    "url": "https://github.com/analog-nico",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request-promise",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request-promise\\LICENSE"
+  },
+  "request@2.88.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/request/request",
+    "publisher": "Mikeal Rogers",
+    "email": "mikeal.rogers@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\request\\LICENSE"
+  },
+  "resolve-from@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/resolve-from",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\resolve-from",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\resolve-from\\license"
+  },
+  "rimraf@3.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/rimraf",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\rimraf",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\rimraf\\LICENSE"
+  },
+  "safe-buffer@5.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/feross/safe-buffer",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\safe-buffer",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\safe-buffer\\LICENSE"
+  },
+  "safer-buffer@2.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ChALkeR/safer-buffer",
+    "publisher": "Nikita Skovoroda",
+    "email": "chalkerx@gmail.com",
+    "url": "https://github.com/ChALkeR",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\safer-buffer",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\safer-buffer\\LICENSE"
+  },
+  "saslprep@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/reklatsmasters/saslprep",
+    "publisher": "Dmitry Tsvettsikh",
+    "email": "me@reklatsmasters.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\saslprep",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\saslprep\\LICENSE"
+  },
+  "semver@5.7.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/npm/node-semver",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\semver",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\semver\\LICENSE"
+  },
+  "semver@7.3.5": {
+    "licenses": "ISC",
+    "repository": "https://github.com/npm/node-semver",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint\\node_modules\\semver",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\eslint\\node_modules\\semver\\LICENSE"
+  },
+  "send@0.17.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/send",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\send",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\send\\LICENSE"
+  },
+  "serve-static@1.14.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/serve-static",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\serve-static",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\serve-static\\LICENSE"
+  },
+  "setprototypeof@1.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/wesleytodd/setprototypeof",
+    "publisher": "Wes Todd",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\setprototypeof",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\setprototypeof\\LICENSE"
+  },
+  "shebang-command@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/kevva/shebang-command",
+    "publisher": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "github.com/kevva",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\shebang-command",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\shebang-command\\license"
+  },
+  "shebang-regex@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/shebang-regex",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\shebang-regex",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\shebang-regex\\license"
+  },
+  "sift@13.5.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/crcn/sift.js",
+    "publisher": "Craig Condon",
+    "email": "craig.j.condon@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sift",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sift\\README.md"
+  },
+  "sliced@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/aheckmann/sliced",
+    "publisher": "Aaron Heckmann",
+    "email": "aaron.heckmann+github@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sliced",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sliced\\LICENSE"
+  },
+  "sparse-bitfield@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mafintosh/sparse-bitfield",
+    "publisher": "Mathias Buus",
+    "url": "@mafintosh",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sparse-bitfield",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sparse-bitfield\\LICENSE"
+  },
+  "sprintf-js@1.0.3": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/alexei/sprintf.js",
+    "publisher": "Alexandru Marasteanu",
+    "email": "hello@alexei.ro",
+    "url": "http://alexei.ro/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sprintf-js",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sprintf-js\\LICENSE"
+  },
+  "sshpk@1.16.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/joyent/node-sshpk",
+    "publisher": "Joyent, Inc",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sshpk",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\sshpk\\LICENSE"
+  },
+  "statuses@1.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/statuses",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\statuses",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\statuses\\LICENSE"
+  },
+  "stealthy-require@1.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/analog-nico/stealthy-require",
+    "publisher": "Nicolai Kamenzky",
+    "url": "https://github.com/analog-nico",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\stealthy-require",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\stealthy-require\\LICENSE"
+  },
+  "strip-ansi@6.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/strip-ansi",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\strip-ansi",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\strip-ansi\\license"
+  },
+  "strip-json-comments@3.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/strip-json-comments",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\strip-json-comments",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\strip-json-comments\\license"
+  },
+  "supports-color@7.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/supports-color",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\supports-color",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\supports-color\\license"
+  },
+  "text-table@0.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/substack/text-table",
+    "publisher": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\text-table",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\text-table\\LICENSE"
+  },
+  "toidentifier@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/toidentifier",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\toidentifier",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\toidentifier\\LICENSE"
+  },
+  "tough-cookie@2.5.0": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/salesforce/tough-cookie",
+    "publisher": "Jeremy Stashewsky",
+    "email": "jstash@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tough-cookie",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tough-cookie\\LICENSE"
+  },
+  "tr46@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jsdom/tr46",
+    "publisher": "Sebastian Mayr",
+    "email": "npm@smayr.name",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tr46",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tr46\\LICENSE.md"
+  },
+  "tunnel-agent@0.6.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/mikeal/tunnel-agent",
+    "publisher": "Mikeal Rogers",
+    "email": "mikeal.rogers@gmail.com",
+    "url": "http://www.futurealoof.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tunnel-agent",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tunnel-agent\\LICENSE"
+  },
+  "tweetnacl@0.14.5": {
+    "licenses": "Unlicense",
+    "repository": "https://github.com/dchest/tweetnacl-js",
+    "publisher": "TweetNaCl-js contributors",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tweetnacl",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\tweetnacl\\LICENSE"
+  },
+  "type-check@0.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/gkz/type-check",
+    "publisher": "George Zahariev",
+    "email": "z@georgezahariev.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\type-check",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\type-check\\LICENSE"
+  },
+  "type-fest@0.20.2": {
+    "licenses": "(MIT OR CC0-1.0)",
+    "repository": "https://github.com/sindresorhus/type-fest",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\type-fest",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\type-fest\\license"
+  },
+  "type-is@1.6.18": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/type-is",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\type-is",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\type-is\\LICENSE"
+  },
+  "unpipe@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stream-utils/unpipe",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\unpipe",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\unpipe\\LICENSE"
+  },
+  "uri-js@4.4.1": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/garycourt/uri-js",
+    "publisher": "Gary Court",
+    "email": "gary.court@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\uri-js",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\uri-js\\LICENSE"
+  },
+  "url@0.11.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/defunctzombie/node-url",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\url",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\url\\LICENSE"
+  },
+  "util@0.10.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/defunctzombie/node-util",
+    "publisher": "Joyent",
+    "url": "http://www.joyent.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\util",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\util\\LICENSE"
+  },
+  "utils-merge@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaredhanson/utils-merge",
+    "publisher": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\utils-merge",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\utils-merge\\LICENSE"
+  },
+  "uuid@3.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/uuidjs/uuid",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\uuid",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\uuid\\LICENSE.md"
+  },
+  "v8-compile-cache@2.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zertosh/v8-compile-cache",
+    "publisher": "Andres Suarez",
+    "email": "zertosh@gmail.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\v8-compile-cache",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\v8-compile-cache\\LICENSE"
+  },
+  "vary@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/vary",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\vary",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\vary\\LICENSE"
+  },
+  "verror@1.10.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/davepacheco/node-verror",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\verror",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\verror\\LICENSE"
+  },
+  "webidl-conversions@6.1.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/jsdom/webidl-conversions",
+    "publisher": "Domenic Denicola",
+    "email": "d@domenic.me",
+    "url": "https://domenic.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\webidl-conversions",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\webidl-conversions\\LICENSE.md"
+  },
+  "whatwg-url@9.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jsdom/whatwg-url",
+    "publisher": "Sebastian Mayr",
+    "email": "github@smayr.name",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\whatwg-url",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\whatwg-url\\LICENSE.txt"
+  },
+  "which@2.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-which",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\which",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\which\\LICENSE"
+  },
+  "word-wrap@1.2.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonschlinkert/word-wrap",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\word-wrap",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\word-wrap\\LICENSE"
+  },
+  "wrappy@1.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/npm/wrappy",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\wrappy",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\wrappy\\LICENSE"
+  },
+  "yallist@4.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/yallist",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\yallist",
+    "licenseFile": "C:\\Users\\wine0\\WEB_BarberForce_Duty-Free\\WEB(BE)\\node_modules\\yallist\\LICENSE"
+  }
+}
