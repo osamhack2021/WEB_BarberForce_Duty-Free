@@ -39,10 +39,8 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     const review = await Review.find({barber: req.params.id});
 
     const barber = await Barber.findOne({_id: req.params.id});
-    const rating = barber.rating;
-    barber.rating = (rating * (review.length-1) + req.body.rating) / review.length;
-    barber.save();
-
+    await barber.update({$set: {rating: (barber.rating * (review.length-1) + req.body.rating) / review.length}})
+    
     return res.json({
       mss: '추가',
     });
