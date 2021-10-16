@@ -29,7 +29,9 @@
         우리부대 제휴미용실
       </NuxtLink>
     </div>
-    <div class="menubar-overlay"></div>
+    <transition name="fade">
+      <div v-if="opened" class="menubar-overlay"></div>
+    </transition>
   </div>
 </template>
 
@@ -89,10 +91,15 @@ export default {
   width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.menubar.closed .menubar-overlay {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
