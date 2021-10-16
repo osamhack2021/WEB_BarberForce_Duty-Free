@@ -110,7 +110,7 @@ router.get('/reservations/:id/update', fetchUser, async (req, res) => {
 
     await reservation.update({$set: { time: req.body.time , description: req.body.description}});
 
-    return json({});
+    return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -124,7 +124,7 @@ router.get('/reservations/:id/cancel', fetchUser, async (req, res) => {
   try{
     await Reservation.deleteOne({_id: req.params.id});
 
-    return json({});
+    return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
