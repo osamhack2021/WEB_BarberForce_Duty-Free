@@ -2,8 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "lint": "eslint --ext \".js\" --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^6.0.10",
+    "nodemon": "^2.0.13",
     "path": "^0.12.7",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
