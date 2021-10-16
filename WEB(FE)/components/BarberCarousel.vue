@@ -21,6 +21,7 @@
                 {{ barber.location }}
               </div>
             </div>
+            <DIsinfectionBadge class="absolute top-2 left-2" :not="!barber.disinfection" />
           </div>
         </div>
       </NuxtLink>
