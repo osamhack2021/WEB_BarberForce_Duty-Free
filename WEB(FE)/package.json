@@ -2,6 +2,7 @@
   "name": "barber-force-frontend",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
