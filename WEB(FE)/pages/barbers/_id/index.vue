@@ -26,7 +26,7 @@
                 v-slot="{ errors, classes }"
                 class="flex justify-center w-full"
                 name="용무"
-                rules="required|min:5|max:140"
+                rules="max:140"
               >
                 <div class="w-full max-w-md">
                   <div class="font-bold text-left mb-1">
