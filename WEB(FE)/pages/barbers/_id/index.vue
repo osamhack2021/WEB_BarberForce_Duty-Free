@@ -2,8 +2,9 @@
   <main>
     <template v-if="barber">
       <!-- title section -->
-      <div class="barbershop-heading flex justify-center items-center font-bold">
+      <div class="barbershop-heading relative flex flex-col justify-center items-center font-bold">
         {{ barber.title }}
+        <DIsinfectionBadge class="mt-1" :not="!barber.disinfection" />
       </div>
       <!-- page contents -->
       <div class="container pt-3 px-4">

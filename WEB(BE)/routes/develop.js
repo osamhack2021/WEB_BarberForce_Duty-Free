@@ -68,6 +68,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 월요일 휴무입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop2.jpg',
+      disinfection: true,
       partnership: ['OICW'],
     },
     {
@@ -77,6 +78,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 화요일 휴무입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop1.jpg',
+      disinfection: true,
       partnership: ['OICW'],
     },
     {
@@ -86,6 +88,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '연중무휴입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop2.jpg',
+      disinfection: true,
       partnership: ['AFOC'],
     },
     {
@@ -95,6 +98,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 화요일 휴무입니다.',
       phone: '010-0000-0011',
       thumb: '/img/shop1.jpg',
+      disinfection: true,
       partnership: ['AFOC'],
     },
     {
@@ -104,6 +108,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 수요일 휴무입니다.',
       phone: '010-0010-0052',
       thumb: '/img/shop1.jpg',
+      disinfection: true,
       partnership: ['AAOC'],
     },
     {
@@ -113,6 +118,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 수요일 휴무입니다.',
       phone: '010-0110-1000',
       thumb: '/img/shop1.jpg',
+      disinfection: true,
       partnership: ['AAOC'],
     },
     {
@@ -122,6 +128,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 수요일 휴무입니다.',
       phone: '010-0010-0052',
       thumb: '/img/shop1.jpg',
+      disinfection: true,
       partnership: ['ABCD'],
     },
     {
@@ -131,6 +138,7 @@ router.get('/setDummyData', async (req, res) => {
       description: '매주 수요일 휴무입니다.',
       phone: '010-0110-1000',
       thumb: '/img/shop1.jpg',
+      disinfection: true,
       partnership: ['ABCD'],
     },
   ];

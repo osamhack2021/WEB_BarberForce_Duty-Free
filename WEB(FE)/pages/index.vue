@@ -71,8 +71,6 @@
         </div>
       </div>
     </div>
-
-    <button class="rounded bg-brand text-white font-bold py-2 px-4" @click="logout">로그아웃(테스트용)</button>
   </main>
 </template>
 
