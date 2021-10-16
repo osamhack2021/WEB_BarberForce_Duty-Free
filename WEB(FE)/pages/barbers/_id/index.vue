@@ -26,7 +26,7 @@
                 v-slot="{ errors, classes }"
                 class="flex justify-center w-full"
                 name="용무"
-                rules="required|min:5|max:140"
+                rules="max:140"
               >
                 <div class="w-full max-w-md">
                   <div class="font-bold text-left mb-1">
@@ -158,6 +158,12 @@ export default {
       const valid = await this.$refs.description.validate();
       if (!valid) {
         this.$toast.error(`'사장님께 용무' 입력을 확인해주세요!`);
+        return;
+      }
+
+      console.log(date.isBefore(moment()));
+      if (date.isBefore(moment())) {
+        this.$toast.error('현재 시각보다 전에 예약을 할 수는 없습니다!');
         return;
       }
 

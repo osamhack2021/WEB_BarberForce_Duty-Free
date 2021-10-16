@@ -23,8 +23,12 @@ export default {
   },
   actions: {
     async load(context) {
-      const token = localStorage.getItem(storagePrefix + 'token');
+      let token = localStorage.getItem(storagePrefix + 'token');
+      if (token === 'null') {
+        token = JSON.parse(token);
+      }
       context.commit('setToken', token);
+
       const userJSON = localStorage.getItem(storagePrefix + 'user');
       context.commit('setUser', null);
       if (userJSON) {
@@ -32,12 +36,14 @@ export default {
         context.commit('setUser', user);
       }
 
-      try {
-        const { data: user } = await this.$api.auth.me();
-        context.commit('setUser', user);
-      } catch (error) {
-        context.commit('setToken', null);
-        context.commit('setUser', null);
+      if (context.state.token) {
+        try {
+          const { data: user } = await this.$api.auth.me();
+          context.commit('setUser', user);
+        } catch (error) {
+          context.commit('setToken', null);
+          context.commit('setUser', null);
+        }
       }
     },
     async login(context, credentials) {

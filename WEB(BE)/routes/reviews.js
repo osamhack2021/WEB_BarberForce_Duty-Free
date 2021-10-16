@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const Review = require('../models/review');
-
+const Barber = require('../models/barber');
 const fetchUser = require('../middleware/fetchUser');
 
 // 해당 미용실의 리뷰 목록 가져오기
@@ -35,9 +35,18 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
       rating: req.body.rating,
     });
 
+    //미용실 별점 겡신
+    const review = await Review.find({barber: req.params.id});
+
+    const barber = await Barber.findOne({_id: req.params.id});
+    const rating = barber.rating;
+    barber.rating = (rating * (review.length-1) + req.body.rating) / review.length;
+    barber.save();
+
     return res.json({
       mss: '추가',
     });
+
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -46,5 +55,9 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     });
   }
 });
+
+router.post('/rating', async(req,res) =>{
+
+})
 
 module.exports = router;
