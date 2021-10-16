@@ -66,12 +66,12 @@ router.post('/barbers/:id/reservations', fetchUser, async (req, res) => {
 
 router.get('/reservations', fetchUser, async (req, res) => {
   const user = req.user;
-
+  const order = req.query.order;
   try {
     const reservations = await Reservation.find({ user: user._id })
       .populate('barber')
       .populate('user')
-      .sort({ time: 'asc' });
+      .sort({ time: order });
 
     return res.json({
       reservations: reservations,
