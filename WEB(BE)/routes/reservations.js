@@ -103,4 +103,35 @@ router.post('/reservations/:id/done', fetchUser, async (req, res) => {
   }
 });
 
+router.get('/reservations/:id/update', fetchUser, async (req, res) => {
+
+  try{
+    const reservation = await Reservation.findOne({_id: req.params.id});
+
+    await reservation.update({$set: { time: req.body.time , description: req.body.description}});
+
+    return res.json({});
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
+});
+
+router.get('/reservations/:id/cancel', fetchUser, async (req, res) => {
+  try{
+    await Reservation.deleteOne({_id: req.params.id});
+
+    return res.json({});
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
+});
+
 module.exports = router;
