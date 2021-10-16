@@ -5,7 +5,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          '국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문한 뒤 리뷰를 공유할 수 있는 웹 서비스',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
@@ -51,36 +56,11 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/onesignal',
-    '@nuxtjs/pwa',
     '@nuxtjs/toast',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    meta: {
-      name: 'BarberForce',
-      author: 'Duty-Free',
-      description: '군 장병 미용시설 예약 서비스',
-      lang: 'ko',
-      ogHost: process.env.FRONT_URL || 'https://barberforce.shop',
-    },
-    manifest: {
-      name: 'BarberForce',
-      short_name: 'BarberForce',
-      description: '군 장병 미용시설 예약 서비스',
-      lang: 'ko',
-      background_color: '#406D96',
-      start_url: '/',
-    },
-    workbox: {
-      offline: false, // no offline support yet.
-    },
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -102,16 +82,5 @@ export default {
   // nuxt router (for global middleware (fetch-user))
   router: {
     middleware: 'fetch-user',
-  },
-
-  // Nuxt onesignal module
-  oneSignal: {
-    init: {
-      appId: '1c70b40b-aa5d-438c-a9cf-7f7e92cd5f99',
-      allowLocalhostAsSecureOrigin: true,
-      welcomeNotification: {
-        disable: true,
-      },
-    },
   },
 };
