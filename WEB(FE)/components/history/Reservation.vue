@@ -38,7 +38,7 @@
         </div>
       </template>
     </template>
-    <CommonModal :opened="formOpened" v-slot:default="{ close }">
+    <CommonModal :opened="formOpened">
       <form class="p-3" @submit.prevent="submit">
         <div class="mb-2">
           <DatePicker v-model="editForm.time" mode="dateTime" is24hr />
