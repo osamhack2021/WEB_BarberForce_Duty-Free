@@ -161,7 +161,6 @@ export default {
         return;
       }
 
-      console.log(date.isBefore(moment()));
       if (date.isBefore(moment())) {
         this.$toast.error('현재 시각보다 전에 예약을 할 수는 없습니다!');
         return;
