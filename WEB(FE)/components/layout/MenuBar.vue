@@ -20,15 +20,18 @@
     </div>
     <hr class="border-opacity-20 my-5" />
     <div>
-      <NuxtLink class="flex px-1 py-2" to="/">
+      <NuxtLink class="flex px-2 py-3 transition-colors hover:bg-black hover:bg-opacity-10" to="/">
         <img class="mr-2" width="22" src="@/assets/img/home.svg" />
         홈페이지
       </NuxtLink>
-      <NuxtLink class="flex px-1 py-2" to="/barbers">
+      <NuxtLink class="flex px-2 py-3 transition-colors hover:bg-black hover:bg-opacity-10" to="/barbers">
         <img class="mr-2" width="22" src="@/assets/img/partnership.svg" />
         우리부대 제휴미용실
       </NuxtLink>
     </div>
+    <transition name="fade">
+      <div v-if="opened" class="menubar-overlay"></div>
+    </transition>
   </div>
 </template>
 
@@ -73,5 +76,30 @@ export default {
 }
 .menubar.closed {
   transform: translate(-100%, 0);
+}
+
+@media (min-width: 400px) {
+  .menubar {
+    max-width: 360px;
+  }
+}
+
+.menubar-overlay {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
