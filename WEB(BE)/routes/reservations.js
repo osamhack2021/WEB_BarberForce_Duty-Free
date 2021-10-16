@@ -123,7 +123,7 @@ router.get('/reservations/:id/update', fetchUser, async (req, res) => {
 router.get('/reservations/:id/cancel', fetchUser, async (req, res) => {
   try{
     await Reservation.deleteOne({_id: req.params.id});
-    
+
     return json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
