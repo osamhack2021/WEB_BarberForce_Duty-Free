@@ -29,6 +29,7 @@
         우리부대 제휴미용실
       </NuxtLink>
     </div>
+    <div class="menubar-overlay"></div>
   </div>
 </template>
 
@@ -79,5 +80,19 @@ export default {
   .menubar {
     max-width: 360px;
   }
+}
+
+.menubar-overlay {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.5s;
+}
+
+.menubar.closed .menubar-overlay {
+  opacity: 0;
 }
 </style>
