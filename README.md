@@ -59,11 +59,54 @@
 <img src="https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white"/>
 
 ## 설치 안내 (Installation Process)
-```bash
-$ git clone git주소
-$ yarn or npm install
-$ yarn start or npm run start
+
+#### 1. 프로젝트 Clone
+``` bash
+cd /YOUR/DIRECTORY
+git clone https://github.com/osamhack2021/WEB_BarberForce_Duty-Free.git
 ```
+
+#### 2. 백엔드 의존성 설치 & 서버 실행
+``` bash
+cd "WEB(BE)"
+npm install --no-save
+npm run dev
+```
+
+#### 3. 프론트엔드 의존성 설치 & dotenv 설정 & 서버 실행
+``` bash
+cd "../WEB(BE)"
+npm install --no-save
+cp .env
+# .env 관련 설정 후 (하단 참고)
+npm run dev
+```
+
+#### .env (dotenv) 설정 관련
+
+`.env.example` 을 복사하여 `.env` 파일을 생성하면, 초기 상태는 아래와 같습니다.
+
+``` dotenv
+# kakao keys (https://developers.kakao.com/console/app/641963)
+KAKAO_REST_KEY=
+KAKAO_JAVASCRIPT_KEY=
+# kakao login redirect
+KAKAO_REDIRECT_URI=https://api.barberforce.shop/kakao/callback
+# backend url (change for localtest..)
+BACKEND_URL=https://api.barberforce.shop
+```
+
+여기서 `KAKAO_REST_KEY` 와 `KAKAO_JAVASCRIPT_KEY` 는 [카카오 개발자 센터](https://developers.kakao.com)의 생성한 앱의 키값을 적어주면 됩니다. ([참고: TEAM Duty-Free 의 앱](https://developers.kakao.com/console/app/641963))
+
+`KAKAO_REST_KEY` 와 `KAKAO_JAVASCRIPT_KEY` 는 각각 카카오 로그인, 카카오 지도 API 에서 사용합니다.
+
+`KAKAO_REDIRECT_URI` 는 카카오 로그인 시 OAuth 처리를 위해 리다이렉트 시킬 URL 입니다.
+
+`BACKEND_URL` 은 프론트엔드 코드에서 API를 사용할 때 사용되는 BaseURL 입니다. 로컬에서 서버를 구동중인 경우, `http://localhost:포트` 로 설정해주시면 됩니다. (백엔드 기본포트: 3306)
+
+
+> 카카오 로그인 등 리다이렉트 URL이 실제 서버 도메인과 연결된 서비스는 별도 카카오 API 관련 설정을 하지 않을 경우, 로컬 환경에서 관련 기능이 동작하지 않을 수 있습니다.
+
 
 ## 프로젝트 사용법 (Getting Started)
  
