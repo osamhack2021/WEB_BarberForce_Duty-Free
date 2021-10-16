@@ -49,7 +49,7 @@ router.post('/barbers/:id/reservations', fetchUser, async (req, res) => {
       barber: req.params.id,
       user: user._id,
       time: new Date(req.body.time),
-      description: req.body.description,
+      description: req.body.desciption,
     });
 
     return res.json({
