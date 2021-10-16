@@ -1,6 +1,6 @@
-# Barber Force - Fronend
+# BarberForce - Fronend
 
-> `Barber Force` 프로젝트의 프론트엔드 부분을 위한 디렉토리
+> `BarberForce` 프로젝트의 프론트엔드 부분을 위한 디렉토리
 
 ## Rules
 
