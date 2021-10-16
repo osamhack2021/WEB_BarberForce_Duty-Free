@@ -13,6 +13,11 @@
     <a href="">
         <img src="https://img.shields.io/github/contributors/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Number of contributors">
     </a>
+    <!-- license -->
+    <a href="">
+        <img src="https://img.shields.io/github/license/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="License">
+    </a>
+    <br>
     <!-- last commit -->
     <a href="">
         <img src="https://img.shields.io/github/last-commit/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Date of the last commit">
