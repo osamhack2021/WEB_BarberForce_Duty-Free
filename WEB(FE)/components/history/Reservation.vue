@@ -122,7 +122,7 @@ export default {
       }
 
       try {
-        await this.$api.reservations.edit(this.reservation.id, this.editForm);
+        await this.$api.reservations.edit(this.reservation._id, this.editForm);
         this.$toast.success('정정되었습니다!');
         this.formOpened = false;
       } catch (e) {
@@ -132,7 +132,7 @@ export default {
     async cancel() {
       if (confirm('정말 취소하시겠습니까?')) {
         try {
-          await this.$api.reservations.cancel(this.reservation.id);
+          await this.$api.reservations.cancel(this.reservation._id);
           this.$toast.success('취소되었습니다!');
           location.reload();
         } catch (e) {

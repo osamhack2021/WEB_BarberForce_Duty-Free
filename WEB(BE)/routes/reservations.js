@@ -103,12 +103,11 @@ router.post('/reservations/:id/done', fetchUser, async (req, res) => {
   }
 });
 
-router.get('/reservations/:id/update', fetchUser, async (req, res) => {
+router.post('/reservations/:id/update', fetchUser, async (req, res) => {
+  try {
+    const reservation = await Reservation.findOne({ _id: req.params.id });
 
-  try{
-    const reservation = await Reservation.findOne({_id: req.params.id});
-
-    await reservation.update({$set: { time: req.body.time , description: req.body.description}});
+    await reservation.update({ $set: { time: req.body.time, description: req.body.description } });
 
     return res.json({});
   } catch (e) {
@@ -120,9 +119,9 @@ router.get('/reservations/:id/update', fetchUser, async (req, res) => {
   }
 });
 
-router.get('/reservations/:id/cancel', fetchUser, async (req, res) => {
-  try{
-    await Reservation.deleteOne({_id: req.params.id});
+router.post('/reservations/:id/cancel', fetchUser, async (req, res) => {
+  try {
+    await Reservation.deleteOne({ _id: req.params.id });
 
     return res.json({});
   } catch (e) {
