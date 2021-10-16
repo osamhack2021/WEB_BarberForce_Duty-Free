@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Barber Force',
+    title: 'BarberForce',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -63,15 +63,15 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
-      name: 'Barber Force',
+      name: 'BarberForce',
       author: 'Duty-Free',
       description: '군 장병 미용시설 예약 서비스',
       lang: 'ko',
       ogHost: process.env.FRONT_URL || 'https://barberforce.shop',
     },
     manifest: {
-      name: 'Barber Force',
-      short_name: 'Barber Force',
+      name: 'BarberForce',
+      short_name: 'BarberForce',
       description: '군 장병 미용시설 예약 서비스',
       lang: 'ko',
       background_color: '#406D96',

@@ -1,7 +1,7 @@
 <template>
   <main class="h-screen w-screen flex flex-col items-center justify-center bg-brand p-3">
     <!-- logo -->
-    <img class="mb-12" src="@/assets/img/2_logo+title_figma_embarrassed.svg" width="203" alt="Barber Force" />
+    <img class="mb-12" src="@/assets/img/2_logo+title_figma_embarrassed.svg" width="203" alt="BarberForce" />
     <!-- errors -->
     <div class="text-center text-white">
       <h1 class="text-3xl font-bold mb-1">{{ error.statusCode }}</h1>
