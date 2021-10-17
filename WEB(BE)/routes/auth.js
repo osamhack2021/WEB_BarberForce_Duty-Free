@@ -76,6 +76,7 @@ router.post('/register', async (req, res) => {
       password: crypto.createHash('sha512').update(req.body.password).digest('base64'),
       name: req.body.name,
       soldier_id: req.body.soldier_id,
+      phone: req.body.phone
     });
 
     // 만들어진 User 확인
@@ -109,6 +110,7 @@ router.get('/me', fetchUser, async (req, res) => {
       email: user.email,
       name: user.name,
       soldier_id: user.soldier_id,
+      phone: user.phone,
       social: user.social,
       unit: unit,
     });
