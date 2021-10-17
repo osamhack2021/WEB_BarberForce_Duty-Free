@@ -5,37 +5,38 @@
 </div>
 
 <div align="center">
-    <!-- no. of used languages -->
-    <a href="">
-        <img src="https://img.shields.io/github/languages/count/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Number of used languages">
-    </a>
-    <!-- no. of contributors -->
-    <a href="">
-        <img src="https://img.shields.io/github/contributors/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Number of contributors">
-    </a>
-    <!-- license -->
-    <a href="">
-        <img src="https://img.shields.io/github/license/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="License">
-    </a>
-    <br>
-    <!-- last commit -->
-    <a href="">
-        <img src="https://img.shields.io/github/last-commit/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Date of the last commit">
-    </a>
-    <!-- commit per month -->
-    <a href="">
-        <img src="https://img.shields.io/github/commit-activity/m/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Commit per month">
-    </a>
+  <!-- no. of used languages -->
+  <a href="">
+      <img src="https://img.shields.io/github/languages/count/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Number of used languages">
+  </a>
+  <!-- no. of contributors -->
+  <a href="">
+      <img src="https://img.shields.io/github/contributors/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Number of contributors">
+  </a>
+  <!-- license -->
+  <a href="">
+      <img src="https://img.shields.io/github/license/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="License">
+  </a>
+  <br>
+  <!-- last commit -->
+  <a href="">
+      <img src="https://img.shields.io/github/last-commit/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Date of the last commit">
+  </a>
+  <!-- commit per month -->
+  <a href="">
+      <img src="https://img.shields.io/github/commit-activity/m/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Commit per month">
+  </a>
 </div>
 
 ## 프로젝트 소개
 
-**바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 부대 인근 편의시설 방문 후기 게시판 등의 커뮤니티 기능을 추가해,  군 장병들의 소통의 장을 마련하고자 합니다.
+**바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 이에 더하여 부대 인근 편의시설 방문 후기 게시판과 같은 커뮤니티 기능을 활용해,  군 장병들의 소통의 장을 마련하고자 합니다.
 
 ## 기획 배경
 
+**바버포스**는 코로나19 상황에서 병사들이 이발과 관련해 겪는 고충을 해소하고자 기획되었습니다.
 <div align="center">
-  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
+  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center" style="image-rendering: -webkit-optimize-contrast;">
 </div>
 
 ## 기능 설명
@@ -86,3 +87,7 @@ $ yarn start or npm run start
 - Sangwook Park (dkxkqkrtkddn@gmail.com), Github Id: sw0501
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
+
+.image{
+image-rendering: -webkit-optimize-contrast;
+}
