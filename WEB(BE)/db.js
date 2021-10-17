@@ -19,4 +19,5 @@ module.exports = () => {
   require('./models/barber');
   require('./models/review');
   require('./models/unit');
+  require('./models/bulletin');
 };
