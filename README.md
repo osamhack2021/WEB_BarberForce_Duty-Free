@@ -30,11 +30,13 @@
 
 ## 프로젝트 소개
 
-**바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 여기에 부대 인근 편의시설 방문 후기 게시판과 자유게시판 등의 커뮤니티 기능을 추가해 군 장병들의 소통의 장을 마련하고자 합니다.
+**바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 부대 인근 편의시설 방문 후기 게시판 등의 커뮤니티 기능을 추가해,  군 장병들의 소통의 장을 마련하고자 합니다.
 
 ## 기획 배경
 
-
+<div align="center">
+  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
+</div>
 
 ## 기능 설명
 
@@ -47,17 +49,6 @@
 
 ## 기술 스택 (Tech Stacks)
 
-### Back-end
-<a href="">
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-</a>
-<a href="">
-  <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"/>
-</a>
-<a href="">
-  <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-</a>
-
 ### Front-end
 <a href="">
   <img src="https://img.shields.io/badge/nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white"/>
@@ -68,8 +59,16 @@
 <a href="">
   <img src="https://img.shields.io/badge/Axios-854195?style=for-the-badge&logoColor=white"/>
 </a>
+
+### Back-end
 <a href="">
-  <img src="https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+</a>
+<a href="">
+  <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"/>
+</a>
+<a href="">
+  <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
 </a>
 
 ## 설치 안내 (Installation Process)
