@@ -51,24 +51,24 @@
 ## 기술 스택 (Tech Stacks)
 
 ### Front-end
-<a href="">
+<a href="https://nuxtjs.org/">
   <img src="https://img.shields.io/badge/nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white"/>
 </a>
-<a href="">
+<a href="https://tailwindcss.com/">
   <img src="https://img.shields.io/badge/tailwind css-06B6D4?style=for-the-badge&logo=tailwind css&logoColor=white"/>
 </a>
-<a href="">
+<a href="https://axios-http.com/">
   <img src="https://img.shields.io/badge/Axios-854195?style=for-the-badge&logoColor=white"/>
 </a>
 
 ### Back-end
-<a href="">
+<a href="https://nodejs.org/">
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
 </a>
-<a href="">
+<a href="https://expressjs.com/">
   <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"/>
 </a>
-<a href="">
+<a href="https://www.mongodb.com/">
   <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
 </a>
 
@@ -88,6 +88,8 @@ $ yarn start or npm run start
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
-.image{
-image-rendering: -webkit-optimize-contrast;
-}
+<style>
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+</style>
