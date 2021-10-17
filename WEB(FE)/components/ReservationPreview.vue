@@ -50,7 +50,7 @@
                   <span class="font-bold text-xl">{{ reservation.barber.title }}</span>
                   <span class="flex items-center text-base ml-auto">
                     <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
-                    {{ reservation.barber.rating }}
+                    {{ reservation.barber.rating.toFixed(1) }}
                   </span>
                 </div>
                 <div class="flex items-center">
