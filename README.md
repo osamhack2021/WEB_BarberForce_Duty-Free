@@ -36,7 +36,7 @@
 
 **바버포스**는 코로나19 상황에서 병사들이 이발과 관련해 겪는 고충을 해소하고자 기획되었습니다.
 <div align="center">
-  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center" style="image-rendering: -webkit-optimize-contrast;">
+  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
 </div>
 
 ## 기능 설명
