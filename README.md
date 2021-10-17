@@ -92,5 +92,6 @@ $ yarn start or npm run start
   img {
     image-rendering: -webkit-optimize-contrast;
     transform: translateZ(0);
+    backface-visibility: hidden;
   }
 </style>
