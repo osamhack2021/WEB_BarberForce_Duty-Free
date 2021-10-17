@@ -34,16 +34,27 @@
 
 ## 기획 배경
 
-**바버포스**는 코로나19 상황에서 병사들이 이발과 관련해 겪는 고충을 해소하고자 기획되었습니다.
+국군 장병들은 기존의 이발병 제도와 코로나19 팬데믹 상황으로 인해 아래와 같은 고충을 겪고 있습니다.
+
 <div align="center">
-  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center" style="image-rendering: -webkit-optimize-contrast;
-    transform: translateZ(0);
-    backface-visibility: hidden;">
+  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
 </div>
+
+## 서비스 설명
+
+**바버포스** 는 이러한 문제점을 해결하고, 지역사회와의 상생을 도모하며 장병들의 소통 창구를 마련하고자 기획되었습니다.
+
+<div align="center">
+  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
+</div>
+
+<!--
 
 ## 기능 설명
 
 장병들은 부대원임을 인증하고 '바버포스'에 가입할 수 있으며, 외출이나 외박 일정에 맞추어 미리 이들 미용시설에 이발 서비스를 예약하게 됩니다. 이렇게 이발 서비스를 받은 후 간단한 별점 시스템을 이용해 만족도를 평가하고, 다른 장병들의 별점과 리뷰를 참고해 자신이 예약하는 데에 활용할 수도 있습니다.
+
+-->
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 
