@@ -91,5 +91,6 @@ $ yarn start or npm run start
 <style>
   img {
     image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
   }
 </style>
