@@ -4,7 +4,7 @@
       <form class="text-center" @submit.prevent="handleSubmit(submit)">
         <div class="underline mb-6">회원정보 입력</div>
         <div class="mb-6">
-          <label class="block mb-1" for="grade">닉네임을 입력해주세요.</label>
+          <label class="block mb-1" for="nickname">닉네임을 입력해주세요.</label>
           <ValidationProvider v-slot="{ errors, classes }" name="닉네임" rules="required">
             <input
               id="nickname"
@@ -27,7 +27,7 @@
           </ValidationProvider>
         </div>
         <div class="mb-6">
-          <label class="block mb-1" for="grade">전화번호를 입력해주세요.</label>
+          <label class="block mb-1" for="phone">전화번호를 입력해주세요.</label>
           <ValidationProvider v-slot="{ errors, classes }" name="전화번호" rules="required">
             <input
               id="phone"

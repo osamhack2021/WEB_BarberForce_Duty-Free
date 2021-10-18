@@ -7,7 +7,7 @@ export default {
     soldier_id: '',
     nickname: '',
     phone: '',
-    grade: '',
+    rank: '',
   }),
   getters: {
     email: state => state.email,
@@ -48,8 +48,8 @@ export default {
     setPhone: (state, payload) => {
       state.phone = payload;
     },
-    setGrade: (state, payload) => {
-      state.grade = payload;
+    setRank: (state, payload) => {
+      state.rank = payload;
     },
   },
   actions: {
@@ -74,8 +74,8 @@ export default {
     setPhone: ({ commit }, payload) => {
       commit('setPhone', payload);
     },
-    setGrade: ({ commit }, payload) => {
-      commit('setGrade', payload);
+    setRank: ({ commit }, payload) => {
+      commit('setRank', payload);
     },
     clear: ({ commit }) => {
       commit('setEmail', '');
@@ -85,7 +85,7 @@ export default {
       commit('setSoldierId', '');
       commit('setNickname', '');
       commit('setPhone', '');
-      commit('setGrade', '');
+      commit('setRank', '');
     },
     async register({ dispatch, state }) {
       await this.$api.auth.register({
@@ -96,7 +96,7 @@ export default {
         soldier_id: state.soldier_id,
         nickname: state.nickname,
         phone: state.phone,
-        grade: state.grade,
+        rank: state.rank,
       });
       dispatch('clear');
     },
