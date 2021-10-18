@@ -201,7 +201,7 @@ router.get('/setDummyData', async (req, res) => {
       board: false,
     },
   ];
-  for (const article in articles) {
+  for (const article of articles) {
     await Board.create(article);
   }
 
