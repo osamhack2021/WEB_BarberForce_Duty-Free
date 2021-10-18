@@ -47,7 +47,7 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
 
 // 게시글 추가
 // (async/await)
-router.post('/boards/register', fetchUser, async (req, res) => {
+router.post('/boards', fetchUser, async (req, res) => {
   try {
     await Board.create({
       title: req.body.title,

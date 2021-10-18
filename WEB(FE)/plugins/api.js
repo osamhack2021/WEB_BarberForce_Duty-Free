@@ -68,6 +68,37 @@ const board = client => ({
     const flag = boardId === 1;
     return await client.get(`/boards?board=${flag}&orderby=${orderBy}&order=${order}`);
   },
+  article: async articleId => {
+    return await client.get(`/boards/${articleId}`);
+  },
+  create: async data => {
+    return await client.post(`/boards`, data);
+  },
+  update: async (articleId, data) => {
+    return await client.post(`/boards/${articleId}/update`, data);
+  },
+  delete: async articleId => {
+    return await client.post(`/boards/${articleId}/delete`);
+  },
+  recommend: async articleId => {
+    return await client.post(`/boards/${articleId}/recommendation`);
+  },
+});
+
+// comment
+const comment = client => ({
+  recommend: async commentId => {
+    return await client.post(`/comments/${commentId}/recommendation`);
+  },
+  update: async (commentId, body) => {
+    return await client.post(`/comments/${commentId}/update`, body);
+  },
+  delete: async commentId => {
+    return await client.post(`/comments/${commentId}/delete`);
+  },
+  create: async (articleId, body) => {
+    return await client.post(`/boards/${articleId}/comments`, body);
+  },
 });
 
 export default function ({ $axios, store }, inject) {
@@ -91,5 +122,6 @@ export default function ({ $axios, store }, inject) {
     reservations: reservations(client),
     profile: profile(client),
     board: board(client),
+    comment: comment(client),
   });
 }
