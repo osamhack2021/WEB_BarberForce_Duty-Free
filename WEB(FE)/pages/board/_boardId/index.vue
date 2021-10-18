@@ -15,7 +15,7 @@
         <div class="flex-1 flex items-center">
           <img class="mr-1" src="@/assets/img/order.png" />
           <select class="bg-transparent text-sm" style="color: #838383" v-model="orderBy">
-            <option value="time:desc">시간순</option>
+            <option value="createdAt:desc">시간순</option>
             <option value="recommendation:desc">추천순</option>
           </select>
         </div>
@@ -45,13 +45,18 @@ export default {
   middleware: 'auth',
   data() {
     return {
-      orderBy: 'time:desc',
+      orderBy: 'createdAt:desc',
       articles: [],
     };
   },
   computed: {
     boardId() {
       return this.$route.params.boardId;
+    },
+  },
+  watch: {
+    orderBy(value) {
+      this.$fetch();
     },
   },
   async fetch() {
