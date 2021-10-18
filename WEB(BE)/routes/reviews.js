@@ -11,7 +11,7 @@ router.get('/barbers/:id/reviews', async (req, res) => {
     const reviews = await Review.find({ barber: req.params.id }).populate('barber').populate('reviewer');
 
     return res.json({
-      reviews: reviews,
+      reviews: reviews
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
