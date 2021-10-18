@@ -63,7 +63,7 @@ router.get('/kakao/access', (req, res) => {
         // 이메일로 사용자 검색
         const existingUser = await User.findOne({ email: email, social: true });
         const existSoldierId = await User.exists({ soldier_id: req.body.soldier_id });
-        if (existingUser && !!existSoldierId) {
+        if (existingUser && !existSoldierId) {
           const token = existingUser.generateToken();
           const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
           return res.redirect(url);
