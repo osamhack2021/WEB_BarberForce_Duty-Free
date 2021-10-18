@@ -19,7 +19,7 @@
       <!-- quick menu icons -->
       <section class="flex justify-center items-center mb-8">
         <!-- 미용실 정보 -->
-        <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/">
+        <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/barbers">
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="rounded-full bg-gray-500 border-2 border-gray-400 w-16 md:w-20 h-16 md:h-20 mb-2"></div>
@@ -71,8 +71,6 @@
         </div>
       </div>
     </div>
-
-    <button class="rounded bg-brand text-white font-bold py-2 px-4" @click="logout">로그아웃(테스트용)</button>
   </main>
 </template>
 

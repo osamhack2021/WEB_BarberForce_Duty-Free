@@ -1,32 +1,38 @@
 <template>
-  <div class="rounded border shadow bg-white cursor-pointer" @click="toggle">
-    <div class="flex p-2">
-      <div class="barber-thumb">
-        <img class="rounded object-cover w-full h-full" :src="barber.thumb" />
-      </div>
-      <div class="relative flex-1 px-2">
-        <div class="flex items-center p-1 sm:p-2 md:p-4">
-          <NuxtLink :to="`/barbers/${barber._id}`">
-            <span class="text-lg font-bold">{{ barber.title }}</span>
-          </NuxtLink>
-          <span class="flex items-center text-base ml-auto">
-            <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
-            {{ barber.rating }}
-          </span>
+  <div class="rounded border shadow bg-white cursor-pointer">
+    <NuxtLink :to="`/barbers/${barber._id}`">
+      <div class="flex p-2">
+        <div class="barber-thumb">
+          <img class="rounded object-cover w-full h-full" :src="barber.thumb" />
         </div>
-        <hr class="" />
-        <div class="flex items-center text-sm p-1 sm:p-2 md:p-4">
-          <span class="flex items-center">
-            <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
-            {{ barber.location }}
-          </span>
-          <span class="flex items-center ml-auto">
-            <img class="w-4 h-4 mr-1" src="~/assets/img/phone.svg" />
-            {{ barber.phone }}
-          </span>
+        <div class="relative flex-1 px-2">
+          <div class="p-1 sm:p-2 md:p-4">
+            <div class="flex items-start">
+              <DIsinfectionBadge class="mb-1 sm:mb-2" :not="!barber.disinfection" />
+              <button class="ml-auto p-1" @click.prevent="toggle">▼</button>
+            </div>
+            <div class="flex items-center">
+              <span class="text-lg font-bold">{{ barber.title }}</span>
+              <span class="flex items-center text-base ml-auto">
+                <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
+                {{ barber.rating.toFixed(1) }}
+              </span>
+            </div>
+          </div>
+          <hr class="" />
+          <div class="flex items-center text-sm p-1 sm:p-2 md:p-4">
+            <span class="flex items-center">
+              <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
+              {{ barber.location }}
+            </span>
+            <span class="flex items-center ml-auto">
+              <img class="w-4 h-4 mr-1" src="~/assets/img/phone.svg" />
+              {{ barber.phone }}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </NuxtLink>
     <div v-if="opened">
       <hr />
       <!-- reviews -->

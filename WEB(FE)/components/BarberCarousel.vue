@@ -13,7 +13,7 @@
                 <span class="font-bold text-xl">{{ barber.title }}</span>
                 <span class="flex items-center text-base ml-auto">
                   <img class="w-5 h-5 mr-1" src="~/assets/img/star.svg" />
-                  {{ barber.rating }}
+                  {{ barber.rating.toFixed(1) }}
                 </span>
               </div>
               <div class="flex items-center">
@@ -21,6 +21,7 @@
                 {{ barber.location }}
               </div>
             </div>
+            <DIsinfectionBadge class="absolute top-2 left-2" :not="!barber.disinfection" />
           </div>
         </div>
       </NuxtLink>
