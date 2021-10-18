@@ -1,10 +1,13 @@
 const router = require('express').Router();
+const crypto = require('crypto');
 
 const User = require('../models/user');
 const Reservation = require('../models/reservation');
 const Barber = require('../models/barber');
 const Review = require('../models/review');
 const Unit = require('../models/unit');
+const Board = require('../models/board');
+const Comment = require('../models/comment');
 
 router.get('/setDummyData', async (req, res) => {
   // 기존 barbers, unit 데이터 비우기
@@ -12,6 +15,8 @@ router.get('/setDummyData', async (req, res) => {
   await Unit.deleteMany({});
   await Reservation.deleteMany({});
   await Review.deleteMany({});
+  await Board.deleteMany({});
+  await Comment.deleteMany({});
 
   // 부대 데이터
   const units = [
@@ -151,6 +156,55 @@ router.get('/setDummyData', async (req, res) => {
       unit.save();
     }
   }
+
+  // 더미유저
+  let dummyUser = await User.findOne({ email: 'dummy@dummy.com' });
+  if (!dummyUser) {
+    dummyUser = await User.create({
+      name: '김더미',
+      nickname: '더미김',
+      email: 'dummy@dummy.com',
+      password: crypto.createHash('sha512').update('dummy123').digest('base64'),
+      phone: '011-1234-5678',
+      soldier_id: '20-70004352',
+      rank: '중장',
+    });
+  }
+
+  // 더미 게시글
+  const articles = [
+    {
+      user: dummyUser._id,
+      title: '급식이 너무 맛있어요!',
+      body: '오산기지 급식 최고~\n잔반데이는 안하는게 낫지 않을까?\n라는 생각이 드네요.',
+      recommendation: 1,
+      recommend_user: [dummyUser._id],
+      comment: [],
+      board: true,
+    },
+    {
+      user: dummyUser._id,
+      title: '미복귀휴가에 관하여..',
+      body: '위드 코로나도 시행하는데 814기부터는 찍턴 해야하는거 아닌가?\n라고 할뻔~',
+      recommendation: 0,
+      recommend_user: [],
+      comment: [],
+      board: true,
+    },
+    {
+      user: dummyUser._id,
+      title: '[맛집추천] 보라매 병사식당',
+      body: '오늘은 오산기지에 있다는 맛집! 보라매 병사식당에 가볼건데요~\n인테리어부터 오래된 전통이 느껴지는 이 곳! 과연 맛은 어떨지 정말 궁금합니다!',
+      recommendation: 0,
+      recommend_user: [],
+      comment: [],
+      board: false,
+    },
+  ];
+  for (const article in articles) {
+    await Board.create(article);
+  }
+
   res.json('done');
 });
 
