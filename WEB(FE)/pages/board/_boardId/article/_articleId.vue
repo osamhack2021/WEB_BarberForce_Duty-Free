@@ -9,7 +9,9 @@
     </section>
     <main>
       <ArticleDetail v-if="article" :article="article" />
-      <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
+      <template v-if="article">
+        <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
+      </template>
     </main>
     <form class="comment-form text-sm border-t" @submit.prevent="createComment">
       <div class="container p-1">
@@ -39,9 +41,14 @@ export default {
       return this.$route.params.articleId;
     },
   },
-  fetch() {
-    const { data } = this.$api.board.article(this.articleId);
-    this.article = data.post;
+  async fetch() {
+    try {
+      const { data } = await this.$api.board.article(this.articleId);
+      this.article = data.post;
+    } catch (e) {
+      console.error(e);
+      this.$toast.error('에러가 발생했습니다!');
+    }
   },
   methods: {
     async createComment() {
@@ -50,6 +57,7 @@ export default {
         this.$toast.success('댓글을 등록했습니다!');
         this.$fetch();
       } catch (e) {
+        console.error(e);
         this.$toast.error('에러가 발생했습니다!');
       }
     },
