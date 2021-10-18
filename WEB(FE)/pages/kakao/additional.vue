@@ -3,14 +3,60 @@
     <ValidationObserver v-slot="{ handleSubmit }">
       <form class="text-center" @submit.prevent="handleSubmit(submit)">
         <div class="underline mb-6">회원정보 입력</div>
-        <!-- 프로필 사진 부분 -->
+        <div class="mb-6">
+          <label class="block mb-1" for="grade">닉네임을 입력해주세요.</label>
+          <ValidationProvider v-slot="{ errors, classes }" name="닉네임" rules="required">
+            <input
+              id="nickname"
+              v-model="additional.nickname"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
+        </div>
+        <div class="mb-6">
+          <label class="block mb-1" for="grade">전화번호를 입력해주세요.</label>
+          <ValidationProvider v-slot="{ errors, classes }" name="전화번호" rules="required">
+            <input
+              id="phone"
+              v-model="additional.phone"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
+        </div>
+
         <!-- 군번 입력 부분 -->
         <div class="mb-6">
           <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
           <ValidationProvider v-slot="{ errors, classes }" name="군번" rules="required">
             <input
               id="soldier_id"
-              v-model="soldier_id"
+              v-model="additional.soldier_id"
               class="
                 w-60
                 border
@@ -21,6 +67,29 @@
               "
               type="text"
               name="soldier_id"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
+        </div>
+        <div class="mb-6">
+          <label class="block mb-1" for="grade">계급을 입력해주세요.</label>
+          <ValidationProvider v-slot="{ errors, classes }" name="계급" rules="required">
+            <input
+              id="grade"
+              v-model="additional.grade"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
             />
             <transition name="fade">
               <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
@@ -42,15 +111,18 @@ export default {
   layout: 'empty',
   data() {
     return {
-      soldier_id: '',
+      additional: {
+        soldier_id: '',
+        phone: '',
+        nickname: '',
+        grade: '',
+      },
     };
   },
   methods: {
     async submit() {
       try {
-        await this.$api.auth.additional({
-          soldier_id: this.soldier_id,
-        });
+        await this.$api.auth.additional(this.additional);
         this.$toast.success('정상적으로 처리되었습니다!');
         this.$router.replace('/');
       } catch (e) {
