@@ -12,6 +12,7 @@ const barbersRouter = require('./routes/barbers');
 const reservationsRouter = require('./routes/reservations');
 const reviewsRouter = require('./routes/reviews');
 const developRouter = require('./routes/develop');
+const profileRouter = require('./routes/profile');
 
 db();
 
@@ -32,6 +33,7 @@ app.use('', barbersRouter);
 app.use('', reservationsRouter);
 app.use('', reviewsRouter);
 app.use('', developRouter);
+app.use('', profileRouter);
 
 app.listen(port, () => {
   console.log(`server is listening at localhost:${port}`);
