@@ -6,7 +6,7 @@ const fetchUser = require('../middleware/fetchUser');
 
 // 사용자 정보 수정
 // (async/await)
-router.get('/profiles/update', fetchUser, async (req, res) => {
+router.post('/profiles/update', fetchUser, async (req, res) => {
   const user = req.user;
 
   try{
@@ -29,7 +29,7 @@ router.get('/profiles/update', fetchUser, async (req, res) => {
 
 // 사용자 탈퇴
 // (async/await)
-router.get('/profiles/withdrawal', fetchUser, async(req,res)=>{
+router.post('/profiles/withdrawal', fetchUser, async(req,res)=>{
   const user = req.user;
 
   try{
