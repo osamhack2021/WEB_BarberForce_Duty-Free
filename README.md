@@ -63,7 +63,7 @@
 
 <table>
 	<tr>
-		<td>
+		<td width="50%">
       <ul>
         <li>
           열악한 이발도구 및 시설, 이발 미경험자 이발병 차출로 인해 병사 이발환경 악화
@@ -82,15 +82,15 @@
         </li>
       </ul>
 		</td>
-		<td align="center">
+		<td width="50%" align="center">
 			<img src="/IMAGES/Chosunbiz.png" alt="Chosunbiz">
 		</td>
 	</tr>
 	<tr>
-		<td align="center">
+		<td width="50%" align="center">
 			<img src="/IMAGES/ChannelA.png" alt="ChannelA">
 		</td>
-		<td>
+		<td width="50%">
       <ul>
         <li>
           장기 외출·외박 미실시로 부대 인근 이발시설을 파악하고 있는 병사 수 급감
