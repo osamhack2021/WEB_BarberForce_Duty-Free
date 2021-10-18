@@ -78,5 +78,6 @@ export default function ({ $axios, store }, inject) {
     auth: auth(client),
     barbers: barbers(client),
     reservations: reservations(client),
+    profile: profile(client),
   });
 }
