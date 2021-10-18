@@ -116,20 +116,19 @@ router.post('/boards/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
   try {
-    const post = await Board.findOne({_id: req.params.id});
-    const recommend_user = await Board.findOne({_id: req.params.id,recommend_user: req.user._id});
+      const post = await Board.findOne({_id: req.params.id});
+      const recommend_user = await Board.findOne({_id: req.params.id,recommend_user: req.user._id});
 
-    //추천인 목록에 있는 걍우
-    if(recommend_user != null){
-      await post.updateOne({$set: {recommendation: post.recommendation - 1}});
-      await post.updateOne({$pull: {recommend_user: req.user._id}});
-    }
-    else{
-      await post.updateOne({$set: {recommendation: post.recommendation + 1}});
-      await post.updateOne({$push: {recommend_user: req.user._id}});
-    }
-    return res.json({});
-
+      //추천인 목록에 있는 걍우
+      if(recommend_user != null){
+        await post.updateOne({$set: {recommendation: post.recommendation - 1}});
+        await post.updateOne({$pull: {recommend_user: req.user._id}});
+      }
+      else{
+        await post.updateOne({$set: {recommendation: post.recommendation + 1}});
+        await post.updateOne({$push: {recommend_user: req.user._id}});
+      }
+      return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({

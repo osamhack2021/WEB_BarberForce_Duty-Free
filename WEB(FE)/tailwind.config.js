@@ -8,7 +8,11 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      borderWidth: ['last'],
+    },
+  },
   plugins: [require('@tailwindcss/aspect-ratio')],
   corePlugins: {
     container: false,

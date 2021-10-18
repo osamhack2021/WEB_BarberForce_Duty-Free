@@ -62,6 +62,14 @@ const profile = client => ({
   },
 });
 
+// board
+const board = client => ({
+  articles: async (boardId, orderBy, order) => {
+    const flag = boardId === 1;
+    return await client.get(`/boards?board=${flag}&orderby=${orderBy}&order=${order}`);
+  },
+});
+
 export default function ({ $axios, store }, inject) {
   const client = $axios.create({
     baseURL: process.env.backendURL,
@@ -82,5 +90,6 @@ export default function ({ $axios, store }, inject) {
     barbers: barbers(client),
     reservations: reservations(client),
     profile: profile(client),
+    board: board(client),
   });
 }
