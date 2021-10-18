@@ -29,7 +29,26 @@
 </div>
 
 ## 프로젝트 소개
-
+<!--
+<table>
+	<tr>
+		<td>
+			<a href="https://www.youtube.com/watch?v=suvEYpgqv18"><img src="/image/INTRO_THUMBNAIL.png"></a>
+		</td>
+		<td>
+			<a href="https://www.youtube.com/watch?v=Oh-SFOLAom0"><img src="/image/GUIDE_THUMBNAIL.png"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<b>소개 영상</b>
+		</td>
+		<td align="center">
+			<b>가이드 영상</b>
+		</td>
+	</tr>
+</table>
+-->
 **바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 이에 더하여 부대 인근 편의시설 방문 후기 게시판과 같은 커뮤니티 기능을 활용해,  군 장병들의 소통의 장을 마련하고자 합니다.
 
 ## 기획 배경
@@ -42,10 +61,16 @@
 
 ## 서비스 설명
 
-**바버포스** 는 이러한 문제점을 해결하고, 지역사회와의 상생을 도모하며 장병들의 소통 창구를 마련하고자 기획되었습니다.
+**바버포스**는 이러한 문제점을 해결하고, 군부대와 지역사회의 상생을 도모하는 장병들의 소통 창구가 되고자 합니다.
 
 <div align="center">
   <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
+</div>
+
+## 기대 효과
+
+<div align="center">
+  <img src="/IMAGES/4_readme_effect_1676.png" alt="Background" align="center">
 </div>
 
 <!--
