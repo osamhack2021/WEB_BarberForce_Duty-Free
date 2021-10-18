@@ -53,7 +53,7 @@ router.post('/barbers/:id/reservations', fetchUser, async (req, res) => {
     });
 
     return res.json({
-      mss: '추가',
+      mss: 'COMPLETE_ADD_RESERVATION',
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -119,7 +119,7 @@ router.post('/reservations/:id/update', fetchUser, async (req, res) => {
 
 router.post('/reservations/:id/cancel', fetchUser, async (req, res) => {
   try {
-    await Reservation.deleteOne({ _id: req.params.id });
+    await Reservation.deleteOne({_id: req.params.id});
 
     return res.json({});
   } catch (e) {

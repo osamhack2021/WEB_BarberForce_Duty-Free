@@ -12,10 +12,10 @@ router.get('/boards', fetchUser, async (req, res) => {
   try {
     const board = req.query.board;
 
-    const post = await Board.find({board: board}).populate('User').populate('Comment');
+    const posts = await Board.find({board: board}).populate('user').populate('comment');
 
     return res.json({
-      posts: post
+      posts: posts
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -32,11 +32,11 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
   const user = req.user;
   try {
 
-    const post = await Board.findone({_id:req.params.id}).populate('User').populate('Comment');
-    const existRecommend = await post.exits({recommend_user: user._id});
+    const posts = await Board.findOne({_id:req.params.id}).populate('user').populate('comment');
+    const existRecommend = await posts.exists({recommend_user: user._id});
 
     return res.json({
-      posts: post,
+      posts: posts,
       recommend_flag: existRecommend
     });
   } catch (e) {
@@ -94,9 +94,11 @@ router.post('/boards/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
   try {
-    const post = await Board.findOne({_id: req.params.id});
-    const recommend_user = await post.findOne({recommend_user: req.params.id});
+    const Post = Board.findOne({_id: req.params.id});
 
+    const recommend_user = await post1.findOne();
+    return res.json({recommend_user});
+    /*
     //작성자인 경우
     if(req.params.id==post.user){
       return res.json({
@@ -118,6 +120,7 @@ router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
       )
       return res.json({});
     }
+    */
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -198,7 +201,7 @@ router.post('/comments/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/comments/:id/recommendation', fetchUser, async (req, res) => {
   try {
-    const comment = await Comment.findOne({_id: req.params.id}).populate('comment');
+    const comment = await Comment.findOne({_id: req.params.id});
     const recommend_user = await comment.exists({recommend_user: req.params.id});
 
     //작성자이거나 이미 추천한 유저인 경우 에러 출력
