@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
 const userSchema = new mongoose.Schema({
-  email: { type: String, required: true },
+  email: { type: String },
   password: { type: String, default: null },
-  name: { type: String, required: true },
-  nickname: { type: String, required: true},
-  phone: { type: String, required: true},
+  name: { type: String },
+  nickname: { type: String},
+  phone: { type: String},
   soldier_id: { type: String, default: null },
-  rank: { type: String, required: true},
+  rank: { type: String},
   social: { type: Boolean, default: false },
 });
 
