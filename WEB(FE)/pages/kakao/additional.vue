@@ -76,11 +76,11 @@
           </ValidationProvider>
         </div>
         <div class="mb-6">
-          <label class="block mb-1" for="grade">계급을 입력해주세요.</label>
+          <label class="block mb-1" for="rank">계급을 입력해주세요.</label>
           <ValidationProvider v-slot="{ errors, classes }" name="계급" rules="required">
             <input
-              id="grade"
-              v-model="additional.grade"
+              id="rank"
+              v-model="additional.rank"
               class="
                 w-60
                 border
@@ -115,7 +115,7 @@ export default {
         soldier_id: '',
         phone: '',
         nickname: '',
-        grade: '',
+        rank: '',
       },
     };
   },

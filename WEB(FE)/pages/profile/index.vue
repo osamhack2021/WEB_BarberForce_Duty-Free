@@ -44,7 +44,7 @@
           <img src="@/assets/img/edit.png" />
           계급
         </span>
-        <span class="ml-auto text-lg">{{ $store.state.auth.user.grade }}</span>
+        <span class="ml-auto text-lg">{{ $store.state.auth.user.rank }}</span>
       </div>
       <hr class="my-4" style="border-color: #c4c4c4" />
       <div class="flex justify-end mt-6">

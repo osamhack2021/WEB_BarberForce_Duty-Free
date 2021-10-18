@@ -102,11 +102,11 @@
             </ValidationProvider>
           </div>
           <div class="mb-6">
-            <label class="block mb-1" for="grade">계급을 입력해주세요.</label>
+            <label class="block mb-1" for="rank">계급을 입력해주세요.</label>
             <ValidationProvider v-slot="{ errors, classes }" class="block" name="계급" rules="required">
               <input
-                id="grade"
-                v-model="profile.grade"
+                id="rank"
+                v-model="profile.rank"
                 class="
                   w-full
                   border border-gray-500
@@ -144,7 +144,7 @@ export default {
         nickname: this.$store.state.auth.user.nickname,
         email: this.$store.state.auth.user.email,
         phone: this.$store.state.auth.user.phone,
-        grade: this.$store.state.auth.user.grade,
+        rank: this.$store.state.auth.user.rank,
       },
     };
   },

@@ -97,11 +97,11 @@
           </ValidationProvider>
         </div>
         <div class="mb-6">
-          <label class="block mb-1" for="grade">계급을 입력해주세요.</label>
+          <label class="block mb-1" for="rank">계급을 입력해주세요.</label>
           <ValidationProvider v-slot="{ errors, classes }" name="계급" rules="required">
             <input
-              id="grade"
-              v-model="grade"
+              id="rank"
+              v-model="rank"
               class="
                 w-60
                 border
@@ -164,12 +164,12 @@ export default {
         this.$store.dispatch('register/setPhone', value);
       },
     },
-    grade: {
+    rank: {
       get() {
-        return this.$store.state.register.grade;
+        return this.$store.state.register.rank;
       },
       set(value) {
-        this.$store.dispatch('register/setGrade', value);
+        this.$store.dispatch('register/setRank', value);
       },
     },
   },
