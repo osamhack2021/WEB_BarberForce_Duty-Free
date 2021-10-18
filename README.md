@@ -83,12 +83,12 @@
       </ul>
 		</td>
 		<td width="50%" align="center">
-			<img src="/IMAGES/Chosunbiz.png" alt="Chosunbiz">
+			<img src="/IMAGES/Chosunbiz.png" alt="Coronafied">
 		</td>
 	</tr>
 	<tr>
 		<td width="50%" align="center">
-			<img src="/IMAGES/ChannelA.png" alt="ChannelA">
+			<img src="/IMAGES/ChannelA.png" alt="Haircut cost support">
 		</td>
 		<td width="50%">
       <ul>
@@ -123,9 +123,58 @@
 
 ## 기대 효과
 
-<div align="center">
-  <img src="/IMAGES/4_readme_effect_1676.png" alt="Background" align="center">
-</div>
+<table>
+	<tr>
+		<td width="50%">
+      <ul>
+        <li>
+          군부대와 미용시설간의 직접 연결·사전 계약
+          <ul>
+            <li>이발이 까다롭지 않은 병사 두발규정을 이용해 이발비 절감 가능, 병사 두발의 양질화</li>
+            <li>‘카카오헤어샵’ 등의 디지털 플랫폼 사업에서 소외된 지역사회 계층에 도움</li>
+          </ul>
+        </li>
+        <li>
+          ‘위드 코로나’ 상황에서 외출·외박이 시행될 경우병사 외출의 가장 많은 사유는 ‘이발’
+          <ul>
+            <li>사전 소독/방역 협조 및 방역여부 표시를 통해병력 방역관리 효율화</li>
+          </ul>
+        </li>
+      </ul>
+		</td>
+		<td width="50%" align="center">
+			<img src="/IMAGES/MBCnews.png" alt="Soldiers">
+		</td>
+	</tr>
+	<tr>
+		<td width="50%" align="center">
+			<img src="/IMAGES/Daehan.png" alt="Relationship">
+		</td>
+		<td width="50%">
+      <ul>
+        <li>
+          별점, 리뷰 시스템을 통해 상권을 공유하는 부대 병사간의 미용시설 정보 공유 및 출타 동선 효율화
+          <ul>
+            <li>상권의 위치정보만을 활용해 부대 위치 노출 방지</li>
+          </ul>
+        </li>
+        <li>
+          ‘머리깎고 뭐하지?’ 게시판을 활용해 지역 편의시설 방문 후기 작성, 공유 및 추천 체계 마련
+          <ul>
+            <li>병사 외출 수요를 활용한 지역상권 활성화 및 인근 부대 병사간의 소통 창구 마련
+            </li>
+          </ul>
+        </li>
+        <li>
+          병사 이발여건 개선, 지역경제 활성화에 공헌
+          <ul>
+            <li>장기적으로 이발비 지급 정책의 기존 목적 달성 및 정상화</li>
+          </ul>
+        </li>
+      </ul>
+		</td>
+	</tr>
+</table>
 
 <!--
 
