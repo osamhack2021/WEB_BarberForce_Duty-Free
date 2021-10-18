@@ -9,7 +9,9 @@
     </section>
     <main>
       <ArticleDetail v-if="article" :article="article" />
-      <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
+      <template v-if="article">
+        <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
+      </template>
     </main>
     <form class="comment-form text-sm border-t" @submit.prevent="createComment">
       <div class="container p-1">
