@@ -72,7 +72,7 @@ const board = client => ({
     return await client.get(`/boards/${articleId}`);
   },
   create: async (boardId, data) => {
-    return await client.post(`/boards?board=${boardId === '1'}`, data);
+    return await client.post(`/boards/register?board=${boardId === '1'}`, data);
   },
   update: async (articleId, data) => {
     return await client.post(`/boards/${articleId}/update`, data);
