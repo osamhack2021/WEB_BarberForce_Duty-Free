@@ -13,10 +13,12 @@ router.post('/profiles/update', fetchUser, async (req, res) => {
     await user.update({
       $set: {
         name: req.body.name,
+        nickname: req.body.nickname,
         email: req.body.email,
         password: req.body.password,
         soldier_id: req.body.soldier_id,
         phone: req.body.phone,
+        rank: req.body.rank
       },
     });
     return res.json({});
