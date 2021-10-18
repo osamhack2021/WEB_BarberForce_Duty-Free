@@ -106,18 +106,25 @@ router.get('/me', fetchUser, async (req, res) => {
   const user = req.user;
 
   try {
-    const unit = await Unit.findOne({ soldier_id: user.soldier_id });
+    if(user.soldier_id == null){
+      return res.status(403).json({
+        error: NO_SOCIAL_ID
+      })
+    }
+    else{
+      const unit = await Unit.findOne({ soldier_id: user.soldier_id });
 
-    res.json({
-      email: user.email,
-      name: user.name,
-      nickname: user.nickname,
-      soldier_id: user.soldier_id,
-      phone: user.phone,
-      social: user.social,
-      rank: user.rank,
-      unit: unit,
-    });
+      res.json({
+        email: user.email,
+        name: user.name,
+        nickname: user.nickname,
+        soldier_id: user.soldier_id,
+        phone: user.phone,
+        social: user.social,
+        rank: user.rank,
+        unit: unit,
+      });
+    }
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({

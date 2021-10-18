@@ -119,7 +119,7 @@ router.post('/kakao/register', fetchUser, async (req, res) => {
     }
 
     // 군번 데이터 추가 입력
-    await user.update({ $set: { soldier_id: req.body.soldier_id, rank: req.bouy.null, nickname: req.body.nickname } });
+    await user.update({ $set: { soldier_id: req.body.soldier_id, rank: req.bouy.rank, nickname: req.body.nickname } });
 
     res.json({});
   } catch (e) {
