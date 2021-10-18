@@ -11,7 +11,7 @@
         <form @submit.prevent="handleSubmit(submit)">
           <div class="mb-6">
             <label class="block mb-1" for="name">이름을 입력해주세요.</label>
-            <ValidationProvider class="block" v-slot="{ errors, classes }" name="이름" rules="required|max:10">
+            <ValidationProvider v-slot="{ errors, classes }" class="block" name="이름" rules="required|max:10">
               <input
                 id="name"
                 v-model="profile.name"
@@ -34,7 +34,7 @@
           </div>
           <div class="mb-6">
             <label class="block mb-1" for="nickname">닉네임을 입력해주세요.</label>
-            <ValidationProvider class="block" v-slot="{ errors, classes }" name="닉네임" rules="required|max:10">
+            <ValidationProvider v-slot="{ errors, classes }" class="block" name="닉네임" rules="required|max:10">
               <input
                 id="nickname"
                 v-model="profile.nickname"
@@ -57,7 +57,7 @@
           </div>
           <div class="mb-6">
             <label class="block mb-1" for="email">이메일을 입력해주세요.</label>
-            <ValidationProvider class="block" v-slot="{ errors, classes }" name="이메일" rules="required|email">
+            <ValidationProvider v-slot="{ errors, classes }" class="block" name="이메일" rules="required|email">
               <input
                 id="email"
                 v-model="profile.email"
@@ -80,7 +80,7 @@
           </div>
           <div class="mb-6">
             <label class="block mb-1" for="phone">전화번호를 입력해주세요.</label>
-            <ValidationProvider class="block" v-slot="{ errors, classes }" name="전화번호" rules="required">
+            <ValidationProvider v-slot="{ errors, classes }" class="block" name="전화번호" rules="required">
               <input
                 id="phone"
                 v-model="profile.phone"
@@ -103,7 +103,7 @@
           </div>
           <div class="mb-6">
             <label class="block mb-1" for="grade">계급을 입력해주세요.</label>
-            <ValidationProvider class="block" v-slot="{ errors, classes }" name="계급" rules="required">
+            <ValidationProvider v-slot="{ errors, classes }" class="block" name="계급" rules="required">
               <input
                 id="grade"
                 v-model="profile.grade"

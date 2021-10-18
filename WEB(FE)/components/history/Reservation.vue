@@ -106,6 +106,20 @@ export default {
       },
     };
   },
+  computed: {
+    dateString() {
+      const date = moment(this.reservation.time);
+      return {
+        date: date.format('YYYY/MM/DD'),
+        time: date.format('HH:mm'),
+      };
+    },
+    upcomming() {
+      const now = moment();
+      const reservedTime = moment(this.reservation.time);
+      return now.isBefore(reservedTime);
+    },
+  },
   methods: {
     async submit() {
       const date = moment(this.editForm.time);
@@ -139,20 +153,6 @@ export default {
           this.$toast.error('에러가 발생했습니다!');
         }
       }
-    },
-  },
-  computed: {
-    dateString() {
-      const date = moment(this.reservation.time);
-      return {
-        date: date.format('YYYY/MM/DD'),
-        time: date.format('HH:mm'),
-      };
-    },
-    upcomming() {
-      const now = moment();
-      const reservedTime = moment(this.reservation.time);
-      return now.isBefore(reservedTime);
     },
   },
 };
