@@ -83,12 +83,12 @@
       </ul>
 		</td>
 		<td align="center">
-			<img src="/IMAGES/Chosunbiz.png" alt="Chosunbiz" width="100%">
+			<img src="/IMAGES/Chosunbiz.png" alt="Chosunbiz">
 		</td>
 	</tr>
 	<tr>
 		<td align="center">
-			<img src="/IMAGES/ChannelA.png" alt="ChannelA" width="100%">
+			<img src="/IMAGES/ChannelA.png" alt="ChannelA">
 		</td>
 		<td>
       <ul>
