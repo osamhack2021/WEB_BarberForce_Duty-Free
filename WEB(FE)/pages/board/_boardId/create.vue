@@ -67,7 +67,7 @@ export default {
       try {
         await this.$api.board.create(this.boardId, this.newArticle);
         this.$toast.success('새 글을 작성했습니다!');
-        this.$fetch();
+        this.$router.replace(`/board/${this.boardId}`);
       } catch (e) {
         console.error(e);
         this.$toast.error('에러가 발생했습니다!');
