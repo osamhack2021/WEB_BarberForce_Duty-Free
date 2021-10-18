@@ -27,6 +27,29 @@
           </ValidationProvider>
         </div>
         <div class="mb-6">
+          <label class="block mb-1" for="nickname">닉네임을 알려주세요.</label>
+          <ValidationProvider v-slot="{ errors, classes }" name="닉네임" rules="required">
+            <input
+              id="nickname"
+              v-model="nickname"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
+        </div>
+        <div class="mb-6">
           <label class="block mb-1" for="soldier_id">군번을 입력해주세요.</label>
           <ValidationProvider v-slot="{ errors, classes }" name="군번" rules="required">
             <input
@@ -51,10 +74,27 @@
           </ValidationProvider>
         </div>
         <div class="mb-6">
-          <div class="mb-4">휴대전화로 본인인증을 해주세요.</div>
-          <div class="flex justify-center">
-            <img class="w-16 h-16" src="~/assets/img/pass.png" alt="PASS" />
-          </div>
+          <label class="block mb-1" for="phone">전화번호 입력해주세요.</label>
+          <ValidationProvider v-slot="{ errors, classes }" name="전화번호" rules="required">
+            <input
+              id="phone"
+              v-model="phone"
+              class="
+                w-60
+                border
+                rounded
+                p-2
+                text-black text-sm
+                focus:outline-none focus:border-blue-500 focus:shadow-sm
+              "
+              type="text"
+            />
+            <transition name="fade">
+              <div v-if="errors.length > 0" class="w-60 text-left text-xs md:text-sm text-red-400" :class="classes">
+                {{ errors[0] }}
+              </div>
+            </transition>
+          </ValidationProvider>
         </div>
         <div class="flex justify-center">
           <button type="submit" class="rounded bg-blue-500 text-white py-2 px-3">가입하기</button>
@@ -82,6 +122,30 @@ export default {
       },
       set(value) {
         this.$store.dispatch('register/setSoldierId', value);
+      },
+    },
+    nickname: {
+      get() {
+        return this.$store.state.register.nickname;
+      },
+      set(value) {
+        this.$store.dispatch('register/setNickname', value);
+      },
+    },
+    phone: {
+      get() {
+        return this.$store.state.register.phone;
+      },
+      set(value) {
+        this.$store.dispatch('register/setPhone', value);
+      },
+    },
+    grade: {
+      get() {
+        return this.$store.state.register.grade;
+      },
+      set(value) {
+        this.$store.dispatch('register/setGrade', value);
       },
     },
   },
