@@ -20,6 +20,7 @@ router.get('/boards', fetchUser, async (req, res) => {
       path: 'comment',
       populate: [
         { path: 'recommend_user' },
+        { path: 'user' }
       ]
     })
 
@@ -52,6 +53,7 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
       path: 'comment',
       populate: [
         { path: 'recommend_user' },
+        { path: 'user' }
       ]
     })
 
