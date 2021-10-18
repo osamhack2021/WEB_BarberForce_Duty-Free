@@ -42,6 +42,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   data() {
     return {
       orderBy: 'time:desc',
