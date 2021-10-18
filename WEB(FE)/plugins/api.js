@@ -71,8 +71,8 @@ const board = client => ({
   article: async articleId => {
     return await client.get(`/boards/${articleId}`);
   },
-  create: async data => {
-    return await client.post(`/boards`, data);
+  create: async (boardId, data) => {
+    return await client.post(`/boards?board=${boardId === 1}`, data);
   },
   update: async (articleId, data) => {
     return await client.post(`/boards/${articleId}/update`, data);
