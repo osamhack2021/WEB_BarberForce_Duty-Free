@@ -52,6 +52,13 @@ const reservations = client => ({
   },
 });
 
+// profile
+const profile = client => ({
+  edit: async data => {
+    return await client.post('/profile/update', data);
+  },
+});
+
 export default function ({ $axios, store }, inject) {
   const client = $axios.create({
     baseURL: process.env.backendURL,
