@@ -11,7 +11,7 @@ router.get('/barbers/:id/reviews', async (req, res) => {
     const reviews = await Review.find({ barber: req.params.id }).populate('barber').populate('reviewer');
 
     return res.json({
-      reviews: reviews,
+      reviews: reviews
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -37,7 +37,6 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
 
     //미용실 별점 겡신
     const review = await Review.find({barber: req.params.id});
-
     const barber = await Barber.findOne({_id: req.params.id});
     await barber.update({$set: {rating: (barber.rating * (review.length-1) + req.body.rating) / review.length}})
 
@@ -53,9 +52,5 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     });
   }
 });
-
-router.post('/rating', async(req,res) =>{
-
-})
 
 module.exports = router;

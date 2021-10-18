@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const crypto = require('crypto');
 
 const User = require('../models/user');
 
@@ -15,7 +16,7 @@ router.post('/profiles/update', fetchUser, async (req, res) => {
         name: req.body.name,
         nickname: req.body.nickname,
         email: req.body.email,
-        password: req.body.password,
+        password: crypto.createHash('sha512').update(req.body.password).digest('base64'),
         soldier_id: req.body.soldier_id,
         phone: req.body.phone,
         rank: req.body.rank
