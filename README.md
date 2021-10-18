@@ -135,9 +135,9 @@
           </ul>
         </li>
         <li>
-          ‘위드 코로나’ 상황에서 외출·외박이 시행될 경우병사 외출의 가장 많은 사유는 ‘이발’
+          ‘위드 코로나’ 상황에서 외출·외박이 시행될 경우 병사 외출의 가장 많은 사유는 ‘이발’
           <ul>
-            <li>사전 소독/방역 협조 및 방역여부 표시를 통해병력 방역관리 효율화</li>
+            <li>사전 소독/방역 협조 및 방역여부 표시를 통해 병력 방역관리 효율화</li>
           </ul>
         </li>
       </ul>
@@ -155,7 +155,7 @@
         <li>
           별점, 리뷰 시스템을 통해 상권을 공유하는 부대 병사간의 미용시설 정보 공유 및 출타 동선 효율화
           <ul>
-            <li>상권의 위치정보만을 활용해 부대 위치 노출 방지</li>
+            <li>서비스의 위치정보는 사용자가 아닌 제휴 업체들의 것을 활용해 부대 위치 노출 방지</li>
           </ul>
         </li>
         <li>
@@ -213,7 +213,7 @@
   <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
 </a>
 
-## 설치 안내 (Installation Process)
+## 프로젝트 설치 안내 (Installation Process)
 
 #### 1. 프로젝트 Clone
 ``` bash
@@ -261,9 +261,6 @@ BACKEND_URL=https://api.barberforce.shop
 
 
 > 카카오 로그인 등 리다이렉트 URL이 실제 서버 도메인과 연결된 서비스는 별도 카카오 API 관련 설정을 하지 않을 경우, 로컬 환경에서 관련 기능이 동작하지 않을 수 있습니다.
-
-
-## 프로젝트 사용법 (Getting Started)
  
 ## 팀 정보 (Team Information)
 - Se Lee (ese1997@naver.com), Github Id: sallyselee
