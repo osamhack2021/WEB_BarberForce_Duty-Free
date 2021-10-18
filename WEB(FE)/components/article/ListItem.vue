@@ -8,7 +8,7 @@
     <div class="flex items-center text-xs">
       <div class="text-gray-300">
         <span class="mr-1">{{ proccesedCreatedAt }}</span>
-        <span>{{ article.user.rank }} {{ article.user.nickname }}</span>
+        <span>{{ article.user.rank }} {{ article.user.name }}</span>
       </div>
       <div class="flex items-center text-gray-300 ml-auto">
         <span class="flex item-center mr-4">
