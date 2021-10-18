@@ -102,7 +102,7 @@
                   </span>
                 </div>
               </div>
-              <div class="">매주 월요일은 정기휴무입니다.</div>
+              <div class="">{{ barber.description.replace(/(\n|\r\n)/g, '<br />') }}</div>
               <span class="flex items-center mt-3 md:hidden">
                 <img class="mr-2 w-7" src="@/assets/img/phone.svg" />
                 {{ barber.phone }}
