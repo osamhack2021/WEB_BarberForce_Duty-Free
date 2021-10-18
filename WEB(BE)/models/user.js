@@ -6,8 +6,10 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, default: null },
   name: { type: String, required: true },
-  phone: { type: String, required: true}, //나중에 프론트 완성하면 주석 지우고 사용 ㄱㄱ
+  nickname: { type: String, required: true},
+  phone: { type: String, required: true},
   soldier_id: { type: String, default: null },
+  rank: { type: String, required: true},
   social: { type: Boolean, default: false },
 });
 
