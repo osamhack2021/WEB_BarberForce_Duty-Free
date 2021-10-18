@@ -33,13 +33,9 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
 
     const post = await Board.findOne({_id:req.params.id}).populate('user').populate('comment');
 
-    let recommend_user = (await post.recommend_user.find(_id => _id === user._id) !== null)
-    console.log("sdfsd");
-    console.log( )
-    console.log(!!post.recommend_user.find(_id => _id === user._id))
     return res.json({
-      //posts: post,
-      recommend_flag: post.recommend_user.find(_id => _id === user._id) === undefined
+      posts: post,
+      recommend_flag: post.recommend_user.find(_id => _id === user._id) !== undefined
     });
 
   } catch (e) {
