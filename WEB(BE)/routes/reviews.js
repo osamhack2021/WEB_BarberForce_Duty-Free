@@ -37,7 +37,6 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
 
     //미용실 별점 겡신
     const review = await Review.find({barber: req.params.id});
-
     const barber = await Barber.findOne({_id: req.params.id});
     await barber.update({$set: {rating: (barber.rating * (review.length-1) + req.body.rating) / review.length}})
 
@@ -53,9 +52,5 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
     });
   }
 });
-
-router.post('/rating', async(req,res) =>{
-
-})
 
 module.exports = router;

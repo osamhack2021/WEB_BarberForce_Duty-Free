@@ -74,7 +74,7 @@ router.get('/reservations', fetchUser, async (req, res) => {
       .sort({ time: order });
 
     return res.json({
-      reservations: reservations,
+      reservations: reservations
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
