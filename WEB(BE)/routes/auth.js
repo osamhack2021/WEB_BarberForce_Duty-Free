@@ -108,7 +108,7 @@ router.get('/me', fetchUser, async (req, res) => {
   try {
     if(user.soldier_id == null){
       return res.status(403).json({
-        error: NO_SOCIAL_ID
+        error: 'NO_SOCIAL_ID'
       })
     }
     else{
