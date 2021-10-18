@@ -65,14 +65,14 @@ const profile = client => ({
 // board
 const board = client => ({
   articles: async (boardId, orderBy, order) => {
-    const flag = boardId === 1;
+    const flag = boardId === '1';
     return await client.get(`/boards?board=${flag}&orderby=${orderBy}&order=${order}`);
   },
   article: async articleId => {
     return await client.get(`/boards/${articleId}`);
   },
   create: async (boardId, data) => {
-    return await client.post(`/boards?board=${boardId === 1}`, data);
+    return await client.post(`/boards?board=${boardId === '1'}`, data);
   },
   update: async (articleId, data) => {
     return await client.post(`/boards/${articleId}/update`, data);
