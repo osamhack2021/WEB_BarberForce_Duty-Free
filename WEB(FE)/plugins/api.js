@@ -65,7 +65,7 @@ const profile = client => ({
 // board
 const board = client => ({
   articles: async (boardId, orderBy, order) => {
-    const flag = boardId === 1 ? true : false;
+    const flag = boardId === 1;
     return await client.get(`/boards?board=${flag}&orderby=${orderBy}&order=${order}`);
   },
 });
