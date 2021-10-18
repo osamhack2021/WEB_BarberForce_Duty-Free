@@ -44,7 +44,7 @@ export default {
   async fetch() {
     try {
       const { data } = await this.$api.board.article(this.articleId);
-      this.article = data.post;
+      this.article = data.posts;
     } catch (e) {
       console.error(e);
       this.$toast.error('에러가 발생했습니다!');
