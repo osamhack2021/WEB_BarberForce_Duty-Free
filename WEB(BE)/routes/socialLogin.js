@@ -62,18 +62,21 @@ router.get('/kakao/access', (req, res) => {
 
         // 이메일로 사용자 검색
         const existingUser = await User.findOne({ email: email, social: true });
-        const existSoldierId = existingUser.soldier_id;
-        if (existingUser != null && existSoldierId == null) {
-          //해당 이메일의 사용자가 군번이 없다면 추가 입력페이지로 리다이렉트
-          const token = existingUser.generateToken();
-          const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
-          return res.redirect(url);
-        } else if (existingUser != null && existSoldierId != null) {
-          // 해당 이메일의 사용자가 이미 있다면
-          // 그 사용자에 대한 토큰 생성 후 리다이렉트
-          const token = existingUser.generateToken();
-          const url = 'https://barberforce.shop/kakao/callback?token=' + token;
-          return res.redirect(url);
+        //const existSoldierId = existingUser.soldier_id;
+        if (existingUser) {
+          if(existingUser.soldier_id == null){
+            // 해당 이메일의 사용자가 이미 있다면
+            // 그 사용자에 대한 토큰 생성 후 리다이렉트
+            const token = existingUser.generateToken();
+            const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
+            return res.redirect(url);
+          }
+          else{
+            //해당 이메일의 사용자가 군번이 없다면 추가 입력페이지로 리다이렉트
+            const token = existingUser.generateToken();
+            const url = 'https://barberforce.shop/kakao/callback?token=' + token;
+            return res.redirect(url);
+          }
         } else {
           // 없다면 (최초 로그인이라면)
           // 사용자를 하나 만들고 (insertMany 대신 create 사용)
