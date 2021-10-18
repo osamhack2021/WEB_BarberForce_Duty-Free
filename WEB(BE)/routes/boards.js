@@ -6,12 +6,7 @@ const Comment = require('../models/comment');
 
 const fetchUser = require('../middleware/fetchUser');
 
-<<<<<<< HEAD
 // 게시판 글 목록 불러오기
-=======
-// 게시판 글 불러오기
-// limit 넘겨주면 잘라서 보내면 될 듯
->>>>>>> 90f4bff0e68535aebf8fc50f1884a449fd9ba2ca
 // (async/await)
 router.get('/boards', fetchUser, async (req, res) => {
   try {
