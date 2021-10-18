@@ -75,8 +75,10 @@ router.post('/register', async (req, res) => {
       email: req.body.email,
       password: crypto.createHash('sha512').update(req.body.password).digest('base64'),
       name: req.body.name,
+      nickname: req.body.nickname,
       soldier_id: req.body.soldier_id,
-      phone: req.body.phone
+      phone: req.body.phone,
+      rank: req.body.rank
     });
 
     // 만들어진 User 확인
@@ -109,9 +111,11 @@ router.get('/me', fetchUser, async (req, res) => {
     res.json({
       email: user.email,
       name: user.name,
+      nickname: user.nickname,
       soldier_id: user.soldier_id,
       phone: user.phone,
       social: user.social,
+      rank: user.rank,
       unit: unit,
     });
   } catch (e) {

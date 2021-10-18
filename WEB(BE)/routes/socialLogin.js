@@ -62,7 +62,8 @@ router.get('/kakao/access', (req, res) => {
 
         // 이메일로 사용자 검색
         const existingUser = await User.findOne({ email: email, social: true });
-        if (existingUser) {
+        const existSoldierId = await User.exists({ soldier_id: req.body.soldier_id });
+        if (existingUser && existSoldierId) {
           // 해당 이메일의 사용자가 이미 있다면
           // 그 사용자에 대한 토큰 생성 후 리다이렉트
           const token = existingUser.generateToken();
@@ -74,8 +75,10 @@ router.get('/kakao/access', (req, res) => {
           const user = await User.create({
             email: email,
             name: name,
+            nickname: name,
             soldier_id: null,
             password: null,
+            rank: null,
             social: true,
           });
           // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
