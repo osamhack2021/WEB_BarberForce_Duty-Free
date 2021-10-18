@@ -8,7 +8,6 @@ const fetchUser = require('../middleware/fetchUser');
 
 // 게시판 글 불러오기
 // limit 넘겨주면 잘라서 보내면 될 듯
-// 댓글은
 // (async/await)
 router.get('/boards', fetchUser, async (req, res) => {
   try {
@@ -114,7 +113,7 @@ router.post('/boards/:id/delete', fetchUser, async (req, res) => {
     await Comment.deleteMany({post:req.params.id});
     //게시글 삭제
     await Board.deleteOne({_id:req.params.id});
-    }})
+
     return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -142,7 +141,7 @@ router.post('/boards/:id/comments', fetchUser, async (req, res) => {
     //게시글에 댓글 추가
     const post = await Board.findOne({_id:req.params.id});
     await post.update(
-      {$push: {comment: createdComment._id}};
+      {$push: {comment: createdComment._id}}
     )
 
     return res.json({});
