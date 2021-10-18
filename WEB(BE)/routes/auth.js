@@ -84,7 +84,7 @@ router.post('/register', async (req, res) => {
     // 만들어진 User 확인
     const createdUser = await User.findOne({ email: req.body.email });
     if (createdUser) {
-      console.log('사용자 추가 완료');
+      console.log('COMPLETE_ADD_USER');
 
       return res.status(200).json({
         registerSuccess: true,

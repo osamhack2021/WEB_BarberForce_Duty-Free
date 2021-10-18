@@ -75,10 +75,11 @@ router.get('/kakao/access', (req, res) => {
           const user = await User.create({
             email: email,
             name: name,
-            nickname: name,
-            soldier_id: null,
-            password: null,
-            rank: null,
+            nickname: "null",
+            soldier_id: "null",
+            phone: "null",
+            password: "null",
+            rank: "null",
             social: true,
           });
           // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
@@ -118,7 +119,7 @@ router.post('/kakao/register', fetchUser, async (req, res) => {
     }
 
     // 군번 데이터 추가 입력
-    await user.update({ $set: { soldier_id: req.body.soldier_id } });
+    await user.update({ $set: { soldier_id: req.body.soldier_id, rank: req.bouy.null, nickname: req.body.nickname } });
 
     res.json({});
   } catch (e) {
