@@ -9,16 +9,18 @@ const fetchUser = require('../middleware/fetchUser');
 router.post('/profiles/update', fetchUser, async (req, res) => {
   const user = req.user;
 
-  try{
-    await user.update({$set: {
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      soldier_id: req.body.soldier_id,
-      phone: req.body.phone
-    }});
+  try {
+    await user.update({
+      $set: {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        soldier_id: req.body.soldier_id,
+        phone: req.body.phone,
+      },
+    });
     return res.json({});
-  } catch(e){
+  } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
       error: e,
@@ -29,18 +31,19 @@ router.post('/profiles/update', fetchUser, async (req, res) => {
 
 // 사용자 탈퇴
 // (async/await)
-router.post('/profiles/withdrawal', fetchUser, async(req,res)=>{
+router.post('/profiles/withdrawal', fetchUser, async (req, res) => {
   const user = req.user;
 
-  try{
-    await User.deleteOne({_id:user._id});
+  try {
+    await User.deleteOne({ _id: user._id });
     return res.json({});
-  } catch(e){
+  } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
       error: e,
       errorString: e.toString(),
     });
-})
+  }
+});
 
 module.exports = router;
