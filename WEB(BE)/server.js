@@ -35,7 +35,7 @@ app.use('', reservationsRouter);
 app.use('', reviewsRouter);
 app.use('', developRouter);
 app.use('', profileRouter);
-app.use('', boardsRoueter)
+app.use('', boardsRouter)
 
 app.listen(port, () => {
   console.log(`server is listening at localhost:${port}`);
