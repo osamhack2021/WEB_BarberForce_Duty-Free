@@ -55,7 +55,10 @@ const reservations = client => ({
 // profile
 const profile = client => ({
   edit: async data => {
-    return await client.post('/profile/update', data);
+    return await client.post('/profiles/update', data);
+  },
+  withdraw: async () => {
+    return await client.post('/profiles/withdrawal');
   },
 });
 
