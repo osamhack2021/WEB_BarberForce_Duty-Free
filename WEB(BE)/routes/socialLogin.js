@@ -62,12 +62,13 @@ router.get('/kakao/access', (req, res) => {
 
         // 이메일로 사용자 검색
         const existingUser = await User.findOne({ email: email, social: true });
-        const existSoldierId = await User.exists({ soldier_id: req.body.soldier_id });
-        if (existingUser && !existSoldierId) {
+        const existSoldierId = existingUser.soldier_id;
+        if (existingUser && existSoldierId = null) {
+          //해당 이메일의 사용자가 군번이 없다면 추가 입력페이지로 리다이렉트
           const token = existingUser.generateToken();
           const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
           return res.redirect(url);
-        } else if (existingUser && existSoldierId) {
+        } else if (existingUser && existSoldierId != null) {
           // 해당 이메일의 사용자가 이미 있다면
           // 그 사용자에 대한 토큰 생성 후 리다이렉트
           const token = existingUser.generateToken();
