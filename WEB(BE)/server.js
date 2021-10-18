@@ -13,6 +13,7 @@ const reservationsRouter = require('./routes/reservations');
 const reviewsRouter = require('./routes/reviews');
 const developRouter = require('./routes/develop');
 const profileRouter = require('./routes/profile');
+const boardsRouter = require('./routes/boards');
 
 db();
 
@@ -34,6 +35,7 @@ app.use('', reservationsRouter);
 app.use('', reviewsRouter);
 app.use('', developRouter);
 app.use('', profileRouter);
+app.use('', boardsRoueter)
 
 app.listen(port, () => {
   console.log(`server is listening at localhost:${port}`);
