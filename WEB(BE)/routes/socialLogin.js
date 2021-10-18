@@ -75,10 +75,11 @@ router.get('/kakao/access', (req, res) => {
           const user = await User.create({
             email: email,
             name: name,
-            nickname: null,
-            soldier_id: null,
-            password: null,
-            rank: null,
+            nickname: "null",
+            soldier_id: "null",
+            phone: "null",
+            password: "null",
+            rank: "null",
             social: true,
           });
           // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)

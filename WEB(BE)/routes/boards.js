@@ -3,7 +3,6 @@ const router = require('express').Router();
 const Board = require('../models/board');
 const Comment = require('../models/comment');
 
-
 const fetchUser = require('../middleware/fetchUser');
 
 // 게시판 글 목록 불러오기
@@ -32,13 +31,17 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
   const user = req.user;
   try {
 
-    const posts = await Board.findOne({_id:req.params.id}).populate('user').populate('comment');
-    const existRecommend = await posts.exists({recommend_user: user._id});
+    const post = await Board.findOne({_id:req.params.id}).populate('user').populate('comment');
 
+    let recommend_user = (await post.recommend_user.find(_id => _id === user._id) !== null)
+    console.log("sdfsd");
+    console.log( )
+    console.log(!!post.recommend_user.find(_id => _id === user._id))
     return res.json({
-      posts: posts,
-      recommend_flag: existRecommend
+      //posts: post,
+      recommend_flag: post.recommend_user.find(_id => _id === user._id) === undefined
     });
+
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -94,11 +97,11 @@ router.post('/boards/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
   try {
-    const Post = Board.findOne({_id: req.params.id});
+    const posts = Board.findOne({_id: req.params.id});
 
-    const recommend_user = await post1.findOne();
+    const recommend_user = await posts.findOne();
     return res.json({recommend_user});
-    /*
+
     //작성자인 경우
     if(req.params.id==post.user){
       return res.json({
@@ -120,7 +123,7 @@ router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
       )
       return res.json({});
     }
-    */
+
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
