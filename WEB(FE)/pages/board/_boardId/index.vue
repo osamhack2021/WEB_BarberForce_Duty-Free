@@ -53,10 +53,15 @@ export default {
       return this.$route.params.boardId;
     },
   },
-  fetch() {
+  async fetch() {
     const [orderBy, order] = this.orderBy.split(':');
-    const { data } = this.$api.board.articles(this.boardId, orderBy, order);
-    this.articles = data.posts;
+    try {
+      const { data } = await this.$api.board.articles(this.boardId, orderBy, order);
+      this.articles = data.posts;
+    } catch (e) {
+      console.log(e.response);
+      this.$toast.error('에러가 발생했습니다!');
+    }
   },
 };
 </script>

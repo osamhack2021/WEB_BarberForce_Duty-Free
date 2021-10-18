@@ -9,7 +9,7 @@ const fetchUser = require('../middleware/fetchUser');
 // (async/await)
 router.get('/boards', fetchUser, async (req, res) => {
   try {
-    const board = req.query.board;
+    const board = JSON.parse(req.query.board);
     const orderBy = req.query.orderBy;
     const order = req.query.order;
 
@@ -37,7 +37,7 @@ router.get('/boards', fetchUser, async (req, res) => {
 // (async/await)
 router.get('/boards/:id', fetchUser, async (req, res) => {
   const user = req.user;
-  const board = req.query.board;
+  const board = JSON.parse(req.query.board);
   const orderBy = req.query.orderBy;
   const order = req.query.order;
   try {
@@ -70,7 +70,7 @@ router.post('/boards', fetchUser, async (req, res) => {
       title: req.body.title,
       user: req.user._id,
       body: req.body.body,
-      board: req.query.board,
+      board: JSON.parse(req.query.board),
     });
 
     return res.json({});
@@ -92,7 +92,7 @@ router.post('/boards/:id/update', fetchUser, async (req, res) => {
       $set: {
         title: req.body.title,
         body: req.body.body,
-        board: req.query.board,
+        board: JSON.parse(req.query.board),
       },
     });
     return res.json({});

@@ -201,7 +201,7 @@ router.get('/setDummyData', async (req, res) => {
       board: false,
     },
   ];
-  for (const article in articles) {
+  for (const article of articles) {
     await Board.create(article);
   }
 
@@ -215,6 +215,8 @@ router.get('/db', async (req, res) => {
     const reservations = await Reservation.find({});
     const reviews = await Review.find({});
     const units = await Unit.find({});
+    const boards = await Board.find({});
+    const comments = await Comment.find({});
 
     return res.json({
       User: users,
@@ -222,6 +224,8 @@ router.get('/db', async (req, res) => {
       Reservation: reservations,
       Review: reviews,
       Unit: units,
+      Board: boards,
+      Comment: comments,
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
