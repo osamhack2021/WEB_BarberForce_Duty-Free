@@ -19,7 +19,7 @@
             <option value="recommendation:desc">추천순</option>
           </select>
         </div>
-        <CommonHeading>PROFILE</CommonHeading>
+        <CommonHeading>BULLETIN</CommonHeading>
         <div class="flex-1 flex justify-end">
           <NuxtLink :to="`/board/${boardId}/create`">
             <img src="@/assets/img/write.png" />

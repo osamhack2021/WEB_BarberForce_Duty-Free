@@ -13,20 +13,16 @@ router.get('/boards', fetchUser, async (req, res) => {
     const orderBy = req.query.orderBy;
     const order = req.query.order;
 
-    const post = await Board.find({board: board})
-    .sort({[orderBy]:order})
-    .populate('user')
-    .populate({
-      path: 'comment',
-      populate: [
-        { path: 'recommend_user' },
-      ]
-    })
-
-
+    const post = await Board.find({ board: board })
+      .sort({ [orderBy]: order })
+      .populate('user')
+      .populate({
+        path: 'comment',
+        populate: [{ path: 'recommend_user' }],
+      });
 
     return res.json({
-      posts: post
+      posts: post,
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -45,22 +41,18 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
   const orderBy = req.query.orderBy;
   const order = req.query.order;
   try {
-
-    const post = await Board.findOne({_id:req.params.id,board:board})
-    .sort({[orderBy]:order})
-    .populate('user')
-    .populate({
-      path: 'comment',
-      populate: [
-        { path: 'recommend_user' },
-      ]
-    })
+    const post = await Board.findOne({ _id: req.params.id, board: board })
+      .sort({ [orderBy]: order })
+      .populate('user')
+      .populate({
+        path: 'comment',
+        populate: [{ path: 'recommend_user' }],
+      });
 
     return res.json({
-      posts: post,
-      recommend_flag: post.recommend_user.find(_id => _id === user._id) === undefined
+      post: post,
+      recommend_flag: post.recommend_user.find(_id => _id === user._id) === undefined,
     });
-
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -72,15 +64,14 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
 
 // 게시글 추가
 // (async/await)
-router.post('/boards/register', fetchUser, async (req, res) => {
+router.post('/boards', fetchUser, async (req, res) => {
   try {
-
     await Board.create({
       title: req.body.title,
       user: req.user._id,
       body: req.body.body,
-      board: req.query.board
-    })
+      board: req.query.board,
+    });
 
     return res.json({});
   } catch (e) {
@@ -96,12 +87,14 @@ router.post('/boards/register', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/boards/:id/update', fetchUser, async (req, res) => {
   try {
-    const post = await Board.findOne({_id: req.params.id});
-    await post.update({$set: {
-      title: req.body.title,
-      body: req.body.body,
-      board: req.query.board
-    }})
+    const post = await Board.findOne({ _id: req.params.id });
+    await post.update({
+      $set: {
+        title: req.body.title,
+        body: req.body.body,
+        board: req.query.board,
+      },
+    });
     return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -116,19 +109,18 @@ router.post('/boards/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
   try {
-      const post = await Board.findOne({_id: req.params.id});
-      const recommend_user = await Board.findOne({_id: req.params.id,recommend_user: req.user._id});
+    const post = await Board.findOne({ _id: req.params.id });
+    const recommend_user = await Board.findOne({ _id: req.params.id, recommend_user: req.user._id });
 
-      //추천인 목록에 있는 걍우
-      if(recommend_user != null){
-        await post.updateOne({$set: {recommendation: post.recommendation - 1}});
-        await post.updateOne({$pull: {recommend_user: req.user._id}});
-      }
-      else{
-        await post.updateOne({$set: {recommendation: post.recommendation + 1}});
-        await post.updateOne({$push: {recommend_user: req.user._id}});
-      }
-      return res.json({});
+    //추천인 목록에 있는 걍우
+    if (recommend_user != null) {
+      await post.updateOne({ $set: { recommendation: post.recommendation - 1 } });
+      await post.updateOne({ $pull: { recommend_user: req.user._id } });
+    } else {
+      await post.updateOne({ $set: { recommendation: post.recommendation + 1 } });
+      await post.updateOne({ $push: { recommend_user: req.user._id } });
+    }
+    return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -138,15 +130,14 @@ router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
   }
 });
 
-
 // 게시글 삭제
 // (async/await)
 router.post('/boards/:id/delete', fetchUser, async (req, res) => {
   try {
     //댓글 삭제
-    await Comment.deleteMany({post:req.params.id});
+    await Comment.deleteMany({ post: req.params.id });
     //게시글 삭제
-    await Board.deleteOne({_id:req.params.id});
+    await Board.deleteOne({ _id: req.params.id });
     return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -165,16 +156,14 @@ router.post('/boards/:id/comments', fetchUser, async (req, res) => {
     await Comment.create({
       post: req.params.id,
       user: req.user._id,
-      body: req.body.body
-    })
+      body: req.body.body,
+    });
 
-    const createdComment = await Comment.findOne({post:req.params.id,user:req.user._id});
+    const createdComment = await Comment.findOne({ post: req.params.id, user: req.user._id });
 
     //게시글에 댓글 추가
-    const post = await Board.findOne({_id:req.params.id});
-    await post.update(
-      {$push: {comment: createdComment._id}}
-    )
+    const post = await Board.findOne({ _id: req.params.id });
+    await post.update({ $push: { comment: createdComment._id } });
 
     return res.json({});
   } catch (e) {
@@ -190,10 +179,10 @@ router.post('/boards/:id/comments', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/comments/:id/update', fetchUser, async (req, res) => {
   try {
-    const comment = await Comment.findOne({_id: req.params.id})
+    const comment = await Comment.findOne({ _id: req.params.id });
     await comment.update({
-      body: req.body.body
-    })
+      body: req.body.body,
+    });
 
     return res.json({});
   } catch (e) {
@@ -209,19 +198,18 @@ router.post('/comments/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/comments/:id/recommendation', fetchUser, async (req, res) => {
   try {
-    const comment = await Comment.findOne({_id: req.params.id});
-    const recommend_user = await Comment.findOne({_id: req.params.id,recommend_user: req.user._id});
+    const comment = await Comment.findOne({ _id: req.params.id });
+    const recommend_user = await Comment.findOne({ _id: req.params.id, recommend_user: req.user._id });
 
     //작성자이거나 이미 추천한 유저인 경우 에러 출력
-    if(recommend_user != null){
-      await comment.updateOne({$set: {recommendation: comment.recommendation - 1}});
-      await comment.updateOne({$pull: {recommend_user: req.user._id}});
+    if (recommend_user != null) {
+      await comment.updateOne({ $set: { recommendation: comment.recommendation - 1 } });
+      await comment.updateOne({ $pull: { recommend_user: req.user._id } });
+    } else {
+      await comment.updateOne({ $set: { recommendation: comment.recommendation + 1 } });
+      await comment.updateOne({ $push: { recommend_user: req.user._id } });
     }
-    else{
-      await comment.updateOne({$set: {recommendation: comment.recommendation + 1}});
-      await comment.updateOne({$push: {recommend_user: req.user._id}});
-    }
-    return res.json({})
+    return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
@@ -236,11 +224,11 @@ router.post('/comments/:id/recommendation', fetchUser, async (req, res) => {
 router.post('/comments/:id/delete', fetchUser, async (req, res) => {
   try {
     //게시글에서 댓글 삭제
-    const post = await Board.findOne({comment: req.params.id});
-    await post.updateOne({$pull: {comment: req.params.id}});
+    const post = await Board.findOne({ comment: req.params.id });
+    await post.updateOne({ $pull: { comment: req.params.id } });
 
     //댓글 삭제
-    await Comment.deleteOne({_id: req.params.id})
+    await Comment.deleteOne({ _id: req.params.id });
 
     return res.json({});
   } catch (e) {
