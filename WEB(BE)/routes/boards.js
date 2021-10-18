@@ -45,7 +45,7 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
   const order = req.query.order;
   try {
 
-    const post = await Board.findOne({_id:req.params.id,board:board})
+    const post = await Board.findOne({_id:req.params.id})
     .sort({[orderBy]:order})
     .populate('user')
     .populate({
