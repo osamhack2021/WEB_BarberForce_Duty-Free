@@ -11,10 +11,10 @@ router.get('/boards', fetchUser, async (req, res) => {
   try {
     const board = req.query.board;
 
-    const posts = await Board.find({board: board}).populate('user').populate('comment');
+    const post = await Board.find({board: board}).populate('user').populate('comment');
 
     return res.json({
-      posts: posts
+      posts: post
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -35,7 +35,7 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
 
     return res.json({
       posts: post,
-      recommend_flag: post.recommend_user.find(_id => _id === user._id) !== undefined
+      recommend_flag: post.recommend_user.find(_id => _id === user._id) === undefined
     });
 
   } catch (e) {
@@ -93,33 +93,24 @@ router.post('/boards/:id/update', fetchUser, async (req, res) => {
 // (async/await)
 router.post('/boards/:id/recommendation', fetchUser, async (req, res) => {
   try {
-    const posts = Board.findOne({_id: req.params.id});
+    const post = Board.findOne({_id: req.params.id});
 
-    const recommend_user = await posts.findOne();
-    return res.json({recommend_user});
+    const recommend_user = await Board.findOne({_id: req.params.id,recommend_user: req.user._id});
 
-    //작성자인 경우
-    if(req.params.id==post.user){
-      return res.json({
-        error: "INVALID RECOMMENDED USER"
-      });
-    }
     //추천인 목록에 있는 걍우
-    else if(recommend_user != null){
-      await post.update(
-        {$set: {recommendation: post.recommendation - 1,}},
+    if(recommend_user){
+      await post.updateMany(
+        {$set: {recommendation: -1,}},
         {$pull: {recommend_user: req.params.id}}
       )
-      return res.json({});
     }
     else{
-      await post.update(
-        {$set: {recommendation: post.recommendation + 1,}},
+      await post.updateMany(
+        {$set: {recommendation: 1,}},
         {$push: {recommend_user: req.params.id}}
       )
-      return res.json({});
     }
-
+    return res.json({});
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
