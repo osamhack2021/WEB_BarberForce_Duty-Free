@@ -84,13 +84,11 @@
 		</td>
 		<td align="center">
 			<img src="/IMAGES/Chosunbiz.png" alt="Chosunbiz" width="100%">
-      <p style="font-size: small; color: gray;">© 조선비즈</p>
 		</td>
 	</tr>
 	<tr>
 		<td align="center">
 			<img src="/IMAGES/ChannelA.png" alt="ChannelA" width="100%">
-      <p style="font-size: small; color: gray;">© 채널A</p>
 		</td>
 		<td>
       <ul>
