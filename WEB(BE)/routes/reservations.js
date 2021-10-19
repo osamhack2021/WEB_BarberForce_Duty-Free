@@ -68,9 +68,12 @@ router.get('/reservations', fetchUser, async (req, res) => {
   const user = req.user;
   const order = req.query.order;
   try {
-    const reservations = await Reservation.find({ user: user._id })
+    const reservations = await Reservation.find({ user: user._id },{password: 0})
       .populate('barber')
-      .populate('user')
+      .populate({
+        path: 'user',
+        select: '-password'
+      })
       .sort({ time: order });
 
     return res.json({
