@@ -10,11 +10,6 @@ export default {
     rank: '',
   }),
   getters: {
-    email: state => state.email,
-    password: state => state.password,
-    password_confirm: state => state.password_confirm,
-    name: state => state.name,
-    soldier_id: state => state.soldier_id,
     // 현재 진행중인 회원가입 단계
     step: state => {
       if (!state.email || !state.password || !state.password_confirm) {
