@@ -137,19 +137,19 @@
 
 <table align="center">
   <tr align="center">
-    <td width="25%">
+    <td width="140">
       <img src="/IMAGES/Chrome.svg" alt="Google Chrome" width="70"><br>
       Google Chrome
     </td>
-    <td width="25%">
+    <td width="140">
       <img src="/IMAGES/Edge.svg" alt="Microsoft Edge" width="70"><br>
       Microsoft Edge
     </td>
-    <td width="25%">
+    <td width="140">
       <img src="/IMAGES/Firefox.svg" alt="Mozilla Firefox" width="70"><br>
       Firefox
     </td>
-    <td width="25%">
+    <td width="140">
       <img src="/IMAGES/Safari.svg" alt="Safari" width="70"><br>
       Safari
     </td>
