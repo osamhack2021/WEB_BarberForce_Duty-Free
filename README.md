@@ -173,7 +173,7 @@
 ## 🗃️ 기술 스택 (Tech Stacks)
 
 <p align="center">
-  <img src="/IMAGES/TechStacks.png" alt="Tech Stacks" style="max-width: 700;" align="center">
+  <img src="/IMAGES/TechStacks.png" alt="Tech Stacks" size="700" align="center">
 </p>
 
 <table align="center">
