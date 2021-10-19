@@ -181,6 +181,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [dummyUser._id],
       comment: [],
       board: true,
+      createdAt: new Date('2021-10-15 16:32'),
     },
     {
       user: dummyUser._id,
@@ -190,6 +191,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [],
       comment: [],
       board: true,
+      createdAt: new Date('2021-10-15 16:36'),
     },
     {
       user: dummyUser._id,
@@ -199,6 +201,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [],
       comment: [],
       board: false,
+      createdAt: new Date('2021-10-15 17:32'),
     },
     {
       user: dummyUser._id,
@@ -208,6 +211,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [dummyUser._id],
       comment: [],
       board: true,
+      createdAt: new Date('2021-10-15 18:32'),
     },
     {
       user: dummyUser._id,
@@ -217,6 +221,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [dummyUser._id],
       comment: [],
       board: true,
+      createdAt: new Date('2021-10-17 16:32'),
     },
     {
       user: dummyUser._id,
@@ -226,6 +231,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [],
       comment: [],
       board: false,
+      createdAt: new Date('2021-10-18 16:32'),
     },
     {
       user: dummyUser._id,
@@ -235,6 +241,7 @@ router.get('/setDummyData', async (req, res) => {
       recommend_user: [dummyUser._id],
       comment: [],
       board: false,
+      createdAt: new Date('2021-10-19 11:32'),
     },
   ];
   for (const article of articles) {
