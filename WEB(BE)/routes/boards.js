@@ -18,7 +18,6 @@ router.get('/boards', fetchUser, async (req, res) => {
         ['createAt', 'desc'],
         [orderBy, order],
       ])
-      .sort()
       .populate('user')
       .populate({
         path: 'comment',

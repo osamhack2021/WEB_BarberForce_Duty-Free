@@ -200,6 +200,42 @@ router.get('/setDummyData', async (req, res) => {
       comment: [],
       board: false,
     },
+    {
+      user: dummyUser._id,
+      title: '하하하하하하하',
+      body: '호호호호호호호\n허허허허허허허허허허\n헤헤헤헤헤헤헤헤헤헤헤헤\n히히히히히히히히히히히\n후후후후후후후후후후후',
+      recommendation: 1,
+      recommend_user: [dummyUser._id],
+      comment: [],
+      board: true,
+    },
+    {
+      user: dummyUser._id,
+      title: '호호호호호호호',
+      body: '허허허허허허허허허허\n히히히히히히히히히히히\n헤헤헤헤헤헤헤헤헤헤헤헤\n후후후후후후후후후후후\n호호호호호호호',
+      recommendation: 0,
+      recommend_user: [dummyUser._id],
+      comment: [],
+      board: true,
+    },
+    {
+      user: dummyUser._id,
+      title: 'ㄹㅇ 맛있는 황금밥알',
+      body: '황금 밥알 황 금 밥 알 황금바발',
+      recommendation: 0,
+      recommend_user: [],
+      comment: [],
+      board: false,
+    },
+    {
+      user: dummyUser._id,
+      title: '보라매 병사식당 브런치데이 증발사건',
+      body: '오산기지 내부에 있는 보라매 병사식당에서 10월달에 예정되어있던 3번의 브런치데이가 모두 증발했다는 소식인데요, 자세한 내용은 인트라넷을 확인해주세요.',
+      recommendation: 1,
+      recommend_user: [dummyUser._id],
+      comment: [],
+      board: false,
+    },
   ];
   for (const article of articles) {
     await Board.create(article);
