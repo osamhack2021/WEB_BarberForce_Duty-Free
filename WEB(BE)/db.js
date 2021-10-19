@@ -20,4 +20,5 @@ module.exports = () => {
   require('./models/review');
   require('./models/unit');
   require('./models/board');
+  require('./models/comment');
 };

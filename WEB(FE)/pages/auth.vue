@@ -3,7 +3,7 @@
     <!-- logo -->
     <img src="@/assets/img/1_logo+title_figma.svg" width="203" alt="BarberForce" />
     <!-- links -->
-    <div class="flex flex-col items-stretch w-3/5 max-w-md text-white text-center mt-20">
+    <div class="flex flex-col items-stretch w-full max-w-sm text-white text-center px-12 mt-10">
       <!-- login via kakao -->
       <a class="flex mb-2" :href="kakaoLoginURL">
         <img class="h-full w-auto mr-2" src="~/assets/img/kakao.png" alt="Kakao talk" />

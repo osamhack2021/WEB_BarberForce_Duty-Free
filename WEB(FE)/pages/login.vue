@@ -3,7 +3,7 @@
     <!-- logo -->
     <img src="@/assets/img/1_logo+title_figma.svg" width="203" alt="BarberForce" />
     <!-- form -->
-    <div class="flex flex-col items-stretch w-3/4 max-w-md text-white text-center mt-16">
+    <div class="flex flex-col items-stretch w-3/4 max-w-md text-white text-center mt-10">
       <div class="mb-3">
         <input
           v-model="credentials.email"
@@ -21,11 +21,7 @@
         />
       </div>
       <div class="flex flex-col items-center">
-        <div class="mb-8">
-          <input id="remember" v-model="remember" type="checkbox" />
-          <label for="remember">로그인 유지</label>
-        </div>
-        <button class="rounded-lg border border-white text-white font-medium py-1 px-7 mb-8" @click="login">
+        <button class="rounded-lg border border-white text-white font-medium py-1 px-7 mb-6" @click="login">
           Login
         </button>
         <NuxtLink class="text-sm underline" to="/register/1">회원가입</NuxtLink>

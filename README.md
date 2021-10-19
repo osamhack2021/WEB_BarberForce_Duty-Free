@@ -1,8 +1,8 @@
 <div align="center">
   <a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free">
-      <img src="/IMAGES/1_readme_title_1676.png" alt="BarberForce title" align="center">
+      <img src="/IMAGES/title_grad.png" alt="BarberForce title" align="center">
   </a>
-</div>
+</div><br>
 
 <div align="center">
   <!-- no. of used languages -->
@@ -29,6 +29,7 @@
 </div>
 
 ## 프로젝트 소개
+
 <!--
 <table>
 	<tr>
@@ -49,17 +50,12 @@
 	</tr>
 </table>
 -->
+
 **바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 이에 더하여 부대 인근 편의시설 방문 후기 게시판과 같은 커뮤니티 기능을 활용해,  군 장병들의 소통의 장을 마련하고자 합니다.
 
 ## 기획 배경
 
 국군 장병들은 기존의 이발병 제도와 코로나19 팬데믹 상황으로 인해 아래와 같은 고충을 겪고 있습니다.
-
-<!--
-<div align="center">
-  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
-</div>
--->
 
 <table>
 	<tr>
@@ -77,7 +73,7 @@
         <li>
           짧은 주기로 조발이 필요한 병사 두발규정 상 주기적인 두발 관리를 위해 월 1만원은 부족
           <ul>
-            <li>프랜차이즈 평균 남성 1회 커트 비용  22,220원</li>
+            <li>프랜차이즈 미용실 남성 1회 커트 평균 비용 22,220원</li>
           </ul>
         </li>
       </ul>
@@ -153,7 +149,7 @@
 		<td width="50%">
       <ul>
         <li>
-          별점, 리뷰 시스템을 통해 상권을 공유하는 부대 병사간의 미용시설 정보 공유 및 출타 동선 효율화
+          리뷰 시스템을 통해 상권을 공유하는 부대 병사간의 미용시설 정보 공유 및 출타 동선 효율화
           <ul>
             <li>서비스의 위치정보는 사용자가 아닌 제휴 업체들의 것을 활용해 부대 위치 노출 방지</li>
           </ul>
@@ -191,27 +187,44 @@
 
 ## 기술 스택 (Tech Stacks)
 
-### Front-end
-<a href="https://nuxtjs.org/">
-  <img src="https://img.shields.io/badge/nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white"/>
-</a>
-<a href="https://tailwindcss.com/">
-  <img src="https://img.shields.io/badge/tailwind css-06B6D4?style=for-the-badge&logo=tailwind css&logoColor=white"/>
-</a>
-<a href="https://axios-http.com/">
-  <img src="https://img.shields.io/badge/Axios-854195?style=for-the-badge&logoColor=white"/>
-</a>
+<p align="center">
+  <img src="/IMAGES/TechStacks.png" alt="Tech Stacks" align="center">
+</p>
 
-### Back-end
-<a href="https://nodejs.org/">
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-</a>
-<a href="https://expressjs.com/">
-  <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"/>
-</a>
-<a href="https://www.mongodb.com/">
-  <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-</a>
+<table align="center">
+	<tr>
+		<td align="center">
+			<font style="font-size: large">Front-end</font>
+		</td>
+		<td align="center">
+			<font style="font-size: large">Back-end</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<a href="https://nuxtjs.org/" target="_blank">
+        <img src="https://img.shields.io/badge/nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white"/>
+      </a>
+      <a href="https://tailwindcss.com/" target="_blank">
+        <img src="https://img.shields.io/badge/tailwind css-06B6D4?style=for-the-badge&logo=tailwind css&logoColor=white"/>
+      </a>
+      <a href="https://axios-http.com/" target="_blank">
+        <img src="https://img.shields.io/badge/Axios-854195?style=for-the-badge&logoColor=white"/>
+      </a>
+		</td>
+		<td align="center">
+			<a href="https://nodejs.org/" target="_blank">
+        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+      </a>
+      <a href="https://expressjs.com/" target="_blank">
+        <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"/>
+      </a>
+      <a href="https://www.mongodb.com/" target="_blank">
+        <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+      </a>
+		</td>
+	</tr>
+</table>
 
 ## 프로젝트 설치 안내 (Installation Process)
 

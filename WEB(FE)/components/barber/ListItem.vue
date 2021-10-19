@@ -19,7 +19,7 @@
               </span>
             </div>
           </div>
-          <hr class="" />
+          <hr class="my-1 sm:my-0" />
           <div class="flex items-center text-sm p-1 sm:p-2 md:p-4">
             <span class="flex items-center">
               <img class="w-4 h-4 mr-1" src="~/assets/img/place.svg" />
