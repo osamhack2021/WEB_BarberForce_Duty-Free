@@ -8,7 +8,13 @@
       <div class="flex-1"></div>
     </section>
     <main>
-      <ArticleDetail v-if="article" :article="article" />
+      <ArticleDetail
+        v-if="article"
+        :article="article"
+        :board-id="boardId"
+        :recommended="recommend_flag"
+        @refetch="$fetch()"
+      />
       <template v-if="article">
         <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
       </template>
@@ -47,6 +53,7 @@ export default {
     try {
       const { data } = await this.$api.board.article(this.articleId);
       this.article = data.posts;
+      this.recommend_flag = data.recommend_flag;
     } catch (e) {
       console.error(e);
       this.$toast.error('에러가 발생했습니다!');
