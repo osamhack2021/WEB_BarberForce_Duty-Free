@@ -8,7 +8,12 @@ const fetchUser = require('../middleware/fetchUser');
 // (async/await)
 router.get('/barbers/:id/reviews', async (req, res) => {
   try {
-    const reviews = await Review.find({ barber: req.params.id }).populate('barber').populate('reviewer');
+    const reviews = await Review.find({ barber: req.params.id },{password: 0})
+    .populate('barber')
+    .populate({
+      path: 'reviewer',
+      select: '-password'
+    });
 
     return res.json({
       reviews: reviews
