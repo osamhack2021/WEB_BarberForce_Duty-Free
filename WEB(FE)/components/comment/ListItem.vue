@@ -72,6 +72,11 @@ export default {
       return this.comment.user._id === this.$store.state.auth.user._id;
     },
   },
+  watch: {
+    comment(value) {
+      this.commentForm.body = value.body;
+    },
+  },
   methods: {
     async recommend() {
       try {
