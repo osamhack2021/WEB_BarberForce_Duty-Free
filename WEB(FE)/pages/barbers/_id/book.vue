@@ -58,11 +58,11 @@
               <div class="font-bold mb-2 md:text-xl">영업정보</div>
               <div class="mb-8">
                 <div class="mb-2">
-                  <div class="mb-2 md:text-lg">화~금</div>
+                  <div class="mb-2 md:text-lg">평일</div>
                   <div class="flex items-center">
                     <span class="flex items-center mr-8">
                       <img class="mr-2 w-7" src="@/assets/img/clock.svg" />
-                      10:00 ~ 18:30
+                      {{ weekdayDuration }}
                     </span>
                     <span class="items-center hidden md:flex">
                       <img class="mr-2 w-7" src="@/assets/img/phone.svg" />
@@ -71,10 +71,10 @@
                   </div>
                 </div>
                 <div class="mb-2">
-                  <div class="mb-2 md:text-lg">공휴일</div>
+                  <div class="mb-2 md:text-lg">주말</div>
                   <span class="flex items-center mr-8">
                     <img class="mr-2 w-7" src="@/assets/img/clock.svg" />
-                    13:00 ~ 15:00
+                    {{ weekendDuration }}
                   </span>
                 </div>
               </div>
@@ -120,6 +120,22 @@ export default {
     },
     timeString() {
       return this.time.format('A hh:mm');
+    },
+    weekdayDuration() {
+      const start = moment()
+        .set('hour', this.barber.weekday.start.hour)
+        .set('minute', this.barber.weekday.start.minute);
+      const end = moment().set('hour', this.barber.weekday.end.hour).set('minute', this.barber.weekday.end.minute);
+
+      console.log(start.toISOString(), end.toISOString());
+      return `${start.format('HH:mm')} ~ ${end.format('HH:mm')}`;
+    },
+    weekendDuration() {
+      const start = moment()
+        .set('hour', this.barber.weekend.start.hour)
+        .set('minute', this.barber.weekend.start.minute);
+      const end = moment().set('hour', this.barber.weekend.end.hour).set('minute', this.barber.weekend.end.minute);
+      return `${start.format('HH:mm')} ~ ${end.format('HH:mm')}`;
     },
   },
   watch: {
