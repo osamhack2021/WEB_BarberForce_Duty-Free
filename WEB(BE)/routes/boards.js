@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const mongoose = require('mongoose');
 
 const Board = require('../models/board');
 const Comment = require('../models/comment');
@@ -49,7 +48,6 @@ router.get('/boards', fetchUser, async (req, res) => {
 // 게시판 글 및 댓글 불러오기
 // (async/await)
 router.get('/boards/:id', fetchUser, async (req, res) => {
-  const user = req.user;
   const orderBy = req.query.orderBy;
   const order = req.query.order;
   try {
