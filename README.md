@@ -1,8 +1,24 @@
+<!--
 <div align="center">
   <a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free">
       <img src="/IMAGES/1_readme_title_1676.png" alt="BarberForce title" align="center">
   </a>
 </div>
+-->
+
+<div align="center">
+  <a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free">
+      <img src="/IMAGES/title_grad.png" alt="BarberForce title" align="center">
+  </a>
+</div>
+
+<!--
+<div align="center">
+  <a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free">
+      <img src="/IMAGES/title_white.png" alt="BarberForce title" align="center">
+  </a>
+</div>
+-->
 
 <div align="center">
   <!-- no. of used languages -->
