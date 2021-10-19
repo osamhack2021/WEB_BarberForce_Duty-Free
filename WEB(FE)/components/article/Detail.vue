@@ -1,6 +1,6 @@
 <template>
   <article class="bg-white border-t border-b sm:border border-gray-300 py-2 px-4">
-    <div class="flex items-center mb-2">
+    <div class="flex items-center flex-wrap mb-2">
       <span class="font-semibold">{{ article.title }}</span>
       <span class="text-gray-300 text-xs ml-auto">{{ createdAt }}</span>
     </div>
