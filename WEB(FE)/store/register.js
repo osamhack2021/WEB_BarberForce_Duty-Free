@@ -12,17 +12,15 @@ export default {
   getters: {
     email: state => state.email,
     password: state => state.password,
-    password_confrim: state => state.password_confrim,
+    password_confirm: state => state.password_confirm,
     name: state => state.name,
     soldier_id: state => state.soldier_id,
     // 현재 진행중인 회원가입 단계
     step: state => {
       if (!state.email || !state.password || !state.password_confirm) {
         return 2;
-      } else if (!state.name || !state.soldier_id) {
-        return 3;
       } else {
-        return 1;
+        return 3;
       }
     },
   },
@@ -98,7 +96,6 @@ export default {
         phone: state.phone,
         rank: state.rank,
       });
-      dispatch('clear');
     },
   },
 };

@@ -183,10 +183,12 @@ export default {
     async submit() {
       try {
         await this.$auth.register();
+        await this.$store.dispatch('register/clear');
       } catch (e) {
         const errorType = e.response.data.error;
         if (errorType === 'EXISTING_EMAIL') {
           this.$toast.error('이미 사용중인 이메일입니다!');
+          this.$router.replace('/register/2');
         } else if (errorType === 'EXISTING_SOLDIER_ID') {
           this.$toast.error('이미 사용중인 군번입니다!');
         } else if (errorType === 'INVALID_SOLDIER_ID') {
