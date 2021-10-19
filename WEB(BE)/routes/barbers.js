@@ -44,4 +44,27 @@ router.get('/barbers/:id', async (req, res) => {
   }
 });
 
+// 미용실 세부페이지
+// (async/await)
+router.get('/barbers/:id/update', async (req, res) => {
+  try {
+    const barber = await Barber.findOne({ _id: req.params.id });
+
+    await barber.update({
+      $set:{
+        thumb: req.body.thumb
+      }
+    })
+
+    return res.json(barber);
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
+});
+
+
 module.exports = router;
