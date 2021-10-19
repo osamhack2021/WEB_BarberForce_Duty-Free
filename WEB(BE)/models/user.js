@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+require('dotenv').config();
 
 const userSchema = new mongoose.Schema({
   email: { type: String },
@@ -20,7 +21,7 @@ userSchema.methods.comparePassword = function (plainPassword) {
 
 userSchema.methods.generateToken = function () {
   //env.process.dddd맞음 이거 그러면 여기랑  jwt verify 하는 부분도 넣어줘야함
-  return jwt.sign({ _id: this._id }, 'secretToken', { expiresIn: '24h' });
+  return jwt.sign({ _id: this._id }, process.env.SECRETTOKEN, { expiresIn: '24h' });
 };
 
 module.exports = mongoose.model('User', userSchema);
