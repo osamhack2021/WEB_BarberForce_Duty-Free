@@ -27,7 +27,7 @@
         </div>
       </div>
     </section>
-    <main class="container">
+    <main class="container pb-20">
       <template v-if="articles.length === 0">
         <div class="px-4">
           게시글이 없습니다! <br />
