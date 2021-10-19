@@ -1,36 +1,47 @@
 <template>
   <swiper class="swiper mb-4" :options="swiperOption">
-    <swiper-slide
-      v-for="article in articles"
-      :key="article._id"
-      :style="`background: url(${article.thumb}) center/cover no-repeat`"
-    >
+    <swiper-slide v-for="(article, idx) in articles" :key="article._id">
       <!-- article card -->
-      <div class="border shadow bg-white">
+      <NuxtLink :to="`/board/2/article/${article._id}`" class="block border shadow bg-white">
         <!-- thumb image section -->
         <div class="aspect-w-4 aspect-h-3">
-          <img :src="article.thumb" />
+          <img class="object-cover" :src="getThumb(idx)" />
         </div>
         <!-- content section -->
         <div class="p-2">
           <!-- article title -->
-          <div class="text-sm font-bold mb-8">{{ article.title }}</div>
+          <div class="text-sm font-bold mb-8 w-full whitespace-nowrap overflow-hidden overflow-ellipsis">
+            {{ article.title }}
+          </div>
           <!-- content footer -->
           <div class="flex items-center text-xs">
-            <!-- location -->
-            <span class="flex items-center" style="color: #9c9c9c">
-              <img class="mr-1" src="@/assets/img/place.svg" />
-              {{ article.location }}
-            </span>
             <!-- likes count -->
             <span class="flex items-center ml-auto" style="color: #e2474b">
               <img class="mr-1" src="@/assets/img/like.svg" />
-              {{ article.likes }}
+              {{ article.recommendation }}
+            </span>
+            <!-- comments count -->
+            <span class="flex items-center ml-4" style="color: #000000">
+              <img class="mr-1" src="@/assets/img/comment.svg" />
+              {{ article.comment.length }}
             </span>
           </div>
         </div>
-      </div>
+      </NuxtLink>
     </swiper-slide>
+    <!-- <swiper-slide v-if="articles.length < 4">
+      <NuxtLink :to="`/board/2/create`" class="block border shadow bg-white">
+        <div class="aspect-w-4 aspect-h-3">
+          <div class="flex justify-center items-center">
+            <img width="48" src="@/assets/img/write-main.svg" />
+          </div>
+        </div>
+        <div class="p-2 border-t">
+          <div class="font-bold mb-1">새로운 글</div>
+          <div class="text-gray-600 text-sm">새 글을 작성하러 가보세요!</div>
+        </div>
+      </NuxtLink>
+    </swiper-slide> -->
   </swiper>
 </template>
 
@@ -54,44 +65,19 @@ export default {
       },
     };
   },
-  fetch() {
-    this.articles = [
-      {
-        _id: 1,
-        title: '사이버지식정보방',
-        location: '보라매 사동',
-        thumb: '/img/article1.png',
-        likes: 52,
-      },
-      {
-        _id: 2,
-        title: `양현's 댄스클럽`,
-        location: '보호실',
-        thumb: '/img/article2.png',
-        likes: 47,
-      },
-      {
-        _id: 3,
-        title: '그냥 미용실입니다',
-        location: '집무실',
-        thumb: '/img/article3.png',
-        likes: 34,
-      },
-      {
-        _id: 4,
-        title: '또 다른 곳',
-        location: '집무실',
-        thumb: '/img/article3.png',
-        likes: 26,
-      },
-      {
-        _id: 5,
-        title: '또 다른 곳 2',
-        location: '집무실',
-        thumb: '/img/article1.png',
-        likes: 11,
-      },
-    ];
+  methods: {
+    getThumb(idx) {
+      return this.articles[idx].thumb || '/img/thumb-placeholder.png';
+    },
+  },
+  async fetch() {
+    try {
+      const { data } = await this.$api.board.articles(2, 'recommendation', 'desc');
+      this.articles = data.posts;
+    } catch (e) {
+      console.error(e);
+      this.$toast.error('에러가 발생했습니다!');
+    }
   },
 };
 </script>
