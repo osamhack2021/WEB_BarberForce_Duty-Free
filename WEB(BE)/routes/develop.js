@@ -167,7 +167,7 @@ router.get('/setDummyData', async (req, res) => {
     const created = await Barber.create(dummy);
     // 미용실의 partnership에 대해 모두 등록
     for (const partner of dummy.partnership) {
-      const unit = await Unit.findOne({ _id: partner });
+      const unit = await Unit.findOne({ unitName: partner });
       unit.barbers_id.push(created._id);
       unit.save();
     }
