@@ -110,7 +110,7 @@ router.get('/setDummyData', async (req, res) => {
       weekend: { start: { hour: 11, minute: 0 }, end: { hour: 20, minute: 0 } },
       description: '매주 화요일 휴무입니다. \n 커트 : 8000원',
       phone: '010-0000-4321',
-      thumb: '/img/shop1.jpg',
+      thumb: '/img/shop3.png',
       disinfection: true,
       partnership: ['AFOC'],
     },
@@ -122,7 +122,7 @@ router.get('/setDummyData', async (req, res) => {
       weekend: { start: { hour: 10, minute: 0 }, end: { hour: 20, minute: 0 } },
       description: '매주 수요일 휴무입니다. \n 커트 : 8500원',
       phone: '010-0010-0052',
-      thumb: '/img/shop1.jpg',
+      thumb: '/img/shop4.png',
       disinfection: true,
       partnership: ['AFOC'],
     },
@@ -279,7 +279,7 @@ router.get('/setDummyData', async (req, res) => {
     await Board.create(article);
   }
   */
-  
+
   res.json('done');
 });
 

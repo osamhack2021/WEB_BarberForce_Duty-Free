@@ -52,11 +52,13 @@ router.get('/barbers/:id/update', async (req, res) => {
 
     await barber.update({
       $set:{
+        title: req.body.title,
+        location_detail: req.body.location_detail,
         thumb: req.body.thumb
       }
     })
 
-    return res.json(barber);
+    return res.json("done");
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
     return res.status(500).json({
