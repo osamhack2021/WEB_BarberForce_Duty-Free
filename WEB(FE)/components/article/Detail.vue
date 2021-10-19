@@ -95,7 +95,7 @@ export default {
       return this.article.user._id === this.$store.state.auth.user._id;
     },
     recommended() {
-      return !!this.article.recommend_user.find(user => user._id === this.$store.state.user._id);
+      return !!this.article.recommend_user.find(user => user._id === this.$store.state.auth.user._id);
     },
   },
 };
