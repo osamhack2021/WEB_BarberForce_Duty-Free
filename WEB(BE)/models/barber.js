@@ -10,8 +10,8 @@ const barberSchema = new mongoose.Schema({
   phone: { type: String, required: true },
   thumb: { type: String, default: null },
   description: { type: String, default: null },
-  partnership: [ {type: String }],
-  disinfection: { type: Boolean, default: false}
+  partnership: [String],
+  disinfection: { type: Boolean, default: false },
 });
 
 module.exports = mongoose.model('Barber', barberSchema);
