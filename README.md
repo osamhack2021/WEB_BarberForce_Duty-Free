@@ -279,12 +279,12 @@ BACKEND_URL=https://api.barberforce.shop
       👔 담당
     </td>
     <td>
-      📧 이메일
+      📪 이메일, GitHub
     </td>
 	</tr>
 	<tr align="center">
 		<td>
-      <img src="/IMAGES/Profile_Se.png" alt="Se Lee" width="100">
+      <img src="/IMAGES/Profile_Se.png" alt="Se Lee" width="75">
 		</td>
     <td>
       팀장
@@ -306,7 +306,7 @@ BACKEND_URL=https://api.barberforce.shop
     </td>
   <tr align="center">
     <td>
-			<img src="/IMAGES/Profile_Byeon.png" alt="Chanhyuk Byeon" width="100">
+			<img src="/IMAGES/Profile_Byeon.png" alt="Chanhyuk Byeon" width="75">
 		</td>
 		<td>
       팀원
@@ -329,7 +329,7 @@ BACKEND_URL=https://api.barberforce.shop
   </tr>
   <tr align="center">
     <td>
-			<img src="/IMAGES/Profile_Park.png" alt="Sangwook Park" width="100">
+			<img src="/IMAGES/Profile_Park.png" alt="Sangwook Park" width="75">
 		</td>
 		<td>
       팀원
@@ -353,7 +353,7 @@ BACKEND_URL=https://api.barberforce.shop
   <tr align="center">
     <td>
       <!--
-			<img src="/IMAGES/Profile_Jongyoul.png" alt="Jongyoul Lee" width="100">
+			<img src="/IMAGES/Profile_Jongyoul.png" alt="Jongyoul Lee" width="75">
       -->
 		</td>
 		<td>
