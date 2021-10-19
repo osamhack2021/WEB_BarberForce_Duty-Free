@@ -7,7 +7,7 @@
         :style="`background: url(${reservation.barber.thumb}) center/cover no-repeat`"
       >
         <div class="flex flex-col justify-end">
-          <div class="relative bg-black bg-opacity-80 font-thin text-white text-sm py-3 px-5">
+          <div class="relative bg-black bg-opacity-80 font-thin text-white text-sm pt-3 pb-8 px-5">
             <div class="flex items-center">
               <span class="font-bold text-xl">{{ reservation.barber.title }}</span>
               <span class="flex items-center ml-auto">
@@ -24,7 +24,7 @@
             </div>
             <NuxtLink class="underline mt-auto" to="/history">예약 수정/취소하기</NuxtLink>
             <template v-if="timeover && !reviewForm">
-              <div class="absolute top-full" style="right: 5%; transform: translate(0, -75%)">
+              <div class="absolute top-full" style="right: 3%; transform: translate(0, -120%)">
                 <div class="text-sm text-center mb-2">이발이 끝나셨나요?</div>
                 <div class="flex justify-center items-center">
                   <button class="w-16 text-center rounded bg-brand text-white py-2 mr-2" @click="markAsDone">예</button>
