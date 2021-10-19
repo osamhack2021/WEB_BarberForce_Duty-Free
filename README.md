@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free">
-      <img src="/IMAGES/title_grad.png" alt="BarberForce title" align="center">
+      <img src="/IMAGES/title_white.png" alt="BarberForce title" align="center">
   </a>
 </div><br>
 
@@ -62,16 +62,17 @@
 		<td width="50%">
       <ul>
         <li>
-          열악한 이발도구 및 시설, 이발 미경험자 이발병 차출로 병사 이발환경 악화
+          💇 열악한 이발도구 및 시설, 이발 미경험자 이발병 차출로 병사 이발환경 악화
           <ul>
             <li><b>병사 이발환경 개선 필요</b>성 부각</li>
           </ul>
         </li>
         <li>
-          ’21년부터 병사 이발비 예산으로 421억원 편성, 병사에게 <b>월 1만원의 이발비 지급</b>
+          💰 <b>병사 이발비 예산으로 421억원 편성,</b> 
+          '21년부터 병사에게 <b>월 1만원의 이발비 지급</b>
         </li>
         <li>
-          짧은 주기로 관리가 필요한 병사의 두발규정 상 월 1만원은 부족
+          💸 짧은 주기로 관리가 필요한 병사의 두발규정 상 월 1만원은 부족
           <ul>
             <li>프랜차이즈 미용실 남성 1회 커트 평균 비용 22,220원</li>
           </ul>
@@ -89,17 +90,17 @@
 		<td width="50%">
       <ul>
         <li>
-          장기 외출·외박 미실시로 부대 인근 이발시설을 파악하고 있는 병사 수 급감
+          🚫 장기 외출·외박 미실시로 부대 인근 이발시설을 파악하고 있는 병사 수 급감
         </li>
         <li>
-          이발병 제도가 폐지되면 외출 시에만 이발 가능
+          🤷‍♂️ 이발병 제도가 폐지되면 외출 시에만 이발 가능
           <ul>
-            <li>미용시설 수요가 급증할 것으로 예상, 그러나 <b>미용시설에 대한 사전 정보(위치, 가격, 후기 등) 부족</b>
+            <li>미용시설 수요가 급증할 것이지만 <b>미용시설에 대한 사전 정보(위치, 가격, 후기 등) 부족</b>
             </li>
           </ul>
         </li>
         <li>
-          군 장병들의 출타 제한으로 <b>군부대 인근 지역상권 침체</b>
+          📉 군 장병들의 출타 제한으로 <b>군부대 인근 지역상권 침체</b>
           <ul>
             <li>‘위드 코로나’ 시대의 대안 필요</li>
           </ul>
@@ -109,27 +110,27 @@
 	</tr>
 </table>
 
-## 📦 서비스 설명
+## 📦 서비스 설명 (Functionality)
 
-**바버포스**는 이러한 문제점을 해결하고, 군부대와 지역사회의 상생을 도모하는 장병들의 소통 창구가 되고자 합니다.
+✂️**바버포스**는 이러한 문제점을 해결하고, 군부대와 지역사회의 상생을 도모하는 장병들의 소통 창구가 되고자 합니다.
 
 
 
-## 🎁 기대 효과
+## 🎁 기대 효과 (Expectations)
 
 <table>
 	<tr>
 		<td width="50%">
       <ul>
         <li>
-          군부대와 미용시설간의 직접 연결·사전 계약
+          💈 군부대와 미용시설간의 직접 연결·사전 계약
           <ul>
             <li>이발이 까다롭지 않은 병사 두발규정을 이용해 <b>이발비 절감</b> 가능, 병사 두발의 양질화</li>
             <li>‘카카오헤어샵’ 등의 <b>디지털 플랫폼 사업에서 소외된 지역사회 계층에 도움</b></li>
           </ul>
         </li>
         <li>
-          ‘위드 코로나’ 상황에서 외출·외박이 시행될 경우 병사 외출의 가장 많은 사유는 ‘이발’
+          🩺 ‘위드 코로나’ 상황에서 외출·외박이 시행될 경우 병사 외출의 가장 많은 사유는 ‘이발’
           <ul>
             <li>사전 소독/방역 협조 및 방역여부 표시를 통해 <b>병력 방역관리 효율화</b></li>
           </ul>
@@ -147,22 +148,22 @@
 		<td width="50%">
       <ul>
         <li>
-          군 내 정보나 인트라넷 접속, 혹은 부대 내부에서 별도의 통신장비 사용 불필요
+          🔒 군 내 정보나 인트라넷, 또는 별도의 전자기기 불필요, 상권의 위치정보만을 활용
           <ul>
-            <li>상권의 위치정보만을 활용해 군사정보 활용 </li>
+            <li><b>부대 및 병영 내 보안위규 문제로부터 안전</b></li>
           </ul>
         </li>
         <li>
-          ‘머리깎고 뭐하지?’ 게시판을 활용해 지역 편의시설 방문 후기 작성, 공유 및 추천 체계 마련
+          💬 ‘머리깎고 뭐하지?’ 게시판을 활용해 지역 편의시설 방문 후기 작성, 공유 및 추천 체계 마련
           <ul>
             <li>병사 외출 수요를 활용한 지역상권 활성화 및 인근 부대 병사간의 소통 창구 마련
             </li>
           </ul>
         </li>
         <li>
-          병사 이발여건 개선, 지역경제 활성화에 공헌
+          🌟 병사 이발여건 개선, 지역경제 활성화에 공헌
           <ul>
-            <li>장기적으로 이발비 지급 정책의 기존 목적 달성 및 정상화</li>
+            <li><b>이발비 지급 정책의 기존 목적 달성 및 정상화</b></li>
           </ul>
         </li>
       </ul>
@@ -180,8 +181,40 @@
 
 ## 💾 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 
-- ECMAScript 6 지원 브라우저 사용
-- 권장: Google Chrome 버젼 77 이상
+<table>
+  <tr align="center">
+    <td>
+      <img src="/IMAGES/Chrome.svg" alt="Google Chrome">
+      Google Chrome
+    </td>
+    <td>
+      <img src="/IMAGES/Edge.svg" alt="Microsoft Edge">
+      Microsoft Edge
+    </td>
+    <td>
+      <img src="/IMAGES/Firefox.svg" alt="Mozilla Firefox">
+      Firefox
+    </td>
+    <td>
+      <img src="/IMAGES/Safari.svg" alt="Safari">
+      Safari
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      ☑️
+    </td>
+    <td>
+      ☑️
+    </td>
+    <td>
+      ☑️
+    </td>
+    <td>
+      ☑️
+    </td>
+  </tr>
+</table>
 
 ## 🗃️ 기술 스택 (Tech Stacks)
 
@@ -300,7 +333,7 @@ BACKEND_URL=https://api.barberforce.shop
 	</tr>
 	<tr align="center">
 		<td>
-      <img src="/IMAGES/Profile_Se.png" alt="Se Lee">
+      <img src="/IMAGES/Profile_Se.png" alt="Se Lee" width="100">
 		</td>
     <td>
       팀장
@@ -312,12 +345,17 @@ BACKEND_URL=https://api.barberforce.shop
       <b>기획, 디자인,</b> 프론트엔드
     </td>
     <td>
-      ese1997@naver.com
+      <a href="mailto:ese1997@gmail.com" target="_blank">
+        <img src="https://img.shields.io/badge/ese1997@gmail.com-d14836?style=social&logo=gmail"/>
+      </a>
+      <br>
+      <a href="https://github.com/sallyselee" target="_blank">
+        <img src="https://img.shields.io/badge/sallyselee-181717?style=flat-square&logo=github&logoColor=white"/>
+      </a>
     </td>
-	</tr>
-	<tr align="center">
-		<td>
-			<img src="/IMAGES/Profile_Byeon.png" alt="Chanhyuk Byeon">
+  <tr align="center">
+    <td>
+			<img src="/IMAGES/Profile_Byeon.png" alt="Chanhyuk Byeon" width="100">
 		</td>
 		<td>
       팀원
@@ -329,12 +367,18 @@ BACKEND_URL=https://api.barberforce.shop
       <b>프론트엔드,</b> 백엔드
     </td>
     <td>
-      bdu00chch@gmail.com
+      <a href="mailto:bdu00chch@gmail.com" target="_blank">
+        <img src="https://img.shields.io/badge/bdu00chch@gmail.com-d14836?style=social&logo=gmail"/>
+      </a>
+      <br>
+      <a href="https://github.com/Bisue" target="_blank">
+        <img src="https://img.shields.io/badge/Bisue-181717?style=flat-square&logo=github&logoColor=white"/>
+      </a>
     </td>
-	</tr>
+  </tr>
   <tr align="center">
     <td>
-			<img src="/IMAGES/Profile_Park.png" alt="Sangwook Park">
+			<img src="/IMAGES/Profile_Park.png" alt="Sangwook Park" width="100">
 		</td>
 		<td>
       팀원
@@ -346,7 +390,36 @@ BACKEND_URL=https://api.barberforce.shop
       <b>백엔드</b>
     </td>
     <td>
-      dkxkqkrtkddn@gmail.com
+      <a href="mailto:dkxkqkrtkddn@gmail.com" target="_blank">
+        <img src="https://img.shields.io/badge/dkxkqkrtkddn@gmail.com-d14836?style=social&logo=gmail"/>
+      </a>
+      <br>
+      <a href="https://github.com/sw0501" target="_blank">
+        <img src="https://img.shields.io/badge/sw0501-181717?style=flat-square&logo=github&logoColor=white"/>
+      </a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+			<img src="/IMAGES/Profile_Jongyoul.png" alt="Jongyoul Lee" width="100">
+		</td>
+		<td>
+      멘토
+		</td>
+		<td>
+			LINE<br><b>이종열 멘토님</b>
+		</td>
+    <td>
+      <b>PM, FE, BE 멘토링</b>
+    </td>
+    <td>
+      <a href="mailto:jongyoul@gmail.com" target="_blank">
+        <img src="https://img.shields.io/badge/jongyoul@gmail.com-d14836?style=social&logo=gmail"/>
+      </a>
+      <br>
+      <a href="https://github.com/jongyoul" target="_blank">
+        <img src="https://img.shields.io/badge/jongyoul-181717?style=flat-square&logo=github&logoColor=white"/>
+      </a>
     </td>
   </tr>
 </table>
