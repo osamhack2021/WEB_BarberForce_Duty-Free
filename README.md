@@ -28,7 +28,7 @@
   </a>
 </div>
 
-## 프로젝트 소개
+## 👀 프로젝트 소개 (Introduction)
 
 <!--
 <table>
@@ -51,9 +51,9 @@
 </table>
 -->
 
-**바버포스(BarberForce)** 는 국군 장병들이 손쉽게 부대 주변의 미용실이나 이발소를 예약하고 방문해 이발을 받은 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 이에 더하여 부대 인근 편의시설 방문 후기 게시판과 같은 커뮤니티 기능을 활용해,  군 장병들의 소통의 장을 마련하고자 합니다.
+✂️**바버포스(BarberForce)** 는 국군 장병들이 부대 주변의 미용실이나 이발소를 예약하고 방문한 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 이에 더하여 부대 인근 편의시설 방문 후기 게시판과 같은 커뮤니티 기능을 마련해, 군 장병들의 소통의 장이 되고자 합니다.
 
-## 기획 배경
+## 💼 기획 배경 (Background)
 
 국군 장병들은 기존의 이발병 제도와 코로나19 팬데믹 상황으로 인해 아래와 같은 고충을 겪고 있습니다.
 
@@ -62,16 +62,16 @@
 		<td width="50%">
       <ul>
         <li>
-          열악한 이발도구 및 시설, 이발 미경험자 이발병 차출로 인해 병사 이발환경 악화
+          열악한 이발도구 및 시설, 이발 미경험자 이발병 차출로 병사 이발환경 악화
           <ul>
-            <li>병사 이발환경 개선 필요성 부각</li>
+            <li><b>병사 이발환경 개선 필요</b>성 부각</li>
           </ul>
         </li>
         <li>
-          ’21년부터 병사 이발비 예산으로 421억원 편성, 병사에게 월 1만원의 이발비 지급
+          ’21년부터 병사 이발비 예산으로 421억원 편성, 병사에게 <b>월 1만원의 이발비 지급</b>
         </li>
         <li>
-          짧은 주기로 조발이 필요한 병사 두발규정 상 주기적인 두발 관리를 위해 월 1만원은 부족
+          짧은 주기로 관리가 필요한 병사의 두발규정 상 월 1만원은 부족
           <ul>
             <li>프랜차이즈 미용실 남성 1회 커트 평균 비용 22,220원</li>
           </ul>
@@ -94,12 +94,12 @@
         <li>
           이발병 제도가 폐지되면 외출 시에만 이발 가능
           <ul>
-            <li>미용시설 수요가 급증할 것으로 예상, 그러나 미용시설에 대한 사전 정보(위치, 가격, 후기 등) 부족
+            <li>미용시설 수요가 급증할 것으로 예상, 그러나 <b>미용시설에 대한 사전 정보(위치, 가격, 후기 등) 부족</b>
             </li>
           </ul>
         </li>
         <li>
-          군 장병들의 출타 제한으로 군부대 인근 지역상권 침체
+          군 장병들의 출타 제한으로 <b>군부대 인근 지역상권 침체</b>
           <ul>
             <li>‘위드 코로나’ 시대의 대안 필요</li>
           </ul>
@@ -109,15 +109,13 @@
 	</tr>
 </table>
 
-## 서비스 설명
+## 📦 서비스 설명
 
 **바버포스**는 이러한 문제점을 해결하고, 군부대와 지역사회의 상생을 도모하는 장병들의 소통 창구가 되고자 합니다.
 
-<div align="center">
-  <img src="/IMAGES/2_readme_bg_1676.png" alt="Background" align="center">
-</div>
 
-## 기대 효과
+
+## 🎁 기대 효과
 
 <table>
 	<tr>
@@ -126,14 +124,14 @@
         <li>
           군부대와 미용시설간의 직접 연결·사전 계약
           <ul>
-            <li>이발이 까다롭지 않은 병사 두발규정을 이용해 이발비 절감 가능, 병사 두발의 양질화</li>
-            <li>‘카카오헤어샵’ 등의 디지털 플랫폼 사업에서 소외된 지역사회 계층에 도움</li>
+            <li>이발이 까다롭지 않은 병사 두발규정을 이용해 <b>이발비 절감</b> 가능, 병사 두발의 양질화</li>
+            <li>‘카카오헤어샵’ 등의 <b>디지털 플랫폼 사업에서 소외된 지역사회 계층에 도움</b></li>
           </ul>
         </li>
         <li>
           ‘위드 코로나’ 상황에서 외출·외박이 시행될 경우 병사 외출의 가장 많은 사유는 ‘이발’
           <ul>
-            <li>사전 소독/방역 협조 및 방역여부 표시를 통해 병력 방역관리 효율화</li>
+            <li>사전 소독/방역 협조 및 방역여부 표시를 통해 <b>병력 방역관리 효율화</b></li>
           </ul>
         </li>
       </ul>
@@ -149,9 +147,9 @@
 		<td width="50%">
       <ul>
         <li>
-          리뷰 시스템을 통해 상권을 공유하는 부대 병사간의 미용시설 정보 공유 및 출타 동선 효율화
+          군 내 정보나 인트라넷 접속, 혹은 부대 내부에서 별도의 통신장비 사용 불필요
           <ul>
-            <li>서비스의 위치정보는 사용자가 아닌 제휴 업체들의 것을 활용해 부대 위치 노출 방지</li>
+            <li>상권의 위치정보만을 활용해 군사정보 활용 </li>
           </ul>
         </li>
         <li>
@@ -180,12 +178,12 @@
 
 -->
 
-## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
+## 💾 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 
 - ECMAScript 6 지원 브라우저 사용
 - 권장: Google Chrome 버젼 77 이상
 
-## 기술 스택 (Tech Stacks)
+## 🗃️ 기술 스택 (Tech Stacks)
 
 <p align="center">
   <img src="/IMAGES/TechStacks.png" alt="Tech Stacks" align="center">
@@ -194,10 +192,10 @@
 <table align="center">
 	<tr>
 		<td align="center">
-			<font style="font-size: large">Front-end</font>
+			<font style="font-size: large">🖼️Front-end</font>
 		</td>
 		<td align="center">
-			<font style="font-size: large">Back-end</font>
+			<font style="font-size: large">🔙Back-end</font>
 		</td>
 	</tr>
 	<tr>
@@ -226,7 +224,7 @@
 	</tr>
 </table>
 
-## 프로젝트 설치 안내 (Installation Process)
+## 📘 프로젝트 설치 안내 (Installation Process)
 
 #### 1. 프로젝트 Clone
 ``` bash
@@ -275,9 +273,82 @@ BACKEND_URL=https://api.barberforce.shop
 
 > 카카오 로그인 등 리다이렉트 URL이 실제 서버 도메인과 연결된 서비스는 별도 카카오 API 관련 설정을 하지 않을 경우, 로컬 환경에서 관련 기능이 동작하지 않을 수 있습니다.
  
-## 팀 정보 (Team Information)
+## 👨‍💻 팀 정보 (Team Information)
+
+🆓**Duty-Free** 팀을 소개합니다.
 - Se Lee (ese1997@naver.com), Github Id: sallyselee
 - Chanhyuk Byeon (bdu00chch@gmail.com), Github Id: Bisue
 - Sangwook Park (dkxkqkrtkddn@gmail.com), Github Id: sw0501
 
-## 저작권 및 사용권 정보 (Copyleft / End User License)
+<table align="center">
+  <tr align="center">
+		<td>
+      📷 사진
+		</td>
+    <td>
+      ✔️ 역할
+		</td>
+		<td>
+			📛 소속, 이름
+		</td>
+    <td>
+      👔 담당
+    </td>
+    <td>
+      📧 이메일
+    </td>
+	</tr>
+	<tr align="center">
+		<td>
+      <img src="/IMAGES/Profile_Se.png" alt="Se Lee">
+		</td>
+    <td>
+      팀장
+		</td>
+		<td>
+			공군작전정보통신단<br><b>병장 이세</b>
+		</td>
+    <td>
+      <b>기획, 디자인,</b> 프론트엔드
+    </td>
+    <td>
+      ese1997@naver.com
+    </td>
+	</tr>
+	<tr align="center">
+		<td>
+			<img src="/IMAGES/Profile_Byeon.png" alt="Chanhyuk Byeon">
+		</td>
+		<td>
+      팀원
+		</td>
+		<td>
+			공군작전정보통신단<br><b>병장 변찬혁</b>
+		</td>
+    <td>
+      <b>프론트엔드,</b> 백엔드
+    </td>
+    <td>
+      bdu00chch@gmail.com
+    </td>
+	</tr>
+  <tr align="center">
+    <td>
+			<img src="/IMAGES/Profile_Park.png" alt="Sangwook Park">
+		</td>
+		<td>
+      팀원
+		</td>
+		<td>
+			공군작전정보통신단<br><b>병장 박상욱</b>
+		</td>
+    <td>
+      <b>백엔드</b>
+    </td>
+    <td>
+      dkxkqkrtkddn@gmail.com
+    </td>
+  </tr>
+</table>
+
+## ©️ 저작권 및 사용권 정보 (Copyleft / End User License)
