@@ -8,6 +8,9 @@
       <img class="mr-1" width="26" height="26" :src="avatar" />
       <span>{{ article.user.rank }} {{ article.user.name }}</span>
     </div>
+    <div class="flex justify-center">
+      <img :src="thumb" />
+    </div>
     <div class="text-sm text-gray-700 mb-2" v-html="proccesedBody"></div>
     <div class="flex items-center text-xs">
       <div class="flex items-center text-gray-300 ml-auto">
@@ -44,6 +47,9 @@ export default {
     },
     createdAt() {
       return moment(this.article.createdAt).format('YYYY-MM-DD HH:mm');
+    },
+    thumb() {
+      return this.article.thumb || '/img/thumb-placeholder.png';
     },
   },
 };
