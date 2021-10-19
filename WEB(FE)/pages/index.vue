@@ -5,13 +5,16 @@
     <BarberCarousel v-else />
     <div class="p-3">
       <!-- '머리깎고 뭐하지?' section -->
-      <section class="mb-12  ">
+      <section class="mb-12">
         <CommonHeading class="mb-2">머리깎고 뭐하지?</CommonHeading>
         <!-- 게시글 carousel (머리깎고 뭐하지?) -->
         <ArticleCarousel />
         <!-- view more link -->
         <div class="flex justify-center">
-          <NuxtLink class="flex justify-center rounded bg-brand font-bold text-white w-full max-w-md px-1 py-2" to="/board/2">
+          <NuxtLink
+            class="flex justify-center rounded bg-brand font-bold text-white w-full max-w-md px-1 py-2"
+            to="/board/2"
+          >
             더보기
           </NuxtLink>
         </div>
@@ -23,7 +26,7 @@
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
-            <img src="@/assets/img/doldol.png">
+            <img src="@/assets/img/doldol.png" />
           </div>
           <!-- text -->
           <span class="font-bold">미용실 정보</span>
@@ -33,7 +36,7 @@
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
-            <img src="@/assets/img/doldol.png">
+            <img src="@/assets/img/doldol.png" />
           </div>
           <!-- text -->
           <span class="font-bold">맛집 리스트</span>
@@ -43,10 +46,10 @@
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
-            <img src="@/assets/img/doldol.png">
+            <img src="@/assets/img/doldol.png" />
           </div>
           <!-- text -->
-          <span class="font-bold">커뮤니티</span>
+          <span class="font-bold">자유 게시판</span>
         </NuxtLink>
       </section>
       <!-- search form section -->
