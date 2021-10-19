@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    class="block bg-white border-t last:border-b border-gray-300 py-2 px-4"
+    class="block bg-white border-t last:border-b sm:border-l sm:border-r border-gray-300 py-2 px-4"
     :to="`/board/${boardId}/article/${article._id}`"
   >
     <div class="font-semibold mb-2">{{ article.title }}</div>
