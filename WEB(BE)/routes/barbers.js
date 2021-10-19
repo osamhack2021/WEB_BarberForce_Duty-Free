@@ -14,7 +14,7 @@ router.get('/barbers', fetchUser, async (req, res) => {
     const unit = await Unit.findOne({ soldier_id: user.soldier_id });
     // 추후 partnership 을 ObjectId로 변경?
     //-> 바꾸는게 맞는듯 res에만 populate로 바꿔주
-    const barbers = await Barber.find({ partnership: unit.unitname });
+    const barbers = await Barber.find({ partnership: unit.unitName });
 
     return res.json({
       barbers: barbers.slice(0, req.query.limit),
