@@ -82,11 +82,11 @@
               <div class="font-bold mb-2 md:text-xl">영업정보</div>
               <div class="mb-8">
                 <div class="mb-2">
-                  <div class="mb-2 md:text-lg">화~금</div>
+                  <div class="mb-2 md:text-lg">평일</div>
                   <div class="flex items-center">
                     <span class="flex items-center mr-8">
                       <img class="mr-2 w-7" src="@/assets/img/clock.svg" />
-                      10:00 ~ 18:30
+                      {{ weekdayDuration }}
                     </span>
                     <span class="items-center hidden md:flex">
                       <img class="mr-2 w-7" src="@/assets/img/phone.svg" />
@@ -95,10 +95,10 @@
                   </div>
                 </div>
                 <div class="mb-2">
-                  <div class="mb-2 md:text-lg">공휴일</div>
+                  <div class="mb-2 md:text-lg">주말</div>
                   <span class="flex items-center mr-8">
                     <img class="mr-2 w-7" src="@/assets/img/clock.svg" />
-                    13:00 ~ 15:00
+                    {{ weekendDuration }}
                   </span>
                 </div>
               </div>
@@ -141,6 +141,20 @@ export default {
     descriptionWithTag() {
       return this.barber.description.replace(/(\n|\r\n)/g, '<br />');
     },
+    weekdayDuration() {
+      const start = moment()
+        .set(this.barber.weekday.start.hour, 'hour')
+        .set(this.barber.weekday.start.minute, 'minute');
+      const end = moment().set(this.barber.weekday.end.hour, 'hour').set(this.barber.weekday.end.minute, 'minute');
+      return `${start.format('HH:mm')} ~ ${end.format('HH:mm')}`;
+    },
+    weekendDuration() {
+      const start = moment()
+        .set(this.barber.weekend.start.hour, 'hour')
+        .set(this.barber.weekend.start.minute, 'minute');
+      const end = moment().set(this.barber.weekend.end.hour, 'hour').set(this.barber.weekend.end.minute, 'minute');
+      return `${start.format('HH:mm')} ~ ${end.format('HH:mm')}`;
+    },
   },
   async fetch() {
     const id = this.$route.params.id;
@@ -178,6 +192,23 @@ export default {
       if (date.isBefore(moment())) {
         this.$toast.error('현재 시각보다 전에 예약을 할 수는 없습니다!');
         return;
+      }
+
+      const isWeekend = date.day() === 0 || date.day() === 6;
+      if (isWeekend) {
+        const start = this.barber.weekend.start.hour * 60 + this.barber.weekend.start.minute;
+        const end = this.barber.weekend.end.hour * 60 + this.barber.weekend.end.minute;
+        const selected = date.hour() * 60 + date.minute;
+        if (selected < start || end - 30 < selected) {
+          this.$toast.error('영업 시간이 아닙니다!');
+        }
+      } else {
+        const start = this.barber.weekday.start.hour * 60 + this.barber.weekday.start.minute;
+        const end = this.barber.weekday.end.hour * 60 + this.barber.weekday.end.minute;
+        const selected = date.hour() * 60 + date.minute;
+        if (selected < start || end - 30 < selected) {
+          this.$toast.error('영업 시간이 아닙니다!');
+        }
       }
 
       const checkBefore = moment(date).subtract(20, 'minute').subtract(1, 'minute');
