@@ -17,7 +17,7 @@
           <div class="flex flex-col items-center mb-2">
             <div class="mb-2">
               <!-- <DatePicker v-model="date" :disabled-dates="disabledDates" /> -->
-              <DatePicker v-model="date" :minute-increment="10" mode="dateTime" is24hr />
+              <DatePicker v-model="date" :minute-increment="10" mode="dateTime" is24hr is-required />
             </div>
           </div>
           <!-- additional message input -->
@@ -149,6 +149,14 @@ export default {
 
     const { data: reviewResponse } = await this.$api.barbers.reviews(id);
     this.reviews = reviewResponse.reviews;
+
+    const m = moment(this.date);
+    const { data: reservationsResponse } = await this.$api.barbers.reservations(
+      this.barber._id,
+      m.year(),
+      m.month() + 1
+    );
+    this.reservations = reservationsResponse.reservations;
   },
   watch: {
     barber(val) {
@@ -169,6 +177,22 @@ export default {
 
       if (date.isBefore(moment())) {
         this.$toast.error('현재 시각보다 전에 예약을 할 수는 없습니다!');
+        return;
+      }
+
+      const checkBefore = moment(date).subtract(20, 'minute').subtract(1, 'minute');
+      const checkAfter = moment(date).add(20, 'minute').add(1, 'minute');
+      const reservations = this.reservations.filter(reservation => {
+        // checkBefore <= reservation && reservation <= checkAfter
+        const t = moment(reservation.time);
+        return checkBefore.isBefore(t) && t.isBefore(checkAfter);
+      });
+      if (reservations.length > 0) {
+        this.$toast.error('이미 예약된 시간과 겹칩니다. (이발시간: 30분)');
+        for (const reservation of reservations) {
+          const t = moment(reservation.time);
+          this.$toast.error(`예약된 시간: ${t.format('HH:mm')} ~ ${t.add(30, 'minute').format('HH:mm')}`);
+        }
         return;
       }
 

@@ -5,7 +5,9 @@
   >
     <img class="block rounded object-cover article-thumb mr-3" :src="thumb" />
     <div class="flex flex-col flex-1">
-      <div class="font-semibold mb-2 overflow-hidden overflow-ellipsis" style="max-height:24px;">{{ article.title }}</div>
+      <div class="font-semibold mb-2 overflow-hidden overflow-ellipsis" style="max-height: 24px">
+        {{ article.title }}
+      </div>
       <div
         class="text-sm text-gray-400 overflow-hidden overflow-ellipsis mb-2"
         style="max-height: 40px"
