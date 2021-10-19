@@ -7,10 +7,20 @@
     <div class="flex items-center text-xs mb-2">
       <img class="mr-1" width="26" height="26" :src="avatar" />
       <span>{{ article.user.rank }} {{ article.user.name }}</span>
+      <template v-if="mine">
+        <NuxtLink
+          :to="`/board/${boardId}/article/${article._id}/edit`"
+          class="text-xs rounded bg-brand text-white py-1 px-2 ml-auto"
+          >수정</NuxtLink
+        >
+        <button class="text-xs rounded bg-red-500 text-white py-1 px-2 ml-2">삭제</button>
+      </template>
     </div>
-    <div class="flex justify-center">
-      <img :src="thumb" />
-    </div>
+    <template v-if="hasThumb">
+      <div class="flex justify-center">
+        <img :src="thumb" />
+      </div>
+    </template>
     <div class="text-sm text-gray-700 mb-2" v-html="proccesedBody"></div>
     <div class="flex items-center text-xs">
       <div class="flex items-center text-gray-300 ml-auto">
@@ -36,6 +46,10 @@ export default {
       type: Object,
       required: true,
     },
+    boardId: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     proccesedBody() {
@@ -48,8 +62,14 @@ export default {
     createdAt() {
       return moment(this.article.createdAt).format('YYYY-MM-DD HH:mm');
     },
+    hasThumb() {
+      return !!this.article.thumb;
+    },
     thumb() {
       return this.article.thumb || '/img/thumb-placeholder.png';
+    },
+    mine() {
+      return this.article.user._id === this.$store.state.auth.user._id;
     },
   },
 };

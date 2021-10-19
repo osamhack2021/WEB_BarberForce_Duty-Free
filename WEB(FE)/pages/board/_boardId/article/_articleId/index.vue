@@ -8,7 +8,7 @@
       <div class="flex-1"></div>
     </section>
     <main>
-      <ArticleDetail v-if="article" :article="article" />
+      <ArticleDetail v-if="article" :article="article" :board-id="boardId" />
       <template v-if="article">
         <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
       </template>
