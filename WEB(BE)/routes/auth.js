@@ -113,16 +113,17 @@ router.get('/me', fetchUser, async (req, res) => {
     }
     else{
       const unit = await Unit.findOne({ soldier_id: user.soldier_id });
+      await delete user.password;
 
       res.json({
+        _id: user._id,
         email: user.email,
-        name: user.name,
         nickname: user.nickname,
-        soldier_id: user.soldier_id,
         phone: user.phone,
-        social: user.social,
+        soldier_id: user.soldier_id,
         rank: user.rank,
-        unit: unit,
+        social: user.social
+
       });
     }
   } catch (e) {

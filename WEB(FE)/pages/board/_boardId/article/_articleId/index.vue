@@ -47,6 +47,7 @@ export default {
     try {
       const { data } = await this.$api.board.article(this.articleId);
       this.article = data.posts;
+      this.recommend_flag = data.recommend_flag;
     } catch (e) {
       console.error(e);
       this.$toast.error('에러가 발생했습니다!');

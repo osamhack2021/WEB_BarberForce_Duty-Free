@@ -14,10 +14,9 @@ router.get('/boards', fetchUser, async (req, res) => {
     const order = req.query.order;
 
     const post = await Board.find({ board: board })
-      .sort([
-        ['createAt', 'desc'],
-        [orderBy, order],
-      ])
+      .sort({
+        [orderBy]: order, 'createdAt': 'desc'//,
+      })
       .populate('user')
       .populate({
         path: 'comment',
