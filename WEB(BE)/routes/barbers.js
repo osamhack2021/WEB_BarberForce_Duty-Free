@@ -69,4 +69,5 @@ router.get('/barbers/:id/update', async (req, res) => {
 });
 
 
+
 module.exports = router;
