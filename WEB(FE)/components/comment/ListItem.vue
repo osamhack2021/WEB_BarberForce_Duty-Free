@@ -12,8 +12,9 @@
     <div class="text-sm mb-1">{{ comment.body }}</div>
     <div class="flex items-center text-xs">
       <div class="flex items-center text-gray-300 ml-auto">
-        <button class="flex item-center" @click="recommend">
-          <img class="mr-1" src="@/assets/img/recommend.svg" />
+        <button class="flex items-center" @click="recommend">
+          <img v-if="recommended" class="mr-1" src="@/assets/img/recommend.svg" />
+          <img v-else class="mr-1" src="@/assets/img/recommend-empty.svg" />
           <span>{{ comment.recommendation }}</span>
         </button>
       </div>
@@ -37,6 +38,9 @@ export default {
     },
     createdAt() {
       return moment(this.comment.createdAt).format('YYYY-MM-DD HH:mm');
+    },
+    recommended() {
+      return !!this.comment.recommend_user.find(user => user._id === this.$store.state.auth.user._id);
     },
   },
   methods: {
