@@ -51,10 +51,6 @@ export default {
       type: String,
       required: true,
     },
-    recommended: {
-      type: Boolean,
-      required: true,
-    },
   },
   methods: {
     async recommend() {
@@ -97,6 +93,9 @@ export default {
     },
     mine() {
       return this.article.user._id === this.$store.state.auth.user._id;
+    },
+    recommended() {
+      return !!this.article.recommend_user.find(user => user._id === this.$store.state.user._id);
     },
   },
 };
