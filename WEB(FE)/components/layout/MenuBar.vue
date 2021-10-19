@@ -28,6 +28,14 @@
         <img class="mr-2" width="22" src="@/assets/img/partnership.svg" />
         우리부대 제휴미용실
       </NuxtLink>
+      <NuxtLink class="flex px-2 py-3 transition-colors hover:bg-black hover:bg-opacity-10" to="/board/1">
+        <img class="mr-2" width="22" src="@/assets/img/conversation.svg" />
+        자유게시판
+      </NuxtLink>
+      <NuxtLink class="flex px-2 py-3 transition-colors hover:bg-black hover:bg-opacity-10" to="/board/2">
+        <img class="mr-2" width="22" src="@/assets/img/play.svg" />
+        머리깎고 뭐하지?
+      </NuxtLink>
     </div>
     <transition name="fade">
       <div v-if="opened" class="menubar-overlay"></div>
