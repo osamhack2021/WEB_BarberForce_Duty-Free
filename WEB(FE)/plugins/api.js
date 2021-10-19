@@ -66,7 +66,7 @@ const profile = client => ({
 const board = client => ({
   articles: async (boardId, orderBy, order) => {
     const flag = boardId === '1';
-    return await client.get(`/boards?board=${flag}&orderby=${orderBy}&order=${order}`);
+    return await client.get(`/boards?board=${flag}&orderBy=${orderBy}&order=${order}`);
   },
   article: async articleId => {
     return await client.get(`/boards/${articleId}`);
