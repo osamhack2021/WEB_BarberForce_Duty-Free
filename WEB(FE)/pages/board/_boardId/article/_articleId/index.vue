@@ -62,6 +62,7 @@ export default {
         }
         await this.$api.comment.create(this.articleId, { body: this.newComment });
         this.$toast.success('댓글을 등록했습니다!');
+        this.newComment = '';
         this.$fetch();
       } catch (e) {
         console.error(e);
