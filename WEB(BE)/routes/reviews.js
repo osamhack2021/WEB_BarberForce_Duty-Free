@@ -58,4 +58,21 @@ router.post('/barbers/:id/reviews', fetchUser, async (req, res) => {
   }
 });
 
+router.post('/reviews/:id/delete',fetchUser, async(req,res)=>{
+  try {
+    await Review.deleteOne({_id: req.params.id})
+
+    return res.json({
+      mss: '삭제',
+    });
+
+  } catch (e) {
+    console.error(`[${req.method}] ${req.path} - 에러!`, e);
+    return res.status(500).json({
+      error: e,
+      errorString: e.toString(),
+    });
+  }
+})
+
 module.exports = router;
