@@ -143,16 +143,18 @@ export default {
     },
     weekdayDuration() {
       const start = moment()
-        .set(this.barber.weekday.start.hour, 'hour')
-        .set(this.barber.weekday.start.minute, 'minute');
-      const end = moment().set(this.barber.weekday.end.hour, 'hour').set(this.barber.weekday.end.minute, 'minute');
+        .set('hour', this.barber.weekday.start.hour)
+        .set('minute', this.barber.weekday.start.minute);
+      const end = moment().set('hour', this.barber.weekday.end.hour).set('minute', this.barber.weekday.end.minute);
+
+      console.log(start.toISOString(), end.toISOString());
       return `${start.format('HH:mm')} ~ ${end.format('HH:mm')}`;
     },
     weekendDuration() {
       const start = moment()
-        .set(this.barber.weekend.start.hour, 'hour')
-        .set(this.barber.weekend.start.minute, 'minute');
-      const end = moment().set(this.barber.weekend.end.hour, 'hour').set(this.barber.weekend.end.minute, 'minute');
+        .set('hour', this.barber.weekend.start.hour)
+        .set('minute', this.barber.weekend.start.minute);
+      const end = moment().set('hour', this.barber.weekend.end.hour).set('minute', this.barber.weekend.end.minute);
       return `${start.format('HH:mm')} ~ ${end.format('HH:mm')}`;
     },
   },
@@ -201,6 +203,7 @@ export default {
         const selected = date.hour() * 60 + date.minute();
         if (selected < start || end - 30 < selected) {
           this.$toast.error('영업 시간이 아닙니다!');
+          return;
         }
       } else {
         const start = this.barber.weekday.start.hour * 60 + this.barber.weekday.start.minute;
@@ -208,6 +211,7 @@ export default {
         const selected = date.hour() * 60 + date.minute();
         if (selected < start || end - 30 < selected) {
           this.$toast.error('영업 시간이 아닙니다!');
+          return;
         }
       }
 
