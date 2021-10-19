@@ -198,14 +198,14 @@ export default {
       if (isWeekend) {
         const start = this.barber.weekend.start.hour * 60 + this.barber.weekend.start.minute;
         const end = this.barber.weekend.end.hour * 60 + this.barber.weekend.end.minute;
-        const selected = date.hour() * 60 + date.minute;
+        const selected = date.hour() * 60 + date.minute();
         if (selected < start || end - 30 < selected) {
           this.$toast.error('영업 시간이 아닙니다!');
         }
       } else {
         const start = this.barber.weekday.start.hour * 60 + this.barber.weekday.start.minute;
         const end = this.barber.weekday.end.hour * 60 + this.barber.weekday.end.minute;
-        const selected = date.hour() * 60 + date.minute;
+        const selected = date.hour() * 60 + date.minute();
         if (selected < start || end - 30 < selected) {
           this.$toast.error('영업 시간이 아닙니다!');
         }
