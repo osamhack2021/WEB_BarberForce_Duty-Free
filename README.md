@@ -10,7 +10,7 @@
   <a href="https://github.com/osamhack2021/WEB_BarberForce_Duty-Free">
       <img src="/IMAGES/title_grad.png" alt="BarberForce title" align="center">
   </a>
-</div><br>
+</div>
 
 <!--
 <div align="center">
