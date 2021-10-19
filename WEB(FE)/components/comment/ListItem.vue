@@ -19,7 +19,7 @@
             <textarea
               class="rounded border border-gray-300 p-2 text-sm"
               type="text"
-              v-model="this.commentForm.body"
+              v-model="commentForm.body"
             ></textarea>
             <div class="flex justify-end items-center">
               <button class="text-xs rounded bg-red-500 text-white py-1 px-2 mr-2" @click="closeEditModal">취소</button>
