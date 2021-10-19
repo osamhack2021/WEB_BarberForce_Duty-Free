@@ -33,7 +33,7 @@ const fetchUserMiddleware = async (req, res, next) => {
 
   // decode 한 토큰 안의 _id 로 user를 찾음
   try {
-    const user = await UserModel.findOne({ _id: decoded._id });
+    const user = await UserModel.findOne({ _id: decoded._id },{ password: 0});
 
     // 해당 _id의 유저가 없으면
     if (!user) {

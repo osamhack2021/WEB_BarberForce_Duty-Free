@@ -113,18 +113,7 @@ router.get('/me', fetchUser, async (req, res) => {
     }
     else{
       const unit = await Unit.findOne({ soldier_id: user.soldier_id });
-      await delete user.password;
-
-      res.json({
-        _id: user._id,
-        email: user.email,
-        nickname: user.nickname,
-        phone: user.phone,
-        soldier_id: user.soldier_id,
-        rank: user.rank,
-        social: user.social
-
-      });
+      res.json({...user.toObject(), unit: unit});
     }
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);

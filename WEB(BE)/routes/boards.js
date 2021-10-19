@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const mongoose = require('mongoose');
 
 const Board = require('../models/board');
 const Comment = require('../models/comment');
@@ -13,14 +14,24 @@ router.get('/boards', fetchUser, async (req, res) => {
     const orderBy = req.query.orderBy;
     const order = req.query.order;
 
-    const post = await Board.find({ board: board })
+    const post = await Board.find({ board: board },{password: 0})
       .sort({
         [orderBy]: order, 'createdAt': 'desc'//,
       })
-      .populate('user')
+      .populate({
+        path: 'user',
+        select: '-password'
+      })
+      .populate({
+        path: 'recommend_user',
+        select: '-password'
+      })
       .populate({
         path: 'comment',
-        populate: [{ path: 'recommend_user' }, { path: 'user' }],
+        populate: [
+          { path: 'recommend_user', select: '-password' },
+          { path: 'user', select: '-password' }
+        ],
       });
 
     return res.json({
@@ -42,17 +53,25 @@ router.get('/boards/:id', fetchUser, async (req, res) => {
   const orderBy = req.query.orderBy;
   const order = req.query.order;
   try {
-    const post = await Board.findOne({ _id: req.params.id })
+    const post = await Board.findOne({ _id: req.params.id },{password: 0})
       .sort({ [orderBy]: order })
-      .populate('user')
+      .populate({
+        path: 'user',
+        select: '-password'
+      })
+      .populate({
+        path: 'recommend_user',
+        select: '-password'
+      })
       .populate({
         path: 'comment',
-        populate: [{ path: 'recommend_user' }, { path: 'user' }],
+        populate: [
+          { path: 'recommend_user', select: '-password' },
+          { path: 'user', select: '-password' }
+        ],
       });
-
     return res.json({
       posts: post,
-      recommend_flag: post.recommend_user.find(_id => _id === user._id) === undefined,
     });
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
@@ -154,13 +173,12 @@ router.post('/boards/:id/delete', fetchUser, async (req, res) => {
 router.post('/boards/:id/comments', fetchUser, async (req, res) => {
   try {
     //댓글 추가
-    await Comment.create({
+
+    const createdComment = await Comment.create({
       post: req.params.id,
       user: req.user._id,
-      body: req.body.body,
+      body: req.body.body
     });
-
-    const createdComment = await Comment.findOne({ post: req.params.id, user: req.user._id });
 
     //게시글에 댓글 추가
     const post = await Board.findOne({ _id: req.params.id });
