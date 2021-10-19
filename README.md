@@ -4,6 +4,10 @@
   </a>
 </div><br>
 
+<div>
+  <a href=""></a>
+</div>
+
 <div align="center">
   <!-- no. of used languages -->
   <a href="">
@@ -184,19 +188,19 @@
 <table>
   <tr align="center">
     <td>
-      <img src="/IMAGES/Chrome.svg" alt="Google Chrome">
+      <img src="/IMAGES/Chrome.svg" alt="Google Chrome" width="100"><br>
       Google Chrome
     </td>
     <td>
-      <img src="/IMAGES/Edge.svg" alt="Microsoft Edge">
+      <img src="/IMAGES/Edge.svg" alt="Microsoft Edge" width="100"><br>
       Microsoft Edge
     </td>
     <td>
-      <img src="/IMAGES/Firefox.svg" alt="Mozilla Firefox">
+      <img src="/IMAGES/Firefox.svg" alt="Mozilla Firefox" width="100"><br>
       Firefox
     </td>
     <td>
-      <img src="/IMAGES/Safari.svg" alt="Safari">
+      <img src="/IMAGES/Safari.svg" alt="Safari" width="100"><br>
       Safari
     </td>
   </tr>
@@ -308,10 +312,7 @@ BACKEND_URL=https://api.barberforce.shop
  
 ## 👨‍💻 팀 정보 (Team Information)
 
-🆓**Duty-Free** 팀을 소개합니다.
-- Se Lee (ese1997@naver.com), Github Id: sallyselee
-- Chanhyuk Byeon (bdu00chch@gmail.com), Github Id: Bisue
-- Sangwook Park (dkxkqkrtkddn@gmail.com), Github Id: sw0501
+**Duty-Free** 팀을 소개합니다.
 
 <table align="center">
   <tr align="center">
@@ -401,7 +402,9 @@ BACKEND_URL=https://api.barberforce.shop
   </tr>
   <tr align="center">
     <td>
+      <!--
 			<img src="/IMAGES/Profile_Jongyoul.png" alt="Jongyoul Lee" width="100">
+      -->
 		</td>
 		<td>
       멘토
