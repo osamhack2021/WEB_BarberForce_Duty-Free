@@ -7,7 +7,7 @@
       </div>
       <button class="rounded bg-red-500 text-white text-sm py-1 px-3 ml-auto" @click="logout">로그아웃</button>
     </div>
-    <hr class="border-opacity-20 my-3" />
+    <hr class="border-opacity-20 my-5" />
     <div class="flex items-center">
       <NuxtLink class="flex items-center text-lg" to="/profile">
         <img class="mr-2" width="28" src="@/assets/img/user.svg" />

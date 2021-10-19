@@ -4,14 +4,14 @@
     <section class="container p-5">
       <!-- category selection -->
       <nav class="mb-4 ml-3">
-        <div class="font-bold mb-1 tracking-wider">커뮤니티</div>
+        <div class="font-bold mb-2 tracking-wider">커뮤니티</div>
         <div class="flex flex-col items-start text-sm tracking-wide ml-4">
-          <NuxtLink class="board-link font-semibold" to="/board/1">● 자유게시판</NuxtLink>
+          <NuxtLink class="board-link font-semibold mb-1" to="/board/1">● 자유게시판</NuxtLink>
           <NuxtLink class="board-link font-semibold" to="/board/2">● 머리깎고 뭐하지?</NuxtLink>
         </div>
       </nav>
       <!-- controls -->
-      <div class="flex justify-center items-end mb-4">
+      <div class="flex justify-center items-end">
         <div class="flex-1 flex items-center">
           <img class="mr-1" src="@/assets/img/order.png" />
           <select class="bg-transparent text-sm" style="color: #838383" v-model="orderBy">

@@ -5,7 +5,7 @@
   >
     <img class="block rounded object-cover article-thumb mr-3" :src="thumb" />
     <div class="flex flex-col flex-1">
-      <div class="font-semibold mb-2">{{ article.title }}</div>
+      <div class="font-semibold mb-2 overflow-hidden overflow-ellipsis" style="max-height:24px;">{{ article.title }}</div>
       <div
         class="text-sm text-gray-400 overflow-hidden overflow-ellipsis mb-2"
         style="max-height: 40px"
@@ -18,11 +18,11 @@
         </div>
         <div class="flex items-center text-gray-300 ml-auto">
           <span class="flex item-center mr-4">
-            <img class="mr-1" src="@/assets/img/recommend.svg" />
+            <img width="14" class="mr-1" src="@/assets/img/recommend.svg" />
             <span>{{ article.recommendation }}</span>
           </span>
           <span class="flex item-center">
-            <img class="mr-1" src="@/assets/img/comment.svg" />
+            <img width="14" class="mr-1" src="@/assets/img/comment.svg" />
             <span>{{ article.comment.length }}</span>
           </span>
         </div>

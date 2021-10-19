@@ -5,13 +5,13 @@
     <BarberCarousel v-else />
     <div class="p-3">
       <!-- '머리깎고 뭐하지?' section -->
-      <section class="mb-12">
+      <section class="mb-12  ">
         <CommonHeading class="mb-2">머리깎고 뭐하지?</CommonHeading>
         <!-- 게시글 carousel (머리깎고 뭐하지?) -->
         <ArticleCarousel />
         <!-- view more link -->
         <div class="flex justify-center">
-          <NuxtLink class="flex justify-center rounded bg-brand font-bold text-white w-full max-w-md p-1" to="/board/2">
+          <NuxtLink class="flex justify-center rounded bg-brand font-bold text-white w-full max-w-md px-1 py-2" to="/board/2">
             더보기
           </NuxtLink>
         </div>
@@ -22,7 +22,9 @@
         <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/barbers">
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
-          <div class="rounded-full bg-gray-500 border-2 border-gray-400 w-16 md:w-20 h-16 md:h-20 mb-2"></div>
+          <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
+            <img src="@/assets/img/doldol.png">
+          </div>
           <!-- text -->
           <span class="font-bold">미용실 정보</span>
         </NuxtLink>
@@ -30,7 +32,9 @@
         <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/board/2">
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
-          <div class="rounded-full bg-gray-500 border-2 border-gray-400 w-16 md:w-20 h-16 md:h-20 mb-2"></div>
+          <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
+            <img src="@/assets/img/doldol.png">
+          </div>
           <!-- text -->
           <span class="font-bold">맛집 리스트</span>
         </NuxtLink>
@@ -38,7 +42,9 @@
         <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/board/1">
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
-          <div class="rounded-full bg-gray-500 border-2 border-gray-400 w-16 md:w-20 h-16 md:h-20 mb-2"></div>
+          <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
+            <img src="@/assets/img/doldol.png">
+          </div>
           <!-- text -->
           <span class="font-bold">커뮤니티</span>
         </NuxtLink>
