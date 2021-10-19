@@ -36,7 +36,7 @@
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
-            <img src="@/assets/img/doldol.png" />
+            <img src="@/assets/img/food.svg" />
           </div>
           <!-- text -->
           <span class="font-bold">맛집 리스트</span>
@@ -46,7 +46,7 @@
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="flex justify-center items-center w-16 md:w-20 h-16 md:h-20 mb-2">
-            <img src="@/assets/img/doldol.png" />
+            <img src="@/assets/img/chat.svg" />
           </div>
           <!-- text -->
           <span class="font-bold">자유 게시판</span>
