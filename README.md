@@ -191,7 +191,7 @@
   <img src="/IMAGES/TechStacks.png" alt="Tech Stacks" align="center">
 </p>
 
-<table>
+<table align="center">
 	<tr>
 		<td align="center">
 			<font style="font-size: large">Front-end</font>
@@ -202,24 +202,24 @@
 	</tr>
 	<tr>
 		<td align="center">
-			<a href="https://nuxtjs.org/">
+			<a href="https://nuxtjs.org/" target="_blank">
         <img src="https://img.shields.io/badge/nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white"/>
       </a>
-      <a href="https://tailwindcss.com/">
+      <a href="https://tailwindcss.com/" target="_blank">
         <img src="https://img.shields.io/badge/tailwind css-06B6D4?style=for-the-badge&logo=tailwind css&logoColor=white"/>
       </a>
-      <a href="https://axios-http.com/">
+      <a href="https://axios-http.com/" target="_blank">
         <img src="https://img.shields.io/badge/Axios-854195?style=for-the-badge&logoColor=white"/>
       </a>
 		</td>
 		<td align="center">
-			<a href="https://nodejs.org/">
+			<a href="https://nodejs.org/" target="_blank">
         <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
       </a>
-      <a href="https://expressjs.com/">
+      <a href="https://expressjs.com/" target="_blank">
         <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"/>
       </a>
-      <a href="https://www.mongodb.com/">
+      <a href="https://www.mongodb.com/" target="_blank">
         <img src="https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
       </a>
 		</td>
