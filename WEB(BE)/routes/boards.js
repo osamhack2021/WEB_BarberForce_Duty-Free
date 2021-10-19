@@ -16,7 +16,7 @@ router.get('/boards', fetchUser, async (req, res) => {
 
     const post = await Board.find({ board: board },{password: 0})
       .sort({
-        [orderBy]: order, 'createdAt': 'desc'//,
+        [orderBy]: order, 'createdAt': 'desc'
       })
       .populate({
         path: 'user',

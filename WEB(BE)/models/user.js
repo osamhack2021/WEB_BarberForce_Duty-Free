@@ -6,10 +6,10 @@ const userSchema = new mongoose.Schema({
   email: { type: String },
   password: { type: String, default: null },
   name: { type: String },
-  nickname: { type: String},
-  phone: { type: String},
+  nickname: { type: String },
+  phone: { type: String },
   soldier_id: { type: String, default: null },
-  rank: { type: String},
+  rank: { type: String },
   social: { type: Boolean, default: false },
 });
 
@@ -19,6 +19,7 @@ userSchema.methods.comparePassword = function (plainPassword) {
 };
 
 userSchema.methods.generateToken = function () {
+  //env.process.dddd맞음 이거 그러면 여기랑  jwt verify 하는 부분도 넣어줘야함
   return jwt.sign({ _id: this._id }, 'secretToken', { expiresIn: '24h' });
 };
 

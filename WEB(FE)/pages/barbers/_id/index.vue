@@ -17,7 +17,7 @@
           <div class="flex flex-col items-center mb-2">
             <div class="mb-2">
               <!-- <DatePicker v-model="date" :disabled-dates="disabledDates" /> -->
-              <DatePicker v-model="date" mode="dateTime" is24hr />
+              <DatePicker v-model="date" :minute-increment="10" mode="dateTime" is24hr />
             </div>
           </div>
           <!-- additional message input -->

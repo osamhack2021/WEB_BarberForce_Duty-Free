@@ -18,7 +18,7 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    // 비밀번호 검사 (todo: 암호화 해시비교)
+    // 비밀번호 검사
     const checkPassword = user.comparePassword(req.body.password);
     if (!checkPassword) {
       return res.status(403).json({

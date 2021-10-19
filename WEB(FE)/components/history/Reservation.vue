@@ -3,7 +3,7 @@
     <!-- toggle button -->
     <button class="absolute top-0 right-0 py-1 px-2" @click="opened = !opened">▼</button>
     <!-- heading -->
-    <div class="flex items-center mb-2">
+    <div class="flex items-start mb-2">
       <!-- time -->
       <div class="text-right font-bold text-lg mr-3">
         {{ dateString.date }} <br />
@@ -15,7 +15,7 @@
           <!-- title -->
           <div class="text-lg font-bold">{{ reservation.barber.title }}</div>
           <!-- separator -->
-          <hr class="my-1" />
+          <hr class="my-2" />
           <!-- phone -->
           <div class="flex items-center text-xs">
             <img class="w-4" src="@/assets/img/phone.svg" />
@@ -28,7 +28,7 @@
       <!-- description (사장님께 용무) -->
       <div class="text-sm">
         <div class="text-gray-400 ml-4">요청사항(사장님께 용무)</div>
-        <div class="h-32 break-all">{{ reservation.description }}</div>
+        <div class="h-32 break-all">{{ reservation.description || '요청사항이 없습니다.' }}</div>
       </div>
       <!-- 정정/취소 버튼 -->
       <template v-if="upcomming">
