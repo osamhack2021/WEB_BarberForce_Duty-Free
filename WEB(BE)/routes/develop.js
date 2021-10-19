@@ -91,52 +91,52 @@ router.get('/setDummyData', async (req, res) => {
       partnership: ['OICW'],
     },
     {
-      title: `기본군사훈련단`,
-      location: '진주',
-      location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
-      weekday: { start: { hour: 10, minute: 0 }, end: { hour: 22, minute: 0 } },
-      weekend: { start: { hour: 12, minute: 0 }, end: { hour: 20, minute: 0 } },
-      description: '연중무휴입니다. \n 커트 : 8000원',
-      phone: '010-0000-0011',
+      title: `엇던`,
+      location: '평택',
+      location_detail: '경기도 평택시 밀월로 9 1층 102호 송탄역 4번 출구',
+      weekday: { start: { hour: 10, minute: 0 }, end: { hour: 19, minute: 0 } },
+      weekend: { start: { hour: 10, minute: 0 }, end: { hour: 19, minute: 0 } },
+      description: '연중무휴입니다. \n 커트 : 5000원',
+      phone: '010-0000-1234',
       thumb: '/img/shop2.jpg',
       disinfection: true,
       partnership: ['AFOC'],
     },
     {
-      title: `제 20 전투비행단`,
-      location: '서산',
-      location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
-      weekday: { start: { hour: 10, minute: 0 }, end: { hour: 22, minute: 0 } },
-      weekend: { start: { hour: 12, minute: 0 }, end: { hour: 20, minute: 0 } },
-      description: '매주 화요일 휴무입니다. \n 커트 : 9000원',
-      phone: '010-0000-0011',
+      title: `맨Hair`,
+      location: '평택',
+      location_detail: '경기도 평택시 밀월로 35번길 33 101호 ',
+      weekday: { start: { hour: 11, minute: 0 }, end: { hour: 20, minute: 0 } },
+      weekend: { start: { hour: 11, minute: 0 }, end: { hour: 20, minute: 0 } },
+      description: '매주 화요일 휴무입니다. \n 커트 : 8000원',
+      phone: '010-0000-4321',
       thumb: '/img/shop1.jpg',
       disinfection: true,
       partnership: ['AFOC'],
     },
     {
-      title: `머리 잘하는 집`,
-      location: '송탄출장소',
-      location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
-      weekday: { start: { hour: 10, minute: 0 }, end: { hour: 22, minute: 0 } },
-      weekend: { start: { hour: 12, minute: 0 }, end: { hour: 20, minute: 0 } },
+      title: `1st헤어 오산공군기지점`,
+      location: '평택',
+      location_detail: '경기 평택시 신장로 55 2층',
+      weekday: { start: { hour: 10, minute: 0 }, end: { hour: 20, minute: 0 } },
+      weekend: { start: { hour: 10, minute: 0 }, end: { hour: 20, minute: 0 } },
       description: '매주 수요일 휴무입니다. \n 커트 : 8500원',
       phone: '010-0010-0052',
       thumb: '/img/shop1.jpg',
       disinfection: true,
-      partnership: ['AAOC'],
+      partnership: ['AFOC'],
     },
     {
-      title: `송탄미용실`,
-      location: 'K-55 정문',
-      location_detail: '경기도 평택시 고덕북로 77 불난버섯집 1층 중앙현관',
-      weekday: { start: { hour: 10, minute: 0 }, end: { hour: 22, minute: 0 } },
-      weekend: { start: { hour: 12, minute: 0 }, end: { hour: 20, minute: 0 } },
-      description: '매주 수요일 휴무입니다. \n 커트 : 9000원',
+      title: `로빈이발관`,
+      location: '평택',
+      location_detail: '경기 평택시 점촌로 19번길 3',
+      weekday: { start: { hour: 9, minute: 0 }, end: { hour: 20, minute: 0 } },
+      weekend: { start: { hour: 9, minute: 0 }, end: { hour: 20, minute: 0 } },
+      description: '매주 수요일 휴무입니다. \n 커트 : 6000원',
       phone: '010-0110-1000',
       thumb: '/img/shop1.jpg',
       disinfection: true,
-      partnership: ['AAOC'],
+      partnership: ['AFOC'],
     },
     {
       title: `자라나라 머리머리`,
@@ -171,6 +171,21 @@ router.get('/setDummyData', async (req, res) => {
       unit.barbers_id.push(created._id);
       unit.save();
     }
+  }
+
+  /*
+  // 더미유저
+  let dummyUser = await User.findOne({ email: 'kang@naver.com' });
+  if (!dummyUser) {
+    dummyUser = await User.create({
+      name: '강민구',
+      nickname: '구99',
+      email: 'dummy@dummy.com',
+      password: crypto.createHash('sha512').update('dummy123').digest('base64'),
+      phone: '011-1234-5678',
+      soldier_id: '20-70004352',
+      rank: '중장',
+    });
   }
 
   // 더미유저
@@ -263,7 +278,8 @@ router.get('/setDummyData', async (req, res) => {
   for (const article of articles) {
     await Board.create(article);
   }
-
+  */
+  
   res.json('done');
 });
 
