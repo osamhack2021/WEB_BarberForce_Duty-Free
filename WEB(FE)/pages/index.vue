@@ -11,7 +11,7 @@
         <ArticleCarousel />
         <!-- view more link -->
         <div class="flex justify-center">
-          <NuxtLink class="flex justify-center rounded bg-brand font-bold text-white w-full max-w-md p-1" to="/">
+          <NuxtLink class="flex justify-center rounded bg-brand font-bold text-white w-full max-w-md p-1" to="/board/2">
             더보기
           </NuxtLink>
         </div>
@@ -27,7 +27,7 @@
           <span class="font-bold">미용실 정보</span>
         </NuxtLink>
         <!-- 맛집 리스트 -->
-        <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/">
+        <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/board/2">
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="rounded-full bg-gray-500 border-2 border-gray-400 w-16 md:w-20 h-16 md:h-20 mb-2"></div>
@@ -35,7 +35,7 @@
           <span class="font-bold">맛집 리스트</span>
         </NuxtLink>
         <!-- 커뮤니티 -->
-        <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/">
+        <NuxtLink class="flex flex-col items-center mx-3 md:mx-8" to="/board/1">
           <!-- 원형 이미지 or 아이콘 -->
           <!-- || dummy placeholder || -->
           <div class="rounded-full bg-gray-500 border-2 border-gray-400 w-16 md:w-20 h-16 md:h-20 mb-2"></div>
