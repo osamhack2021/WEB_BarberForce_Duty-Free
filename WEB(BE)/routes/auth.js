@@ -116,7 +116,7 @@ router.get('/me', fetchUser, async (req, res) => {
       await delete user.password;
 
       res.json({
-        id: user._id,
+        _id: user._id,
         email: user.email,
         nickname: user.nickname,
         phone: user.phone,
