@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="w-full max-w-lg mx-auto mb-32">
     <section class="flex items-center p-5">
       <NuxtLink class="flex-1" :to="`/board/${boardId}`">
         <img src="@/assets/img/left-arrow.svg" />
@@ -12,15 +12,17 @@
       <template v-if="article">
         <CommentListItem v-for="comment in article.comment" :key="comment._id" :comment="comment" @reload="$fetch()" />
       </template>
-    </main>
-    <form class="comment-form text-sm border-t" @submit.prevent="createComment">
-      <div class="container p-1">
-        <input class="rounded border w-full border-gray-300 bg-white text-sm mb-1" v-model="newComment" type="text" />
+      <form class="w-full max-w-lg mx-auto mt-3" @submit.prevent="createComment">
+        <textarea
+          class="w-full rounded border border-gray-300 bg-white p-2 mb-1 focus:border-brand focus:outline-none"
+          rows="3"
+          v-model="newComment"
+        ></textarea>
         <div class="flex justify-end">
-          <button class="rounded bg-brand text-white py-2 px-3" type="submit">작성</button>
+          <button class="rounded bg-brand text-white py-2 px-5" type="submit">댓글 작성</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </main>
   </div>
 </template>
 
@@ -53,6 +55,10 @@ export default {
   methods: {
     async createComment() {
       try {
+        if (this.newComment.trim() === '') {
+          this.$toast.error('댓글 내용을 입력해주세요!');
+          return;
+        }
         await this.$api.comment.create(this.articleId, { body: this.newComment });
         this.$toast.success('댓글을 등록했습니다!');
         this.$fetch();

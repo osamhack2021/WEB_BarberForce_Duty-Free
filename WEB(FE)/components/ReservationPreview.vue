@@ -116,9 +116,9 @@
         <ValidationObserver v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(submitReview)">
             <div class="flex items-end font-bold mb-1">
-              간단 리뷰 작성하기 <span class="text-gray-400 text-xs font-light ml-2">5/140</span>
+              간단 리뷰 작성하기 <span class="text-gray-400 text-xs font-light ml-2">{{ review.body.length }}/140</span>
             </div>
-            <ValidationProvider v-slot="{ errors }" name="리뷰" rules="required">
+            <ValidationProvider v-slot="{ errors }" name="리뷰" rules="required|max:140">
               <textarea
                 v-model="review.body"
                 class="w-full rounded border p-2 focus:outline-none"
