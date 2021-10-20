@@ -378,3 +378,8 @@ BACKEND_URL=https://api.barberforce.shop
 </table>
 
 ## ©️ 저작권 및 사용권 정보 (Copyleft / End User License)
+* [MIT](https://github.com/osamhack2021/WEB_BarberForce_Duty-Free/blob/master/LICENSE.md)
+* [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License)
+* [BSD 2-Clause](https://en.wikipedia.org/wiki/BSD_licenses#2-clause)
+
+This project is licensed under the terms of the MIT license, Apache License 2.0, and BSD 2-Clause.
