@@ -228,7 +228,7 @@ npm run dev
 
 #### 3. 프론트엔드 의존성 설치 & dotenv 설정 & 서버 실행
 ``` bash
-cd "../WEB(BE)"
+cd "../WEB(FE)"
 npm install --no-save
 cp .env
 # .env 관련 설정 후 (하단 참고)
