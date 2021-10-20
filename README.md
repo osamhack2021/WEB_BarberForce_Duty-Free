@@ -85,7 +85,7 @@
   </li>
 </ul>
 
-## 📦 서비스 설명 (Functionality)
+## 📦 기능 설명 (Functionality)
 
 ✂️**바버포스**는 이러한 문제점을 해결하고, 군부대와 지역사회의 상생을 도모하는 장병들의 소통 창구가 되고자 합니다.
 
@@ -211,7 +211,7 @@
 	</tr>
 </table>
 
-## 📘 프로젝트 설치 안내 (Installation Process)
+## 📘 설치 안내 (Installation Process)
 
 #### 1. 프로젝트 Clone
 ``` bash
