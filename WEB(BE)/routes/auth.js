@@ -78,7 +78,7 @@ router.post('/register', async (req, res) => {
       nickname: req.body.nickname,
       soldier_id: req.body.soldier_id,
       phone: req.body.phone,
-      rank: req.body.rank
+      rank: req.body.rank,
     });
 
     // 만들어진 User 확인
@@ -106,14 +106,13 @@ router.get('/me', fetchUser, async (req, res) => {
   const user = req.user;
 
   try {
-    if(user.soldier_id == null){
+    if (!user.soldier_id) {
       return res.status(403).json({
-        error: 'NO_SOCIAL_ID'
-      })
-    }
-    else{
+        error: 'NO_SOCIAL_ID',
+      });
+    } else {
       const unit = await Unit.findOne({ soldier_id: user.soldier_id });
-      res.json({...user.toObject(), unit: unit});
+      res.json({ ...user.toObject(), unit: unit });
     }
   } catch (e) {
     console.error(`[${req.method}] ${req.path} - 에러!`, e);
