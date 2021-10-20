@@ -278,7 +278,7 @@
       예약 확인 페이지
     </td>
     <td width="140">
-      <img src="/IMAGES/reservation_after" alt="미용실 정보" width="70"><br>
+      <img src="/IMAGES/reservation_after.png" alt="미용실 정보" width="70"><br>
       홈페이지 메인
     </td>
     <td width="140">
