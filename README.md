@@ -89,6 +89,76 @@
 
 ✂️**바버포스**는 이러한 문제점을 해결하고, 군부대와 지역사회의 상생을 도모하는 장병들의 소통 창구가 되고자 합니다.
 
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/login_main.png" alt="로그인 화면" width="70"><br>
+      로그인 화면
+    </td>
+    <td width="140">
+      <img src="/IMAGES/register_select.png" alt="회원가입 화면" width="70"><br>
+      회원가입 화면
+    </td>
+    <td width="140">
+      <img src="/IMAGES/kakako_login.png" alt="카카오로그인 화면" width="70"><br>
+      카카오로그인 화면
+    </td>
+    <td width="140">
+      <img src="/IMAGES/kakao_register1.png" alt="추가정보 입력 화면" width="70"><br>
+      추가정보 입력 화면
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      로그인 화면에서는 카카오톡과 이메일 2가지 방법으로 로그인 할 수 있습니다. 
+    </td>
+    <td>
+      회원가입 페이지에서는 카카오톡과 이메일 2가지 방법으로 가입할 수 있습니다.
+    </td>
+    <td>
+      카카오톡으로 가입할 경우 카카오로그인 화면으로 넘어가서 카카오톡 계정을 인증하고 정보 제공 동의를 합니다.
+    </td>
+    <td>
+      카카오 인증이 완료된 후에 추가정보를 입력하는 페이지로 넘어갑니다.
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/register_select.png" alt="회원가입 화면" width="70"><br>
+      회원가입 화면
+    </td>
+    <td width="140">
+      <img src="/IMAGES/email_register1" alt="이메일 등록 화면" width="70"><br>
+      정보입력 화면
+    </td>
+    <td width="140">
+      <img src="/IMAGES/email_register2" alt="회원가입 화면" width="70"><br>
+      정보입력 화면
+    </td>
+    <td width="140">
+      <img src="/IMAGES/email_register_success" alt="카카오로그인 화면" width="70"><br>
+      가입 성공
+    </td>
+  </tr>
+  <tr align="center">
+   <td>
+      회원가입 화면에서 이메일 회원가입을 선택한 경우 정보 입력화면으로 넘어갑니다.
+    </td>
+    <td>
+      조건에 맞는 이메일과 비밀번호를 입력하고 다음페이지에서 추가 정보를 입력합니다. 
+    </td>
+    <td>
+      이름, 별명, 전화번호, 군번 그리고 계급 정보를 입력합니다.
+    </td>
+    <td>
+      가입한 이메일과 비밀번호로 로그인을 하면 BarberForce 서비스를 이용할 수 있습니다.
+    </td>
+  </tr>
+</table>
+
 <!--
 
 ## 기능 설명
