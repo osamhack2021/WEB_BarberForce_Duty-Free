@@ -41,9 +41,6 @@ export default {
           const { data: user } = await this.$api.auth.me();
           context.commit('setUser', user);
         } catch (error) {
-          if (error.response && error.response.data.error === 'NO_SOCIAL_ID') {
-            await $nuxt.$router.replace('/kakao/additional');
-          }
           context.commit('setToken', null);
           context.commit('setUser', null);
         }
