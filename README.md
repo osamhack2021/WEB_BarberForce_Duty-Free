@@ -382,4 +382,4 @@ BACKEND_URL=https://api.barberforce.shop
 * [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License)
 * [BSD 2-Clause](https://en.wikipedia.org/wiki/BSD_licenses#2-clause)
 
-This project is licensed under the terms of the MIT license, Apache License 2.0, and BSD 2-Clause.
+This project is multi-licensed under the terms of the MIT license, Apache License 2.0, and BSD 2-Clause.
