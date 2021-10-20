@@ -34,7 +34,7 @@
 
 ## 👀 프로젝트 소개 (Introduction)
 
-[![시연 동영상](https://img.youtube.com/vi/9Rs7Mk07alA/0.jpg)](https://www.youtube.com/watch?v=9Rs7Mk07alA)
+[![시연 동영상](https://img.youtube.com/vi/9Rs7Mk07aIA/0.jpg)](https://www.youtube.com/watch?v=9Rs7Mk07aIA)
 
 <!--
 <table>
