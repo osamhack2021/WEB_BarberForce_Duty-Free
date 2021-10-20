@@ -106,7 +106,7 @@
       회원가입 화면
     </td>
     <td width="140">
-      <img src="/IMAGES/kakako_login.png" alt="카카오로그인 화면" width="70"><br>
+      <img src="/IMAGES/kakao_login.png" alt="카카오로그인 화면" width="70"><br>
       카카오로그인 화면
     </td>
     <td width="140">
@@ -137,15 +137,15 @@
       회원가입 화면
     </td>
     <td width="140">
-      <img src="/IMAGES/email_register1" alt="이메일 등록 화면" width="70"><br>
+      <img src="/IMAGES/email_register1.png" alt="이메일 등록 화면" width="70"><br>
       정보입력 화면
     </td>
     <td width="140">
-      <img src="/IMAGES/email_register2" alt="회원가입 화면" width="70"><br>
+      <img src="/IMAGES/email_register2.png" alt="회원가입 화면" width="70"><br>
       정보입력 화면
     </td>
     <td width="140">
-      <img src="/IMAGES/email_register_success" alt="카카오로그인 화면" width="70"><br>
+      <img src="/IMAGES/email_register_success.png" alt="카카오로그인 화면" width="70"><br>
       가입 성공
     </td>
   </tr>
@@ -160,7 +160,184 @@
       이름, 별명, 전화번호, 군번 그리고 계급 정보를 입력합니다.
     </td>
     <td>
-      가입한 이메일과 비밀번호로 로그인을 하면 BarberForce 서비스를 이용할 수 있습니다.
+      가입한 이메일로 로그인을 하면 BarberForce 서비스를 이용할 수 있습니다.
+    </td>
+  </tr>
+</table>
+
+
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/homepage_main.png" alt="홈페이지" width="70"><br>
+      홈페이지 메인
+    </td>
+    <td width="140">
+      <img src="/IMAGES/homepage_main2.png" alt="홈페이지 하단" width="70"><br>
+      홈페이지 하단
+    </td>
+    <td width="140">
+      <img src="/IMAGES/tab_menu.png" alt="메뉴 탭" width="70"><br>
+      우측 메뉴 탭
+    </td>
+  </tr>
+  <tr align="center">
+   <td>
+      로그인에 성공하면 위와 같은 홈페이지가 보입니다. 중앙에는 미용실 배너가 위치해있고 슬라이드해서 다른 미용실을 살펴볼 수 있습니다. 하단에 위치한 배너는 사용자들이 머리깎고 뭐하지 게시판에 작성한 게시글들 중 추천수가 높은 것들을 보여줍니다.
+    </td>
+    <td>
+      페이지 하단에는 게시판으로 이동할 수 있는 더보기 버튼이 있으며 최하단에는 내가 속한 부대의 제휴 미용실을 보여주는 '미용실 정보', 머리깎고 뭐하지 게시판으로 이동하는 '맛집 리스트', 자유 게시판으로 이동하는 '자유 게시판' 버튼 등이 있습니다.
+    </td>
+    <td>
+      우측 상단에 있는 버튼을 누르면 메뉴 탭이 뜹니다. 이곳에서는 내 정보를 볼 수 있는 '마이페이지', 내 예약들을 볼 수 있는 '내 예약'과 다른 페이지들로 이동할 수 있는 메뉴들이 위치해있습니다.
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/profile.png" alt="프로필" width="70"><br>
+      마이페이지
+    </td>
+    <td width="140">
+      <img src="/IMAGES/profile_update.png" alt="정보 수정" width="70"><br>
+      내 정보 수정
+    </td>
+    <td width="140">
+      <img src="/IMAGES/reservation_update.png" alt="내 예약" width="70"><br>
+      내 예약
+    </td>
+    <td width="140">
+      <img src="/IMAGES/reservation_update2.png" alt="메뉴 탭" width="70"><br>
+      우측 메뉴 탭
+    </td>
+  </tr>
+  <tr align="center">
+   <td>
+      '마이페이지'에서는 현재 로그인한 사용자의 정보를 볼 수 있습니다.
+    </td>
+    <td>
+      수정하기 버튼을 통해 이름, 닉네임, 이메일, 휴대전화, 계급등을 수정할 수 있습니다.
+    </td>
+    <td>
+      '내 예약'에서는 다가오는 예약과 과거 예약을 살펴 볼 수 있습니다.
+    </td>
+    <td>
+      다가오는 예약을 클릭하여 예약 날짜와 시간, 용무를 수정하거나 취소할 수 있습니다.
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/partnerhship.png" alt="미용실 정보" width="70"><br>
+      미용실 정보
+    </td>
+    <td width="140">
+      <img src="/IMAGES/partnership_review.png" alt="미용실 정보" width="70"><br>
+      미용실 정보(리뷰)
+    </td>
+    <td width="140">
+      <img src="/IMAGES/reservation1.png" alt="예약 페이지" width="70"><br>
+      예약 페이지 상단
+    </td>
+    <td width="140">
+      <img src="/IMAGES/reservation2.png" alt="예약 페이지" width="70"><br>
+      예약 페이지 중단
+    </td>
+    <td width="140">
+      <img src="/IMAGES/reservation3.png" alt="예약 페이지" width="70"><br>
+      예약 페이지 하단
+    </td>
+  </tr>
+  <tr align="center">
+   <td>
+      '미용실 정보'에서는 내가 속한 부대와 제휴를 맺은 미용실 목록과 별점같은 정보들을 보여줍니다.
+    </td>
+    <td>
+      '미용실 정보'에 화살표 버튼을 누르게 되면 해당 미용실을 이용했던 사용자들의 별점과 리뷰를 볼 수 있습니다.
+    </td>
+    <td>
+      홈페이지의 미용실 배너나 미용실 정보를 클릭하게 되면 예약 페이지로 넘어옵니다. 예약 페이지에서 예약이 없고 미용실의 영업시간에 맞는 날짜와 시간을 선택해서 예약을 할 수 있습니다.  
+    </td>
+    <td>
+      예약 페이지 중단에는 미용실을 이용한 사용자들의 별점과 리뷰를 볼 수 있습니다.
+    </td>
+    <td>
+      예약 페이지 하단에는 미용실의 세부 위치, 영업시간, 커트 비용, 정보를 볼 수 있습니다.
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/reserved1.png" alt="예약 확인" width="70"><br>
+      예약 확인 페이지
+    </td>
+    <td width="140">
+      <img src="/IMAGES/reservation_after" alt="미용실 정보" width="70"><br>
+      홈페이지 메인
+    </td>
+    <td width="140">
+      <img src="/IMAGES/review1.png" alt="예약 페이지" width="70"><br>
+      미용 완료 확인
+    </td>
+    <td width="140">
+      <img src="/IMAGES/review2.png" alt="예약 페이지" width="70"><br>
+      예약 페이지 중단
+    </td>
+  </tr>
+  <tr align="center">
+   <td>
+      예약 확인 페이지에서는 내가 예약한 내용을 보여주며 하단에 위치한 예약 확인 버튼을 눌러 예약을 완료할 수 있습니다.
+    </td>
+    <td>
+      예약을 완료하면 홈페이지 메인에서 내가 예약한 미용실과 예약 내용을 확인 할 수 있고 수정/취소하기 버튼을 통해
+      '내 예약'으로 이동하여 예약을 수정하거나 취소 할 수 있습니다. 
+    </td>
+    <td>
+      취소되지 않은 미용실 예약이 시간이 지나게 되면 미용을 완료했는지 확인하는 페이지로 바뀌게 됩니다.
+    </td>
+    <td>
+      예를 선택할 경우 미용실에 대한 리뷰와 별점을 작성할 수 있습니다.
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr align="center">
+    <td width="140">
+      <img src="/IMAGES/bulletin_afterhair.png" alt="머리깎고 뭐하지" width="70"><br>
+      머리깎고 뭐하지
+    </td>
+    <td width="140">
+      <img src="/IMAGES/bulletin_post.png" alt="게시글 작성" width="70"><br>
+      게시글 작성
+    </td>
+    <td width="140">
+      <img src="/IMAGES/recommendation.png" alt="댓글 작성 및 추천" width="70"><br>
+      댓글 작성 및 추천
+    </td>
+    <td width="140">
+      <img src="/IMAGES/banner_mypost.png" alt="홈페이지 배너" width="70"><br>
+      홈페이지 배너
+    </td>
+  </tr>
+  <tr align="center">
+   <td>
+      머리깎고 뭐하지와 자유게시판에서는 다른 사용자들이 작성한 게시글들을 시간/추천순으로 정렬하여 볼 수 있습니다.
+    </td>
+    <td>
+      게시판 우측 상단에 글쓰기 버튼을 누르면 제목과 내용을 입력하고 게시글을 작성 할 수 있습니다.
+    </td>
+    <td>
+      관심있는 게시글을 누른 후에 댓글을 달 수 있고 마음에 드는 게시글과 댓글을 추천하여 배너에 노출되게 할 수 있습니다.
+    </td>
+    <td>
+      내가 작성한 게시글은 홈페이지 배너에 추천순으로 배치되어 확인할 수 있습니다.
     </td>
   </tr>
 </table>
