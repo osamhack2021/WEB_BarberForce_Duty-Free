@@ -168,16 +168,16 @@
 
 <table align="center">
   <tr align="center">
-    <td width="250">
-      <img src="/IMAGES/homepage_main.png" alt="홈페이지" width="250"><br>
+    <td width="333">
+      <img src="/IMAGES/homepage_main.png" alt="홈페이지" width="333"><br>
       홈페이지 메인
     </td>
-    <td width="250">
-      <img src="/IMAGES/homepage_main2.png" alt="홈페이지 하단" width="250"><br>
+    <td width="333">
+      <img src="/IMAGES/homepage_main2.png" alt="홈페이지 하단" width="333"><br>
       홈페이지 하단
     </td>
-    <td width="250">
-      <img src="/IMAGES/tab_menu.png" alt="메뉴 탭" width="250"><br>
+    <td width="333">
+      <img src="/IMAGES/tab_menu.png" alt="메뉴 탭" width="333"><br>
       우측 메뉴 탭
     </td>
   </tr>
