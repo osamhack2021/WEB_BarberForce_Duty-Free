@@ -97,20 +97,20 @@
 
 <table align="center">
   <tr align="center">
-    <td width="200">
-      <img src="/IMAGES/login_main.png" alt="로그인 화면" width="200"><br>
+    <td width="250">
+      <img src="/IMAGES/login_main.png" alt="로그인 화면" width="250"><br>
       로그인 화면
     </td>
-    <td width="200">
-      <img src="/IMAGES/register_select.png" alt="회원가입 화면" width="200"><br>
+    <td width="250">
+      <img src="/IMAGES/register_select.png" alt="회원가입 화면" width="250"><br>
       회원가입 화면
     </td>
-    <td width="200">
-      <img src="/IMAGES/kakao_login.png" alt="카카오로그인 화면" width="200"><br>
+    <td width="250">
+      <img src="/IMAGES/kakao_login.png" alt="카카오로그인 화면" width="250"><br>
       카카오로그인 화면
     </td>
-    <td width="200">
-      <img src="/IMAGES/kakao_register1.png" alt="추가정보 입력 화면" width="200"><br>
+    <td width="250">
+      <img src="/IMAGES/kakao_register1.png" alt="추가정보 입력 화면" width="250"><br>
       추가정보 입력 화면
     </td>
   </tr>
