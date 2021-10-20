@@ -40,6 +40,15 @@
   </a>
 </div>
 
+<div align="center">
+  <a href="https://barber-force.notion.site/Duty-Free-BarberForce-38c0dfd08dca4af9967d754cf11d69d4">
+    Notion
+  </a>
+  <a href="https://www.figma.com/file/EfA2Av6TaoyxpV8saKGOSo/BarberForce?node-id=0%3A14">
+    Figma
+  </a>
+</div>
+
 <!--
 <table>
 	<tr>
