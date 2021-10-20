@@ -132,20 +132,20 @@
 
 <table align="center">
   <tr align="center">
-    <td width="140">
-      <img src="/IMAGES/register_select.png" alt="회원가입 화면" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/register_select.png" alt="회원가입 화면" width="250"><br>
       회원가입 화면
     </td>
-    <td width="140">
-      <img src="/IMAGES/email_register1.png" alt="이메일 등록 화면" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/email_register1.png" alt="이메일 등록 화면" width="250"><br>
       정보입력 화면
     </td>
-    <td width="140">
-      <img src="/IMAGES/email_register2.png" alt="회원가입 화면" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/email_register2.png" alt="회원가입 화면" width="250"><br>
       정보입력 화면
     </td>
-    <td width="140">
-      <img src="/IMAGES/email_register_success.png" alt="카카오로그인 화면" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/email_register_success.png" alt="카카오로그인 화면" width="250"><br>
       가입 성공
     </td>
   </tr>
@@ -168,16 +168,16 @@
 
 <table align="center">
   <tr align="center">
-    <td width="140">
-      <img src="/IMAGES/homepage_main.png" alt="홈페이지" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/homepage_main.png" alt="홈페이지" width="250"><br>
       홈페이지 메인
     </td>
-    <td width="140">
-      <img src="/IMAGES/homepage_main2.png" alt="홈페이지 하단" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/homepage_main2.png" alt="홈페이지 하단" width="250"><br>
       홈페이지 하단
     </td>
-    <td width="140">
-      <img src="/IMAGES/tab_menu.png" alt="메뉴 탭" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/tab_menu.png" alt="메뉴 탭" width="250"><br>
       우측 메뉴 탭
     </td>
   </tr>
@@ -196,20 +196,20 @@
 
 <table align="center">
   <tr align="center">
-    <td width="140">
-      <img src="/IMAGES/profile.png" alt="프로필" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/profile.png" alt="프로필" width="250"><br>
       마이페이지
     </td>
-    <td width="140">
-      <img src="/IMAGES/profile_update.png" alt="정보 수정" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/profile_update.png" alt="정보 수정" width="250"><br>
       내 정보 수정
     </td>
-    <td width="140">
-      <img src="/IMAGES/reservation_update.png" alt="내 예약" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/reservation_update.png" alt="내 예약" width="250"><br>
       내 예약
     </td>
-    <td width="140">
-      <img src="/IMAGES/reservation_update2.png" alt="메뉴 탭" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/reservation_update2.png" alt="메뉴 탭" width="250"><br>
       우측 메뉴 탭
     </td>
   </tr>
@@ -231,24 +231,24 @@
 
 <table align="center">
   <tr align="center">
-    <td width="140">
-      <img src="/IMAGES/partnerhship.png" alt="미용실 정보" width="70"><br>
+    <td width="200">
+      <img src="/IMAGES/partnerhship.png" alt="미용실 정보" width="200"><br>
       미용실 정보
     </td>
-    <td width="140">
-      <img src="/IMAGES/partnership_review.png" alt="미용실 정보" width="70"><br>
+    <td width="200">
+      <img src="/IMAGES/partnership_review.png" alt="미용실 정보" width="200"><br>
       미용실 정보(리뷰)
     </td>
-    <td width="140">
-      <img src="/IMAGES/reservation1.png" alt="예약 페이지" width="70"><br>
+    <td width="200">
+      <img src="/IMAGES/reservation1.png" alt="예약 페이지" width="200"><br>
       예약 페이지 상단
     </td>
-    <td width="140">
-      <img src="/IMAGES/reservation2.png" alt="예약 페이지" width="70"><br>
+    <td width="200">
+      <img src="/IMAGES/reservation2.png" alt="예약 페이지" width="200"><br>
       예약 페이지 중단
     </td>
-    <td width="140">
-      <img src="/IMAGES/reservation3.png" alt="예약 페이지" width="70"><br>
+    <td width="200">
+      <img src="/IMAGES/reservation3.png" alt="예약 페이지" width="200"><br>
       예약 페이지 하단
     </td>
   </tr>
@@ -273,20 +273,20 @@
 
 <table align="center">
   <tr align="center">
-    <td width="140">
-      <img src="/IMAGES/reserved1.png" alt="예약 확인" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/reserved1.png" alt="예약 확인" width="250"><br>
       예약 확인 페이지
     </td>
-    <td width="140">
-      <img src="/IMAGES/reservation_after.png" alt="미용실 정보" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/reservation_after.png" alt="미용실 정보" width="250"><br>
       홈페이지 메인
     </td>
-    <td width="140">
-      <img src="/IMAGES/review1.png" alt="예약 페이지" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/review1.png" alt="예약 페이지" width="250"><br>
       미용 완료 확인
     </td>
-    <td width="140">
-      <img src="/IMAGES/review2.png" alt="예약 페이지" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/review2.png" alt="예약 페이지" width="250"><br>
       예약 페이지 중단
     </td>
   </tr>
@@ -309,20 +309,20 @@
 
 <table align="center">
   <tr align="center">
-    <td width="140">
-      <img src="/IMAGES/bulletin_afterhair.png" alt="머리깎고 뭐하지" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/bulletin_afterhair.png" alt="머리깎고 뭐하지" width="250"><br>
       머리깎고 뭐하지
     </td>
-    <td width="140">
-      <img src="/IMAGES/bulletin_post.png" alt="게시글 작성" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/bulletin_post.png" alt="게시글 작성" width="250"><br>
       게시글 작성
     </td>
-    <td width="140">
-      <img src="/IMAGES/recommendation.png" alt="댓글 작성 및 추천" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/recommendation.png" alt="댓글 작성 및 추천" width="250"><br>
       댓글 작성 및 추천
     </td>
-    <td width="140">
-      <img src="/IMAGES/banner_mypost.png" alt="홈페이지 배너" width="70"><br>
+    <td width="250">
+      <img src="/IMAGES/banner_mypost.png" alt="홈페이지 배너" width="250"><br>
       홈페이지 배너
     </td>
   </tr>
