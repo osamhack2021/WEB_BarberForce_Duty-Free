@@ -370,9 +370,7 @@ BACKEND_URL=https://api.barberforce.shop
   </tr>
   <tr align="center">
     <td>
-      <!--
 			<img src="/IMAGES/Profile_Jongyoul.png" alt="Jongyoul Lee" width="85">
-      -->
 		</td>
 		<td>
       멘토
