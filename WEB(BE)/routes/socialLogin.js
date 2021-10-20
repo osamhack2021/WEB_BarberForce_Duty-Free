@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const axios = require('axios');
 const request = require('request');
 
 const User = require('../models/user');
@@ -60,18 +61,30 @@ router.get('/kakao/access', (req, res) => {
         const email = user.email;
         const name = user.profile.nickname;
 
+        if (!email) {
+          try {
+            await axios.post('https://kapi.kakao.com/v1/user/unlink', {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            });
+            res.redirect('https://www.barberforce.shop/kakao/error');
+          } catch (e) {
+            res.json(e.toString());
+          }
+        }
+
         // 이메일로 사용자 검색
         const existingUser = await User.findOne({ email: email, social: true });
         //const existSoldierId = existingUser.soldier_id;
         if (existingUser) {
-          if(existingUser.soldier_id == null){
+          if (existingUser.soldier_id == null) {
             // 해당 이메일의 사용자가 이미 있다면
             // 그 사용자에 대한 토큰 생성 후 리다이렉트
             const token = existingUser.generateToken();
             const url = 'https://barberforce.shop/kakao/callback?token=' + token + '&first=1';
             return res.redirect(url);
-          }
-          else{
+          } else {
             //해당 이메일의 사용자가 군번이 없다면 추가 입력페이지로 리다이렉트
             const token = existingUser.generateToken();
             const url = 'https://barberforce.shop/kakao/callback?token=' + token;
@@ -83,11 +96,11 @@ router.get('/kakao/access', (req, res) => {
           const user = await User.create({
             email: email,
             name: name,
-            nickname: "",
-            soldier_id: "",
-            phone: "",
-            password: "",
-            rank: "",
+            nickname: '',
+            soldier_id: '',
+            phone: '',
+            password: '',
+            rank: '',
             social: true,
           });
           // 만든 사용자에 대한 토큰을 생성 후 리다이렉트 (first=1 플래그)
@@ -127,7 +140,14 @@ router.post('/kakao/register', fetchUser, async (req, res) => {
     }
 
     // 군번 데이터 추가 입력
-    await user.update({ $set: { soldier_id: req.body.soldier_id, phone: req.body.phone, rank: req.body.rank, nickname: req.body.nickname } });
+    await user.update({
+      $set: {
+        soldier_id: req.body.soldier_id,
+        phone: req.body.phone,
+        rank: req.body.rank,
+        nickname: req.body.nickname,
+      },
+    });
 
     res.json({});
   } catch (e) {
