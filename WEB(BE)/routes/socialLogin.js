@@ -63,7 +63,7 @@ router.get('/kakao/access', (req, res) => {
 
         if (!email) {
           try {
-            await axios.post('https://kapi.kakao.com/v1/user/unlink', {
+            await axios.post('https://kapi.kakao.com/v1/user/unlink', undefined, {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
               },
