@@ -220,13 +220,29 @@ git clone https://github.com/osamhack2021/WEB_BarberForce_Duty-Free.git
 ```
 
 #### 2. 백엔드 의존성 설치 & 서버 실행
+
 ``` bash
 cd "WEB(BE)"
 npm install --no-save
+```
+
+이후, `.env` 파일을 생성하여 `jwt` 토큰에 사용될 시크릿 키 문자열을 설정해주어야 합니다.
+
+```
+vi .env
+# SECRETTOKEN=설정할_시크릿_키
+```
+
+서버를 실행합니다.
+
+> (여기서는 개발 서버를 실행하는 방법입니다. 프로덕션 서버일 경우 pm2 등을 사용합니다.)
+
+```
 npm run dev
 ```
 
 #### 3. 프론트엔드 의존성 설치 & dotenv 설정 & 서버 실행
+
 ``` bash
 cd "../WEB(FE)"
 npm install --no-save
@@ -235,9 +251,11 @@ cp .env
 npm run dev
 ```
 
+> 프로덕션 서버일 경우 pm2 등을 사용합니다.
+
 #### .env (dotenv) 설정 관련
 
-`.env.example` 을 복사하여 `.env` 파일을 생성하면, 초기 상태는 아래와 같습니다.
+`./WEB(FE)/.env.example` 을 복사하여 `.env` 파일을 생성하면, 초기 상태는 아래와 같습니다.
 
 ``` dotenv
 # kakao keys (https://developers.kakao.com/console/app/641963)
