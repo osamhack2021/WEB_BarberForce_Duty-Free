@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 BSD 2-clause
 
-Copyright (c) <year>, <copyright holder>
+Copyright (c) 2021 Duty-Free
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
