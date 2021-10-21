@@ -17,15 +17,6 @@
   <a href="">
       <img src="https://img.shields.io/github/contributors/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Number of contributors">
   </a>
-  <!-- license -->
-  <a href="">
-      <img src="https://img.shields.io/github/license/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="License">
-  </a>
-  <br>
-  <!-- last commit -->
-  <a href="">
-      <img src="https://img.shields.io/github/last-commit/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Date of the last commit">
-  </a>
   <!-- commit per month -->
   <a href="">
       <img src="https://img.shields.io/github/commit-activity/m/osamhack2021/WEB_BarberForce_Duty-Free?style=for-the-badge" alt="Commit per month">
@@ -36,39 +27,19 @@
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=9Rs7Mk07aIA">
-    <img src="https://img.youtube.com/vi/9Rs7Mk07aIA/0.jpg" alt="BarberForce Youtube">
-  </a>
+    <img src="/IMAGES/youtube.png" alt="BarberForce Youtube" width="400">
+  </a><br>
+  <b>▲ BarberForce 프로젝트 시연영상</b>
 </div>
 
 <div align="center">
   <a href="https://barber-force.notion.site/Duty-Free-BarberForce-38c0dfd08dca4af9967d754cf11d69d4">
-    <img src="/IMAGES/notion-button.png" alt="Notion">
+    <img src="/IMAGES/notion-button.png" alt="Notion" width="110">
   </a>
   <a href="https://www.figma.com/file/EfA2Av6TaoyxpV8saKGOSo/BarberForce?node-id=0%3A14">
-    <img src="/IMAGES/figma-button.png" alt="Figma">
+    <img src="/IMAGES/figma-button.png" alt="Figma" width="110">
   </a>
 </div>
-
-<!--
-<table>
-	<tr>
-		<td>
-			<a href="https://www.youtube.com/watch?v=suvEYpgqv18"><img src="/image/INTRO_THUMBNAIL.png"></a>
-		</td>
-		<td>
-			<a href="https://www.youtube.com/watch?v=Oh-SFOLAom0"><img src="/image/GUIDE_THUMBNAIL.png"></a>
-		</td>
-	</tr>
-	<tr>
-		<td align="center">
-			<b>소개 영상</b>
-		</td>
-		<td align="center">
-			<b>가이드 영상</b>
-		</td>
-	</tr>
-</table>
--->
 
 ✂️**바버포스(BarberForce)** 는 **국군 장병을 위한 미용시설 예약 웹 서비스입니다.** 부대 주변의 미용실이나 이발소를 예약하고 방문한 뒤 리뷰를 공유할 수 있는 모바일 웹 서비스입니다. 이에 더하여 부대 인근 편의시설 방문 후기 게시판과 같은 커뮤니티 기능을 마련해, 군 장병들의 소통의 장이 되고자 합니다.
 
